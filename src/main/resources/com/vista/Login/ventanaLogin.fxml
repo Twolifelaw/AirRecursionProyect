@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ventanaLogin" prefHeight="768.0" prefWidth="1024.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codigo.controlador.VentanaLoginController">
+    <AnchorPane fx:id="anchorPane2" layoutX="316.0" layoutY="213.0" opacity="0.87" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #212121;">
+        <Label fx:id="lblError" layoutX="149.0" layoutY="32.0" prefHeight="22.0" prefWidth="169.0" textFill="#d3cfda">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="161.0" layoutY="61.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="161.0" layoutY="102.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #593F70;" />
+        <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="91.0" layoutY="131.0" prefHeight="26.0" prefWidth="213.0" promptText="Usuario" />
+        <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="91.0" layoutY="183.0" prefHeight="26.0" prefWidth="213.0" promptText="Contraseña" />
+      <Button fx:id="btnIngresar" layoutX="162.0" layoutY="227.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70;" text="Ingresar" textFill="WHITE" />
+    </AnchorPane>
+   </AnchorPane>
