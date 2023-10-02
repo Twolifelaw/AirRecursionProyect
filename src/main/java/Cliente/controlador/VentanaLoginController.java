@@ -1,7 +1,6 @@
-package com.codigo.controlador;
+package Cliente.controlador;
 
-import com.codigo.exceptions.verificarException;
-import com.codigo.modelo.objetos.DataBase;
+import Cliente.exceptions.verificarException;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -19,6 +18,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -54,25 +55,34 @@ public class VentanaLoginController {
                 throw new verificarException("Campo vacio llenar porfavor");
             }else{
                 boolean usuarioEncontrado = false;
-                for (int i = 0; i < DataBase.empleados.size(); i++) {
-                    if (DataBase.empleados.get(i).getNombre().equals(nombre) && DataBase.empleados.get(i).getContrasena().equals(contrasena)) {
-                        lblError.setText("Se ingreso correctamente.");
-                        mostrarLoginErrorTemporalmente();
-                        Stage stage = new Stage();
-                        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
-                        Scene escena = new Scene(root);
-                        stage.setScene(escena);
-                        stage.show();
-                        // en esta linea , esconde el stage del login y carga el nuevo stage
-                        ((Node) (event.getSource())).getScene().getWindow().hide();
-                        usuarioEncontrado = true;
-                        break;
-                    }else{
-                        lblError.setText("No se encontro el usuario");
-                        mostrarLoginErrorTemporalmente();
+                try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
+                    String linea;
+                    while ((linea = reader.readLine()) != null) {
+                        // Verificar si la línea contiene el correo electrónico y la contraseña
+                        if (linea.contains("Nombre Usuario: " + txtUsuario.getText()) &&
+                                reader.readLine().contains("Contraseña: " + pswContrasena.getText())) {
+                            System.out.println("Las credenciales son correctas.");
+                            lblError.setText("Se ingreso correctamente.");
+                            mostrarLoginErrorTemporalmente();
+                            Stage stage = new Stage();
+                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
+                            Scene escena = new Scene(root);
+                            stage.setScene(escena);
+                            stage.show();
+                            // en esta linea , esconde el stage del login y carga el nuevo stage
+                            ((Node) (event.getSource())).getScene().getWindow().hide();
+                            usuarioEncontrado = true;
+                        }else{
+                            lblError.setText("No se encontro el usuario");
+                            mostrarLoginErrorTemporalmente();
+                        }
                     }
-
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+
+
                 if(!usuarioEncontrado){
                     throw new verificarException("No se encontro usuario");
                 }
@@ -82,8 +92,6 @@ public class VentanaLoginController {
         } catch (verificarException e) {
             lblError.setText(e.getMessage());
             mostrarLoginErrorTemporalmente();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
     }

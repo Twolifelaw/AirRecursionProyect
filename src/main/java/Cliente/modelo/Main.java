@@ -1,8 +1,7 @@
-package com.codigo.modelo;
+package Cliente.modelo;
 
-import com.codigo.controlador.VentanaLoginController;
-import com.codigo.modelo.objetos.DataBase;
-import com.codigo.modelo.objetos.Empleado;
+import Cliente.controlador.VentanaLoginController;
+import Cliente.modelo.objetos.Empleado;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,8 +24,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        DataBase baseDeDatos = new DataBase();
-        ArrayList<Empleado> empleados = baseDeDatos.setValoresQuemados();
         launch(args);
     }
 }

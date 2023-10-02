@@ -1,4 +1,4 @@
-package com.codigo.modelo.objetos;
+package Cliente.modelo.objetos;
 
 public class Persona {
     private String nombre;

@@ -1,4 +1,4 @@
-package com.codigo.controlador;
+package Cliente.controlador;
 
 public class VentanaManager {
 }
