@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1587556-4020-406d-8d11-13fe58a23c61" name="Changes" comment="">
+    <list default="true" id="72f8f97d-9ea5-497e-90ba-edb383bf3cd9" name="Changes" comment="Se creo la ventana de registro de clientes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +28,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="brandon" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2W3ZVuM1wGwoGG7x2hP6GVpaZUm" />
+  <component name="ProjectId" id="2WEkJPKmk2HWi0eufYeEzGUue62" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,96 +40,44 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "brandon",
-    "last_opened_file_path": "C:/Users/camil/IdeaProjects/AirRecursion",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5205395",
-    "vue.rearranger.settings.migration": "true"
+    "last_opened_file_path": "C:/Users/camil/IdeaProjects/AirRecursion"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/ventanas" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
-      <recent name="$PROJECT_DIR$/src/main/java/modelo" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Cliente.modelo" />
-      <recent name="com.codigo.controlador" />
-      <recent name="com.codigo.modelo.objetos" />
-      <recent name="com.codigo.exceptions" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Login" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="GestionClientes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Cliente.modelo.GestionClientes" />
-      <module name="AirRecursionProyect" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Cliente.modelo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cliente.modelo.Main" />
       <module name="AirRecursionProyect" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Servidor.mainServer" />
-      <module name="AirRecursionProyect" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Servidor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.mainServer" />
-        <item itemvalue="Application.GestionClientes" />
-        <item itemvalue="Application.GestionClientes" />
-        <item itemvalue="Application.mainServer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Se creo la ventana de registro de clientes">
+      <created>1696264263162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696264263162</updated>
+    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1587556-4020-406d-8d11-13fe58a23c61" name="Changes" comment="" />
-      <created>1695963252898</created>
+      <changelist id="72f8f97d-9ea5-497e-90ba-edb383bf3cd9" name="Changes" comment="Se creo la ventana de registro de clientes" />
+      <created>1696305059778</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695963252898</updated>
-      <workItem from="1695963254590" duration="5360000" />
-      <workItem from="1696260504095" duration="1035000" />
+      <updated>1696305059778</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se creo la ventana de registro de clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creo la ventana de registro de clientes" />
   </component>
 </project>

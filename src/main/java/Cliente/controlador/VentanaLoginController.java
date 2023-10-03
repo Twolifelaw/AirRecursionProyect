@@ -29,6 +29,8 @@ public class VentanaLoginController {
 
     @FXML
     private AnchorPane anchorPane2;
+    @FXML
+    private Button btn_registrar;
 
     @FXML
     private Button btnIngresar;
@@ -58,11 +60,13 @@ public class VentanaLoginController {
                 try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
                     String linea;
                     while ((linea = reader.readLine()) != null) {
-                        // Verificar si la línea contiene el correo electrónico y la contraseña
-                        if (linea.contains("Nombre Usuario: " + txtUsuario.getText()) &&
-                                reader.readLine().contains("Contraseña: " + pswContrasena.getText())) {
-                            System.out.println("Las credenciales son correctas.");
-                            lblError.setText("Se ingreso correctamente.");
+                        // Verificar si la línea contiene el nombre y la contraseña
+                        if (linea.startsWith("Nombre Usuario: ") && linea.contains(txtUsuario.getText())) {
+                            // Leer la siguiente línea para verificar la contraseña
+                            linea = reader.readLine();
+                            if (linea != null && linea.startsWith("Contaseña Usuario: ") && linea.contains(pswContrasena.getText())) {
+                                System.out.println("Las credenciales son correctas.");
+                                lblError.setText("Se ingreso correctamente.");
                             mostrarLoginErrorTemporalmente();
                             Stage stage = new Stage();
                             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
@@ -71,7 +75,7 @@ public class VentanaLoginController {
                             stage.show();
                             // en esta linea , esconde el stage del login y carga el nuevo stage
                             ((Node) (event.getSource())).getScene().getWindow().hide();
-                            usuarioEncontrado = true;
+                            usuarioEncontrado = true;}
                         }else{
                             lblError.setText("No se encontro el usuario");
                             mostrarLoginErrorTemporalmente();
@@ -96,6 +100,17 @@ public class VentanaLoginController {
 
     }
 
+    @FXML
+    void action_registrar(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaRegistro.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta linea , esconde el stage del login y carga el nuecvo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+
+    }
 
     private void mostrarLoginErrorTemporalmente() {
         lblError.setVisible(true);
