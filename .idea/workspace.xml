@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8f97d-9ea5-497e-90ba-edb383bf3cd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
+    <list default="true" id="72f8f97d-9ea5-497e-90ba-edb383bf3cd9" name="Changes" comment="Se creo la ventana de registro de clientes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,57 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2WEkJPKmk2HWi0eufYeEzGUue62" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/camil/IdeaProjects/AirRecursion"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Login" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cliente.modelo.Main" />
+      <module name="AirRecursionProyect" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Se creo la ventana de registro de clientes">
+      <created>1696264263162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696264263162</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72f8f97d-9ea5-497e-90ba-edb383bf3cd9" name="Changes" comment="Se creo la ventana de registro de clientes" />
+      <created>1696305059778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696305059778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se creo la ventana de registro de clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creo la ventana de registro de clientes" />
   </component>
 </project>

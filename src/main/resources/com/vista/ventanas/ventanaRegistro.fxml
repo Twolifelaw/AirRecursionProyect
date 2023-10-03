@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Cliente.controlador.VentanaRegistroController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane id="ventanaRegistro" prefHeight="508.0" prefWidth="631.0" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaRegistroController">
+   <children>
+      <AnchorPane layoutX="178.0" layoutY="100.0" opacity="0.87" prefHeight="307.0" prefWidth="275.0" style="-fx-background-color: #212121;" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <VBox layoutX="51.0" layoutY="58.0" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="txt_nombre" promptText="Nombres">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_Id" promptText="Identificacion">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_correo" promptText="Correo electronico">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_numero_telefonico" promptText="Numero telefonico">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_direccion" promptText="Direccion de residencia">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <PasswordField fx:id="psw_contrasena" promptText="Contraseña" />
+                  <Button fx:id="btn_registrar" mnemonicParsing="false" onAction="#actionRegistrar" style="-fx-background-color: #593F70;" text="REGISTRAR" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="50.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="110.0" layoutY="14.0" prefHeight="17.0" prefWidth="57.0" text="REGISTRO" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btn_atras" layoutX="14.0" layoutY="469.0" mnemonicParsing="false" onAction="#actionAtras" opacity="0.49" style="-fx-background-color: #593F70;" text="Atras" textFill="WHITE" />
+   </children>
 </AnchorPane>

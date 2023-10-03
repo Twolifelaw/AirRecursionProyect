@@ -6,19 +6,28 @@ import java.io.IOException;
 
 public class GestionClientes {
     public static void main(String[] args) {
-        guardarDatosCliente("Camilo","123");
+        //guardarDatosCliente("Camilo","123");
     }
     
-    public static void guardarDatosCliente(String nombre, String contrasena) {
+    public static void guardarDatosCliente(String identificacion , String nombre , String correo,String num_telefono,String direccion,String contrasena) {
         try {
             // Abre un archivo de texto para escritura (si no existe, lo crea)
             BufferedWriter writer = new BufferedWriter(new FileWriter("clientes.txt", true));
 
             // Escribe los datos del cliente en el archivo
+            writer.write("Identificación Usuario: " + identificacion);
+            writer.newLine(); // Agrega una nueva línea para separar los registros
             writer.write("Nombre Usuario: " + nombre);
             writer.newLine(); // Agrega una nueva línea para separar los registros
-            writer.write("Contraseña: " + contrasena);
-            writer.newLine(); // Agrega otra nueva línea al final
+            writer.write("Contaseña Usuario: " + contrasena);
+            writer.newLine(); // Agrega una nueva línea para separar los registros
+            writer.write("Correo Usuario: " + correo);
+            writer.newLine(); // Agrega una nueva línea para separar los registros
+            writer.write("Número telefonico Usuario: " + num_telefono);
+            writer.newLine(); // Agrega una nueva línea para separar los registros
+            writer.write("Dirección Usuario: " + direccion);
+            writer.newLine(); // Agrega una nueva línea para separar los registros
+
 
             // Cierra el archivo
             writer.close();

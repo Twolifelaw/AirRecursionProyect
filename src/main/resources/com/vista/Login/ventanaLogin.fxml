@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaLogin" prefHeight="768.0" prefWidth="1024.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
-    <AnchorPane fx:id="anchorPane2" layoutX="316.0" layoutY="213.0" opacity="0.87" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #212121;">
+<AnchorPane fx:id="ventanaLogin" prefHeight="687.0" prefWidth="909.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
+    <AnchorPane fx:id="anchorPane2" layoutX="254.0" layoutY="202.0" opacity="0.87" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #212121;">
         <Label fx:id="lblError" layoutX="149.0" layoutY="32.0" prefHeight="22.0" prefWidth="169.0" textFill="#d3cfda">
             <font>
                 <Font size="14.0" />
@@ -23,5 +23,6 @@
         <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="91.0" layoutY="131.0" prefHeight="26.0" prefWidth="213.0" promptText="Usuario" />
         <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="91.0" layoutY="183.0" prefHeight="26.0" prefWidth="213.0" promptText="Contraseña" />
       <Button fx:id="btnIngresar" layoutX="162.0" layoutY="227.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70;" text="Ingresar" textFill="WHITE" />
+      <Button fx:id="btn_registrar" layoutX="22.0" layoutY="301.0" mnemonicParsing="false" onAction="#action_registrar" opacity="0.55" style="-fx-background-color: #593F70;" text="Registrar" />
     </AnchorPane>
    </AnchorPane>
