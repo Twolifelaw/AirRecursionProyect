@@ -1,4 +1,20 @@
-Nombre Usuario: Camilo
-Contraseña: 123
+Identificación Usuario: 1234567890
+Nombre Usuario: Juan Camilo Cuenca
+Contaseña Usuario: 123
+Correo Usuario: camilo@gmail.com
+Número telefonico Usuario: 30029785757
+Dirección Usuario: crr23 #7 -11
+
+Identificación Usuario: 1234567899
 Nombre Usuario: Brandon
-Contraseña: 1234
+Contaseña Usuario: 1234
+Correo Usuario: elBrandonxd
+Número telefonico Usuario: 1234334332
+Dirección Usuario: ccrrana
+
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 

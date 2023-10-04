@@ -4,24 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaLogin" prefHeight="768.0" prefWidth="1024.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
-    <AnchorPane fx:id="anchorPane2" layoutX="316.0" layoutY="213.0" opacity="0.87" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #212121;">
-        <Label fx:id="lblError" layoutX="149.0" layoutY="32.0" prefHeight="22.0" prefWidth="169.0" textFill="#d3cfda">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="161.0" layoutY="61.0" text="Login" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="30.0" />
-            </font>
-        </Label>
-        <AnchorPane layoutX="161.0" layoutY="102.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #593F70;" />
-        <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="91.0" layoutY="131.0" prefHeight="26.0" prefWidth="213.0" promptText="Usuario" />
-        <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="91.0" layoutY="183.0" prefHeight="26.0" prefWidth="213.0" promptText="Contraseña" />
-      <Button fx:id="btnIngresar" layoutX="162.0" layoutY="227.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70;" text="Ingresar" textFill="WHITE" />
-    </AnchorPane>
+<AnchorPane fx:id="ventanaLogin" prefHeight="628.0" prefWidth="804.0" style="-fx-background-color: #ventanaRegistro{-fx-background-image: url(&quot;1.jpg&quot;); }: ;" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
+   <AnchorPane layoutX="240.0" layoutY="154.0" opacity="0.94" prefHeight="320.0" prefWidth="341.0" style="-fx-background-color: #10101A; -fx-background-radius: 15;">
+      <children>
+           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="129.0" layoutY="28.0" prefHeight="42.0" prefWidth="83.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                   <Font name="System Italic" size="30.0" />
+               </font>
+           </Label>
+         <AnchorPane layoutX="133.0" layoutY="68.0" prefHeight="4.0" prefWidth="83.0" style="-fx-background-color: #593F70;" />
+           <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="93.0" layoutY="125.0" prefHeight="26.0" prefWidth="160.0" promptText="Usuario" style="-fx-background-radius: 15; -fx-background-color: #ffffff;" />
+           <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="93.0" layoutY="160.0" prefHeight="26.0" prefWidth="160.0" promptText="Contraseña" style="-fx-background-radius: 15;" />
+         <Button fx:id="btnIngresar" layoutX="98.0" layoutY="202.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Ingresar" textFill="WHITE" />
+         <Button fx:id="btnRegistrarse" layoutX="175.0" layoutY="202.0" mnemonicParsing="false" onAction="#action_registrar" style="-fx-background-color: #10101A;" text="Registrar" textAlignment="CENTER" textFill="WHITE" />
+         <Button fx:id="btnContraseña" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="244.0" mnemonicParsing="false" onAction="#action_recuperar" style="-fx-background-color: #10101A;" text="¿Olvido su contraseña?" textAlignment="CENTER" textFill="WHITE" />
+         <Label fx:id="lblAction" alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="90.0" prefHeight="18.0" prefWidth="203.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" />
+      </children>
+   </AnchorPane>
+   <AnchorPane prefHeight="94.0" prefWidth="804.0" style="-fx-background-color: #10101A;">
+      <children>
+         <ImageView fx:id="AirRecursion" fitHeight="57.0" fitWidth="160.0" layoutX="228.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../Imagenes/Screenshot_20231004_010250.png" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
    </AnchorPane>
