@@ -1,8 +1,7 @@
-#ventanaLogin{
+#ventanaLogin {
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
 }
-
 #ventanaBienvenida{
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;

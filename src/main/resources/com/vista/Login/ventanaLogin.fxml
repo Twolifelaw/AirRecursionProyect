@@ -7,22 +7,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaLogin" prefHeight="687.0" prefWidth="909.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
-    <AnchorPane fx:id="anchorPane2" layoutX="254.0" layoutY="202.0" opacity="0.87" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #212121;">
-        <Label fx:id="lblError" layoutX="149.0" layoutY="32.0" prefHeight="22.0" prefWidth="169.0" textFill="#d3cfda">
+<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
+    <AnchorPane layoutX="270.0" layoutY="177.0" opacity="0.87" prefHeight="330.0" prefWidth="370.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;">
+        <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="80.0" prefHeight="26.0" prefWidth="215.0" textAlignment="CENTER" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="161.0" layoutY="61.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+        <Label layoutX="150.0" layoutY="25.0" text="Login" textAlignment="CENTER" textFill="WHITE">
             <font>
-                <Font size="30.0" />
+                <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <AnchorPane layoutX="161.0" layoutY="102.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #593F70;" />
-        <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="91.0" layoutY="131.0" prefHeight="26.0" prefWidth="213.0" promptText="Usuario" />
-        <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="91.0" layoutY="183.0" prefHeight="26.0" prefWidth="213.0" promptText="Contraseña" />
-      <Button fx:id="btnIngresar" layoutX="162.0" layoutY="227.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70;" text="Ingresar" textFill="WHITE" />
-      <Button fx:id="btn_registrar" layoutX="22.0" layoutY="301.0" mnemonicParsing="false" onAction="#action_registrar" opacity="0.55" style="-fx-background-color: #593F70;" text="Registrar" />
+        <AnchorPane layoutX="153.0" layoutY="66.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #593F70;" />
+        <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="104.0" layoutY="116.0" prefHeight="26.0" prefWidth="169.0" promptText="Usuario" style="-fx-background-radius: 15;" />
+        <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="104.0" layoutY="155.0" prefHeight="26.0" prefWidth="169.0" promptText="Contraseña" style="-fx-background-radius: 15;" />
+      <Button fx:id="btnIngresar" layoutX="111.0" layoutY="199.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Ingresar" textFill="WHITE" />
+      <Button fx:id="btnRegistrar" layoutX="192.0" layoutY="199.0" mnemonicParsing="false" onAction="#action_registrar" style="-fx-background-color: #0B1525;" text="Registrar" textFill="WHITE" />
+      <Button fx:id="btnRecuperar" layoutX="102.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="176.0" style="-fx-background-color: #0B1525;" text="¿olvidaste tu contraseña?" textFill="WHITE" />
     </AnchorPane>
+   <AnchorPane opacity="0.72" prefHeight="94.0" prefWidth="909.0" style="-fx-background-color: #0A1425;" />
    </AnchorPane>

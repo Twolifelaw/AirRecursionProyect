@@ -12,3 +12,9 @@ Correo Usuario: elBrandonxd
 Número telefonico Usuario: 1234334332
 Dirección Usuario: ccrrana
 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
