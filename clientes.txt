@@ -18,3 +18,15 @@ Contaseña Usuario:
 Correo Usuario: 
 Número telefonico Usuario: 
 Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 

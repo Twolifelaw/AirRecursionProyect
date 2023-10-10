@@ -1,12 +1,12 @@
 package Cliente.controlador;
 
 import Cliente.exceptions.verificarException;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,16 +14,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class VentanaLoginController {
+public class VentanaLoginController implements Initializable {
     String nombre;
     String contrasena;
 
@@ -66,7 +70,10 @@ public class VentanaLoginController {
                             linea = reader.readLine();
                             if (linea != null && linea.startsWith("Contaseña Usuario: ") && linea.contains(pswContrasena.getText())) {
                                 System.out.println("Las credenciales son correctas.");
+
                                 lblMensaje.setText("Se ingreso correctamente.");
+
+
                             mostrarLoginErrorTemporalmente();
                             Stage stage = new Stage();
                             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
@@ -77,7 +84,9 @@ public class VentanaLoginController {
                             ((Node) (event.getSource())).getScene().getWindow().hide();
                             usuarioEncontrado = true;}
                         }else{
+
                             lblMensaje.setText("No se encontro el usuario");
+
                             mostrarLoginErrorTemporalmente();
                         }
                     }
@@ -94,6 +103,7 @@ public class VentanaLoginController {
             }
 
         } catch (verificarException e) {
+
             lblMensaje.setText(e.getMessage());
             mostrarLoginErrorTemporalmente();
         }
@@ -112,15 +122,26 @@ public class VentanaLoginController {
 
     }
 
+    @FXML
+    void action_recuperar(ActionEvent event) {
+
+    }
+
     private void mostrarLoginErrorTemporalmente() {
+
         lblMensaje.setVisible(true);
+
+
 
         // Configurar un Timeline para ocultar el mensaje después de 2 segundos (por ejemplo).
         Duration delay = Duration.seconds(2);
         KeyFrame keyFrame = new KeyFrame(delay, new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+
                 lblMensaje.setVisible(false);
+
+
             }
         });
 
@@ -129,4 +150,8 @@ public class VentanaLoginController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
