@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
-    <AnchorPane layoutX="270.0" layoutY="177.0" opacity="0.87" prefHeight="330.0" prefWidth="370.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;">
+<AnchorPane id="ventanaLogin" prefHeight="718.0" prefWidth="909.0" stylesheets="@ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaLoginController">
+    <AnchorPane layoutX="270.0" layoutY="194.0" opacity="0.87" prefHeight="330.0" prefWidth="370.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;">
         <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="80.0" prefHeight="26.0" prefWidth="215.0" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
@@ -26,5 +26,4 @@
       <Button fx:id="btnRegistrar" layoutX="192.0" layoutY="199.0" mnemonicParsing="false" onAction="#action_registrar" style="-fx-background-color: #0B1525;" text="Registrar" textFill="WHITE" />
       <Button fx:id="btnRecuperar" layoutX="102.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="176.0" style="-fx-background-color: #0B1525;" text="¿olvidaste tu contraseña?" textFill="WHITE" />
     </AnchorPane>
-   <AnchorPane opacity="0.72" prefHeight="94.0" prefWidth="909.0" style="-fx-background-color: #0A1425;" />
    </AnchorPane>

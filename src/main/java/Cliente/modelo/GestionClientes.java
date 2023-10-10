@@ -31,8 +31,6 @@ public class GestionClientes {
 
             // Cierra el archivo
             writer.close();
-
-            System.out.println("Datos del cliente guardados con éxito.");
         } catch (IOException e) {
             System.err.println("Error al guardar los datos del cliente: " + e.getMessage());
         }

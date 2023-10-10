@@ -28,9 +28,17 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class VentanaLoginController implements Initializable {
+
+    /**
+     * Variables que se encargan de la validacion de la ventana.
+     */
     String nombre;
     String contrasena;
+    //
 
+    /**
+     * Componenetes  que interactuan con la ventana .
+     */
     @FXML
     private Button btnIngresar;
 
@@ -48,18 +56,24 @@ public class VentanaLoginController implements Initializable {
 
     @FXML
     private TextField txtUsuario;
+    //
 
 
+    /**
+     * Boton que se encarga del ingreso de cliente.
+     *
+     * @param event
+     */
     @FXML
     void ingresar(ActionEvent event) {
-        try{
+        try {
             nombre = txtUsuario.getText();
             contrasena = pswContrasena.getText();
-            if(nombre.isEmpty() && contrasena.isEmpty()){
+            if (nombre.isEmpty() && contrasena.isEmpty()) {
                 throw new verificarException("Llene los campos");
-            }else if(nombre.isEmpty() || contrasena.isEmpty()){
+            } else if (nombre.isEmpty() || contrasena.isEmpty()) {
                 throw new verificarException("Campo vacio llenar porfavor");
-            }else{
+            } else {
                 boolean usuarioEncontrado = false;
                 try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
                     String linea;
@@ -74,16 +88,17 @@ public class VentanaLoginController implements Initializable {
                                 lblMensaje.setText("Se ingreso correctamente.");
 
 
-                            mostrarLoginErrorTemporalmente();
-                            Stage stage = new Stage();
-                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
-                            Scene escena = new Scene(root);
-                            stage.setScene(escena);
-                            stage.show();
-                            // en esta linea , esconde el stage del login y carga el nuevo stage
-                            ((Node) (event.getSource())).getScene().getWindow().hide();
-                            usuarioEncontrado = true;}
-                        }else{
+                                mostrarLoginErrorTemporalmente();
+                                Stage stage = new Stage();
+                                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
+                                Scene escena = new Scene(root);
+                                stage.setScene(escena);
+                                stage.show();
+                                // en esta linea , esconde el stage del login y carga el nuevo stage
+                                ((Node) (event.getSource())).getScene().getWindow().hide();
+                                usuarioEncontrado = true;
+                            }
+                        } else {
 
                             lblMensaje.setText("No se encontro el usuario");
 
@@ -95,8 +110,7 @@ public class VentanaLoginController implements Initializable {
                 }
 
 
-
-                if(!usuarioEncontrado){
+                if (!usuarioEncontrado) {
                     throw new verificarException("No se encontro usuario");
                 }
 
@@ -110,6 +124,12 @@ public class VentanaLoginController implements Initializable {
 
     }
 
+    /**
+     * Boton que se encarga de abrir la ventana registrar.
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void action_registrar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -122,15 +142,22 @@ public class VentanaLoginController implements Initializable {
 
     }
 
+    /**
+     * Boton que se encargara de recuperar la contraseña del cliente.
+     *
+     * @param event
+     */
     @FXML
     void action_recuperar(ActionEvent event) {
 
     }
 
+    /**
+     * Funcion que se encarga de que el mensaje en pantalla no quede costante si no por un tiempo definido.
+     */
     private void mostrarLoginErrorTemporalmente() {
 
         lblMensaje.setVisible(true);
-
 
 
         // Configurar un Timeline para ocultar el mensaje después de 2 segundos (por ejemplo).

@@ -1,13 +1,10 @@
-#ventanaLogin {
-    -fx-background-image: url("1.jpg");
+#ventanaLogin{
+    -fx-background-image: url("5.jpg");
     -fx-background-size: cover;
 }
-#ventanaBienvenida{
-    -fx-background-image: url("1.jpg");
-    -fx-background-size: cover;
-}
+
 #ventanaRegistro{
--fx-background-image: url("1.jpg");
+-fx-background-image: url("6.jpg");
 -fx-background-size: cover;
 }
 

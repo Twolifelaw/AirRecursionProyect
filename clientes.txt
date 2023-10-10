@@ -30,3 +30,57 @@ Contaseña Usuario:
 Correo Usuario: 
 Número telefonico Usuario: 
 Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 1001277430
+Nombre Usuario: Brandon
+Contaseña Usuario: 123
+Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
+Número telefonico Usuario: 3153033412
+Dirección Usuario: mansa11
+Identificación Usuario: 123
+Nombre Usuario: Brandon
+Contaseña Usuario: 123
+Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
+Número telefonico Usuario: 3153033412
+Dirección Usuario: manzana12
