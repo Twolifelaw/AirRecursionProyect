@@ -84,3 +84,9 @@ Contaseña Usuario: 123
 Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
 Número telefonico Usuario: 3153033412
 Dirección Usuario: manzana12
+Identificación Usuario: 0000
+Nombre Usuario: juan1
+Contaseña Usuario: 1234
+Correo Usuario: juan@f.co
+Número telefonico Usuario: 3256
+Dirección Usuario: aja
