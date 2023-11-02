@@ -5,9 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class GestionClientes {
-    public static void main(String[] args) {
-        //guardarDatosCliente("Camilo","123");
-    }
+
     
     public static void guardarDatosCliente(String identificacion , String nombre , String correo,String num_telefono,String direccion,String contrasena) {
         try {
