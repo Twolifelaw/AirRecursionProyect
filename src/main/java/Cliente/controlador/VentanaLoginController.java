@@ -90,7 +90,7 @@ public class VentanaLoginController implements Initializable {
 
                                 mostrarLoginErrorTemporalmente();
                                 Stage stage = new Stage();
-                                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
+                                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
                                 Scene escena = new Scene(root);
                                 stage.setScene(escena);
                                 stage.show();
