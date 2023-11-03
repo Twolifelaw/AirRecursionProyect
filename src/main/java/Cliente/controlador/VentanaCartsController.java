@@ -2,17 +2,23 @@ package Cliente.controlador;
 
 import Cliente.modelo.DatosPersistencia;
 import Cliente.modelo.objetos.Destino;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -23,6 +29,8 @@ public class VentanaCartsController implements Initializable {
     private AnchorPane paneOfertas;
     @FXML
     private ScrollPane scroll_pane;
+    @FXML
+    private CartsController cartsController;
 
     private double paneSpacing = 10.0; // Espacio entre los AnchorPane
     private int anchorPanelCount = 0;
@@ -36,6 +44,10 @@ public class VentanaCartsController implements Initializable {
         //ArrayList<Destino> destinos = new ArrayList<>();
        //destinos.add(new Destino("Colombia", "Armenia", "aaaa", new ArrayList<>(), "Calor"));
         //destinos.add(new Destino("Otro país", "Otra ciudad", "Descripción", new ArrayList<>(), "Clima"));
+        ArrayList<String> imagenes = new ArrayList<>();
+        imagenes.add("/com/vista/Imagenes/NotiInversa.png");
+        imagenes.add("/com/vista/Imagenes/Alert.png");
+        imagenes.add("/com/vista/Imagenes/Candado png.png");
 
         // Guardar los destinos en un archivo
         //ArrayList<Destino> destinos = new ArrayList<>();
@@ -90,6 +102,7 @@ public class VentanaCartsController implements Initializable {
             throw new RuntimeException(e);
         }}
 
-
     }
+
+
 }

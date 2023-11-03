@@ -4,35 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="Se crearon las clases, propuestas en el diagrama de clases">
-      <change afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/MapaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/DatosPersistencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/31069111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/31069111copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Alert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Candado png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/NotiInversa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/R2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/SOCIALMEDIA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Usuarip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/aim_PNG451.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/enviarIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/img_451479.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/socialMediaair.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/wp6493600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Mapa.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698968242260</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos">
+      <created>1698977995616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698977995617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +199,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se crearon las clases, propuestas en el diagrama de clases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crearon las clases, propuestas en el diagrama de clases" />
+    <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
