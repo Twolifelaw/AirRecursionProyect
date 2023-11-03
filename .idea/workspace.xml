@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_23,_4_05_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_23__4_05_p__m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +54,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "brandon",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -135,7 +130,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1587556-4020-406d-8d11-13fe58a23c61" name="Changes" comment="" />
+      <changelist id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="" />
       <created>1695963252898</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -153,6 +148,7 @@
       <workItem from="1696807968571" duration="216000" />
       <workItem from="1696953221833" duration="2235000" />
       <workItem from="1696955631752" duration="2938000" />
+      <workItem from="1697501246414" duration="282000" />
     </task>
     <servers />
   </component>
