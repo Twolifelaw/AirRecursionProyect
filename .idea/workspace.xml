@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Administrador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Asesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/EnumGuiaTuristico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Estado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/GuiaTuristico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Mensaje.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Reserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_23,_4_05_p_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_10_23__4_05_p__m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Empleado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -66,26 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;brandon&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/camil/IdeaProjects/AirRecursionProyect&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "brandon",
+    "last_opened_file_path": "C:/Users/camil/IdeaProjects/AirRecursionProyect/src/main/resources/com/vista/Imagenes",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Imagenes" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\ventanas" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/ventanas" />
-      <recent name="$PROJECT_DIR$/src/main/java/modelo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Cliente.modelo" />
@@ -164,6 +154,21 @@
       <workItem from="1696953221833" duration="2235000" />
       <workItem from="1696955631752" duration="2938000" />
     </task>
+    <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
+      <created>1698968242258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698968242260</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos">
+      <created>1698977995616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698977995617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +196,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se crearon las clases, propuestas en el diagrama de clases" />
+    <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

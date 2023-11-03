@@ -1,8 +1,9 @@
 package Cliente.modelo.objetos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Destino {
+public class Destino implements Serializable {
 
     private String pais;
     private String ciudad;
