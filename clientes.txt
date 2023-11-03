@@ -12,81 +12,9 @@ Correo Usuario: elBrandonxd
 Número telefonico Usuario: 1234334332
 Dirección Usuario: ccrrana
 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
 Identificación Usuario: 1001277430
-Nombre Usuario: Brandon
+Nombre Usuario: Carlos
 Contaseña Usuario: 123
-Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
-Número telefonico Usuario: 3153033412
-Dirección Usuario: mansa11
-Identificación Usuario: 123
-Nombre Usuario: Brandon
-Contaseña Usuario: 123
-Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
-Número telefonico Usuario: 3153033412
-Dirección Usuario: manzana12
-Identificación Usuario: 1004779025
-Nombre Usuario: Camilo
-Contaseña Usuario: 1234
-Correo Usuario: camilojc@gmail.com
-Número telefonico Usuario: 3157455678
-Dirección Usuario: crr23#7-15
+Correo Usuario: brandone.asdaa
+Número telefonico Usuario: 315400441
+Dirección Usuario: mercedes

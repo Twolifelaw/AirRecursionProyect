@@ -8,4 +8,9 @@
 -fx-background-size: cover;
 }
 
+#ventanaPrincipal{
+    -fx-background-image: url("7.jpg");
+    -fx-background-size: cover;
+}
+
 

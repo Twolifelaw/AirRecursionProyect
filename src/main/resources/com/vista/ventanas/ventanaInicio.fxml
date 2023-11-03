@@ -8,161 +8,39 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
+<AnchorPane fx:id="ventanaPrincipal" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="140.0" style="-fx-background-color: #172A4A;">
+      <Pane layoutX="493.0" layoutY="14.0" prefHeight="79.0" prefWidth="395.0">
          <children>
-            <VBox layoutX="20.0" layoutY="195.0" prefHeight="385.0" prefWidth="100.0" style="-fx-background-color: 2F345F;">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#OnMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2F345F;" text="Mi Cuenta" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Pane prefHeight="33.0" prefWidth="100.0" />
-                  <Button mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2F345F;" text="Mapa" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Pane prefHeight="33.0" prefWidth="100.0" />
-                  <Button mnemonicParsing="false" onAction="#OnPaquetes" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2F345F;" text="Paquetes " textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Pane prefHeight="33.0" prefWidth="100.0" />
-                  <Button mnemonicParsing="false" onAction="#OnChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2F345F;" text="Chat" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Pane prefHeight="33.0" prefWidth="100.0" />
-                  <Button mnemonicParsing="false" onAction="#OnSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2F345F;" text="Salir" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-            <ImageView fitHeight="103.0" fitWidth="100.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="70.0" layoutY="11.0" text="AirRecursion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="41.0" fitWidth="48.0" layoutX="19.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/MenuSantiago/MenuSantiago/src/main/resources/Images/Usuarip.png" />
+                  <Image url="@../Imagenes/31069111.png" />
                </image>
             </ImageView>
-            <Label layoutX="11.0" layoutY="105.0" text="Bienvenido" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="28.0" layoutY="134.0" text="nombre" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <HBox layoutX="240.0" layoutY="108.0" prefHeight="35.0" prefWidth="847.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#OnOfertas" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2F345F;" text="Ofertas " textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane prefHeight="35.0" prefWidth="67.0" />
-            <Button mnemonicParsing="false" onAction="#OnNacionales" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2F345F;" text="Vuelos Nacionales" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane prefHeight="35.0" prefWidth="67.0" />
-            <Button mnemonicParsing="false" onAction="#OnInternacionales" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #2F345F;" text="Vuelos Internacionales" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane prefHeight="35.0" prefWidth="67.0" />
-            <Button mnemonicParsing="false" onAction="#OnAyuda" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #2F345F;" text="Ayuda" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </HBox>
-      <Pane layoutX="478.0" layoutY="29.0" prefHeight="79.0" prefWidth="370.0">
-         <children>
-            <Label layoutX="74.0" layoutY="5.0" text="AirRecursion" textFill="WHITE">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="41.0" fitWidth="48.0" layoutX="15.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="336.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/MenuSantiago/MenuSantiago/src/main/resources/Images/31069111.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="307.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../Downloads/MenuSantiago/MenuSantiago/src/main/resources/Images/31069111copy.png" />
+                  <Image url="@../Imagenes/31069111copy.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="79.0" fitWidth="222.0" layoutX="960.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="207.0" layoutX="1071.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Downloads/MenuSantiago/MenuSantiago/src/main/resources/Images/SOCIALMEDIA.png" />
+            <Image url="@../Imagenes/SOCIALMEDIA.png" />
          </image>
       </ImageView>
-      <HBox layoutX="240.0" layoutY="154.0" prefHeight="5.0" prefWidth="847.0">
+      <StackPane layoutX="184.0" layoutY="193.0" prefHeight="388.0" prefWidth="1007.0">
          <children>
-            <Pane prefHeight="18.0" prefWidth="161.0" style="-fx-background-color: #FAB4C8;" />
-            <Pane prefHeight="18.0" prefWidth="67.0" />
-            <Pane prefHeight="18.0" prefWidth="161.0" style="-fx-background-color: #FAB4C8;" />
-            <Pane prefHeight="18.0" prefWidth="67.0" />
-            <Pane prefHeight="18.0" prefWidth="179.0" style="-fx-background-color: #FAB4C8;" />
-            <Pane prefHeight="18.0" prefWidth="67.0" />
-            <Pane prefHeight="18.0" prefWidth="145.0" style="-fx-background-color: #FAB4C8;" />
-         </children>
-      </HBox>
-      <Label layoutX="953.0" layoutY="563.0" text="www.brandonjuancamidavidsantiago.com" textFill="WHITE" />
-      <Button layoutX="186.0" layoutY="294.0" mnemonicParsing="false" onAction="#OnIzquierda" prefHeight="87.0" prefWidth="92.0" style="-fx-background-color: #2F345F;" text="&lt;" textFill="WHITE">
-         <font>
-            <Font size="40.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button layoutX="1048.0" layoutY="294.0" mnemonicParsing="false" onAction="#OnDerecha" prefHeight="87.0" prefWidth="92.0" style="-fx-background-color: #2F345F;" text="&gt;" textFill="WHITE">
-         <font>
-            <Font size="40.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <StackPane layoutX="294.0" layoutY="183.0" prefHeight="331.0" prefWidth="738.0">
-         <children>
-            <Pane fx:id="paneSoporte" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #240C24;">
+            <Pane fx:id="paneSoporte" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0A1425;">
                <children>
                   <Label layoutX="327.0" layoutY="14.0" text="Soporte" textFill="WHITE">
                      <font>
@@ -191,7 +69,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="paneInternacionales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #240C24;">
+            <Pane fx:id="paneInternacionales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0A1425;">
                <children>
                   <Label layoutX="250.0" layoutY="14.0" text="Vuelos Internacionales" textFill="WHITE">
                      <font>
@@ -214,7 +92,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane fx:id="paneNacionales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #240C24;">
+            <Pane fx:id="paneNacionales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0A1425;">
                <children>
                   <Label layoutX="272.0" layoutY="14.0" text="Vuelos Nacionales" textFill="WHITE">
                      <font>
@@ -238,10 +116,86 @@
                   </TableView>
                </children>
             </Pane>
-            <Pane fx:id="paneOfertas" prefHeight="384.0" prefWidth="738.0" style="-fx-background-color: #240C24;" />
-            <BorderPane fx:id="borderPaneOfertas" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="paneOfertas" prefHeight="384.0" prefWidth="738.0" style="-fx-background-color: #0A1425;" />
          </children>
       </StackPane>
+      <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
+         <children>
+            <AnchorPane layoutX="16.0" layoutY="122.0" prefHeight="520.0" prefWidth="145.0">
+               <children>
+                  <Button layoutX="22.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="22.0" layoutY="128.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="22.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnPaquetes" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="22.0" layoutY="242.0" mnemonicParsing="false" onAction="#OnChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="22.0" layoutY="300.0" mnemonicParsing="false" onAction="#OnSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="475.0" mnemonicParsing="false" onAction="#OnAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="103.0" fitWidth="100.0" layoutX="39.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/Usuarip.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="169.0" layoutY="108.0" opacity="0.82" prefHeight="77.0" prefWidth="1042.0" style="-fx-background-color: #0A1425;">
+         <children>
+            <Button layoutX="441.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="648.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnNacionales" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Nacionales" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="207.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnInternacionales" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Internacionales" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane layoutX="214.0" layoutY="52.0" prefHeight="5.0" prefWidth="192.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
+            <Pane layoutX="441.0" layoutY="52.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
+            <Pane layoutX="648.0" layoutY="54.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
+         </children>
+      </AnchorPane>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

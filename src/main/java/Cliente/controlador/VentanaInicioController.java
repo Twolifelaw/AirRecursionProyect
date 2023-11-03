@@ -33,6 +33,9 @@ public class VentanaInicioController {
     @FXML
     private Pane paneSoporte;
 
+    @FXML
+    private AnchorPane ventanaPrincipal;
+
     private static int i=0;
 
     @FXML
@@ -106,7 +109,7 @@ public class VentanaInicioController {
     @FXML
     void OnMapa(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("Mapa.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("/com/vista/ventanas/Mapa.fxml"));
         Scene escena=new Scene(root);
         stage.setScene(escena);
         stage.show();

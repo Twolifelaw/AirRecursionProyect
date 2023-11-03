@@ -19,10 +19,10 @@
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <AnchorPane layoutX="153.0" layoutY="66.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #593F70;" />
+        <AnchorPane layoutX="153.0" layoutY="66.0" prefHeight="3.0" prefWidth="80.0" style="-fx-background-color: #2E2559;" />
         <TextField fx:id="txtUsuario" alignment="CENTER" layoutX="104.0" layoutY="116.0" prefHeight="26.0" prefWidth="169.0" promptText="Usuario" style="-fx-background-radius: 15;" />
         <PasswordField fx:id="pswContrasena" alignment="CENTER" layoutX="104.0" layoutY="155.0" prefHeight="26.0" prefWidth="169.0" promptText="Contraseña" style="-fx-background-radius: 15;" />
-      <Button fx:id="btnIngresar" layoutX="111.0" layoutY="199.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Ingresar" textFill="WHITE" />
+      <Button fx:id="btnIngresar" layoutX="111.0" layoutY="199.0" mnemonicParsing="false" onAction="#ingresar" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ingresar" textFill="WHITE" />
       <Button fx:id="btnRegistrar" layoutX="192.0" layoutY="199.0" mnemonicParsing="false" onAction="#action_registrar" style="-fx-background-color: #0B1525;" text="Registrar" textFill="WHITE" />
       <Button fx:id="btnRecuperar" layoutX="102.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="176.0" style="-fx-background-color: #0B1525;" text="¿olvidaste tu contraseña?" textFill="WHITE" />
     </AnchorPane>
