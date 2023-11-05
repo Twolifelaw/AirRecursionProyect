@@ -48,16 +48,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;brandon&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/camil/IdeaProjects/AirRecursionProyect/src/main/resources/com/vista/Imagenes&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "brandon",
+    "last_opened_file_path": "C:/Users/camil/IdeaProjects/AirRecursionProyect/src/main/resources/com/vista/Imagenes",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Imagenes" />
@@ -163,21 +163,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698977995617</updated>
     </task>
-    <task id="LOCAL-00003" summary="Se agregaron botones al anchorPane que representa los carts">
-      <created>1698982985514</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1698982985515</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Se ccreo los métodos para serializar y deserializar los objetos clientes">
-      <created>1699157369967</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699157369967</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,9 +195,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se crearon las clases, propuestas en el diagrama de clases" />
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
-    <MESSAGE value="Se agregaron botones al anchorPane que representa los carts" />
-    <MESSAGE value="Se ccreo los métodos para serializar y deserializar los objetos clientes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se ccreo los métodos para serializar y deserializar los objetos clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
