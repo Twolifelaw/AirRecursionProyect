@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -12,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class VentanaInicioController {
 
@@ -32,9 +34,6 @@ public class VentanaInicioController {
 
     @FXML
     private Pane paneSoporte;
-
-    @FXML
-    private AnchorPane ventanaPrincipal;
 
     private static int i=0;
 
@@ -109,7 +108,7 @@ public class VentanaInicioController {
     @FXML
     void OnMapa(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("/com/vista/ventanas/Mapa.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("Mapa.fxml"));
         Scene escena=new Scene(root);
         stage.setScene(escena);
         stage.show();
@@ -131,12 +130,13 @@ public class VentanaInicioController {
     @FXML
     void OnOfertas(ActionEvent event) throws IOException {
 
+        paneOfertas.toFront();
         Platform.runLater(() -> {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
                 AnchorPane anchorPaneOfertas = (AnchorPane) loader.load();
-                borderPaneOfertas.setCenter(anchorPaneOfertas);
+                paneOfertas.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -150,7 +150,15 @@ public class VentanaInicioController {
     }
 
     @FXML
-    void OnSalir(ActionEvent event) {
+    void OnSalir(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/Login/ventanaLogin.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta linea , esconde el stage del login y carga el nuevo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+
 
     }
 }

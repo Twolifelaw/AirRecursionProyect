@@ -1,14 +1,19 @@
 package Cliente.modelo.objetos;
 
-public class Cliente extends Persona{
+import java.io.Serializable;
+
+public class Cliente extends Persona implements Serializable {
     private String correo;
     private String telefono;
     private String direccionResidencia;
 
-    public Cliente(String nombre, String apellido, String cedula, String contrasena) {
-        super(nombre, apellido, cedula, contrasena);
-    }
 
+    public Cliente(String nombre, String apellido, String cedula, String contrasena, String correo, String telefono, String direccionResidencia) {
+        super(nombre, apellido, cedula, contrasena);
+        this.correo = correo;
+        this.telefono = telefono;
+        this.direccionResidencia = direccionResidencia;
+    }
 
     public String getCorreo() {
         return correo;
@@ -32,5 +37,14 @@ public class Cliente extends Persona{
 
     public void setDireccionResidencia(String direccionResidencia) {
         this.direccionResidencia = direccionResidencia;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +super.toString()+
+                "correo='" + correo + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccionResidencia='" + direccionResidencia + '\'' +
+                '}';
     }
 }
