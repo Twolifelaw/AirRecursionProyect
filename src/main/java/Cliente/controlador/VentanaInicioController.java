@@ -130,12 +130,13 @@ public class VentanaInicioController {
     @FXML
     void OnOfertas(ActionEvent event) throws IOException {
 
+        paneOfertas.toFront();
         Platform.runLater(() -> {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
                 AnchorPane anchorPaneOfertas = (AnchorPane) loader.load();
-                borderPaneOfertas.setCenter(anchorPaneOfertas);
+                paneOfertas.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
             }
