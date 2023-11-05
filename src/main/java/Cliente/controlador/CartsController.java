@@ -3,14 +3,9 @@ package Cliente.controlador;
 import Cliente.modelo.objetos.Destino;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class CartsController {
 
@@ -40,10 +35,8 @@ public class CartsController {
     private int indiceImagenActual;
 
 
-
     @FXML
     void ActionBtnDer(ActionEvent event) {
-
 
 
     }
@@ -52,7 +45,6 @@ public class CartsController {
     void actionBtnIzq(ActionEvent event) {
 
     }
-
 
 
     public Button getBtnComprar() {
@@ -91,10 +83,6 @@ public class CartsController {
     public void setLblPais(Label lblPais) {
         this.lblPais = lblPais;
     }
-
-
-
-
 
 
 }

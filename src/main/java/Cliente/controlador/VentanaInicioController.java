@@ -17,25 +17,19 @@ import java.util.Objects;
 
 public class VentanaInicioController {
 
+    private static int i = 0;
     @FXML
     private Pane paneImagen;
-
     @FXML
     private BorderPane borderPaneOfertas;
-
     @FXML
     private Pane paneInternacionales;
-
     @FXML
     private Pane paneNacionales;
-
     @FXML
     private Pane paneOfertas;
-
     @FXML
     private Pane paneSoporte;
-
-    private static int i=0;
 
     @FXML
     void OnAyuda(ActionEvent event) {
@@ -46,9 +40,9 @@ public class VentanaInicioController {
 
     @FXML
     void OnChat(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("Chat.fxml"));
-        Scene escena=new Scene(root);
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
+        Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
 
@@ -59,19 +53,19 @@ public class VentanaInicioController {
 
         i++;
 
-        if(i==0){
+        if (i == 0) {
             paneImagen.toFront();
-        }else if(i==1){
+        } else if (i == 1) {
             paneOfertas.toFront();
 
-        }else if(i==2){
+        } else if (i == 2) {
             paneNacionales.toFront();
-        }else if(i==3){
+        } else if (i == 3) {
             paneInternacionales.toFront();
-        }else if(i==4){
+        } else if (i == 4) {
             paneSoporte.toFront();
-        }else{
-            i=0;
+        } else {
+            i = 0;
         }
 
     }
@@ -87,19 +81,19 @@ public class VentanaInicioController {
     void OnIzquierda(ActionEvent event) {
         i--;
 
-        if(i==0){
+        if (i == 0) {
             paneImagen.toFront();
-        }else if(i==1){
+        } else if (i == 1) {
             paneOfertas.toFront();
 
-        }else if(i==2){
+        } else if (i == 2) {
             paneNacionales.toFront();
-        }else if(i==3){
+        } else if (i == 3) {
             paneInternacionales.toFront();
-        }else if(i==4){
+        } else if (i == 4) {
             paneSoporte.toFront();
-        }else{
-            i=0;
+        } else {
+            i = 0;
         }
 
 
@@ -107,9 +101,9 @@ public class VentanaInicioController {
 
     @FXML
     void OnMapa(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("Mapa.fxml"));
-        Scene escena=new Scene(root);
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Mapa.fxml"));
+        Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
 
@@ -135,7 +129,7 @@ public class VentanaInicioController {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
-                AnchorPane anchorPaneOfertas = (AnchorPane) loader.load();
+                AnchorPane anchorPaneOfertas = loader.load();
                 paneOfertas.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();

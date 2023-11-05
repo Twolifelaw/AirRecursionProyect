@@ -1,5 +1,8 @@
 package Cliente.modelo.objetos;
 
+import Cliente.modelo.enums.EnumGuiaTuristico;
+import Cliente.modelo.enums.Estado;
+
 import java.util.Date;
 
 public class Reserva {
