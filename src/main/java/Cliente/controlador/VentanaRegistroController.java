@@ -2,6 +2,8 @@ package Cliente.controlador;
 
 import Cliente.exceptions.verificarException;
 import Cliente.modelo.GestionClientes;
+import Cliente.modelo.objetos.Cliente;
+import Cliente.modelo.objetos.GestionSerializacioClientes;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -18,9 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class VentanaRegistroController {
@@ -69,7 +70,39 @@ public class VentanaRegistroController {
 
     @FXML
     private TextField txt_numero_telefonico;
-    //
+
+    public ArrayList<Cliente> clientes = new ArrayList<>();
+
+    public static void serializarObjetos(String nombreArchivo, ArrayList<Cliente> nuevoCliente) {
+        ArrayList<Cliente> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
+
+        if (listaClientes == null) {
+            listaClientes = new ArrayList<>(); // Si no hay datos en el archivo, creamos una nueva lista
+        }
+
+        listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
+            out.writeObject(listaClientes); // Escribimos la lista completa en el archivo
+            System.out.println("Objeto serializado y guardado en " + nombreArchivo);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static ArrayList<Cliente> deserializarObjetos(String nombreArchivo) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
+            return (ArrayList<Cliente>) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            // Maneja las excepciones adecuadamente si el archivo no existe o no se puede leer
+            e.printStackTrace(); // Asegúrate de manejar la excepción de forma adecuada
+            return null;
+        }
+    }
+
+
+
 
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
@@ -79,6 +112,7 @@ public class VentanaRegistroController {
 
     @FXML
     void actionRegistrar(ActionEvent event) {
+
 
         try {
             nombres = txt_nombre.getText();
@@ -98,7 +132,15 @@ public class VentanaRegistroController {
                     throw new verificarException("El correo ya esta registrado");
                 } else {
                     GestionClientes gestionClientes = new GestionClientes();
-                    gestionClientes.guardarDatosCliente(identificacion, nombres, correoElectronico, numeroTelefonico, direccionResidencia, ccontrasena);
+                    //gestionClientes.guardarDatosCliente(identificacion, nombres, correoElectronico, numeroTelefonico, direccionResidencia, ccontrasena);
+
+
+                    //clientes.add(new Cliente("Camilo", "a","1234","1","111","122","12"));
+                    //clientes.add(new Cliente("Pedro", "a","1234","1","112","123","12"));
+                    //clientes.add(new Cliente("Pepe", "a","1234","1","113","124","12"));
+                    clientes.add(new Cliente(nombres,"a",identificacion,ccontrasena,correoElectronico,numeroTelefonico,direccionResidencia));
+                    serializarObjetos("clientes.se",clientes);
+
                     throw new verificarException("Se registró correctamente");
                 }
 

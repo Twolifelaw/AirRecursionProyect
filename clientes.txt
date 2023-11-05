@@ -1,92 +1,60 @@
-Identificación Usuario: 1234567890
-Nombre Usuario: Juan Camilo Cuenca
-Contaseña Usuario: 123
-Correo Usuario: camilo@gmail.com
-Número telefonico Usuario: 30029785757
-Dirección Usuario: crr23 #7 -11
-
-Identificación Usuario: 1234567899
-Nombre Usuario: Brandon
-Contaseña Usuario: 1234
-Correo Usuario: elBrandonxd
-Número telefonico Usuario: 1234334332
-Dirección Usuario: ccrrana
-
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 
-Nombre Usuario: 
-Contaseña Usuario: 
-Correo Usuario: 
-Número telefonico Usuario: 
-Dirección Usuario: 
-Identificación Usuario: 1001277430
-Nombre Usuario: Brandon
-Contaseña Usuario: 123
-Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
-Número telefonico Usuario: 3153033412
-Dirección Usuario: mansa11
-Identificación Usuario: 123
-Nombre Usuario: Brandon
-Contaseña Usuario: 123
-Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
-Número telefonico Usuario: 3153033412
-Dirección Usuario: manzana12
-Identificación Usuario: 1004779025
+Identificación Usuario: 1
 Nombre Usuario: Camilo
-Contaseña Usuario: 1234
-Correo Usuario: camilojc@gmail.com
-Número telefonico Usuario: 3157455678
-Dirección Usuario: crr23#7-15
+Contaseña Usuario: 1
+Correo Usuario: 1
+Número telefonico Usuario: 1
+Dirección Usuario: 1
+Identificación Usuario: 11
+Nombre Usuario: a
+Contaseña Usuario: 1
+Correo Usuario: 11
+Número telefonico Usuario: 111
+Dirección Usuario: 11
+Identificación Usuario: 11121212
+Nombre Usuario: a
+Contaseña Usuario: 1
+Correo Usuario: 112111212
+Número telefonico Usuario: 11
+Dirección Usuario: 11
+Identificación Usuario: 1212
+Nombre Usuario: Juan
+Contaseña Usuario: 1
+Correo Usuario: 21212
+Número telefonico Usuario: 2121
+Dirección Usuario: 121
+Identificación Usuario: 21212124
+Nombre Usuario: Pepe
+Contaseña Usuario: 1
+Correo Usuario: 4
+Número telefonico Usuario: 4
+Dirección Usuario: 4
+Identificación Usuario: 12344
+Nombre Usuario: brenda
+Contaseña Usuario: 1
+Correo Usuario: 1212
+Número telefonico Usuario: 12121231
+Dirección Usuario: 123123
+Identificación Usuario: 1281281
+Nombre Usuario: brenda
+Contaseña Usuario: 1
+Correo Usuario: 192u120
+Número telefonico Usuario: 12187012
+Dirección Usuario: 102190
+Identificación Usuario: 121|223|
+Nombre Usuario: vero
+Contaseña Usuario: 1
+Correo Usuario: 113
+Número telefonico Usuario: 31
+Dirección Usuario: 22
+Identificación Usuario: 15156561
+Nombre Usuario: vero
+Contaseña Usuario: 0
+Correo Usuario: 565615615
+Número telefonico Usuario: 5651516165
+Dirección Usuario: 56562516
+Identificación Usuario: q
+Nombre Usuario: a
+Contaseña Usuario: 1
+Correo Usuario: qq
+Número telefonico Usuario: q
+Dirección Usuario: q
