@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class VentanaManager {//Esta clase se encargara de cargar todas las ventnaas que sean necesarias.
+
     public static void mostrarVentanaLogin() {
         try {
             FXMLLoader loader = new FXMLLoader(VentanaManager.class.getResource("/com/vista/Login/ventanaLogin.fxml"));

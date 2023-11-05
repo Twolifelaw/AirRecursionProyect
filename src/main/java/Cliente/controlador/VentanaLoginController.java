@@ -1,8 +1,9 @@
 package Cliente.controlador;
 
-import Cliente.exceptions.verificarException;
+import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Cliente;
-import javafx.animation.*;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,18 +16,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import static Cliente.modelo.objetos.GestionSerializacioClientes.*;
 
 public class VentanaLoginController implements Initializable {
 
@@ -106,14 +106,14 @@ public class VentanaLoginController implements Initializable {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
                 boolean usuarioEncontrado = false;
-                Cliente clienteBuscar = buscarObjetoPorNombre("clientes.se",nombre);
+                Cliente clienteBuscar = buscarObjetoPorNombre("clientes.se", nombre);
 
 
                 System.out.println("clientes en el archivo");
                 System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
 
-                if(clienteBuscar !=null){
+                if (clienteBuscar != null) {
                     mostrarLoginErrorTemporalmente();
                     Stage stage = new Stage();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
@@ -124,7 +124,7 @@ public class VentanaLoginController implements Initializable {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     usuarioEncontrado = true;
 
-                }else {
+                } else {
                     if (!usuarioEncontrado) {
                         throw new verificarException("No se encontro usuario");
                     }

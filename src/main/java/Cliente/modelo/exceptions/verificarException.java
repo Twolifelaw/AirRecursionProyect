@@ -1,4 +1,4 @@
-package Cliente.exceptions;
+package Cliente.modelo.exceptions;
 
 public class verificarException extends  Exception{
     public verificarException(String mensaje){

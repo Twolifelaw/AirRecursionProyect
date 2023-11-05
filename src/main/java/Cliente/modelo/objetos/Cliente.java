@@ -41,7 +41,7 @@ public class Cliente extends Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Cliente{" +super.toString()+
+        return "Cliente{" + super.toString() +
                 "correo='" + correo + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccionResidencia='" + direccionResidencia + '\'' +

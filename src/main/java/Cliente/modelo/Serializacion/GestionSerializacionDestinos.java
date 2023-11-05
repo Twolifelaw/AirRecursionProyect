@@ -1,16 +1,16 @@
-package Cliente.modelo;
+package Cliente.modelo.Serializacion;
 
 import Cliente.modelo.objetos.Destino;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class DatosPersistencia {
+public class GestionSerializacionDestinos {
 
     public static void guardarDestinos(ArrayList<Destino> destinos, String archivo) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
             oos.writeObject(destinos);
-        } catch ( IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="Se ccreo los métodos para serializar y deserializar los objetos clientes">
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinos.dat" beforeDir="false" afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/exceptions/verificarException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/verificarException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/DatosPersistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacionDestinos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Asesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Asesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/EnumGuiaTuristico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/EnumGuiaTuristico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/Estado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/EstadoMensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/EstadoMensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/GestionSerializacioClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacioClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +50,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
-    {
-      "state": "OPEN",
-      "author": "CamiloCuenca"
-    }
-  ],
-  "lastFilter": {
-    "state": "OPEN",
-    "author": "CamiloCuenca"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="0a6bbe6c-5db6-4e6b-b897-04e528834da4" />
-        <option name="url" value="https://github.com/Twolifelaw/AirRecursionProyect.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
@@ -66,7 +63,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
@@ -81,24 +78,29 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;brandon&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/camil/IdeaProjects/AirRecursionProyect/src/main/resources/com/vista/Imagenes&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/twolife/Descargas/serializacion&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Imagenes" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Imagenes" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\ventanas" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/ventanas" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -114,7 +116,7 @@
       <module name="AirRecursionProyect" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Cliente.modelo.*" />
+          <option name="PATTERN" value="Cliente.modelo.Serializacion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,6 +179,8 @@
       <workItem from="1696807968571" duration="216000" />
       <workItem from="1696953221833" duration="2235000" />
       <workItem from="1696955631752" duration="2938000" />
+      <workItem from="1698993688107" duration="1323000" />
+      <workItem from="1699020301383" duration="9224000" />
     </task>
     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
       <created>1698968242258</created>
@@ -192,14 +196,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698977995617</updated>
     </task>
-    <task id="LOCAL-00003" summary="Se ccreo los métodos para serializar y deserializar los objetos clientes">
-      <created>1699158678020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1699158678021</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,8 +228,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se crearon las clases, propuestas en el diagrama de clases" />
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
-    <MESSAGE value="Se ccreo los métodos para serializar y deserializar los objetos clientes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se ccreo los métodos para serializar y deserializar los objetos clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

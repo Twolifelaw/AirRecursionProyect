@@ -1,9 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.exceptions.verificarException;
-import Cliente.modelo.GestionClientes;
+import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Cliente;
-import Cliente.modelo.objetos.GestionSerializacioClientes;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -26,52 +24,38 @@ import java.util.Objects;
 
 public class VentanaRegistroController {
 
+    public ArrayList<Cliente> clientes = new ArrayList<>();
     /**
      * Variables responsables de realizar todas las validaciones de la ventana.
      */
     String nombres;
     String identificacion;
-
     String correoElectronico;
-
     String numeroTelefonico;
-
     String direccionResidencia;
-
-    String ccontrasena;
     //
-
+    String ccontrasena;
     /**
      * COmponenete que hace uso la ventana
      */
     @FXML
     private Button btn_atras;
-
     @FXML
     private Button btn_registrar;
-
     @FXML
     private Label lblMensaje;
-
     @FXML
     private PasswordField psw_contrasena;
-
     @FXML
     private TextField txt_Id;
-
     @FXML
     private TextField txt_correo;
-
     @FXML
     private TextField txt_direccion;
-
     @FXML
     private TextField txt_nombre;
-
     @FXML
     private TextField txt_numero_telefonico;
-
-    public ArrayList<Cliente> clientes = new ArrayList<>();
 
     public static void serializarObjetos(String nombreArchivo, ArrayList<Cliente> nuevoCliente) {
         ArrayList<Cliente> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
@@ -102,8 +86,6 @@ public class VentanaRegistroController {
     }
 
 
-
-
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
      *
@@ -131,15 +113,9 @@ public class VentanaRegistroController {
                 } else if (verificarCorreoRegistrado(correoElectronico)) {
                     throw new verificarException("El correo ya esta registrado");
                 } else {
-                    GestionClientes gestionClientes = new GestionClientes();
-                    //gestionClientes.guardarDatosCliente(identificacion, nombres, correoElectronico, numeroTelefonico, direccionResidencia, ccontrasena);
 
-
-                    //clientes.add(new Cliente("Camilo", "a","1234","1","111","122","12"));
-                    //clientes.add(new Cliente("Pedro", "a","1234","1","112","123","12"));
-                    //clientes.add(new Cliente("Pepe", "a","1234","1","113","124","12"));
-                    clientes.add(new Cliente(nombres,"a",identificacion,ccontrasena,correoElectronico,numeroTelefonico,direccionResidencia));
-                    serializarObjetos("clientes.se",clientes);
+                    clientes.add(new Cliente(nombres, "a", identificacion, ccontrasena, correoElectronico, numeroTelefonico, direccionResidencia));
+                    serializarObjetos("clientes.se", clientes);
 
                     throw new verificarException("Se registró correctamente");
                 }

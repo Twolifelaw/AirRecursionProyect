@@ -1,5 +1,7 @@
 package Cliente.modelo.objetos;
 
+import Cliente.modelo.enums.EstadoMensaje;
+
 import java.util.Date;
 
 public class Mensaje {
