@@ -22,6 +22,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
+
 public class VentanaRegistroController {
 
     public ArrayList<Cliente> clientes = new ArrayList<>();
@@ -57,34 +59,6 @@ public class VentanaRegistroController {
     @FXML
     private TextField txt_numero_telefonico;
 
-    public static void serializarObjetos(String nombreArchivo, ArrayList<Cliente> nuevoCliente) {
-        ArrayList<Cliente> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
-
-        if (listaClientes == null) {
-            listaClientes = new ArrayList<>(); // Si no hay datos en el archivo, creamos una nueva lista
-        }
-
-        listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
-
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
-            out.writeObject(listaClientes); // Escribimos la lista completa en el archivo
-            System.out.println("Objeto serializado y guardado en " + nombreArchivo);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public static ArrayList<Cliente> deserializarObjetos(String nombreArchivo) {
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
-            return (ArrayList<Cliente>) in.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            // Maneja las excepciones adecuadamente si el archivo no existe o no se puede leer
-            e.printStackTrace(); // Asegúrate de manejar la excepción de forma adecuada
-            return null;
-        }
-    }
-
 
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
@@ -108,9 +82,9 @@ public class VentanaRegistroController {
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || ccontrasena.isEmpty()) {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
-                if (verificarIdentificacionRegistrada(identificacion)) {
+                if (verificarIdentificacionRegistrada("clientes.se",identificacion )==null) {
                     throw new verificarException("La identificacion ya esta registrada");
-                } else if (verificarCorreoRegistrado(correoElectronico)) {
+                } else if (verificarCorreoRegistrado("clientes.se",correoElectronico)==null) {
                     throw new verificarException("El correo ya esta registrado");
                 } else {
 
@@ -125,8 +99,6 @@ public class VentanaRegistroController {
 
             lblMensaje.setText(e.getMessage());
             mostrarLoginErrorTemporalmente();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
 
@@ -156,43 +128,42 @@ public class VentanaRegistroController {
         timeline.play();
     }
 
-    /**
-     * Funcion que se encarga de que la identificacion que va ser registrada no exista en los archivos.
+    /**Este método verifica si la identificación ya se encuntra registrada
      *
+     * @param nombreArchivo
      * @param identificacion
      * @return
-     * @throws IOException
      */
+    public static Cliente verificarIdentificacionRegistrada (String nombreArchivo, String identificacion) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
 
-    private boolean verificarIdentificacionRegistrada(String identificacion) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                if (linea.startsWith("Identificación Usuario: " + identificacion)) {
-                    return true;
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getCedula().equals(identificacion)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
         }
-        return false;
+        return null; // No se encontró el objeto con el nombre deseado
     }
 
-    /**
-     * Funcion que se encarga de que el correo que va ser registrado no exista en los archivos.
+    /**Este método verifica si ese correo elctronico ya esta registrado
      *
-     * @param correo
+     * @param nombreArchivo
+     * @param correoElectronico
      * @return
-     * @throws IOException
      */
-    private boolean verificarCorreoRegistrado(String correo) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                if (linea.startsWith("Correo Usuario: " + correo)) {
-                    return true;
+    public static Cliente verificarCorreoRegistrado (String nombreArchivo, String correoElectronico) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getCorreo().equals(correoElectronico)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
         }
-        return false;
+        return null; // No se encontró el objeto con el nombre deseado
     }
 
 

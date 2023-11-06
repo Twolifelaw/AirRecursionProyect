@@ -19,14 +19,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
 
 public class VentanaLoginController implements Initializable {
 
@@ -59,30 +57,20 @@ public class VentanaLoginController implements Initializable {
     private TextField txtUsuario;
     //
 
-    public static ArrayList<Cliente> deserializarClientesDesdeArchivo(String nombreArchivo) {
-        ArrayList<Cliente> listaClientes = new ArrayList<>();
-
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
-            ArrayList<Cliente> clientes = (ArrayList<Cliente>) in.readObject();
-            listaClientes.addAll(clientes);
-            System.out.println("Clientes deserializados desde " + nombreArchivo);
-        } catch (EOFException e) {
-            // Se lanza EOFException al llegar al final del archivo
-            System.out.println("Fin del archivo " + nombreArchivo);
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return listaClientes;
-    }
-
-
-    public static Cliente buscarObjetoPorNombre(String nombreArchivo, String nombreBuscado) {
+    /**Este metodo busca en una lista de clientes deserializados si uno de ellos tiene los mismos parametros
+     * (nombre y contraseña), proporsionado en el login.
+     *
+     * @param nombreArchivo
+     * @param nombreBuscado
+     * @param contrasena
+     * @return Cliente
+     */
+    public static Cliente buscarObjeto(String nombreArchivo, String nombreBuscado , String contrasena) {
         ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
 
         if (listaObjetos != null) {
             for (Cliente objeto : listaObjetos) {
-                if (objeto.getNombre().equals(nombreBuscado)) {
+                if (objeto.getNombre().equals(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
                     return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
@@ -106,11 +94,11 @@ public class VentanaLoginController implements Initializable {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
                 boolean usuarioEncontrado = false;
-                Cliente clienteBuscar = buscarObjetoPorNombre("clientes.se", nombre);
+                Cliente clienteBuscar = buscarObjeto("clientes.se", nombre,contrasena);
 
 
                 System.out.println("clientes en el archivo");
-                System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
+                //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
 
                 if (clienteBuscar != null) {
