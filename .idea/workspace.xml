@@ -153,7 +153,7 @@
       <module name="AirRecursionProyect" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Cliente.modelo.*" />
+          <option name="PATTERN" value="Cliente.modelo.Serializacion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -190,6 +190,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.mainServer" />
+        <item itemvalue="Application.GestionClientes" />
         <item itemvalue="Application.mainServer" />
         <item itemvalue="Application.GestionClientes" />
       </list>
