@@ -25,8 +25,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
-import static Cliente.modelo.Serializacion.GestionAdministradores.*;
+
+import static Cliente.modelo.Serializacion.GestionAdministradores.deserializarAdministradorDesdeArchivo;
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
 
 public class VentanaLoginController implements Initializable {
 
@@ -40,6 +41,7 @@ public class VentanaLoginController implements Initializable {
     /**
      * Componenetes  que interactuan con la ventana .
      */
+
     @FXML
     private Button btnIngresar;
 
@@ -59,7 +61,8 @@ public class VentanaLoginController implements Initializable {
     private TextField txtUsuario;
     //
 
-    /**Este metodo busca en una lista de clientes deserializados si uno de ellos tiene los mismos parametros
+    /**
+     * Este metodo busca en una lista de clientes deserializados si uno de ellos tiene los mismos parametros
      * (nombre y contraseña), proporsionado en el login.
      *
      * @param nombreArchivo
@@ -67,7 +70,8 @@ public class VentanaLoginController implements Initializable {
      * @param contrasena
      * @return Cliente
      */
-    public static Cliente buscarObjeto(String nombreArchivo, String nombreBuscado , String contrasena) {
+
+    public static Cliente buscarObjeto(String nombreArchivo, String nombreBuscado, String contrasena) {
         ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
 
         if (listaObjetos != null) {
@@ -79,7 +83,8 @@ public class VentanaLoginController implements Initializable {
         }
         return null; // No se encontró el objeto con el nombre deseado
     }
-    public static Administrador buscarAdmin(String nombreArchivo, String nombreBuscado , String contrasena) {
+
+    public static Administrador buscarAdmin(String nombreArchivo, String nombreBuscado, String contrasena) {
         ArrayList<Administrador> listaObjetos = deserializarAdministradorDesdeArchivo(nombreArchivo);
 
         if (listaObjetos != null) {
@@ -93,10 +98,11 @@ public class VentanaLoginController implements Initializable {
     }
 
     /**
-     * Boton que se encarga del ingreso de cliente.
+     * Boton que se encarga del ingreso de los diferentes usuarios.
      *
      * @param event
      */
+
     @FXML
     void ingresar(ActionEvent event) {
         try {
@@ -108,8 +114,8 @@ public class VentanaLoginController implements Initializable {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
                 boolean usuarioEncontrado = false;
-                Cliente clienteBuscar = buscarObjeto("clientes.se", nombre,contrasena);
-                Administrador  adminBuscar = buscarAdmin("Admins.se",nombre,contrasena);
+                Cliente clienteBuscar = buscarObjeto("clientes.se", nombre, contrasena);
+                Administrador adminBuscar = buscarAdmin("Admins.se", nombre, contrasena);
 
                 System.out.println("clientes en el archivo");
                 //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
@@ -126,9 +132,16 @@ public class VentanaLoginController implements Initializable {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     usuarioEncontrado = true;
 
-                } else if (adminBuscar !=null) {
-                    //Mensaje probisional xd
-                    throw new verificarException("Es damin");
+                } else if (adminBuscar != null) {
+                    //Mensaje provisional xd
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaAdministrador.fxml")));
+                    Scene escena = new Scene(root);
+                    stage.setScene(escena);
+                    stage.show();
+                    // en esta linea , esconde el stage del login y carga el nuevo stage
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+
                 } else {
                     if (!usuarioEncontrado) {
                         throw new verificarException("No se encontro usuario");

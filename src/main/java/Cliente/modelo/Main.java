@@ -16,9 +16,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        ArrayList<Administrador> administradores = new ArrayList<>();
-        administradores.add(new Administrador("Profe","programacion","12332134","1234","profeProgra@gmail.com"));
-        serializarAdinistrador("Admins.se",administradores);
+        VentanaManager.crearAdministrador();
         launch(args);
 
     }
