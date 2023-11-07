@@ -1,6 +1,7 @@
 package Cliente.controlador;
 
 import Cliente.modelo.exceptions.verificarException;
+import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
+import static Cliente.modelo.Serializacion.GestionAdministradores.*;
 
 public class VentanaLoginController implements Initializable {
 
@@ -77,6 +79,18 @@ public class VentanaLoginController implements Initializable {
         }
         return null; // No se encontró el objeto con el nombre deseado
     }
+    public static Administrador buscarAdmin(String nombreArchivo, String nombreBuscado , String contrasena) {
+        ArrayList<Administrador> listaObjetos = deserializarAdministradorDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Administrador objeto : listaObjetos) {
+                if (objeto.getNombre().equals(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
+                }
+            }
+        }
+        return null; // No se encontró el objeto con el nombre deseado
+    }
 
     /**
      * Boton que se encarga del ingreso de cliente.
@@ -95,7 +109,7 @@ public class VentanaLoginController implements Initializable {
             } else {
                 boolean usuarioEncontrado = false;
                 Cliente clienteBuscar = buscarObjeto("clientes.se", nombre,contrasena);
-
+                Administrador  adminBuscar = buscarAdmin("Admins.se",nombre,contrasena);
 
                 System.out.println("clientes en el archivo");
                 //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
@@ -112,6 +126,9 @@ public class VentanaLoginController implements Initializable {
                     ((Node) (event.getSource())).getScene().getWindow().hide();
                     usuarioEncontrado = true;
 
+                } else if (adminBuscar !=null) {
+                    //Mensaje probisional xd
+                    throw new verificarException("Es damin");
                 } else {
                     if (!usuarioEncontrado) {
                         throw new verificarException("No se encontro usuario");
