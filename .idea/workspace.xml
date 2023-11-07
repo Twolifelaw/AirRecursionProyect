@@ -4,7 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_11_23,_10_28_a_ m__[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_11_23__10_28_a__m___Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientes.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/MapaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VueloInternacionalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VueloNacionalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacioClientes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacionDestinos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/EnumGuiaTuristico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/Estado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/enums/EstadoMensaje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Administrador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Asesor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Chat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/GuiaTuristico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Mensaje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Reserva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/31069111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/31069111copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Alert.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Candado png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/NotiInversa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP (1).jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/R2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/SOCIALMEDIA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Usuarip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/aim_PNG451.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/enviarIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/img_451479.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/socialMediaair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Mapa.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/exceptions/verificarException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/verificarException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/GestionClientes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Empleado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +116,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging brandon&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/twolife/Descargas/serializacion&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,7 +153,7 @@
       <module name="AirRecursionProyect" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Cliente.modelo.Serializacion.*" />
+          <option name="PATTERN" value="Cliente.modelo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,6 +218,8 @@
       <workItem from="1696955631752" duration="2938000" />
       <workItem from="1698993688107" duration="1323000" />
       <workItem from="1699020301383" duration="9224000" />
+      <workItem from="1699314306337" duration="2429000" />
+      <workItem from="1699317377240" duration="2169000" />
     </task>
     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
       <created>1698968242258</created>
