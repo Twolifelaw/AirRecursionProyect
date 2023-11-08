@@ -33,23 +33,8 @@ public class VentanaCartsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //ArrayList<Destino> destinos = new ArrayList<>();
-        //destinos.add(new Destino("Colombia", "Armenia", "aaaa", new ArrayList<>(), "Calor"));
-        //destinos.add(new Destino("Otro país", "Otra ciudad", "Descripción", new ArrayList<>(), "Clima"));
-        ArrayList<String> imagenes = new ArrayList<>();
-        imagenes.add("/com/vista/Imagenes/NotiInversa.png");
-        imagenes.add("/com/vista/Imagenes/Alert.png");
-        imagenes.add("/com/vista/Imagenes/Candado png.png");
-
-        // Guardar los destinos en un archivo
-        //ArrayList<Destino> destinos = new ArrayList<>();
-        destinos.add(new Destino("Colombia", "Armenia", "aaaa", new ArrayList<>(), "Calor"));
-        destinos.add(new Destino("Otro país", "Otra ciudad", "Descripción", new ArrayList<>(), "Clima"));
-        destinos.add(new Destino("Canada", "Toronto", "Descripción", new ArrayList<>(), "Frio"));
-        GestionSerializacionDestinos.guardarDestinos(destinos, "destinos.dat");
-
         // Cargar los destinos desde el archivo
-        ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.cargarDestinos("destinos.dat");
+        ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
 
         for (Destino destino : destinos) {
             try {
