@@ -206,7 +206,6 @@ public class VentanaInicioController implements Initializable {
     }
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         RotateTransition rotate = new RotateTransition();
@@ -217,7 +216,18 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
+        //Aqui acaba el codigo de la animaciond e la primera imagen.
 
+        //Aqui inicia el de la segunda.
+        rotate.setNode(avion_2);
+        rotate.setDuration(Duration.millis(1700));
+        rotate.setCycleCount(TranslateTransition.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setByAngle(360);
+        rotate.setAxis(Rotate.Y_AXIS);
+        rotate.play();
 
     }
+
+
 }

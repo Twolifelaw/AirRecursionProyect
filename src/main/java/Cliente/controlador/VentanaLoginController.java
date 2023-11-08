@@ -76,7 +76,7 @@ public class VentanaLoginController implements Initializable {
 
         if (listaObjetos != null) {
             for (Cliente objeto : listaObjetos) {
-                if (objeto.getNombre().equals(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
+                if (objeto.getNombre().equalsIgnoreCase(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
                     return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
@@ -89,7 +89,7 @@ public class VentanaLoginController implements Initializable {
 
         if (listaObjetos != null) {
             for (Administrador objeto : listaObjetos) {
-                if (objeto.getNombre().equals(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
+                if (objeto.getNombre().equalsIgnoreCase(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
                     return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
