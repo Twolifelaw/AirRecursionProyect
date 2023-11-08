@@ -8,8 +8,12 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,37 +30,34 @@ public class VentanaCartsController implements Initializable {
     private ScrollPane scroll_pane;
     @FXML
     private CartsController cartsController;
-    private final double paneSpacing = 10.0; // Espacio entre los AnchorPane
+    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private int anchorPanelCount = 0;
-    private final int maxColumns = 2; // Número máximo de columnas
+    private final int maxColumns = 3; // Número máximo de columnas
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //ArrayList<Destino> destinos = new ArrayList<>();
-        //destinos.add(new Destino("Colombia", "Armenia", "aaaa", new ArrayList<>(), "Calor"));
-        //destinos.add(new Destino("Otro país", "Otra ciudad", "Descripción", new ArrayList<>(), "Clima"));
-        ArrayList<String> imagenes = new ArrayList<>();
-        imagenes.add("/com/vista/Imagenes/NotiInversa.png");
-        imagenes.add("/com/vista/Imagenes/Alert.png");
-        imagenes.add("/com/vista/Imagenes/Candado png.png");
-
-        // Guardar los destinos en un archivo
-        //ArrayList<Destino> destinos = new ArrayList<>();
-        destinos.add(new Destino("Colombia", "Armenia", "aaaa", new ArrayList<>(), "Calor"));
-        destinos.add(new Destino("Otro país", "Otra ciudad", "Descripción", new ArrayList<>(), "Clima"));
-        destinos.add(new Destino("Canada", "Toronto", "Descripción", new ArrayList<>(), "Frio"));
-        GestionSerializacionDestinos.guardarDestinos(destinos, "destinos.dat");
-
         // Cargar los destinos desde el archivo
-        ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.cargarDestinos("destinos.dat");
+        ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
 
-        for (Destino destino : destinos) {
+        for (Destino destino : destinosCargados) {
             try {
                 //Cargar el AnchorPane desde el archivo FXML
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/Carts.fxml"));
                 AnchorPane nuevoAnchorPane = loader.load();
                 anchorPanelCount++;
+
+                // Establece el tamaño deseado para las filas y columnas en el GridPane
+                RowConstraints rowConstraints = new RowConstraints();
+                rowConstraints.setPrefHeight(310); // Establece la altura deseada para las filas
+
+                ColumnConstraints columnConstraints = new ColumnConstraints();
+                columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
+
+// Aplica las restricciones a todas las filas y columnas
+                gridOfertas.getRowConstraints().addAll(rowConstraints, rowConstraints, rowConstraints);
+                gridOfertas.getColumnConstraints().addAll(columnConstraints, columnConstraints);
+
 
                 //Se setan los valores de los objetos en los labels del anchorPane (Cart)
                 Label lblPais = (Label) nuevoAnchorPane.lookup("#lblPais");
@@ -68,6 +69,21 @@ public class VentanaCartsController implements Initializable {
                 Label lblClima = (Label) nuevoAnchorPane.lookup("#lblClima");
                 lblClima.setText("Clima: " + destino.getClima());
 
+                ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
+                Image image = new Image(destino.getImagenes());
+                imgView.setImage(image);
+
+
+                double width = 258; // Ancho deseado
+                double height = 165; // Alto deseado
+                imgView.setFitWidth(width);
+                imgView.setFitHeight(height);
+
+
+                nuevoAnchorPane.setMaxHeight(291);
+                nuevoAnchorPane.setMinHeight(291);
+                nuevoAnchorPane.setMaxWidth(300);
+                nuevoAnchorPane.setMinWidth(300);
 
                 // Configurar las coordenadas de acuerdo a tu diseño
                 int row = (anchorPanelCount - 1) / maxColumns;
@@ -77,13 +93,14 @@ public class VentanaCartsController implements Initializable {
                 GridPane.setColumnIndex(nuevoAnchorPane, col);
 
 
+
                 // Establecer restricciones de crecimiento horizontal para evitar que se agrupen
-                GridPane.setHgrow(nuevoAnchorPane, javafx.scene.layout.Priority.ALWAYS);
+               GridPane.setHgrow(nuevoAnchorPane, javafx.scene.layout.Priority.ALWAYS);
 
                 //Agregar al cart al GridePane
                 gridOfertas.getChildren().add(nuevoAnchorPane);
                 if (anchorPanelCount > 0) {
-                    Insets margins = new Insets(0.0, paneSpacing, paneSpacing, 0.0);
+                    Insets margins = new Insets(paneSpacing, paneSpacing, paneSpacing, paneSpacing);
                     GridPane.setMargin(nuevoAnchorPane, margins);
                 }
 

@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="291.0" style="-fx-background-color: #593F70; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.CartsController">
    <children>
-      <ImageView fx:id="imagenVuelo" fitHeight="150.0" fitWidth="173.0" layoutX="59.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenVuelo" fitHeight="165.0" fitWidth="258.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <VBox layoutX="15.0" layoutY="186.0" prefHeight="100.0" prefWidth="264.0">
          <children>
             <Label fx:id="lblPais" text="Pais:" textFill="WHITE">
@@ -34,7 +34,5 @@
             </Button>
          </children>
       </VBox>
-      <Button fx:id="btnIzq" layoutY="103.0" mnemonicParsing="false" onAction="#actionBtnIzq" text="&lt;" />
-      <Button fx:id="btnDer" layoutX="265.0" layoutY="103.0" mnemonicParsing="false" onAction="#ActionBtnDer" text="&gt;" />
    </children>
 </AnchorPane>

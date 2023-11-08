@@ -8,10 +8,10 @@ public class Destino implements Serializable {
     private String pais;
     private String ciudad;
     private String descripcion;
-    private ArrayList<String> imagenes;
+    private String imagenes;
     private String clima;
 
-    public Destino(String pais, String ciudad, String descripcion, ArrayList<String> imagenes, String clima) {
+    public Destino(String pais, String ciudad, String descripcion,String imagenes, String clima) {
         this.pais = pais;
         this.ciudad = ciudad;
         this.descripcion = descripcion;
@@ -43,11 +43,11 @@ public class Destino implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public ArrayList<String> getImagenes() {
+    public String getImagenes() {
         return imagenes;
     }
 
-    public void setImagenes(ArrayList<String> imagenes) {
+    public void setImagenes(String imagenes) {
         this.imagenes = imagenes;
     }
 
