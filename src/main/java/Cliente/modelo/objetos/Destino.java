@@ -43,7 +43,13 @@ public class Destino implements Serializable {
         this.descripcion = descripcion;
     }
 
+    public String getImagenes() {
+        return imagenes;
+    }
 
+    public void setImagenes(String imagenes) {
+        this.imagenes = imagenes;
+    }
 
     public String getClima() {
         return clima;

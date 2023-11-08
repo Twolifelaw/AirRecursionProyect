@@ -7,7 +7,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 
-
+/**
+ * Serializa los datos ingresados del administrador de forma que se puedan guardar en el archivo.
+ */
 public class GestionAdministradores {
 
     public static void serializarAdinistrador(String nombreArchivo, ArrayList<Administrador> nuevoCliente) {
@@ -25,6 +27,12 @@ public class GestionAdministradores {
         }
     }
 
+    /**
+     * Deserializa los datos del administrador para poderlos usar en las diferentes condiciones.
+     * @param nombreArchivo
+     * @return null
+     */
+
     public static ArrayList<Administrador> deserializarObjetos(String nombreArchivo) {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
             return (ArrayList<Administrador>) in.readObject();
@@ -34,6 +42,12 @@ public class GestionAdministradores {
             return null;
         }
     }
+
+    /**
+     *
+     * @param nombreArchivo
+     * @return
+     */
 
     public static ArrayList<Administrador> deserializarAdministradorDesdeArchivo(String nombreArchivo) {
         ArrayList<Administrador> listaClientes = new ArrayList<>();

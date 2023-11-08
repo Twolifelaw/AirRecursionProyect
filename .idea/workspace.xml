@@ -196,14 +196,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699241769968</updated>
     </task>
-    <task id="LOCAL-00005" summary="Se creo el primer admin y se creo su ventana de inicio">
-      <created>1699328431307</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1699328431307</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,8 +230,7 @@
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
-    <MESSAGE value="Se creo el primer admin y se creo su ventana de inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo el primer admin y se creo su ventana de inicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="se gurada workspace.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
