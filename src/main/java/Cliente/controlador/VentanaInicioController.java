@@ -11,7 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -26,36 +29,52 @@ import java.util.ResourceBundle;
 
 public class VentanaInicioController implements Initializable {
 
-    private static int i = 0;
+    @FXML
+    private AnchorPane anc_bienvenida;
 
     @FXML
-    private AnchorPane anc_Inicio;
+    private AnchorPane anc_botones;
+
     @FXML
-    private Pane paneImagen;
+    private AnchorPane anc_contenedor;
+
     @FXML
-    private BorderPane borderPaneOfertas;
-    @FXML
-    private Pane paneInternacionales;
-    @FXML
-    private Pane paneNacionales;
-    @FXML
-    private Pane paneOfertas;
-    @FXML
-    private Pane paneSoporte;
+    private AnchorPane anc_inicio;
 
     @FXML
     private ImageView avion_1;
 
     @FXML
     private ImageView avion_2;
+
     @FXML
-    private AnchorPane anc_contenedor;
+    private Button btn_chat;
+
+    @FXML
+    private Button btn_cuenta;
+
+    @FXML
+    private Button btn_internacionales;
+
+    @FXML
+    private Button btn_mapa;
+
+    @FXML
+    private Button btn_nacionales;
+
+    @FXML
+    private Button btn_ofertas;
+
+    @FXML
+    private Button btn_paquete;
+
+    @FXML
+    private Button btn_salir;
 
 
     @FXML
     void OnAyuda(ActionEvent event) {
 
-        paneSoporte.toFront();
 
     }
 
@@ -71,23 +90,6 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     void OnDerecha(ActionEvent event) {
-
-        i++;
-
-        if (i == 0) {
-            paneImagen.toFront();
-        } else if (i == 1) {
-            paneOfertas.toFront();
-
-        } else if (i == 2) {
-            paneNacionales.toFront();
-        } else if (i == 3) {
-            paneInternacionales.toFront();
-        } else if (i == 4) {
-            paneSoporte.toFront();
-        } else {
-            i = 0;
-        }
 
     }
 
@@ -110,24 +112,6 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     void OnIzquierda(ActionEvent event) {
-        i--;
-
-        if (i == 0) {
-            paneImagen.toFront();
-        } else if (i == 1) {
-            paneOfertas.toFront();
-
-        } else if (i == 2) {
-            paneNacionales.toFront();
-        } else if (i == 3) {
-            paneInternacionales.toFront();
-        } else if (i == 4) {
-            paneSoporte.toFront();
-        } else {
-            i = 0;
-        }
-
-
     }
 
     @FXML
@@ -193,15 +177,14 @@ public class VentanaInicioController implements Initializable {
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
-        // en esta linea , esconde el stage del login y carga el nuevo stage
+        // en esta línea, esconde el stage del login y carga el nuevo stage
         ((Node) (event.getSource())).getScene().getWindow().hide();
-
-
     }
+
 
     @FXML
     void anchorDesaparecer(ActionEvent event) {
-        anc_Inicio.setVisible(false);
+        anc_bienvenida.setVisible(false);
 
     }
 
@@ -228,6 +211,5 @@ public class VentanaInicioController implements Initializable {
         rotate.play();
 
     }
-
 
 }
