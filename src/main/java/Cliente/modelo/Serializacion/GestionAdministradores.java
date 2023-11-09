@@ -19,6 +19,7 @@ public class GestionAdministradores {
         }
         listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
 
+
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
             out.writeObject(listaClientes); // Escribimos la lista completa en el archivo
             System.out.println("Objeto serializado y guardado en " + nombreArchivo);
