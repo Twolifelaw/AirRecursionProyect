@@ -18,7 +18,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        VentanaManager.crearAdministrador();
+        //VentanaManager.crearAdministrador();
         launch(args);
        // guardarDestinoTuristico("destinos.dat");
 

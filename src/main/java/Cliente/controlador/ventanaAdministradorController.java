@@ -14,9 +14,42 @@ import java.util.Objects;
 
 public class ventanaAdministradorController {
 
+
     @FXML
     private Button btn_regresar;
 
+    @FXML
+    private Button btnClientes;
+
+    @FXML
+    private Button btnDestinos;
+
+    @FXML
+    private Button btnEstadisticas;
+
+    @FXML
+    private Button btnPaquetes;
+
+
+    @FXML
+    void actionbtnClientes(ActionEvent event) {
+
+    }
+
+    @FXML
+    void actionbtnDestinos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void actionbtnEstadisticas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void actionbtnPaquetes(ActionEvent event) {
+
+    }
     @FXML
     void regresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
