@@ -1,6 +1,8 @@
 package Cliente.modelo.objetos;
 
-public class Persona {
+import java.io.Serializable;
+
+public class Persona implements Serializable {
     private String nombre;
     private String apellido;
 
@@ -12,6 +14,9 @@ public class Persona {
         this.apellido = apellido;
         this.cedula = cedula;
         this.contrasena = contrasena;
+    }
+
+    public Persona() {
     }
 
     public String getNombre() {
@@ -44,5 +49,15 @@ public class Persona {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                '}';
     }
 }

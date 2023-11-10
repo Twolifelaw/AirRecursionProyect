@@ -1,13 +1,14 @@
 package Cliente.controlador;
 
-import Cliente.exceptions.verificarException;
-import Cliente.modelo.GestionClientes;
+import Cliente.modelo.exceptions.verificarException;
+import Cliente.modelo.objetos.Cliente;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,61 +16,53 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class VentanaRegistroController {
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
 
+public class VentanaRegistroController implements Initializable {
+
+    public ArrayList<Cliente> clientes = new ArrayList<>();
     /**
      * Variables responsables de realizar todas las validaciones de la ventana.
      */
     String nombres;
     String identificacion;
-
     String correoElectronico;
-
     String numeroTelefonico;
-
     String direccionResidencia;
-
-    String ccontrasena;
     //
-
+    String ccontrasena;
     /**
      * COmponenete que hace uso la ventana
      */
     @FXML
     private Button btn_atras;
-
     @FXML
     private Button btn_registrar;
-
     @FXML
     private Label lblMensaje;
-
     @FXML
     private PasswordField psw_contrasena;
-
     @FXML
     private TextField txt_Id;
-
     @FXML
     private TextField txt_correo;
-
     @FXML
     private TextField txt_direccion;
-
     @FXML
     private TextField txt_nombre;
-
     @FXML
     private TextField txt_numero_telefonico;
-    //
+
 
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
@@ -79,6 +72,7 @@ public class VentanaRegistroController {
 
     @FXML
     void actionRegistrar(ActionEvent event) {
+
 
         try {
             nombres = txt_nombre.getText();
@@ -92,23 +86,17 @@ public class VentanaRegistroController {
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || ccontrasena.isEmpty()) {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
-                if (verificarIdentificacionRegistrada(identificacion)) {
-                    throw new verificarException("La identificacion ya esta registrada");
-                } else if (verificarCorreoRegistrado(correoElectronico)) {
-                    throw new verificarException("El correo ya esta registrado");
-                } else {
-                    GestionClientes gestionClientes = new GestionClientes();
-                    gestionClientes.guardarDatosCliente(identificacion, nombres, correoElectronico, numeroTelefonico, direccionResidencia, ccontrasena);
+                    clientes.add(new Cliente(nombres, "a", identificacion, ccontrasena, correoElectronico, numeroTelefonico, direccionResidencia));
+                    serializarObjetos("clientes.se", clientes);
+
                     throw new verificarException("Se registró correctamente");
-                }
+
 
             }
         } catch (verificarException e) {
 
             lblMensaje.setText(e.getMessage());
             mostrarLoginErrorTemporalmente();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
 
@@ -138,43 +126,42 @@ public class VentanaRegistroController {
         timeline.play();
     }
 
-    /**
-     * Funcion que se encarga de que la identificacion que va ser registrada no exista en los archivos.
+    /**Este método verifica si la identificación ya se encuntra registrada
      *
+     * @param nombreArchivo
      * @param identificacion
      * @return
-     * @throws IOException
      */
+    public static Cliente verificarIdentificacionRegistrada (String nombreArchivo, String identificacion) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
 
-    private boolean verificarIdentificacionRegistrada(String identificacion) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                if (linea.startsWith("Identificación Usuario: " + identificacion)) {
-                    return true;
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getCedula().equals(identificacion)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
         }
-        return false;
+        return null; // No se encontró el objeto con el nombre deseado
     }
 
-    /**
-     * Funcion que se encarga de que el correo que va ser registrado no exista en los archivos.
+    /**Este método verifica si ese correo elctronico ya esta registrado
      *
-     * @param correo
+     * @param nombreArchivo
+     * @param correoElectronico
      * @return
-     * @throws IOException
      */
-    private boolean verificarCorreoRegistrado(String correo) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                if (linea.startsWith("Correo Usuario: " + correo)) {
-                    return true;
+    public static Cliente verificarCorreoRegistrado (String nombreArchivo, String correoElectronico) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getCorreo().equals(correoElectronico)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
                 }
             }
         }
-        return false;
+        return null; // No se encontró el objeto con el nombre deseado
     }
 
 
@@ -197,5 +184,25 @@ public class VentanaRegistroController {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    /**
+     * Metodo que al oprimir Enter me verifique los campos y en caso de que sean correcto registra.
+     */
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txt_nombre, txt_Id, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
 
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btn_registrar.fire();
+                }
+            });
+        }
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        inicializarEnterKey();//llama el metodo
+
+    }
 }

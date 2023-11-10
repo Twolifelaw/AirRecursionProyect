@@ -1,7 +1,10 @@
 package Cliente.controlador;
 
-import Cliente.exceptions.verificarException;
-import javafx.animation.*;
+import Cliente.modelo.exceptions.verificarException;
+import Cliente.modelo.objetos.Administrador;
+import Cliente.modelo.objetos.Cliente;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,18 +17,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Rotate;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import static Cliente.modelo.Serializacion.GestionAdministradores.deserializarAdministradorDesdeArchivo;
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
 
 public class VentanaLoginController implements Initializable {
 
@@ -39,6 +42,7 @@ public class VentanaLoginController implements Initializable {
     /**
      * Componenetes  que interactuan con la ventana .
      */
+
     @FXML
     private Button btnIngresar;
 
@@ -58,12 +62,48 @@ public class VentanaLoginController implements Initializable {
     private TextField txtUsuario;
     //
 
+    /**
+     * Este metodo busca en una lista de clientes deserializados si uno de ellos tiene los mismos parametros
+     * (nombre y contraseña), proporsionado en el login.
+     *
+     * @param nombreArchivo
+     * @param nombreBuscado
+     * @param contrasena
+     * @return Cliente
+     */
+
+    public static Cliente buscarObjeto(String nombreArchivo, String nombreBuscado, String contrasena) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getNombre().equalsIgnoreCase(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
+                }
+            }
+        }
+        return null; // No se encontró el objeto con el nombre deseado
+    }
+
+    public static Administrador buscarAdmin(String nombreArchivo, String nombreBuscado, String contrasena) {
+        ArrayList<Administrador> listaObjetos = deserializarAdministradorDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Administrador objeto : listaObjetos) {
+                if (objeto.getNombre().equalsIgnoreCase(nombreBuscado) && objeto.getContrasena().equals(contrasena)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
+                }
+            }
+        }
+        return null; // No se encontró el objeto con el nombre deseado
+    }
 
     /**
-     * Boton que se encarga del ingreso de cliente.
+     * Boton que se encarga del ingreso de los diferentes usuarios.
      *
      * @param event
      */
+
     @FXML
     void ingresar(ActionEvent event) {
         try {
@@ -75,51 +115,47 @@ public class VentanaLoginController implements Initializable {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
                 boolean usuarioEncontrado = false;
-                try (BufferedReader reader = new BufferedReader(new FileReader("clientes.txt"))) {
-                    String linea;
-                    while ((linea = reader.readLine()) != null) {
-                        // Verificar si la línea contiene el nombre y la contraseña
-                        if (linea.startsWith("Nombre Usuario: ") && linea.contains(txtUsuario.getText())) {
-                            // Leer la siguiente línea para verificar la contraseña
-                            linea = reader.readLine();
-                            if (linea != null && linea.startsWith("Contaseña Usuario: ") && linea.contains(pswContrasena.getText())) {
-                                System.out.println("Las credenciales son correctas.");
+                Cliente clienteBuscar = buscarObjeto("clientes.se", nombre, contrasena);
+                Administrador adminBuscar = buscarAdmin("Admins.se", nombre, contrasena);
 
-                                lblMensaje.setText("Se ingreso correctamente.");
+                System.out.println("clientes en el archivo");
+                //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
 
-                                mostrarLoginErrorTemporalmente();
-                                Stage stage = new Stage();
-                                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaPrincipal.fxml")));
-                                Scene escena = new Scene(root);
-                                stage.setScene(escena);
-                                stage.show();
-                                // en esta linea , esconde el stage del login y carga el nuevo stage
-                                ((Node) (event.getSource())).getScene().getWindow().hide();
-                                usuarioEncontrado = true;
-                            }
-                        } else {
+                if (clienteBuscar != null) {
+                    mostrarLoginErrorTemporalmente();
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
+                    Scene escena = new Scene(root);
+                    stage.setScene(escena);
+                    stage.show();
+                    // en esta linea , esconde el stage del login y carga el nuevo stage
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    usuarioEncontrado = true;
 
-                            lblMensaje.setText("No se encontro el usuario");
+                } else if (adminBuscar != null) {
+                    //Mensaje provisional xd
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaAdministrador.fxml")));
+                    Scene escena = new Scene(root);
+                    stage.setScene(escena);
+                    stage.show();
+                    // en esta linea , esconde el stage del login y carga el nuevo stage
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
 
-                            mostrarLoginErrorTemporalmente();
-                        }
+                } else {
+                    if (!usuarioEncontrado) {
+                        throw new verificarException("No se encontro usuario");
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
-
-
-                if (!usuarioEncontrado) {
-                    throw new verificarException("No se encontro usuario");
-                }
-
             }
 
         } catch (verificarException e) {
 
             lblMensaje.setText(e.getMessage());
             mostrarLoginErrorTemporalmente();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -176,9 +212,25 @@ public class VentanaLoginController implements Initializable {
         timeline.play();
     }
 
+    /**
+     * Metodo para cuando se oprima la letra Enter hace acción en el botonIngresar.
+     */
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtUsuario,pswContrasena};
+
+        for (TextField campo: camposTexto){
+            campo.setOnKeyPressed(event ->{
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnIngresar.fire();
+                }
+            });
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        inicializarEnterKey();//Se llama al metodo de btnIngresar.
 
     }
 }
