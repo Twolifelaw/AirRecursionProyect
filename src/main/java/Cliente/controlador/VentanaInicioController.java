@@ -199,9 +199,11 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
-        //Aqui acaba el codigo de la animaciond e la primera imagen.
-
-        //Aqui inicia el de la segunda.
+        girarAvion2();
+        //Aqui acaba el codigo de la animaciond e la primera imagen
+    }
+    public void girarAvion2(){
+        RotateTransition rotate = new RotateTransition();
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));
         rotate.setCycleCount(TranslateTransition.INDEFINITE);
@@ -209,7 +211,7 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
-
     }
+
 
 }
