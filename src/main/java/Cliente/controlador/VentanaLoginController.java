@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -211,9 +212,25 @@ public class VentanaLoginController implements Initializable {
         timeline.play();
     }
 
+    /**
+     * Metodo para cuando se oprima la letra Enter hace acción en el botonIngresar.
+     */
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtUsuario,pswContrasena};
+
+        for (TextField campo: camposTexto){
+            campo.setOnKeyPressed(event ->{
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnIngresar.fire();
+                }
+            });
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        inicializarEnterKey();//Se llama al metodo de btnIngresar.
 
     }
 }

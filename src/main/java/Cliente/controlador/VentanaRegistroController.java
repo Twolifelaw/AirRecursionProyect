@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,16 +16,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
 
-public class VentanaRegistroController {
+public class VentanaRegistroController implements Initializable {
 
     public ArrayList<Cliente> clientes = new ArrayList<>();
     /**
@@ -82,17 +86,11 @@ public class VentanaRegistroController {
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || ccontrasena.isEmpty()) {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
-                if (verificarIdentificacionRegistrada("clientes.se",identificacion )==null) {
-                    throw new verificarException("La identificacion ya esta registrada");
-                } else if (verificarCorreoRegistrado("clientes.se",correoElectronico)==null) {
-                    throw new verificarException("El correo ya esta registrado");
-                } else {
-
                     clientes.add(new Cliente(nombres, "a", identificacion, ccontrasena, correoElectronico, numeroTelefonico, direccionResidencia));
                     serializarObjetos("clientes.se", clientes);
 
                     throw new verificarException("Se registró correctamente");
-                }
+
 
             }
         } catch (verificarException e) {
@@ -186,5 +184,25 @@ public class VentanaRegistroController {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    /**
+     * Metodo que al oprimir Enter me verifique los campos y en caso de que sean correcto registra.
+     */
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txt_nombre, txt_Id, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
 
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btn_registrar.fire();
+                }
+            });
+        }
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        inicializarEnterKey();//llama el metodo
+
+    }
 }

@@ -10,52 +10,33 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaPrincipal" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
+<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
-      <Pane layoutX="333.0" layoutY="20.0" prefHeight="79.0" prefWidth="710.0">
-         <children>
-            <Label layoutX="227.0" layoutY="11.0" text="AirRecursion" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="483.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/31069111copy.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="avion_1" fitHeight="41.0" fitWidth="48.0" layoutX="186.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/31069111.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
       <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="184.0" prefHeight="423.0" prefWidth="144.0">
+            <AnchorPane fx:id="anc_botones" layoutX="14.0" layoutY="184.0" prefHeight="423.0" prefWidth="144.0">
                <children>
-                  <Button layoutX="22.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
+                  <Button fx:id="btn_cuenta" layoutX="22.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button layoutX="22.0" layoutY="128.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
+                  <Button fx:id="btn_mapa" layoutX="22.0" layoutY="128.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button layoutX="22.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnPaquetes" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
+                  <Button fx:id="btn_paquete" layoutX="22.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnPaquetes" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button layoutX="22.0" layoutY="242.0" mnemonicParsing="false" onAction="#OnChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
+                  <Button fx:id="btn_chat" layoutX="22.0" layoutY="242.0" mnemonicParsing="false" onAction="#OnChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_Regresar" layoutX="22.0" layoutY="300.0" mnemonicParsing="false" onAction="#OnSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
+                  <Button fx:id="btn_salir" layoutX="22.0" layoutY="300.0" mnemonicParsing="false" onAction="#OnSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -79,7 +60,7 @@
       </AnchorPane>
       <AnchorPane layoutX="169.0" layoutY="108.0" opacity="0.82" prefHeight="77.0" prefWidth="1042.0" style="-fx-background-color: #0A1425;">
          <children>
-            <Button layoutX="441.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
+            <Button fx:id="btn_ofertas" layoutX="441.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -87,7 +68,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="648.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnNacionales" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Nacionales" textFill="WHITE">
+            <Button fx:id="btn_nacionales" layoutX="648.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnNacionales" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Nacionales" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -95,7 +76,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="207.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnInternacionales" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Internacionales" textFill="WHITE">
+            <Button fx:id="btn_internacionales" layoutX="207.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnInternacionales" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Internacionales" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -110,7 +91,7 @@
       </AnchorPane>
       <AnchorPane fx:id="anc_contenedor" layoutX="182.0" layoutY="226.0" prefHeight="388.0" prefWidth="1007.0" style="-fx-background-color: #0A1425;">
          <children>
-            <AnchorPane layoutX="3.0" layoutY="-1.0" prefHeight="388.0" prefWidth="1007.0">
+            <AnchorPane fx:id="anc_bienvenida" layoutX="3.0" layoutY="-1.0" prefHeight="388.0" prefWidth="1007.0">
                <children>
                   <HBox prefHeight="388.0" prefWidth="1007.0">
                      <children>
@@ -135,6 +116,25 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <Pane layoutX="333.0" layoutY="20.0" prefHeight="79.0" prefWidth="710.0">
+         <children>
+            <Label layoutX="227.0" layoutY="11.0" text="AirRecursion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="467.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111copy.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="avion_1" fitHeight="41.0" fitWidth="48.0" layoutX="186.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />
