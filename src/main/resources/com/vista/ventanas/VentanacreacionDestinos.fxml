@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <AnchorPane fx:id="anchorPaneRpincipal" prefHeight="550.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanacreacionDestinos">
    <children>
@@ -16,13 +18,16 @@
       </TableView>
       <AnchorPane layoutX="637.0" layoutY="30.0" prefHeight="504.0" prefWidth="397.0">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6c1d9" height="199.0" layoutX="13.0" layoutY="241.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
             <TextField fx:id="txtPais" layoutX="7.0" layoutY="36.0" promptText="Pais" />
             <TextField fx:id="txtCiudad" layoutX="7.0" layoutY="74.0" promptText="Ciudad" />
             <TextArea fx:id="txtDescripcion" layoutX="9.0" layoutY="149.0" prefHeight="73.0" prefWidth="259.0" promptText="Descripción" />
             <TextField fx:id="txtClima" layoutX="7.0" layoutY="111.0" promptText="Clima" />
-            <Button fx:id="btnAgregar" layoutX="174.0" layoutY="378.0" mnemonicParsing="false" onAction="#actionbtnAgregar" prefHeight="25.0" prefWidth="65.0" text="Agregar" />
-            <Button fx:id="btnEditar" layoutX="91.0" layoutY="378.0" mnemonicParsing="false" onAction="#actionbtnEditar" prefHeight="25.0" prefWidth="74.0" text="Editar" />
-            <Button fx:id="btnEliminar" layoutX="23.0" layoutY="378.0" mnemonicParsing="false" onAction="#actionbtnEliminar" text="Eliminar" />
+            <Button fx:id="btnAgregar" layoutX="191.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnAgregar" prefHeight="25.0" prefWidth="65.0" text="Agregar" />
+            <Button fx:id="btnEditar" layoutX="102.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEditar" prefHeight="25.0" prefWidth="74.0" text="Editar" />
+            <Button fx:id="btnEliminar" layoutX="20.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEliminar" text="Eliminar" />
+            <ImageView fx:id="imvImagenDestino" fitHeight="185.0" fitWidth="230.0" layoutX="20.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnAgregarImg" layoutX="280.0" layoutY="392.0" mnemonicParsing="false" onAction="#actionbtnAgregarImagen" text="Agregar Imagen" />
          </children>
       </AnchorPane>
    </children>
