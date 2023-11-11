@@ -1,7 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
 import Cliente.modelo.objetos.Destino;
+import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
