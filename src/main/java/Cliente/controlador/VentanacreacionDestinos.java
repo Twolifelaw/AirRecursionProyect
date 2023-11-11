@@ -6,15 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -25,7 +20,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
+
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserializarDestino;
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.serializarDestino;
 
 
 public class VentanacreacionDestinos implements Initializable {
@@ -54,10 +51,10 @@ public class VentanacreacionDestinos implements Initializable {
     private TableColumn<Destino, String> columnClima;
 
     @FXML
-    private TableColumn<Destino,String> columnImagen;
+    private TableColumn<Destino, String> columnImagen;
 
     @FXML
-    private TableColumn<Destino,String > columnPais;
+    private TableColumn<Destino, String> columnPais;
 
     @FXML
     private TableView<Destino> tblDestinos;
@@ -78,8 +75,8 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     void actionbtnAgregar(ActionEvent event) {
         ArrayList<Destino> destinosNuevos = new ArrayList<>();
-        destinosNuevos.add(new Destino(txtPais.getText(),txtCiudad.getText(),txtDescripcion.getText(),imagePath,txtClima.getText()));
-        serializarDestino("destinos.dat",destinosNuevos);
+        destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), txtDescripcion.getText(), imagePath, txtClima.getText()));
+        serializarDestino("destinos.dat", destinosNuevos);
     }
 
     @FXML
@@ -102,7 +99,7 @@ public class VentanacreacionDestinos implements Initializable {
         if (selectedFile != null) {
             try {
                 // Obtener la ruta relativa del archivo con respecto al directorio de trabajo actual
-                imagePath =  "/"+selectedFile.getName();
+                imagePath = "/" + selectedFile.getName();
 
                 // Imprimir la ruta relativa (puedes guardarla en una variable, base de datos, etc.)
                 System.out.println("Ruta relativa del archivo: " + imagePath);
@@ -120,13 +117,13 @@ public class VentanacreacionDestinos implements Initializable {
             }
         }
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         columnPais.setCellValueFactory(new PropertyValueFactory<>("pais"));
         ColumnCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
         columnClima.setCellValueFactory(new PropertyValueFactory<>("clima"));
-
 
 
         ObservableList<Destino> datosDestinos = FXCollections.observableArrayList(deserializarDestino("destinos.dat"));

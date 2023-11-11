@@ -27,8 +27,8 @@ public class GestionSerializacionDestinos {
     }
 
 
-
-    /**Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
+    /**
+     * Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
      * toma todos lo que esté en el archivo (si tubiera ya objetos serializados) y los alamcena en una lista
      * temporal y posteriro a ello añade un nuevo objeto a esa lista y lo serializa en el archivo
      *
@@ -50,7 +50,8 @@ public class GestionSerializacionDestinos {
         }
     }
 
-    /**Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
+    /**
+     * Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
      *
      * @param nombreArchivo
      * @return
@@ -68,6 +69,7 @@ public class GestionSerializacionDestinos {
 
     /**
      * Este metodo deserialisa los clientes del el archivo.
+     *
      * @param nombreArchivo
      * @return
      */
@@ -88,11 +90,11 @@ public class GestionSerializacionDestinos {
         return listaClientes;
     }
 
-    public static void guardarDestinoTuristico( String nombreArchivo){
+    public static void guardarDestinoTuristico(String nombreArchivo) {
         //destinos.add(new Destino("Colombia", "Armenia", "aaaa", "/Armenia.jpg", "Calor"));
         //destinos.add(new Destino("Canada", "Toronto", "Descripción", "/Toronto.jpg", "Frio"));
         destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor"));
-        GestionSerializacionDestinos.serializarDestino(nombreArchivo,destinos);
+        GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
     }
 
 }

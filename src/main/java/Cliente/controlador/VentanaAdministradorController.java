@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class ventanaAdministradorController {
+public class VentanaAdministradorController {
 
 
     @FXML
@@ -61,6 +61,7 @@ public class ventanaAdministradorController {
     void actionbtnPaquetes(ActionEvent event) {
 
     }
+
     @FXML
     void regresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();

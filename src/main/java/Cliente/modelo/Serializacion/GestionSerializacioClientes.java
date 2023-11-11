@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 public class GestionSerializacioClientes {
 
-    /**Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
+    /**
+     * Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
      * toma todos lo que esté en el archivo (si tubiera ya objetos serializados) y los alamcena en una lista
      * temporal y posteriro a ello añade un nuevo objeto a esa lista y lo serializa en el archivo
      *
@@ -29,7 +30,8 @@ public class GestionSerializacioClientes {
         }
     }
 
-    /**Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
+    /**
+     * Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
      *
      * @param nombreArchivo
      * @return
@@ -46,6 +48,7 @@ public class GestionSerializacioClientes {
 
     /**
      * Este metodo deserialisa los clientes del el archivo.
+     *
      * @param nombreArchivo
      * @return
      */
