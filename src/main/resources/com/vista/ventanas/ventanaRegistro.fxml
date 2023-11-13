@@ -13,14 +13,14 @@
    <children>
       <AnchorPane layoutX="178.0" layoutY="101.0" opacity="0.87" prefHeight="307.0" prefWidth="275.0" style="-fx-background-color: #0B1525; -fx-background-radius: 15;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="101.0">
          <children>
-            <VBox layoutX="189.0" layoutY="124.0" prefHeight="200.0" prefWidth="175.0">
+            <VBox fx:id="vText" layoutX="189.0" layoutY="124.0" prefHeight="200.0" prefWidth="175.0">
                <children>
                   <TextField fx:id="txt_nombre" alignment="CENTER" promptText="Nombres" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="txt_Id" alignment="CENTER" promptText="Identificacion" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txt_id" alignment="CENTER" promptText="Identificacion" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -44,13 +44,18 @@
                </children>
             </VBox>
             <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Registrar" textFill="WHITE" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="59.0" prefHeight="18.0" prefWidth="129.0" text="REGISTRO" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="48.0" prefHeight="18.0" prefWidth="129.0" text="REGISTRO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font></Label>
-            <AnchorPane layoutX="222.0" layoutY="90.0" prefHeight="3.0" prefWidth="109.0" style="-fx-background-color: #593F70;" />
+            <AnchorPane layoutX="223.0" layoutY="79.0" prefHeight="3.0" prefWidth="109.0" style="-fx-background-color: #593F70;" />
             <Button fx:id="btn_atras" layoutX="21.0" layoutY="431.0" mnemonicParsing="false" onAction="#actionAtras" style="-fx-background-color: #0B1525;" text="Regresar" textFill="WHITE" />
             <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="342.0" prefHeight="26.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="90.0" prefHeight="26.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

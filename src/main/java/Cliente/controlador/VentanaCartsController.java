@@ -1,7 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.modelo.objetos.Destino;
 import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
+import Cliente.modelo.objetos.Destino;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +21,12 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class VentanaCartsController implements Initializable {
-    public static ArrayList<Destino> destinos = new ArrayList<>();
+
+    // Cargar los destinos desde el archivo
+   public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+
+    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
+    private final int maxColumns = 3; // Número máximo de columnas
     @FXML
     private GridPane gridOfertas;
     @FXML
@@ -30,15 +35,11 @@ public class VentanaCartsController implements Initializable {
     private ScrollPane scroll_pane;
     @FXML
     private CartsController cartsController;
-    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private int anchorPanelCount = 0;
-    private final int maxColumns = 3; // Número máximo de columnas
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        // Cargar los destinos desde el archivo
-        ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
 
         for (Destino destino : destinosCargados) {
             try {
@@ -54,7 +55,7 @@ public class VentanaCartsController implements Initializable {
                 ColumnConstraints columnConstraints = new ColumnConstraints();
                 columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
 
-// Aplica las restricciones a todas las filas y columnas
+                // Aplica las restricciones a todas las filas y columnas
                 gridOfertas.getRowConstraints().addAll(rowConstraints, rowConstraints, rowConstraints);
                 gridOfertas.getColumnConstraints().addAll(columnConstraints, columnConstraints);
 
@@ -69,17 +70,24 @@ public class VentanaCartsController implements Initializable {
                 Label lblClima = (Label) nuevoAnchorPane.lookup("#lblClima");
                 lblClima.setText("Clima: " + destino.getClima());
 
+                Label lblDescipcion = (Label)nuevoAnchorPane.lookup("#lblDescipcion") ;
+                lblDescipcion.setText(destino.getDescripcion());
+
+                Label lblPrecio = (Label)nuevoAnchorPane.lookup("#lblPrecio");
+                lblPrecio.setText("Precio: "+destino.getPrecio());
+
                 ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
                 Image image = new Image(destino.getImagenes());
                 imgView.setImage(image);
 
 
-                double width = 258; // Ancho deseado
-                double height = 165; // Alto deseado
+                //Establece el Ancho y alto de las imagenes
+                double width = 240; // Ancho deseado
+                double height = 150; // Alto deseado
                 imgView.setFitWidth(width);
                 imgView.setFitHeight(height);
 
-
+                //Establece el minimo y maximo de tamaño de los anchorPane's
                 nuevoAnchorPane.setMaxHeight(291);
                 nuevoAnchorPane.setMinHeight(291);
                 nuevoAnchorPane.setMaxWidth(300);
@@ -93,9 +101,8 @@ public class VentanaCartsController implements Initializable {
                 GridPane.setColumnIndex(nuevoAnchorPane, col);
 
 
-
                 // Establecer restricciones de crecimiento horizontal para evitar que se agrupen
-               GridPane.setHgrow(nuevoAnchorPane, javafx.scene.layout.Priority.ALWAYS);
+                GridPane.setHgrow(nuevoAnchorPane, javafx.scene.layout.Priority.ALWAYS);
 
                 //Agregar al cart al GridePane
                 gridOfertas.getChildren().add(nuevoAnchorPane);

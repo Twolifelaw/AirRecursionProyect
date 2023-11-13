@@ -12,12 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -74,8 +70,6 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     void OnAyuda(ActionEvent event) {
-
-
     }
 
     @FXML
@@ -202,7 +196,8 @@ public class VentanaInicioController implements Initializable {
         girarAvion2();
         //Aqui acaba el codigo de la animaciond e la primera imagen
     }
-    public void girarAvion2(){
+
+    public void girarAvion2() {
         RotateTransition rotate = new RotateTransition();
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));

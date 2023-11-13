@@ -8,27 +8,9 @@ import java.util.ArrayList;
 public class GestionSerializacionDestinos {
     public static ArrayList<Destino> destinos = new ArrayList<>();
 
-    public static void guardarDestinos(ArrayList<Destino> destinos, String archivo) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
-            oos.writeObject(destinos);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static ArrayList<Destino> cargarDestinos(String archivo) {
-        ArrayList<Destino> destinos = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
-            destinos = (ArrayList<Destino>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return destinos;
-    }
-
-
-
-    /**Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
+    /**
+     * Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
      * toma todos lo que esté en el archivo (si tubiera ya objetos serializados) y los alamcena en una lista
      * temporal y posteriro a ello añade un nuevo objeto a esa lista y lo serializa en el archivo
      *
@@ -36,10 +18,8 @@ public class GestionSerializacionDestinos {
      * @param nuevoCliente
      */
     public static void serializarDestino(String nombreArchivo, ArrayList<Destino> nuevoCliente) {
-        ArrayList<Destino> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
-        if (listaClientes == null) {
-            listaClientes = new ArrayList<>(); // Si no hay datos en el archivo, creamos una nueva lista
-        }
+        ArrayList<Destino> listaClientes = new ArrayList<>(); // Cargamos la lista existente
+
         listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
@@ -50,7 +30,8 @@ public class GestionSerializacionDestinos {
         }
     }
 
-    /**Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
+    /**
+     * Este método se encarga de deserializar los objetos de el archivo para que el método serializarObjetos lo use
      *
      * @param nombreArchivo
      * @return
@@ -68,6 +49,7 @@ public class GestionSerializacionDestinos {
 
     /**
      * Este metodo deserialisa los clientes del el archivo.
+     *
      * @param nombreArchivo
      * @return
      */
@@ -88,11 +70,26 @@ public class GestionSerializacionDestinos {
         return listaClientes;
     }
 
-    public static void guardarDestinoTuristico( String nombreArchivo){
+    public static void guardarDestinoTuristico(String nombreArchivo) {
         //destinos.add(new Destino("Colombia", "Armenia", "aaaa", "/Armenia.jpg", "Calor"));
         //destinos.add(new Destino("Canada", "Toronto", "Descripción", "/Toronto.jpg", "Frio"));
-        destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor"));
-        GestionSerializacionDestinos.serializarDestino(nombreArchivo,destinos);
+        //destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor"));
+        GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
     }
+
+    /**
+     * Este método elimina un destino del archivo basado en el nombre del país.
+     *
+     * @param nombreArchivo
+     * @param pais          El nombre del país del destino a eliminar
+     */
+    public static void eliminarDestino(String nombreArchivo, String id) {
+        ArrayList<Destino> destinos = deserializarObjetos(nombreArchivo);
+
+        destinos.removeIf(destino -> destino.getId().equals(id));
+
+        serializarDestino(nombreArchivo, destinos);
+    }
+
 
 }
