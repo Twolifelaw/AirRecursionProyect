@@ -13,6 +13,12 @@
     -fx-background-size: cover;
 }
 
+#anc_miCuenta{
+    -fx-background-image: url("6.jpg");
+    -fx-background-size: cover;
+
+}
+
 
 
 

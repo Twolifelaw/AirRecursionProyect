@@ -1,7 +1,6 @@
 package Cliente.modelo.Serializacion;
 
 import Cliente.modelo.objetos.Administrador;
-import Cliente.modelo.objetos.Cliente;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -30,6 +29,7 @@ public class GestionAdministradores {
 
     /**
      * Deserializa los datos del administrador para poderlos usar en las diferentes condiciones.
+     *
      * @param nombreArchivo
      * @return null
      */
@@ -45,7 +45,6 @@ public class GestionAdministradores {
     }
 
     /**
-     *
      * @param nombreArchivo
      * @return
      */
@@ -66,7 +65,6 @@ public class GestionAdministradores {
 
         return listaClientes;
     }
-
 
 
 }

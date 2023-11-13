@@ -7,12 +7,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ventanaAdministradorController {
+public class VentanaAdministradorController {
 
 
     @FXML
@@ -30,6 +32,8 @@ public class ventanaAdministradorController {
     @FXML
     private Button btnPaquetes;
 
+    @FXML
+    private BorderPane borderPanePrincipla;
 
     @FXML
     void actionbtnClientes(ActionEvent event) {
@@ -38,7 +42,14 @@ public class ventanaAdministradorController {
 
     @FXML
     void actionbtnDestinos(ActionEvent event) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanacreacionDestinos.fxml"));
+            AnchorPane anchorPaneOfertas = loader.load();
+            borderPanePrincipla.setCenter(anchorPaneOfertas);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -50,6 +61,7 @@ public class ventanaAdministradorController {
     void actionbtnPaquetes(ActionEvent event) {
 
     }
+
     @FXML
     void regresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();

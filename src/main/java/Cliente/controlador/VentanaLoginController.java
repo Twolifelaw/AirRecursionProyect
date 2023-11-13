@@ -1,12 +1,11 @@
 package Cliente.controlador;
 
+import Cliente.modelo.Serializacion.GestionSerializacioClientes;
+import Cliente.modelo.Serializacion.SesionCliente;
 import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,7 +18,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -121,9 +119,10 @@ public class VentanaLoginController implements Initializable {
                 System.out.println("clientes en el archivo");
                 //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
-
                 if (clienteBuscar != null) {
-                    mostrarLoginErrorTemporalmente();
+                    Cliente clienteaut = clienteBuscar;
+                    SesionCliente.setClienteAutenticado(clienteBuscar);
+                    VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
                     Stage stage = new Stage();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
                     Scene escena = new Scene(root);
@@ -153,7 +152,7 @@ public class VentanaLoginController implements Initializable {
         } catch (verificarException e) {
 
             lblMensaje.setText(e.getMessage());
-            mostrarLoginErrorTemporalmente();
+            VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -188,38 +187,15 @@ public class VentanaLoginController implements Initializable {
 
     }
 
-    /**
-     * Funcion que se encarga de que el mensaje en pantalla no quede costante si no por un tiempo definido.
-     */
-    private void mostrarLoginErrorTemporalmente() {
-
-        lblMensaje.setVisible(true);
-
-
-        // Configurar un Timeline para ocultar el mensaje después de 2 segundos (por ejemplo).
-        Duration delay = Duration.seconds(2);
-        KeyFrame keyFrame = new KeyFrame(delay, new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                lblMensaje.setVisible(false);
-
-
-            }
-        });
-
-        Timeline timeline = new Timeline(keyFrame);
-        timeline.play();
-    }
 
     /**
      * Metodo para cuando se oprima la letra Enter hace acción en el botonIngresar.
      */
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txtUsuario,pswContrasena};
+        TextField[] camposTexto = {txtUsuario, pswContrasena};
 
-        for (TextField campo: camposTexto){
-            campo.setOnKeyPressed(event ->{
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
                 if (event.getCode().equals(KeyCode.ENTER)) {
                     btnIngresar.fire();
                 }

@@ -8,4 +8,7 @@ module com.example.airrecursionproyect {
     exports Cliente.modelo;
     exports Cliente.modelo.Serializacion;
     opens Cliente.modelo.Serializacion to javafx.fxml;
+    opens Cliente to javafx.fxml;
+    exports Cliente.modelo.objetos;
+    opens Cliente.modelo.objetos to javafx.fxml;
 }

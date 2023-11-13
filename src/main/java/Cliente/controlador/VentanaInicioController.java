@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.modelo.objetos.Cliente;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
@@ -12,12 +13,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -72,10 +69,22 @@ public class VentanaInicioController implements Initializable {
     private Button btn_salir;
 
 
+
+
+    @FXML
+    void OnMiCuenta(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta linea , esconde el stage del login y carga el nuecvo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+
+    }
+
     @FXML
     void OnAyuda(ActionEvent event) {
-
-
     }
 
     @FXML
@@ -124,10 +133,7 @@ public class VentanaInicioController implements Initializable {
 
     }
 
-    @FXML
-    void OnMiCuenta(ActionEvent event) {
 
-    }
 
     @FXML
     void OnNacionales(ActionEvent event) {
@@ -199,9 +205,12 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
-        //Aqui acaba el codigo de la animaciond e la primera imagen.
+        girarAvion2();
+        //Aqui acaba el codigo de la animaciond e la primera imagen
+    }
 
-        //Aqui inicia el de la segunda.
+    public void girarAvion2() {
+        RotateTransition rotate = new RotateTransition();
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));
         rotate.setCycleCount(TranslateTransition.INDEFINITE);
@@ -209,7 +218,7 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
-
     }
+
 
 }

@@ -2,10 +2,7 @@ package Cliente.controlador;
 
 import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Cliente;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,16 +14,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static Cliente.modelo.Serializacion.GestionSerializacioClientes.*;
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
 
 public class VentanaRegistroController implements Initializable {
 
@@ -40,7 +37,7 @@ public class VentanaRegistroController implements Initializable {
     String numeroTelefonico;
     String direccionResidencia;
     //
-    String ccontrasena;
+    String contrasena;
     /**
      * COmponenete que hace uso la ventana
      */
@@ -50,10 +47,15 @@ public class VentanaRegistroController implements Initializable {
     private Button btn_registrar;
     @FXML
     private Label lblMensaje;
+
+    @FXML
+    private Label lblStatus;
+
     @FXML
     private PasswordField psw_contrasena;
     @FXML
-    private TextField txt_Id;
+    private TextField txt_id;
+
     @FXML
     private TextField txt_correo;
     @FXML
@@ -62,7 +64,8 @@ public class VentanaRegistroController implements Initializable {
     private TextField txt_nombre;
     @FXML
     private TextField txt_numero_telefonico;
-
+    @FXML
+    private VBox vText;
 
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
@@ -72,98 +75,36 @@ public class VentanaRegistroController implements Initializable {
 
     @FXML
     void actionRegistrar(ActionEvent event) {
-
-
         try {
             nombres = txt_nombre.getText();
-            identificacion = txt_Id.getText();
+            identificacion = txt_id.getText();
             correoElectronico = txt_correo.getText();
             numeroTelefonico = txt_numero_telefonico.getText();
             direccionResidencia = txt_direccion.getText();
-            ccontrasena = psw_contrasena.getText();
-            if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && ccontrasena.isEmpty()) {
+            contrasena = psw_contrasena.getText();
+            if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty()) {
                 throw new verificarException("Llene los campos");
-            } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || ccontrasena.isEmpty()) {
+            } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty()) {
                 throw new verificarException("Campo vacio llenar porfavor");
             } else {
-                    clientes.add(new Cliente(nombres, "a", identificacion, ccontrasena, correoElectronico, numeroTelefonico, direccionResidencia));
+                if (VentanaUtilidades.verificarIdentificacionRegistrada("clientes.se", identificacion)) {
+                    throw new verificarException("identificacion ya registrada.");
+                } else if (VentanaUtilidades.verificarCorreoRegistrado("clientes.se", correoElectronico)) {
+                    throw new verificarException("correo ya registrada.");
+                } else {
+                    clientes.add(new Cliente(nombres, "a", identificacion, contrasena, correoElectronico, numeroTelefonico, direccionResidencia));
                     serializarObjetos("clientes.se", clientes);
-
                     throw new verificarException("Se registró correctamente");
-
-
+                }
             }
         } catch (verificarException e) {
 
             lblMensaje.setText(e.getMessage());
-            mostrarLoginErrorTemporalmente();
+            VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
         }
 
 
     }
-
-    /**
-     * Funcion  que se encarga de que el mensaje que salga en pantalla no se quede costante si no que tenga un timpo seleccionado.
-     */
-    private void mostrarLoginErrorTemporalmente() {
-
-        lblMensaje.setVisible(true);
-
-
-        // Configurar un Timeline para ocultar el mensaje después de 2 segundos (por ejemplo).
-        Duration delay = Duration.seconds(2);
-        KeyFrame keyFrame = new KeyFrame(delay, new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                lblMensaje.setVisible(false);
-
-
-            }
-        });
-
-        Timeline timeline = new Timeline(keyFrame);
-        timeline.play();
-    }
-
-    /**Este método verifica si la identificación ya se encuntra registrada
-     *
-     * @param nombreArchivo
-     * @param identificacion
-     * @return
-     */
-    public static Cliente verificarIdentificacionRegistrada (String nombreArchivo, String identificacion) {
-        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
-
-        if (listaObjetos != null) {
-            for (Cliente objeto : listaObjetos) {
-                if (objeto.getCedula().equals(identificacion)) {
-                    return objeto; // Se encontró el objeto con el nombre deseado
-                }
-            }
-        }
-        return null; // No se encontró el objeto con el nombre deseado
-    }
-
-    /**Este método verifica si ese correo elctronico ya esta registrado
-     *
-     * @param nombreArchivo
-     * @param correoElectronico
-     * @return
-     */
-    public static Cliente verificarCorreoRegistrado (String nombreArchivo, String correoElectronico) {
-        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
-
-        if (listaObjetos != null) {
-            for (Cliente objeto : listaObjetos) {
-                if (objeto.getCorreo().equals(correoElectronico)) {
-                    return objeto; // Se encontró el objeto con el nombre deseado
-                }
-            }
-        }
-        return null; // No se encontró el objeto con el nombre deseado
-    }
-
 
     /**
      * Boton que se encarga de regresar a a la ventana login.
@@ -187,8 +128,9 @@ public class VentanaRegistroController implements Initializable {
     /**
      * Metodo que al oprimir Enter me verifique los campos y en caso de que sean correcto registra.
      */
+
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txt_nombre, txt_Id, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
+        TextField[] camposTexto = {txt_nombre, txt_id, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
 
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
@@ -199,10 +141,42 @@ public class VentanaRegistroController implements Initializable {
         }
     }
 
+    /**
+     * Se encarga de decirme en que Texfield y mostrarme con el mouse enque campoo estoy de igual forma.
+     *
+     * @param campo
+     * @param label
+     * @param mensaje
+     */
+    private void agregarEventoYMostrarStatus(TextField campo, Label label, String mensaje) {
+        campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
+        campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mostrarStatus(label, mensaje);
+            }
+        });
+    }
+
+    /**
+     * Metodo que se encarga de mostrae el mensaje del lbl en la parte superior.
+     *
+     * @param label
+     * @param mensaje
+     */
+    private void mostrarStatus(Label label, String mensaje) {
+        // Lógica para mostrar el mensaje en el lugar que desees (por ejemplo, lblStatus)
+        label.setText(mensaje);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        inicializarEnterKey();//llama el metodo
-
+        inicializarEnterKey();
+        agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
+        agregarEventoYMostrarStatus(txt_id, lblStatus, "Identificacion");
+        agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
+        agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
+        agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Dirección");
+        agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
     }
 }
