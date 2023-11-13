@@ -168,6 +168,7 @@ public class VentanaRegistroController implements Initializable {
         label.setText(mensaje);
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         inicializarEnterKey();
