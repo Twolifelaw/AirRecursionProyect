@@ -7,11 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="300.0" prefWidth="291.0" style="-fx-background-color: #593F70; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.CartsController">
+<AnchorPane prefHeight="300.0" prefWidth="291.0" style="-fx-background-color: #6e3f70; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: BLack; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.CartsController">
    <children>
-      <ImageView fx:id="imagenVuelo" fitHeight="165.0" fitWidth="258.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenVuelo" fitHeight="132.0" fitWidth="232.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" />
       <VBox layoutX="15.0" layoutY="186.0" prefHeight="100.0" prefWidth="264.0">
          <children>
+            <Label fx:id="lblPrecio" text="Precio:" textFill="WHITE">
+               <VBox.margin>
+                  <Insets right="5.0" />
+               </VBox.margin>
+            </Label>
             <Label fx:id="lblPais" text="Pais:" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" />
@@ -24,15 +29,16 @@
             </Label>
             <Label fx:id="lblClima" text="Clima:" textFill="WHITE">
                <VBox.margin>
-                  <Insets bottom="5.0" />
+                  <Insets bottom="3.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="btnComprar" mnemonicParsing="false" text="Comprar">
+            <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#ActionComprar" style="-fx-background-color: #593F70; -fx-background-radius: 10; -fx-border-color: BLACK; -fx-border-radius: 10;" text="Comprar" textFill="WHITE">
                <VBox.margin>
-                  <Insets bottom="5.0" left="100.0" />
+                  <Insets bottom="8.0" left="100.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
+      <Label fx:id="lblDescipcion" layoutY="-55.0" prefHeight="11.0" prefWidth="281.0" visible="false" />
    </children>
 </AnchorPane>
