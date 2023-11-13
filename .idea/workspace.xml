@@ -143,6 +143,8 @@
       <list>
         <item itemvalue="Application.mainServer" />
         <item itemvalue="Application.GestionClientes" />
+        <item itemvalue="Application.mainServer" />
+        <item itemvalue="Application.GestionClientes" />
       </list>
     </recent_temporary>
   </component>

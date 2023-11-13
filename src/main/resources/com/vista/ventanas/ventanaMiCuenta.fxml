@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc_miCuenta" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="909.0" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaMicuentaController">
+   <children>
+      <AnchorPane layoutX="188.0" layoutY="111.0" opacity="0.87" prefHeight="457.0" prefWidth="546.0" style="-fx-background-color: #0B1525; -fx-background-radius: 15;">
+         <children>
+            <VBox fx:id="vText" layoutX="119.0" layoutY="145.0" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="txt_nombre" alignment="CENTER" promptText="Nombres" style="-fx-background-radius: 15;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_correo" alignment="CENTER" promptText="Correo electronico" style="-fx-background-radius: 15;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_numero_telefonico" alignment="CENTER" promptText="Numero telefonico" style="-fx-background-radius: 15;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txt_direccion" alignment="CENTER" promptText="Direccion de residencia" style="-fx-background-radius: 15;">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <PasswordField fx:id="psw_contrasena" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 15;" />
+               </children>
+            </VBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="66.0" prefHeight="18.0" prefWidth="129.0" text="Mi Cuenta" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="223.0" layoutY="98.0" prefHeight="3.0" prefWidth="109.0" style="-fx-background-color: #593F70;" />
+            <Button fx:id="btn_atras" layoutX="263.0" layoutY="364.0" mnemonicParsing="false" onAction="#actionAtras" style="-fx-background-color: #0B1525;" text="Regresar" textFill="WHITE" />
+            <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="331.0" prefHeight="26.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_nombre" alignment="CENTER" layoutX="311.0" layoutY="145.0" mnemonicParsing="false" onAction="#cambiarNombre" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="cambiar nombre" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btn_correo" alignment="CENTER" layoutX="311.0" layoutY="179.0" mnemonicParsing="false" onAction="#cambiarCorreo" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="cambiar correo" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btn_telefono" alignment="CENTER" layoutX="312.0" layoutY="215.0" mnemonicParsing="false" onAction="#cambiarTelefono" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="cambiar telefono" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btn_direccion" alignment="CENTER" layoutX="312.0" layoutY="251.0" mnemonicParsing="false" onAction="#cambiarDireccion" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="cambiar direccion" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btn_contrasena" alignment="CENTER" layoutX="312.0" layoutY="293.0" mnemonicParsing="false" onAction="#cambiarContrasena" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="cambiar contraseña" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
