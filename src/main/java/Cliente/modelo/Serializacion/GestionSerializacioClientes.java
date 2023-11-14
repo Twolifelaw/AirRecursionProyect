@@ -16,10 +16,8 @@
          * @param nuevoCliente
          */
         public static void serializarObjetos(String nombreArchivo, ArrayList<Cliente> nuevoCliente) {
-            ArrayList<Cliente> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
-            if (listaClientes == null) {
-                listaClientes = new ArrayList<>(); // Si no hay datos en el archivo, creamos una nueva lista
-            }
+            ArrayList<Cliente> listaClientes = new ArrayList<>(); // Cargamos la lista existente
+
             listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
 
             try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {

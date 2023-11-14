@@ -9,12 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,41 +20,17 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
+
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
 
 public class VentanaMicuentaController implements Initializable {
-    String id;
-
-    @FXML
-    private AnchorPane anc_miCuenta;
-
-    @FXML
-    private Button btn_atras;
-
-    @FXML
-    private Button btn_contrasena;
-
-    @FXML
-    private Button btn_correo;
-
-    @FXML
-    private Button buscar;
-
-
-    @FXML
-    private Button btn_direccion;
-
-    @FXML
-    private Button btn_nombre;
-
-    @FXML
-    private Button btn_telefono;
 
     @FXML
     private Label lblMensaje;
 
-    @FXML
-    private TextField txt_id;
+
+
 
     @FXML
     private PasswordField psw_contrasena;
@@ -74,10 +47,9 @@ public class VentanaMicuentaController implements Initializable {
     @FXML
     private TextField txt_numero_telefonico;
 
-    @FXML
-    private VBox vText;
 
-    private Cliente clienteAutenticado;
+    private Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
+    ;
 
     // Otros métodos...
 
@@ -133,30 +105,30 @@ public class VentanaMicuentaController implements Initializable {
 
      */
 
+
     @FXML
-    void cambiarContrasena(ActionEvent event) {
+    void cambiarDatos(ActionEvent event) {
+        ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
+
+        if(listaClientes != null) {
+            for (Cliente cliente : listaClientes) {
+                if (cliente.getCedula().equals(clienteAutenticado.getCedula())) {
+                    cliente.setNombre(txt_nombre.getText());
+                    cliente.setCorreo(txt_correo.getText());
+                    cliente.setTelefono(txt_numero_telefonico.getText());
+                    cliente.setDireccionResidencia(txt_direccion.getText());
+                    cliente.setContrasena(psw_contrasena.getText());
+                    break;
+                }
+
+            }
+            serializarObjetos("clientes.se", listaClientes);
+
+        }
+
 
     }
 
-    @FXML
-    void cambiarCorreo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void cambiarDireccion(ActionEvent event) {
-
-    }
-
-    @FXML
-    void cambiarNombre(ActionEvent event) {
-
-    }
-
-    @FXML
-    void cambiarTelefono(ActionEvent event) {
-
-    }
 
 
     @Override
@@ -164,7 +136,7 @@ public class VentanaMicuentaController implements Initializable {
         Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
 
         // Llenar los campos con la información del cliente
-        if (clienteAutenticado != null) {
+        if ( clienteAutenticado!= null) {
             txt_nombre.setText(clienteAutenticado.getNombre());
             txt_correo.setText(clienteAutenticado.getCorreo());
             txt_numero_telefonico.setText(clienteAutenticado.getTelefono());

@@ -1,7 +1,7 @@
 package Cliente.modelo.Serializacion;
 import Cliente.modelo.objetos.Cliente;
 
-import java.util.ArrayList;
+
 
 public class SesionCliente {
     private static Cliente clienteAutenticado;
@@ -12,4 +12,6 @@ public class SesionCliente {
     public static void setClienteAutenticado(Cliente cliente) {
         clienteAutenticado = cliente;
     }
+
+
 }
