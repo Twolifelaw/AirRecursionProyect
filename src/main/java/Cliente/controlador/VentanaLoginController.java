@@ -210,9 +210,6 @@ public class VentanaLoginController implements Initializable {
         }
     }
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Se llama al metodo de btnIngresar.

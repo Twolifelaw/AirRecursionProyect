@@ -1,6 +1,5 @@
 package Cliente.controlador;
 
-import Cliente.modelo.objetos.Cliente;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
@@ -70,8 +69,6 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private Button btn_salir;
-
-
 
 
     @FXML
@@ -146,7 +143,6 @@ public class VentanaInicioController implements Initializable {
     }
 
 
-
     @FXML
     void OnNacionales(ActionEvent event) {
 
@@ -199,29 +195,17 @@ public class VentanaInicioController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
-
     @FXML
     void anchorDesaparecer(ActionEvent event) {
         anc_bienvenida.setVisible(false);
-
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        RotateTransition rotate = new RotateTransition();
-        rotate.setNode(avion_1);
-        rotate.setDuration(Duration.millis(1700));
-        rotate.setCycleCount(TranslateTransition.INDEFINITE);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Y_AXIS);
-        rotate.play();
-        girarAvion2();
-        //Aqui acaba el codigo de la animaciond e la primera imagen
+        animacionElementos();
     }
 
-    public void girarAvion2() {
+    public void animacionElementos() {
         VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
         VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
         VentanaUtilidades.agregarAnimacionBoton(btn_ofertas);
@@ -231,7 +215,16 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.agregarAnimacionBoton(btn_chat);
         VentanaUtilidades.agregarAnimacionBoton(btn_salir);
         VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
+        //Avion 1
         RotateTransition rotate = new RotateTransition();
+        rotate.setNode(avion_1);
+        rotate.setDuration(Duration.millis(1700));
+        rotate.setCycleCount(TranslateTransition.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setByAngle(360);
+        rotate.setAxis(Rotate.Y_AXIS);
+        rotate.play();
+        //Avion 2
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));
         rotate.setCycleCount(TranslateTransition.INDEFINITE);

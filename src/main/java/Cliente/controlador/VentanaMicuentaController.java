@@ -122,10 +122,10 @@ public class VentanaMicuentaController implements Initializable {
         VentanaUtilidades.agregarAnimacionBoton(btn_atras);
         actualizarCamposTexto();
         inicializarEnterKey();
-        VentanaRegistroController.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
-        VentanaRegistroController.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
-        VentanaRegistroController.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
-        VentanaRegistroController.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Direccion");
-        VentanaRegistroController.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Direccion");
+        VentanaUtilidades.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
     }
 }

@@ -1,6 +1,5 @@
 package Cliente.controlador;
 
-import Cliente.modelo.objetos.Cliente;
 import Cliente.modelo.objetos.Destino;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,10 +20,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
 import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
 
 
@@ -56,7 +53,7 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     private TableColumn<Destino, String> columnImagen;
     @FXML
-    private TableColumn<Destino, String > columnID;
+    private TableColumn<Destino, String> columnID;
 
 
     @FXML
@@ -87,12 +84,11 @@ public class VentanacreacionDestinos implements Initializable {
     private TextField txtCupos;
 
 
-
     @FXML
     void seleccionar(MouseEvent event) {
-        Destino d = (Destino) this.tblDestinos.getSelectionModel().getSelectedItem();
+        Destino d = this.tblDestinos.getSelectionModel().getSelectedItem();
 
-        if(d!=null){
+        if (d != null) {
             this.txtPais.setText(d.getPais());
             this.txtCiudad.setText(d.getCiudad());
             this.txtClima.setText(d.getClima());
@@ -107,11 +103,12 @@ public class VentanacreacionDestinos implements Initializable {
 
 
     }
+
     @FXML
     void actionbtnAgregar(ActionEvent event) {
         ArrayList<Destino> destinosNuevos = deserializarDestino("destinos.dat");
         destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), txtDescripcion.getText(),
-                imagePath, txtClima.getText(),txtPrecio.getText(),txtID.getText(),Integer.parseInt(txtCupos.getText())));
+                imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText())));
 
         serializarDestino("destinos.dat", destinosNuevos);
     }
@@ -119,17 +116,17 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     void actionbtnEditar(ActionEvent event) {
 
-        Destino D = (Destino) this.tblDestinos.getSelectionModel().getSelectedItem();
+        Destino D = this.tblDestinos.getSelectionModel().getSelectedItem();
 
 
-        if(D==null){
+        if (D == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
             alert.setContentText("Debes seleccionar un Destino");
             alert.showAndWait();
-        }else {
-            editarDestino("destinos.dat",D.getId());
+        } else {
+            editarDestino("destinos.dat", D.getId());
 
             D.setPais(txtPais.getText());
             D.setCiudad(txtCiudad.getText());
@@ -146,12 +143,12 @@ public class VentanacreacionDestinos implements Initializable {
 
     }
 
-    public  void editarDestino(String nombreArchivo , String id) {
+    public void editarDestino(String nombreArchivo, String id) {
         ArrayList<Destino> listaObjetos = deserializarObjetos(nombreArchivo);
 
         if (listaObjetos != null) {
             for (Destino objeto : listaObjetos) {
-                if (objeto.getId().equals(id)){
+                if (objeto.getId().equals(id)) {
                     objeto.setPais(txtPais.getText());
                     objeto.setCiudad(txtCiudad.getText());
                     objeto.setClima(txtClima.getText());
@@ -165,22 +162,22 @@ public class VentanacreacionDestinos implements Initializable {
 
                 }
             }
-            serializarDestino("destinos.dat",listaObjetos);
+            serializarDestino("destinos.dat", listaObjetos);
         }
 
     }
 
     @FXML
     void actionbtnEliminar(ActionEvent event) {
-        Destino D = (Destino) this.tblDestinos.getSelectionModel().getSelectedItem();
-        if(D == null){
+        Destino D = this.tblDestinos.getSelectionModel().getSelectedItem();
+        if (D == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
             alert.setContentText("Debes seleccionar un Destino");
             alert.showAndWait();
-        }else {
-            eliminarDestino("destinos.dat",D.getId());
+        } else {
+            eliminarDestino("destinos.dat", D.getId());
 
         }
 
@@ -197,7 +194,7 @@ public class VentanacreacionDestinos implements Initializable {
             try {
 
                 // Obtener la ruta relativa del archivo con respecto al directorio de trabajo actual
-                imagePath = "file:"+selectedFile.getAbsolutePath();
+                imagePath = "file:" + selectedFile.getAbsolutePath();
 
                 // Imprimir la ruta relativa (puedes guardarla en una variable, base de datos, etc.)
                 System.out.println("Ruta relativa del archivo: " + imagePath);
@@ -208,10 +205,8 @@ public class VentanacreacionDestinos implements Initializable {
                 Files.copy(selectedFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
 
 
-
-
                 // Cargar la imagen desde la ubicación dentro del proyecto
-                Image image = new Image("file:" +selectedFile.getAbsolutePath());
+                Image image = new Image("file:" + selectedFile.getAbsolutePath());
 
                 imvImagenDestino.setImage(image);
             } catch (IOException e) {

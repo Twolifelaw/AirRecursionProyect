@@ -67,6 +67,7 @@ public class VentanaRegistroController implements Initializable {
     @FXML
     private VBox vText;
 
+
     /**
      * Boton que se encarga de toda la parte de registro del cliente.
      *
@@ -141,44 +142,16 @@ public class VentanaRegistroController implements Initializable {
         }
     }
 
-    /**
-     * Se encarga de decirme en que Texfield y mostrarme con el mouse enque campoo estoy de igual forma.
-     *
-     * @param campo
-     * @param label
-     * @param mensaje
-     */
-    public static void agregarEventoYMostrarStatus(TextField campo, Label label, String mensaje) {
-        campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
-        campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                mostrarStatus(label, mensaje);
-            }
-        });
-    }
-
-    /**
-     * Metodo que se encarga de mostrae el mensaje del lbl en la parte superior.
-     *
-     * @param label
-     * @param mensaje
-     */
-    public static void mostrarStatus(Label label, String mensaje) {
-        // Lógica para mostrar el mensaje en el lugar que desees (por ejemplo, lblStatus)
-        label.setText(mensaje);
-    }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         VentanaUtilidades.agregarAnimacionBoton(btn_registrar);
         VentanaUtilidades.agregarAnimacionBoton(btn_atras);
         inicializarEnterKey();
-        agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
-        agregarEventoYMostrarStatus(txt_id, lblStatus, "Identificacion");
-        agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
-        agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
-        agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Dirección");
-        agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_id, lblStatus, "Identificacion");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Dirección");
+        VentanaUtilidades.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
     }
 }
