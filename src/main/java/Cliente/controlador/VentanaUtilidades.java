@@ -3,18 +3,22 @@ package Cliente.controlador;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
 import javafx.animation.KeyFrame;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static Cliente.modelo.Serializacion.GestionAdministradores.serializarAdinistrador;
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
@@ -100,6 +104,21 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         }
         return false; // No se encontró el objeto con el nombre deseado
     }
+
+    public static void agregarAnimacionBoton(Button boton) {
+        ScaleTransition escalaEntrada = new ScaleTransition(Duration.millis(200), boton);
+        escalaEntrada.setToX(1.1);
+        escalaEntrada.setToY(1.1);
+
+        ScaleTransition escalaSalida = new ScaleTransition(Duration.millis(200), boton);
+        escalaSalida.setToX(1);
+        escalaSalida.setToY(1);
+
+        boton.setOnMouseEntered(event -> escalaEntrada.play());
+        boton.setOnMouseExited(event -> escalaSalida.play());
+    }
+
+
 
 
 }

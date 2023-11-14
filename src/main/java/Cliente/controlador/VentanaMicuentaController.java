@@ -9,9 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,17 +22,22 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
-
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
 
 public class VentanaMicuentaController implements Initializable {
 
     @FXML
     private Label lblMensaje;
 
+    @FXML
+    private Label lblStatus;
 
+    @FXML
+    private Button btn_atras;
 
+    @FXML
+    private Button btn_guardar;
 
     @FXML
     private PasswordField psw_contrasena;
@@ -49,25 +56,6 @@ public class VentanaMicuentaController implements Initializable {
 
 
     private Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
-    ;
-
-    // Otros métodos...
-
-
-    /*public static Cliente buscarMiCuenta(String nombreArchivo, String id) {
-        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
-
-        if (listaObjetos != null) {
-            for (Cliente objeto : listaObjetos) {
-                if (objeto.getCedula().equalsIgnoreCase(id)) {
-                    return objeto; // Se encontró el objeto con el id deseado.
-                }
-            }
-        }
-        return null; // No se encontró el objeto con el nombre deseado
-    }
-
-     */
 
     @FXML
     void actionAtras(ActionEvent event) throws IOException {
@@ -80,37 +68,11 @@ public class VentanaMicuentaController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
-    //@FXML
-    /*void buscarCliente(ActionEvent event) {
-        String id = txt_id.getText();
-        boolean usuarioEncontrado = false;
-        Cliente clienteBuscar = buscarMiCuenta("clientes.se",id);
-        System.out.println("Cliente encontrado");
-
-        if (clienteBuscar!=null){
-            String nombre = clienteBuscar.getNombre();
-            String correo = clienteBuscar.getCorreo();
-            String telefono = clienteBuscar.getTelefono();
-            String direccion = clienteBuscar.getDireccionResidencia();
-            String contrasena = clienteBuscar.getContrasena();
-            txt_nombre.setText(nombre);
-            txt_correo.setText(correo);
-            txt_numero_telefonico.setText(telefono);
-            txt_direccion.setText(direccion);
-            psw_contrasena.setText(contrasena);
-            usuarioEncontrado =true;
-        }
-
-    }
-
-     */
-
-
     @FXML
-    void cambiarDatos(ActionEvent event) {
+    public void cambiarDatos(ActionEvent event) {
         ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
 
-        if(listaClientes != null) {
+        if (listaClientes != null) {
             for (Cliente cliente : listaClientes) {
                 if (cliente.getCedula().equals(clienteAutenticado.getCedula())) {
                     cliente.setNombre(txt_nombre.getText());
@@ -118,30 +80,52 @@ public class VentanaMicuentaController implements Initializable {
                     cliente.setTelefono(txt_numero_telefonico.getText());
                     cliente.setDireccionResidencia(txt_direccion.getText());
                     cliente.setContrasena(psw_contrasena.getText());
+                    lblMensaje.setText("se actualizo sus datos correctamente!");
+                    clienteAutenticado = cliente;
                     break;
                 }
-
             }
             serializarObjetos("clientes.se", listaClientes);
-
+            actualizarCamposTexto();
         }
-
 
     }
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
-
-        // Llenar los campos con la información del cliente
-        if ( clienteAutenticado!= null) {
+    /**
+     * Metodo que pense que servia para actualizar los textField pero no.
+     */
+    public void actualizarCamposTexto() {
+        // Actualiza los campos de texto solo si el clienteAutenticado no es null
+        if (clienteAutenticado != null) {
             txt_nombre.setText(clienteAutenticado.getNombre());
             txt_correo.setText(clienteAutenticado.getCorreo());
             txt_numero_telefonico.setText(clienteAutenticado.getTelefono());
             txt_direccion.setText(clienteAutenticado.getDireccionResidencia());
             psw_contrasena.setText(clienteAutenticado.getContrasena());
         }
+    }
+
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txt_nombre, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btn_guardar.fire();
+                }
+            });
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        VentanaUtilidades.agregarAnimacionBoton(btn_guardar);
+        VentanaUtilidades.agregarAnimacionBoton(btn_atras);
+        actualizarCamposTexto();
+        inicializarEnterKey();
+        VentanaRegistroController.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
+        VentanaRegistroController.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
+        VentanaRegistroController.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
+        VentanaRegistroController.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Direccion");
+        VentanaRegistroController.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
     }
 }

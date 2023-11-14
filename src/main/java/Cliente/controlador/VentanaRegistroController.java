@@ -148,7 +148,7 @@ public class VentanaRegistroController implements Initializable {
      * @param label
      * @param mensaje
      */
-    private void agregarEventoYMostrarStatus(TextField campo, Label label, String mensaje) {
+    public static void agregarEventoYMostrarStatus(TextField campo, Label label, String mensaje) {
         campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
         campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
@@ -163,7 +163,7 @@ public class VentanaRegistroController implements Initializable {
      * @param label
      * @param mensaje
      */
-    private void mostrarStatus(Label label, String mensaje) {
+    public static void mostrarStatus(Label label, String mensaje) {
         // Lógica para mostrar el mensaje en el lugar que desees (por ejemplo, lblStatus)
         label.setText(mensaje);
     }
@@ -171,6 +171,8 @@ public class VentanaRegistroController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        VentanaUtilidades.agregarAnimacionBoton(btn_registrar);
+        VentanaUtilidades.agregarAnimacionBoton(btn_atras);
         inicializarEnterKey();
         agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
         agregarEventoYMostrarStatus(txt_id, lblStatus, "Identificacion");

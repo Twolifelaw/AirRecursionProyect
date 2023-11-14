@@ -30,6 +30,9 @@ public class VentanaInicioController implements Initializable {
     private AnchorPane anc_bienvenida;
 
     @FXML
+    private Button btnAyuda;
+
+    @FXML
     private AnchorPane anc_botones;
 
     @FXML
@@ -74,11 +77,20 @@ public class VentanaInicioController implements Initializable {
     @FXML
     void OnMiCuenta(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml"));
+        Parent root = loader.load();
+
+        // Obtén el controlador de la ventana Mi Cuenta
+        VentanaMicuentaController miCuentaController = loader.getController();
+
+        // Llama al método para actualizar los campos de texto
+        miCuentaController.actualizarCamposTexto();
+
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
-        // en esta linea , esconde el stage del login y carga el nuecvo stage
+
+        // en esta línea, esconde el stage del login y carga el nuevo stage
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }
@@ -210,6 +222,15 @@ public class VentanaInicioController implements Initializable {
     }
 
     public void girarAvion2() {
+        VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btn_ofertas);
+        VentanaUtilidades.agregarAnimacionBoton(btn_cuenta);
+        VentanaUtilidades.agregarAnimacionBoton(btn_mapa);
+        VentanaUtilidades.agregarAnimacionBoton(btn_paquete);
+        VentanaUtilidades.agregarAnimacionBoton(btn_chat);
+        VentanaUtilidades.agregarAnimacionBoton(btn_salir);
+        VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
         RotateTransition rotate = new RotateTransition();
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));
