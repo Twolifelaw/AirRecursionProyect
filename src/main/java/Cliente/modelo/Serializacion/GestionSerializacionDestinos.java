@@ -81,7 +81,7 @@ public class GestionSerializacionDestinos {
      * Este método elimina un destino del archivo basado en el nombre del país.
      *
      * @param nombreArchivo
-     * @param pais          El nombre del país del destino a eliminar
+     * @param id          El nombre del país del destino a eliminar
      */
     public static void eliminarDestino(String nombreArchivo, String id) {
         ArrayList<Destino> destinos = deserializarObjetos(nombreArchivo);

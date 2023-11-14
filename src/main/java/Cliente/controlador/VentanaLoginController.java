@@ -1,5 +1,7 @@
 package Cliente.controlador;
 
+import Cliente.modelo.Serializacion.GestionSerializacioClientes;
+import Cliente.modelo.Serializacion.SesionCliente;
 import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
@@ -118,6 +120,8 @@ public class VentanaLoginController implements Initializable {
                 //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
                 if (clienteBuscar != null) {
+                    Cliente clienteaut = clienteBuscar;
+                    SesionCliente.setClienteAutenticado(clienteBuscar);
                     VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
                     Stage stage = new Stage();
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));

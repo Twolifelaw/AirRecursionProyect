@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.modelo.objetos.Cliente;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
@@ -68,6 +69,20 @@ public class VentanaInicioController implements Initializable {
     private Button btn_salir;
 
 
+
+
+    @FXML
+    void OnMiCuenta(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta linea , esconde el stage del login y carga el nuecvo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+
+    }
+
     @FXML
     void OnAyuda(ActionEvent event) {
     }
@@ -118,10 +133,7 @@ public class VentanaInicioController implements Initializable {
 
     }
 
-    @FXML
-    void OnMiCuenta(ActionEvent event) {
 
-    }
 
     @FXML
     void OnNacionales(ActionEvent event) {

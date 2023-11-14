@@ -5,29 +5,88 @@ Correo Usuario: camilo@gmail.com
 Número telefonico Usuario: 30029785757
 Dirección Usuario: crr23 #7 -11
 
+Identificación Usuario: 1234567899
+Nombre Usuario: Brandon
+Contaseña Usuario: 1234
+Correo Usuario: elBrandonxd
+Número telefonico Usuario: 1234334332
+Dirección Usuario: ccrrana
 
-
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
+Identificación Usuario: 
+Nombre Usuario: 
+Contaseña Usuario: 
+Correo Usuario: 
+Número telefonico Usuario: 
+Dirección Usuario: 
 Identificación Usuario: 1001277430
 Nombre Usuario: Brandon
 Contaseña Usuario: 123
 Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
 Número telefonico Usuario: 3153033412
-Dirección Usuario: manzana21
-Identificación Usuario: 29911
+Dirección Usuario: mansa11
+Identificación Usuario: 123
 Nombre Usuario: Brandon
 Contaseña Usuario: 123
-<<<<<<< HEAD
-Correo Usuario: ban
-Número telefonico Usuario: 31112
-Dirección Usuario: 1231
-=======
 Correo Usuario: brandone.acevedoc@uqvirtual.edu.co
 Número telefonico Usuario: 3153033412
 Dirección Usuario: manzana12
-Identificación Usuario: 1004779025
-Nombre Usuario: Camilo
+Identificación Usuario: 0000
+Nombre Usuario: juan1
 Contaseña Usuario: 1234
-Correo Usuario: camilojc@gmail.com
-Número telefonico Usuario: 3157455678
-Dirección Usuario: crr23#7-15
->>>>>>> main
+Correo Usuario: juan@f.co
+Número telefonico Usuario: 3256
+Dirección Usuario: aja
