@@ -1,5 +1,5 @@
 #ventanaLogin{
-    -fx-background-image: url("20.jpg");
+    -fx-background-image: url("0.jpg");
     -fx-background-size: cover;
 }
 
@@ -14,7 +14,7 @@
 }
 
 #anc_miCuenta{
-    -fx-background-image: url("3.jpg");
+    -fx-background-image: url("5.jpg");
     -fx-background-size: cover;
 
 }
