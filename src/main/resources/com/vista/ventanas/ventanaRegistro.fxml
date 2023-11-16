@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" style="-fx-background-color: #212121;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaRegistroController">
+<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" style="-fx-background-color: #212121;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaRegistroController">
    <children>
       <AnchorPane layoutX="178.0" layoutY="101.0" opacity="0.87" prefHeight="307.0" prefWidth="275.0" style="-fx-background-color: #0B1525; -fx-background-radius: 15;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="101.0">
          <children>

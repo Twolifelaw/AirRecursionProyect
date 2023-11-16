@@ -47,6 +47,9 @@ public class VentanaInicioController implements Initializable {
     private ImageView avion_2;
 
     @FXML
+    private ImageView img_usuario;
+
+    @FXML
     private Button btn_chat;
 
     @FXML
@@ -142,7 +145,6 @@ public class VentanaInicioController implements Initializable {
 
     }
 
-
     @FXML
     void OnNacionales(ActionEvent event) {
 
@@ -215,24 +217,8 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.agregarAnimacionBoton(btn_chat);
         VentanaUtilidades.agregarAnimacionBoton(btn_salir);
         VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
-        //Avion 1
-        RotateTransition rotate = new RotateTransition();
-        rotate.setNode(avion_1);
-        rotate.setDuration(Duration.millis(1700));
-        rotate.setCycleCount(TranslateTransition.INDEFINITE);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Y_AXIS);
-        rotate.play();
-        //Avion 2
-        rotate.setNode(avion_2);
-        rotate.setDuration(Duration.millis(1700));
-        rotate.setCycleCount(TranslateTransition.INDEFINITE);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Y_AXIS);
-        rotate.play();
+        VentanaUtilidades.girarImagen(avion_1);
+        VentanaUtilidades.girarImagen(avion_2);
+        VentanaUtilidades.girarImagen(img_usuario);
     }
-
-
 }

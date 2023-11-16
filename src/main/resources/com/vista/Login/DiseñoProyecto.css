@@ -1,25 +1,25 @@
-#ventanaLogin{
+#ventanaLogin {
     -fx-background-image: url("0.jpg");
     -fx-background-size: cover;
 }
 
-#ventanaRegistro{
--fx-background-image: url("6.jpg");
--fx-background-size: cover;
+#ventanaRegistro {
+    -fx-background-image: url("6.jpg");
+    -fx-background-size: cover;
 }
 
-#anc_inicio{
+#anc_inicio {
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
 }
 
-#anc_miCuenta{
+#anc_miCuenta {
     -fx-background-image: url("5.jpg");
     -fx-background-size: cover;
 
 }
 
-#anc_recuperacion{
+#anc_recuperacion {
     -fx-background-image: url("2.jpg");
     -fx-background-size: cover;
 }
@@ -29,6 +29,24 @@
     -fx-background-radius: 15; /* Radio de las esquinas del fondo */
     -fx-text-fill: #000000;
 }
+
+#ventanaAdministrador {
+    -fx-background-image: url("3.jpg");
+    -fx-background-size: cover;
+}
+
+#tblDestinos {
+    -fx-background-color: #593f70;
+}
+
+#tblDestinos .table-cell {
+    -fx-text-fill: #ffffff;
+}
+
+#tblDestinos .table-row-cell {
+    -fx-background-color: #2e2559;
+}
+
 
 
 

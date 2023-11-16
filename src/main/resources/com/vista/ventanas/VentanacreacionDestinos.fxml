@@ -7,36 +7,73 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneRpincipal" prefHeight="550.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanacreacionDestinos">
+<AnchorPane fx:id="anchorPaneRpincipal" prefHeight="537.0" prefWidth="1150.0" style="-fx-background-color: #0A1425;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanacreacionDestinos">
    <children>
-      <TableView fx:id="tblDestinos" layoutX="14.0" layoutY="40.0" onMouseClicked="#seleccionar" prefHeight="471.0" prefWidth="671.0">
-        <columns>
-          <TableColumn fx:id="columnPais" prefWidth="113.99999523162842" text="Pais" />
-          <TableColumn fx:id="ColumnCiudad" prefWidth="109.33331298828125" text="Ciudad" />
-            <TableColumn fx:id="columnImagen" prefWidth="107.99998474121094" text="Imagen" />
-            <TableColumn fx:id="columnClima" minWidth="8.0" prefWidth="128.0" text="Clima" />
-            <TableColumn fx:id="columnPrecio" prefWidth="117.33331298828125" text="Precio" />
-            <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="columnCupos" prefWidth="75.0" text="Cupos" />
-        </columns>
-      </TableView>
-      <AnchorPane layoutX="707.0" layoutY="24.0" prefHeight="504.0" prefWidth="397.0">
+      <AnchorPane layoutX="736.0" layoutY="4.0" prefHeight="529.0" prefWidth="409.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6c1d9" height="199.0" layoutX="13.0" layoutY="241.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
-            <TextField fx:id="txtPais" layoutX="7.0" layoutY="36.0" promptText="Pais" />
-            <TextField fx:id="txtCiudad" layoutX="7.0" layoutY="74.0" promptText="Ciudad" />
-            <TextArea fx:id="txtDescripcion" layoutX="9.0" layoutY="149.0" prefHeight="73.0" prefWidth="375.0" promptText="Descripción" />
-            <TextField fx:id="txtClima" layoutX="7.0" layoutY="111.0" promptText="Clima" />
-            <Button fx:id="btnAgregar" layoutX="191.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnAgregar" prefHeight="25.0" prefWidth="65.0" text="Agregar" />
-            <Button fx:id="btnEditar" layoutX="102.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEditar" prefHeight="25.0" prefWidth="74.0" text="Editar" />
-            <Button fx:id="btnEliminar" layoutX="20.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEliminar" text="Eliminar" />
-            <ImageView fx:id="imvImagenDestino" fitHeight="185.0" fitWidth="230.0" layoutX="20.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="btnAgregarImg" layoutX="280.0" layoutY="392.0" mnemonicParsing="false" onAction="#actionbtnAgregarImagen" text="Agregar Imagen" />
-            <TextField fx:id="txtPrecio" layoutX="194.0" layoutY="36.0" promptText="Precio" />
-            <TextField fx:id="txtID" layoutX="194.0" layoutY="74.0" promptText="ID" />
-            <TextField fx:id="txtCupos" layoutX="194.0" layoutY="111.0" promptText="Cupos" />
+            <TextField fx:id="txtPais" alignment="CENTER" layoutX="18.0" layoutY="7.0" prefHeight="26.0" prefWidth="185.0" promptText="Pais" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtCiudad" alignment="CENTER" layoutX="18.0" layoutY="41.0" prefHeight="26.0" prefWidth="185.0" promptText="Ciudad" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <TextArea fx:id="txtDescripcion" layoutX="18.0" layoutY="112.0" prefHeight="73.0" prefWidth="372.0" promptText="Descripción" style="-fx-border-color: #2E2559;" />
+            <TextField fx:id="txtClima" alignment="CENTER" layoutX="18.0" layoutY="78.0" prefHeight="26.0" prefWidth="185.0" promptText="Clima" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <Button fx:id="btnAgregar" layoutX="186.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnAgregar" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Agregar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnEditar" layoutX="102.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEditar" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Editar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnEliminar" layoutX="17.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnEliminar" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnAgregarImg" layoutX="259.0" layoutY="459.0" mnemonicParsing="false" onAction="#actionbtnAgregarImagen" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Agregar Imagen" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <TextField fx:id="txtPrecio" alignment="CENTER" layoutX="210.0" layoutY="7.0" prefHeight="26.0" prefWidth="179.0" promptText="Precio" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtID" alignment="CENTER" layoutX="210.0" layoutY="41.0" prefHeight="26.0" prefWidth="179.0" promptText="ID" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <TextField fx:id="txtCupos" alignment="CENTER" layoutX="210.0" layoutY="78.0" prefHeight="26.0" prefWidth="179.0" promptText="Cupos" style="-fx-background-radius: 15;">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></TextField>
+            <AnchorPane layoutX="19.0" layoutY="189.0" opacity="0.87" prefHeight="264.0" prefWidth="362.0" style="-fx-background-color: #2E2559;">
+               <children>
+                  <ImageView fx:id="imvImagenDestino" fitHeight="264.0" fitWidth="372.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 15;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="7.0" layoutY="14.0" prefHeight="511.0" prefWidth="730.0">
+         <children>
+            <TableView fx:id="tblDestinos" layoutX="7.0" layoutY="6.0" onMouseClicked="#seleccionar" prefHeight="496.0" prefWidth="720.0" stylesheets="@../Login/DiseñoProyecto.css">
+               <columns>
+                  <TableColumn fx:id="columnPais" prefWidth="113.99999523162842" text="Pais" />
+                  <TableColumn fx:id="ColumnCiudad" prefWidth="109.33331298828125" text="Ciudad" />
+                  <TableColumn fx:id="columnImagen" prefWidth="107.99998474121094" text="Imagen" />
+                  <TableColumn fx:id="columnClima" minWidth="8.0" prefWidth="128.0" text="Clima" />
+                  <TableColumn fx:id="columnPrecio" prefWidth="117.33331298828125" text="Precio" />
+                  <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="columnCupos" prefWidth="75.0" text="Cupos" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

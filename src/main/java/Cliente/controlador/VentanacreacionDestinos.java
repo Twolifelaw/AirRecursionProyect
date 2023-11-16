@@ -55,6 +55,8 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     private TableColumn<Destino, String> columnID;
 
+    @FXML
+    private Button btnAgregarImg;
 
     @FXML
     private TableColumn<Destino, String> columnPais;
@@ -217,6 +219,10 @@ public class VentanacreacionDestinos implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        VentanaUtilidades.agregarAnimacionBoton(btnAgregar);
+        VentanaUtilidades.agregarAnimacionBoton(btnEditar);
+        VentanaUtilidades.agregarAnimacionBoton(btnEliminar);
+        VentanaUtilidades.agregarAnimacionBoton(btnAgregarImg);
 
         columnPais.setCellValueFactory(new PropertyValueFactory<>("pais"));
         ColumnCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
