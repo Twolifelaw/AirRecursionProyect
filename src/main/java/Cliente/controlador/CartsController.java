@@ -1,6 +1,5 @@
 package Cliente.controlador;
 
-import Cliente.modelo.objetos.Destino;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class CartsController {
 

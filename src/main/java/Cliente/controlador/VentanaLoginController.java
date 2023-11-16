@@ -5,6 +5,7 @@ import Cliente.modelo.Serializacion.SesionCliente;
 import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -121,10 +123,9 @@ public class VentanaLoginController implements Initializable {
 
                 if (clienteBuscar != null) {
                     Cliente clienteaut = clienteBuscar;
-                    SesionCliente.setClienteAutenticado(clienteBuscar);
-                    VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
+                    SesionCliente.setClienteAutenticado(clienteaut);
                     Stage stage = new Stage();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml"));
                     Scene escena = new Scene(root);
                     stage.setScene(escena);
                     stage.show();
@@ -210,9 +211,14 @@ public class VentanaLoginController implements Initializable {
     }
 
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        inicializarEnterKey();//Se llama al metodo de btnIngresar.
-
+        // Se llama al metodo de btnIngresar.
+        inicializarEnterKey();
+        VentanaUtilidades.agregarAnimacionBoton(btnIngresar);
+        VentanaUtilidades.agregarAnimacionBoton(btnRecuperar);
+        VentanaUtilidades.agregarAnimacionBoton(btnRegistrar);
     }
 }

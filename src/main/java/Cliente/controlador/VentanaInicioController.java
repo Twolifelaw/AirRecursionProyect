@@ -1,6 +1,5 @@
 package Cliente.controlador;
 
-import Cliente.modelo.objetos.Cliente;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
@@ -28,6 +27,9 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private AnchorPane anc_bienvenida;
+
+    @FXML
+    private Button btnAyuda;
 
     @FXML
     private AnchorPane anc_botones;
@@ -69,16 +71,23 @@ public class VentanaInicioController implements Initializable {
     private Button btn_salir;
 
 
-
-
     @FXML
     void OnMiCuenta(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml")));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml"));
+        Parent root = loader.load();
+
+        // Obtén el controlador de la ventana Mi Cuenta
+        VentanaMicuentaController miCuentaController = loader.getController();
+
+        // Llama al método para actualizar los campos de texto
+        miCuentaController.actualizarCamposTexto();
+
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
-        // en esta linea , esconde el stage del login y carga el nuecvo stage
+
+        // en esta línea, esconde el stage del login y carga el nuevo stage
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }
@@ -134,7 +143,6 @@ public class VentanaInicioController implements Initializable {
     }
 
 
-
     @FXML
     void OnNacionales(ActionEvent event) {
 
@@ -187,16 +195,27 @@ public class VentanaInicioController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
-
     @FXML
     void anchorDesaparecer(ActionEvent event) {
         anc_bienvenida.setVisible(false);
-
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        animacionElementos();
+    }
+
+    public void animacionElementos() {
+        VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btn_ofertas);
+        VentanaUtilidades.agregarAnimacionBoton(btn_cuenta);
+        VentanaUtilidades.agregarAnimacionBoton(btn_mapa);
+        VentanaUtilidades.agregarAnimacionBoton(btn_paquete);
+        VentanaUtilidades.agregarAnimacionBoton(btn_chat);
+        VentanaUtilidades.agregarAnimacionBoton(btn_salir);
+        VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
+        //Avion 1
         RotateTransition rotate = new RotateTransition();
         rotate.setNode(avion_1);
         rotate.setDuration(Duration.millis(1700));
@@ -205,12 +224,7 @@ public class VentanaInicioController implements Initializable {
         rotate.setByAngle(360);
         rotate.setAxis(Rotate.Y_AXIS);
         rotate.play();
-        girarAvion2();
-        //Aqui acaba el codigo de la animaciond e la primera imagen
-    }
-
-    public void girarAvion2() {
-        RotateTransition rotate = new RotateTransition();
+        //Avion 2
         rotate.setNode(avion_2);
         rotate.setDuration(Duration.millis(1700));
         rotate.setCycleCount(TranslateTransition.INDEFINITE);

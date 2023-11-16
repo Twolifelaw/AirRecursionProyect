@@ -8,11 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
+
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserializarDestino;
 
 public class VentanaCompraDestinosController implements Initializable {
 
@@ -44,14 +44,13 @@ public class VentanaCompraDestinosController implements Initializable {
     void aactionBtnReserva(ActionEvent event) {
 
 
-
     }
 
     @FXML
     void actionBtnComprear(ActionEvent event) {
         String aux = "Pais: ";
-        for (Destino destino:deserializarDestino("destinos.dat")){
-            if(aux.concat(destino.getPais()).equals(lblPais.getText())){
+        for (Destino destino : deserializarDestino("destinos.dat")) {
+            if (aux.concat(destino.getPais()).equals(lblPais.getText())) {
 
                 System.out.println("si");
             }
@@ -75,27 +74,22 @@ public class VentanaCompraDestinosController implements Initializable {
     }
 
 
-
     public Label getLblClima() {
         return lblClima;
     }
-
 
 
     public Label getLblPais() {
         return lblPais;
     }
 
-    public Label getLblPrecio(){
+    public Label getLblPrecio() {
         return lblPrecio;
     }
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
 
 
     }

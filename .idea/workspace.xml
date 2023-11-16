@@ -4,18 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se implemento un método para agregar las imagenes a los destinos.">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_23,_9_09_p_ m__[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_23__9_09_p__m___Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRecuperacionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_11_23__8_18_p__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_11_23__8_19_p__m___Changes_.xml" beforeDir="false" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsPaquetesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionPaquetes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/destino 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/destino 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/destino2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/CartsPaquetes.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaPaquetes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCompraDestinosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCompraDestinosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaMicuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaMicuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRecuperacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRecuperacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacioClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacioClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +66,6 @@
     <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
     </layout>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -78,7 +97,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.gitlab.GitLabSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -90,11 +109,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\ventanas" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/ventanas" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Cliente.modelo" />
@@ -109,7 +128,7 @@
       <module name="AirRecursionProyect" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Cliente.modelo.objetos.*" />
+          <option name="PATTERN" value="Cliente.modelo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +137,7 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/corretto-17.0.8.1" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Cliente.modelo.Main" />
       <module name="AirRecursionProyect" />
@@ -146,6 +165,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.mainServer" />
+        <item itemvalue="Application.GestionClientes" />
         <item itemvalue="Application.mainServer" />
         <item itemvalue="Application.GestionClientes" />
       </list>
@@ -177,6 +198,10 @@
       <workItem from="1699314306337" duration="2429000" />
       <workItem from="1699317377240" duration="2169000" />
       <workItem from="1699371174656" duration="357000" />
+      <workItem from="1699455920987" duration="1308000" />
+      <workItem from="1699706731691" duration="2886000" />
+      <workItem from="1699709643738" duration="6557000" />
+      <workItem from="1699888108261" duration="1647000" />
     </task>
     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
       <created>1698968242258</created>
@@ -206,21 +231,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699241769968</updated>
     </task>
-    <task id="LOCAL-00005" summary="se diseñó la ventanaAdministrador.fxml y se creo la VentanacreacionDestinos para el CRUD de los destinos">
-      <created>1699506272834</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1699506272834</updated>
-    </task>
-    <task id="LOCAL-00006" summary="se implemento la logica para crear nuevos destinos por parte del administrador ademas de mostrar la informacion de los destinos en una tabla">
-      <created>1699674916437</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1699674916439</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,10 +265,7 @@
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
-    <MESSAGE value="se diseñó la ventanaAdministrador.fxml y se creo la VentanacreacionDestinos para el CRUD de los destinos" />
-    <MESSAGE value="se implemento la logica para crear nuevos destinos por parte del administrador ademas de mostrar la informacion de los destinos en una tabla" />
-    <MESSAGE value="se implemento un método para agregar las imagenes a los destinos." />
-    <option name="LAST_COMMIT_MESSAGE" value="se implemento un método para agregar las imagenes a los destinos." />
+    <option name="LAST_COMMIT_MESSAGE" value="se gurada workspace.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,5 @@
 #ventanaLogin{
-    -fx-background-image: url("5.jpg");
+    -fx-background-image: url("0.jpg");
     -fx-background-size: cover;
 }
 
@@ -9,20 +9,28 @@
 }
 
 #anc_inicio{
-    -fx-background-image: url("6.jpg");
+    -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
 }
 
 #anc_miCuenta{
-    -fx-background-image: url("6.jpg");
+    -fx-background-image: url("5.jpg");
     -fx-background-size: cover;
 
 }
 
 #anc_recuperacion{
-    -fx-background-image: url("6.jpg");
+    -fx-background-image: url("2.jpg");
     -fx-background-size: cover;
 }
+
+.text-field:focused {
+    -fx-background-color: #7d5dab; /* Color de fondo cuando está enfocado */
+    -fx-background-radius: 15; /* Radio de las esquinas del fondo */
+    -fx-text-fill: #000000;
+}
+
+
 
 
 

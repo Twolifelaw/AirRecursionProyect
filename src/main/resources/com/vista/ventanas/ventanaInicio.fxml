@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
+<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
       <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
          <children>
@@ -41,7 +41,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button layoutX="23.0" layoutY="357.0" mnemonicParsing="false" onAction="#OnAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
+                  <Button fx:id="btnAyuda" layoutX="23.0" layoutY="357.0" mnemonicParsing="false" onAction="#OnAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -51,7 +51,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="103.0" fitWidth="100.0" layoutX="39.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Login/10.png" />
                </image>
@@ -97,17 +97,17 @@
                      <children>
                         <ImageView fitHeight="392.0" fitWidth="347.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../Login/7.jpg" />
+                              <Image url="@../Imagenes/destino%201.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="389.0" fitWidth="330.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../Login/6.jpg" />
+                              <Image url="@../Imagenes/destino2.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="394.0" fitWidth="330.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../Login/8.jpg" />
+                              <Image url="@../Imagenes/destino%203.jpg" />
                            </image>
                         </ImageView>
                      </children>

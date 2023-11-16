@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 public class VentanaCartsController implements Initializable {
 
     // Cargar los destinos desde el archivo
-   public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
 
     private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private final int maxColumns = 3; // Número máximo de columnas
@@ -70,11 +70,11 @@ public class VentanaCartsController implements Initializable {
                 Label lblClima = (Label) nuevoAnchorPane.lookup("#lblClima");
                 lblClima.setText("Clima: " + destino.getClima());
 
-                Label lblDescipcion = (Label)nuevoAnchorPane.lookup("#lblDescipcion") ;
+                Label lblDescipcion = (Label) nuevoAnchorPane.lookup("#lblDescipcion");
                 lblDescipcion.setText(destino.getDescripcion());
 
-                Label lblPrecio = (Label)nuevoAnchorPane.lookup("#lblPrecio");
-                lblPrecio.setText("Precio: "+destino.getPrecio());
+                Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblPrecio");
+                lblPrecio.setText("Precio: " + destino.getPrecio());
 
                 ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
                 Image image = new Image(destino.getImagenes());

@@ -3,13 +3,16 @@ package Cliente.controlador;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
 import javafx.animation.KeyFrame;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -42,11 +45,11 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         ArrayList<Administrador> administradores = new ArrayList<>();
         administradores.add(new Administrador("Profe", "programacion", "12332134", "1234", "profeProgra@gmail.com"));
         serializarAdinistrador("Admins.se", administradores);
-
     }
 
     /**
      * Metodo para imprimir mensaje en lblLabel dure 2 segundos y desaparezca.
+     *
      * @param lblMensaje
      */
     public static void mostrarErrorTemporalmente(Label lblMensaje) {
@@ -64,6 +67,7 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
 
     /**
      * Metodo que me valida si la identificacion ya esta registrada en los archivos.
+     *
      * @param nombreArchivo
      * @param identificacion
      * @return
@@ -101,5 +105,47 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         return false; // No se encontró el objeto con el nombre deseado
     }
 
+    /***
+     * Metodo que anima los botones.
+     * @param boton
+     */
+    public static void agregarAnimacionBoton(Button boton) {
+        ScaleTransition escalaEntrada = new ScaleTransition(Duration.millis(200), boton);
+        escalaEntrada.setToX(1.1);
+        escalaEntrada.setToY(1.1);
+
+        ScaleTransition escalaSalida = new ScaleTransition(Duration.millis(200), boton);
+        escalaSalida.setToX(1);
+        escalaSalida.setToY(1);
+        boton.setOnMouseEntered(event -> escalaEntrada.play());
+        boton.setOnMouseExited(event -> escalaSalida.play());
+    }
+
+    /**
+     * Metodo que me muestra mensaje de donde tengo el cursor o el focus.
+     *
+     * @param campo
+     * @param label
+     * @param mensaje
+     */
+    public static void agregarEventoYMostrarStatus(TextField campo, Label label, String mensaje) {
+        campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
+        campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mostrarStatus(label, mensaje);
+            }
+        });
+    }
+
+    /**
+     * Metodo encargado  de mostrar mensaje en el label.
+     *
+     * @param label
+     * @param mensaje
+     */
+    public static void mostrarStatus(Label label, String mensaje) {
+        // Lógica para mostrar el mensaje en el lugar que desees (por ejemplo, lblStatus)
+        label.setText(mensaje);
+    }
 
 }
