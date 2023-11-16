@@ -43,7 +43,10 @@
                   <PasswordField fx:id="psw_contrasena" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 15;" />
                </children>
             </VBox>
-            <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Registrar" textFill="WHITE" />
+            <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Registrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="48.0" prefHeight="18.0" prefWidth="129.0" text="REGISTRO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />

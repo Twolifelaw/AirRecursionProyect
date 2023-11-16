@@ -22,6 +22,9 @@ public class VentanaAdministradorController implements Initializable {
 
     @FXML
     private AnchorPane anc_administrador;
+    @FXML
+    private AnchorPane anc_bienvenida;
+
 
     @FXML
     private AnchorPane anc_contenedor;
@@ -52,18 +55,23 @@ public class VentanaAdministradorController implements Initializable {
 
     @FXML
     void actionbtnDestinos(ActionEvent event) {
-        anc_contenedor.toFront();
+        limpiarContenido();
+
         Platform.runLater(() -> {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanacreacionDestinos.fxml"));
                 AnchorPane anchorPaneOfertas = loader.load();
-                anc_contenedor.getChildren().clear();
                 anc_contenedor.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
+    }
+
+    private void limpiarContenido() {
+        anc_bienvenida.getChildren().clear();
+        anc_contenedor.getChildren().clear();
     }
 
     @FXML
@@ -87,6 +95,7 @@ public class VentanaAdministradorController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

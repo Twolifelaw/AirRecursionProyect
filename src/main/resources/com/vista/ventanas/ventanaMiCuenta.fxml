@@ -50,7 +50,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btn_guardar" alignment="CENTER" layoutX="199.0" layoutY="357.0" mnemonicParsing="false" onAction="#cambiarDatos" prefHeight="26.0" prefWidth="160.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Guardar Cambios" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btn_guardar" alignment="CENTER" layoutX="199.0" layoutY="357.0" mnemonicParsing="false" onAction="#cambiarDatos" prefHeight="26.0" prefWidth="160.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Guardar Cambios" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
             <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="152.0" layoutY="109.0" prefHeight="26.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="13.0" />

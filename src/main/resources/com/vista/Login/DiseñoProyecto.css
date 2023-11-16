@@ -25,13 +25,12 @@
 }
 
 .text-field:focused {
-    -fx-background-color: #7d5dab; /* Color de fondo cuando está enfocado */
+    -fx-background-color: rgba(46, 37, 89, 0.7); /* Color de fondo con opacidad */
     -fx-background-radius: 15; /* Radio de las esquinas del fondo */
-    -fx-text-fill: #000000;
+    -fx-text-fill: #ffffff;
 }
-
-#ventanaAdministrador {
-    -fx-background-image: url("3.jpg");
+#anc_crear {
+    -fx-background-image: url("2.jpg");
     -fx-background-size: cover;
 }
 
@@ -45,6 +44,11 @@
 
 #tblDestinos .table-row-cell {
     -fx-background-color: #2e2559;
+}
+
+#anc_crear{
+    -fx-background-color: rgba(46, 37, 89, 0.7); /* Color de fondo con opacidad */
+    -fx-background-size: cover;
 }
 
 

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.transform.Rotate;
@@ -136,6 +137,16 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
             }
         });
     }
+
+    public static void agregarEventoYMostrarStatus(TextArea campo, Label label, String mensaje) {
+        campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
+        campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mostrarStatus(label, mensaje);
+            }
+        });
+    }
+
 
     /**
      * Metodo encargado  de mostrar mensaje en el label.

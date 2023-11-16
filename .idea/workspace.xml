@@ -5,46 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_11_23,_12_50_p_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_11_23,_12_50_p_ m__[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_11_23__12_50_p__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_11_23__12_50_p__m___Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_11_23,_10_08_a_ m__[Changes]/Admins.se" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_11_23,_10_08_a_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_11_23__10_08_a__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_23,_10_39_a_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_23__10_39_a__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_11_23,_10_08_a_ m__[Changes]/Admins.se" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_11_23,_10_08_a_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_11_23__10_08_a__m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/destinos.dat" beforeDir="false" afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Candado png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/NotiInversa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/R2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Usuarip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/airplane_4902246.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/enviarIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-contraseña-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-usuario-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/img_451479.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/producto-default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
@@ -219,7 +188,8 @@
       <workItem from="1700069990817" duration="862000" />
       <workItem from="1700135288163" duration="655000" />
       <workItem from="1700137287457" duration="2769000" />
-      <workItem from="1700141236648" duration="4178000" />
+      <workItem from="1700141236648" duration="4229000" />
+      <workItem from="1700148861933" duration="6817000" />
     </task>
     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
       <created>1698968242258</created>
