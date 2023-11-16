@@ -183,7 +183,13 @@ public class VentanaLoginController implements Initializable {
      * @param event
      */
     @FXML
-    void action_recuperar(ActionEvent event) {
+    void onRecuperar(ActionEvent event) throws IOException { Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaRecuperacion.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta linea , esconde el stage del login y carga el nuecvo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }
 
