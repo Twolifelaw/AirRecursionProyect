@@ -173,6 +173,7 @@ public class VentanaInicioController implements Initializable {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
                 AnchorPane anchorPaneOfertas = loader.load();
+                anc_contenedor.getChildren().clear();
                 anc_contenedor.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
