@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Rotate;
@@ -25,6 +26,8 @@ import java.util.ResourceBundle;
 
 public class VentanaInicioController implements Initializable {
 
+    @FXML
+    private Label lblStatus;
     @FXML
     private AnchorPane anc_bienvenida;
 

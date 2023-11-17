@@ -1,6 +1,8 @@
 package Cliente.controlador;
 
 import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
+import Cliente.modelo.exceptions.CargarImagenException;
+import Cliente.modelo.exceptions.VerificarExceptionNull;
 import Cliente.modelo.objetos.Destino;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,6 +35,8 @@ public class VentanaCartsController implements Initializable {
     private AnchorPane paneOfertas;
     @FXML
     private ScrollPane scroll_pane;
+    @FXML
+    private Label lblStatus;
     @FXML
     private CartsController cartsController;
     private int anchorPanelCount = 0;
@@ -76,16 +80,36 @@ public class VentanaCartsController implements Initializable {
                 Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblPrecio");
                 lblPrecio.setText("Precio: " + destino.getPrecio());
 
+
                 ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
-                Image image = new Image(destino.getImagenes());
-                imgView.setImage(image);
+                try {
+                    String rutaImagen = destino.getImagenes();
+
+                    if (rutaImagen != null) {
+                        Image image = new Image(rutaImagen);
+                        imgView.setImage(image);
+
+                        // Establece el Ancho y alto de las imágenes
+                        double width = 240; // Ancho deseado
+                        double height = 150; // Alto deseado
+                        imgView.setFitWidth(width);
+                        imgView.setFitHeight(height);
+                    } else {
+                        // Manejar el caso en que la ruta de la imagen es nula
+                        System.out.println("La ruta de la imagen para el destino " + destino.getPais() + " es nula.");
+                        // Puedes asignar una imagen predeterminada o mostrar un mensaje al usuario, según tus necesidades
+                    }
+                } catch (VerificarExceptionNull e) {
+                    // Manejar la excepción específica para el caso de ruta de imagen nula
+                    System.out.println(e.getMessage());
+                } catch (Exception e) {
+                    // Manejar otras excepciones
+                    throw new CargarImagenException("ERROR al cargar la imagen para el destino: " + destino.getPais(), e);
+                }
 
 
-                //Establece el Ancho y alto de las imagenes
-                double width = 240; // Ancho deseado
-                double height = 150; // Alto deseado
-                imgView.setFitWidth(width);
-                imgView.setFitHeight(height);
+
+
 
                 //Establece el minimo y maximo de tamaño de los anchorPane's
                 nuevoAnchorPane.setMaxHeight(291);

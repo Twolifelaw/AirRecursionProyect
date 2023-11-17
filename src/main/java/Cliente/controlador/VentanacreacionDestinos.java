@@ -116,9 +116,13 @@ public class VentanacreacionDestinos implements Initializable {
             this.txtPrecio.setText(d.getPrecio());
             this.txtID.setText(d.getId());
             this.txtCupos.setText(String.valueOf(d.getNumeroCupos()));
+            try {
+                Image img = new Image(d.getImagenes());
+                this.imvImagenDestino.setImage(img);
+            }catch (NullPointerException e){
+                lblStatus.setText("Error en la carga de la imagen ruta no encontrada: "+e.getMessage());
+            }
 
-            Image img = new Image(d.getImagenes());
-            this.imvImagenDestino.setImage(img);
         }
 
 

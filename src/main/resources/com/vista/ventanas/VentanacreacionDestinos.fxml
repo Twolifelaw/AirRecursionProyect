@@ -68,9 +68,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="23.0" layoutY="36.0" prefHeight="485.0" prefWidth="704.0">
+      <AnchorPane layoutX="23.0" layoutY="36.0" opacity="0.87" prefHeight="485.0" prefWidth="704.0" style="-fx-background-radius: 50;">
          <children>
-            <TableView fx:id="tblDestinos" layoutX="7.0" layoutY="15.0" onMouseClicked="#seleccionar" prefHeight="485.0" prefWidth="704.0" style="-fx-background-radius: 50;" stylesheets="@../Login/DiseñoProyecto.css">
+            <TableView fx:id="tblDestinos" layoutX="7.0" layoutY="15.0" onMouseClicked="#seleccionar" prefHeight="485.0" prefWidth="704.0" style="-fx-background-radius: 50; -fx-background-color: #2E2559;" stylesheets="@../Login/DiseñoProyecto.css">
                <columns>
                   <TableColumn fx:id="columnPais" prefWidth="113.99999523162842" text="Pais" />
                   <TableColumn fx:id="ColumnCiudad" prefWidth="109.33331298828125" text="Ciudad" />
@@ -83,20 +83,24 @@
             </TableView>
          </children>
       </AnchorPane>
-      <ImageView fx:id="avion_1" fitHeight="26.0" fitWidth="200.0" layoutX="487.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Imagenes/31069111.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="avion_2" fitHeight="26.0" fitWidth="200.0" layoutX="645.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Imagenes/31069111copy.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="513.0" layoutY="8.0" prefHeight="33.0" prefWidth="132.0" text="AirRecursion" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
+      <AnchorPane layoutX="475.0" layoutY="11.0" prefHeight="26.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="avion_1" fitHeight="26.0" fitWidth="200.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="avion_2" fitHeight="26.0" fitWidth="200.0" layoutX="160.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111copy.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="34.0" prefHeight="33.0" prefWidth="132.0" text="AirRecursion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
