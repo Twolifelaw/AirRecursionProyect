@@ -2,7 +2,9 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -123,7 +125,7 @@
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="467.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="483.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/31069111copy.png" />
                </image>
@@ -135,6 +137,13 @@
             </ImageView>
          </children>
       </Pane>
+      <AnchorPane layoutX="396.0" layoutY="192.0" prefHeight="35.0" prefWidth="585.0">
+         <children>
+            <TextField fx:id="txt_buscador" alignment="CENTER" layoutX="165.0" prefHeight="26.0" prefWidth="256.0" promptText="Buscador" style="-fx-background-radius: 15;" />
+            <ComboBox fx:id="cbx_filtro" layoutX="14.0" onAction="#filtrado" prefWidth="150.0" promptText="Filtro" stylesheets="@../Login/DiseñoProyecto.css" />
+            <Button fx:id="btnBuscar" layoutX="428.0" mnemonicParsing="false" onAction="#onBuscar" prefHeight="12.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="buscar" textFill="WHITE" />
+         </children>
+      </AnchorPane>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

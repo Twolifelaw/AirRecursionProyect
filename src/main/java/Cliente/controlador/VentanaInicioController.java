@@ -1,9 +1,9 @@
 package Cliente.controlador;
 
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
-import javafx.animation.TranslateTransition;
+import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
+import Cliente.modelo.objetos.Destino;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,20 +12,30 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
 
 public class VentanaInicioController implements Initializable {
 
+    public ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+
+
+    @FXML
+    private ComboBox<String> cbx_filtro;
     @FXML
     private Label lblStatus;
     @FXML
@@ -76,6 +86,12 @@ public class VentanaInicioController implements Initializable {
     @FXML
     private Button btn_salir;
 
+    @FXML
+    private Button btnBuscar;
+
+    @FXML
+    private TextField txt_buscador;
+    VentanaCartsController ventanaCartsController = new VentanaCartsController();
 
     @FXML
     void OnMiCuenta(ActionEvent event) throws IOException {
@@ -135,6 +151,11 @@ public class VentanaInicioController implements Initializable {
     }
 
     @FXML
+    void filtrado(ActionEvent event) {
+
+    }
+
+    @FXML
     void OnIzquierda(ActionEvent event) {
     }
 
@@ -186,6 +207,60 @@ public class VentanaInicioController implements Initializable {
     }
 
     @FXML
+    void onBuscar(ActionEvent event) {
+        String filtroSeleccionado = cbx_filtro.getValue();
+        String valorBusqueda = txt_buscador.getText();
+        if(filtroSeleccionado != null && !valorBusqueda.isEmpty()){
+            buscarDestinoPorFiltro(filtroSeleccionado,valorBusqueda);
+        }else{
+            System.out.println("Seleccione un filtro y proporcione un valor de búsqueda.");
+        }
+    }
+    private void buscarDestinoPorFiltro(String filtro, String valor) {
+        ArrayList<Destino> destinosFiltrados = new ArrayList<>();
+
+        for (Destino destino : destinosCargados) {
+            String valorAtributo = null;
+
+            switch (filtro.toLowerCase()) {
+                case "pais":
+                    valorAtributo = destino.getPais();
+                    break;
+                case "ciudad":
+                    valorAtributo = destino.getCiudad();
+                    break;
+                case "clima":
+                    valorAtributo = destino.getClima();
+                    break;
+                case "precio":
+                    valorAtributo = destino.getPrecio();
+                    break;
+                case "id":
+                    valorAtributo = destino.getId();
+                    break;
+                case "cupos":
+                    valorAtributo = String.valueOf(destino.getNumeroCupos());
+                    break;
+                // Agrega más casos según tus atributos
+                default:
+                    // Manejar el caso en que el filtro no coincide con ningún atributo
+                    System.out.println("Filtro no válido");
+                    return;
+            }
+
+            // Realiza la comparación, ignorando mayúsculas y minúsculas
+            if (valorAtributo != null && valorAtributo.equalsIgnoreCase(valor)) {
+                destinosFiltrados.add(destino);
+            }
+        }
+
+        if (destinosFiltrados.isEmpty()) {
+            System.out.println("No se encontraron destinos que coincidan con el filtro proporcionado.");
+        } else {
+            ventanaCartsController.mostrarDestinos(destinosFiltrados);
+        }
+    }
+    @FXML
     void OnPaquetes(ActionEvent event) {
 
     }
@@ -201,16 +276,17 @@ public class VentanaInicioController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+
     @FXML
     void anchorDesaparecer(ActionEvent event) {
         anc_bienvenida.setVisible(false);
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         animacionElementos();
     }
-
     public void animacionElementos() {
         VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
         VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
@@ -224,5 +300,6 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.girarImagen(avion_1);
         VentanaUtilidades.girarImagen(avion_2);
         VentanaUtilidades.girarImagen(img_usuario);
+        cbx_filtro.getItems().addAll("Pais","Ciudad","Clima","Precio","ID","Cupo");
     }
 }

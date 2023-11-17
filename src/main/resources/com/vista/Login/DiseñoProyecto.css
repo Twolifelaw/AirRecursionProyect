@@ -30,7 +30,7 @@
     -fx-text-fill: #ffffff;
 }
 #anc_crear {
-    -fx-background-image: url("2.jpg");
+    -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
 }
 
@@ -50,6 +50,19 @@
     -fx-background-color: rgba(46, 37, 89, 0.7); /* Color de fondo con opacidad */
     -fx-background-size: cover;
 }
+
+.combo-box {
+    -fx-background-color: rgba(46, 37, 89, 0.7); /* Color de fondo */
+    -fx-text-fill: #000000; /* Color del texto */
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #2e2559;
+    -fx-text-fill: #ffffff; /* Cambia el color del texto a rojo (#ff0000) */
+}
+
+
+
 
 
 

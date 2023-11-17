@@ -24,11 +24,10 @@ import java.util.ResourceBundle;
 
 public class VentanaCartsController implements Initializable {
 
-    // Cargar los destinos desde el archivo
-    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
-
     private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private final int maxColumns = 3; // Número máximo de columnas
+    // Cargar los destinos desde el archivo
+    public ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
     @FXML
     private GridPane gridOfertas;
     @FXML
@@ -41,11 +40,10 @@ public class VentanaCartsController implements Initializable {
     private CartsController cartsController;
     private int anchorPanelCount = 0;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        for (Destino destino : destinosCargados) {
+    public void mostrarDestinos(ArrayList<Destino> destinos) {
+        for (Destino destino : destinos) {
             try {
                 //Cargar el AnchorPane desde el archivo FXML
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/Carts.fxml"));
@@ -108,9 +106,6 @@ public class VentanaCartsController implements Initializable {
                 }
 
 
-
-
-
                 //Establece el minimo y maximo de tamaño de los anchorPane's
                 nuevoAnchorPane.setMaxHeight(291);
                 nuevoAnchorPane.setMinHeight(291);
@@ -135,12 +130,18 @@ public class VentanaCartsController implements Initializable {
                     GridPane.setMargin(nuevoAnchorPane, margins);
                 }
 
-
                 scroll_pane.setVvalue(1.0);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        mostrarDestinos(destinosCargados);
+
 
     }
 
