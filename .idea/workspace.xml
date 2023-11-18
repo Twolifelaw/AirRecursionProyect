@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se crearon los CartsPaquetes.fxml para representar graficaente los paquetes turistioc y se creo VentanaPaquetes.fxml para mostrar dichos carts ademas de crear la clase GestionPaquetes.java que se encargara de la serializacion y deserializacion de los pquetes" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="guardado de workspace.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +26,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700108189843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="guardado de workspace.xml">
+      <created>1700268183615</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700268183615</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +245,8 @@
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
     <MESSAGE value="se crearon los CartsPaquetes.fxml para representar graficaente los paquetes turistioc y se creo VentanaPaquetes.fxml para mostrar dichos carts ademas de crear la clase GestionPaquetes.java que se encargara de la serializacion y deserializacion de los pquetes" />
-    <option name="LAST_COMMIT_MESSAGE" value="se crearon los CartsPaquetes.fxml para representar graficaente los paquetes turistioc y se creo VentanaPaquetes.fxml para mostrar dichos carts ademas de crear la clase GestionPaquetes.java que se encargara de la serializacion y deserializacion de los pquetes" />
+    <MESSAGE value="guardado de workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="guardado de workspace.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
