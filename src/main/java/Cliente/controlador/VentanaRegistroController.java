@@ -90,6 +90,7 @@ public class VentanaRegistroController implements Initializable {
             numeroTelefonico = txtNumeroTelefonico.getText();
             direccionResidencia = txtDireccion.getText();
             contrasena = pswContrasena.getText();
+
             if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty()) {
                 throw new verificarException("Llene los campos");
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty()) {

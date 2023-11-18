@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="grid" opacity="0.88" prefHeight="300.0" prefWidth="291.0" style="-fx-background-color: #0A1425; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: BLack; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoDestinosController">
+<AnchorPane fx:id="grid" opacity="0.88" prefHeight="300.0" prefWidth="291.0" style="-fx-background-color: #0A1425; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: BLack; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoDestinosController">
    <children>
       <ImageView fx:id="imagenVuelo" fitHeight="132.0" fitWidth="232.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" />
       <VBox layoutX="15.0" layoutY="186.0" prefHeight="100.0" prefWidth="264.0">
@@ -44,6 +44,6 @@
             </Button>
          </children>
       </VBox>
-      <TextArea fx:id="lblDescipcion" layoutX="53.0" layoutY="-40.0" prefHeight="40.0" prefWidth="200.0" />
+      <TextArea fx:id="lblDescipcion" layoutX="53.0" layoutY="-40.0" opacity="0.0" prefHeight="40.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

@@ -104,6 +104,8 @@ public class VentanaCreacionDestinos implements Initializable {
     private TextField txtCupos;
     //de aqui para arriba son componentes.
 
+
+
     /**
      * Metodo para seleccionar destino dentro de la tablaDestinos.
      *
