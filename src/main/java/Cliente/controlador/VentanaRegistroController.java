@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,6 +27,7 @@ import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializa
 public class VentanaRegistroController implements Initializable {
 
     public ArrayList<Cliente> clientes = new ArrayList<>();
+
     /**
      * Variables responsables de realizar todas las validaciones de la ventana.
      */
@@ -38,13 +38,17 @@ public class VentanaRegistroController implements Initializable {
     String direccionResidencia;
     //
     String contrasena;
+
     /**
      * COmponenete que hace uso la ventana
      */
+
     @FXML
-    private Button btn_atras;
+    private Button btnAtras;
+
     @FXML
-    private Button btn_registrar;
+    private Button btnRegistrar;
+
     @FXML
     private Label lblMensaje;
 
@@ -52,20 +56,23 @@ public class VentanaRegistroController implements Initializable {
     private Label lblStatus;
 
     @FXML
-    private PasswordField psw_contrasena;
-    @FXML
-    private TextField txt_id;
+    private PasswordField pswContrasena;
 
     @FXML
-    private TextField txt_correo;
+    private TextField txtId;
+
     @FXML
-    private TextField txt_direccion;
+    private TextField txtCorreo;
+
     @FXML
-    private TextField txt_nombre;
+    private TextField txtDireccion;
+
     @FXML
-    private TextField txt_numero_telefonico;
+    private TextField txtNombre;
+
     @FXML
-    private VBox vText;
+    private TextField txtNumeroTelefonico;
+    //de aqui parar arriba van componentes.
 
 
     /**
@@ -75,14 +82,14 @@ public class VentanaRegistroController implements Initializable {
      */
 
     @FXML
-    void actionRegistrar(ActionEvent event) {
+    void onRegistrar(ActionEvent event) {
         try {
-            nombres = txt_nombre.getText();
-            identificacion = txt_id.getText();
-            correoElectronico = txt_correo.getText();
-            numeroTelefonico = txt_numero_telefonico.getText();
-            direccionResidencia = txt_direccion.getText();
-            contrasena = psw_contrasena.getText();
+            nombres = txtNombre.getText();
+            identificacion = txtId.getText();
+            correoElectronico = txtCorreo.getText();
+            numeroTelefonico = txtNumeroTelefonico.getText();
+            direccionResidencia = txtDireccion.getText();
+            contrasena = pswContrasena.getText();
             if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty()) {
                 throw new verificarException("Llene los campos");
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty()) {
@@ -115,7 +122,7 @@ public class VentanaRegistroController implements Initializable {
      */
 
     @FXML
-    void actionAtras(ActionEvent event) throws IOException {
+    void onRegresar(ActionEvent event) throws IOException {
 
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/Login/ventanaLogin.fxml")));
@@ -131,27 +138,34 @@ public class VentanaRegistroController implements Initializable {
      */
 
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txt_nombre, txt_id, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
+        TextField[] camposTexto = {txtNombre, txtId, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
 
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
                 if (event.getCode().equals(KeyCode.ENTER)) {
-                    btn_registrar.fire();
+                    btnRegistrar.fire();
                 }
             });
         }
     }
 
+    /**
+     * Metodo que inicia todo lo de la ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        VentanaUtilidades.agregarAnimacionBoton(btn_registrar);
-        VentanaUtilidades.agregarAnimacionBoton(btn_atras);
+        VentanaUtilidades.agregarAnimacionBoton(btnRegistrar);
+        VentanaUtilidades.agregarAnimacionBoton(btnAtras);
         inicializarEnterKey();
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_id, lblStatus, "Identificacion");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Dirección");
-        VentanaUtilidades.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtNombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtId, lblStatus, "Identificacion");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtCorreo, lblStatus, "Correo");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtNumeroTelefonico, lblStatus, "Telefono");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtDireccion, lblStatus, "Dirección");
+        VentanaUtilidades.agregarEventoYMostrarStatus(pswContrasena, lblStatus, "Contraseña");
     }
 }

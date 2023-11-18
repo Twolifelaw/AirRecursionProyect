@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="348.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #6e3f70; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.CartsPaquetesController">
+<AnchorPane prefHeight="348.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #6e3f70; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoPaquetesController">
    <children>
       <HBox layoutX="33.0" layoutY="174.0" prefHeight="104.0" prefWidth="250.0">
          <children>

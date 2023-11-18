@@ -5,52 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/CargarImagenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/VerificarExceptionNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/destino2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/destinos.dat" beforeDir="false" afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoDestinosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsPaquetesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoPaquetesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaOfertasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCompraDestinosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCompraDestinosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaMicuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaMicuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRecuperacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRecuperacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Armenia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Armenia.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Candado png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/NotiInversa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/R2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Texas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Texas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Usuarip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/airplane_4902246.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/enviarIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-contraseña-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-usuario-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/img_451479.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/producto-default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VueloInternacionalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInternacionalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VueloNacionalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaNacionalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/DiseñoDestinos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/CartsPaquetes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/DiseñoPaquetes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaOfertas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCompraDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCompraDestinos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCreacionDestinos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaAdministrador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaInicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInternacional.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaInternacional.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaMiCuenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaRecuperacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaRegistro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaVueloNacional.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaVueloNacional.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +96,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -122,11 +108,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\ventanas" />
+      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Cliente.modelo" />
@@ -180,9 +166,6 @@
       <list>
         <item itemvalue="Application.mainServer" />
         <item itemvalue="Application.GestionClientes" />
-        <item itemvalue="Application.mainServer" />
-        <item itemvalue="Application.GestionClientes" />
-        <item itemvalue="Application.mainServer" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +201,18 @@
       <workItem from="1699888108261" duration="1647000" />
       <workItem from="1699927897019" duration="9028000" />
       <workItem from="1699939420125" duration="55000" />
-      <workItem from="1699973696022" duration="2164000" />
+      <workItem from="1699973696022" duration="2600000" />
+      <workItem from="1700064581294" duration="2486000" />
+      <workItem from="1700069735723" duration="51000" />
+      <workItem from="1700069901325" duration="68000" />
+      <workItem from="1700069990817" duration="862000" />
+      <workItem from="1700135288163" duration="655000" />
+      <workItem from="1700137287457" duration="2769000" />
+      <workItem from="1700141236648" duration="4229000" />
+      <workItem from="1700148861933" duration="7752000" />
+      <workItem from="1700225993389" duration="4894000" />
+      <workItem from="1700235600830" duration="1389000" />
+      <workItem from="1700248305057" duration="11952000" />
     </task>
     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
       <created>1698968242258</created>

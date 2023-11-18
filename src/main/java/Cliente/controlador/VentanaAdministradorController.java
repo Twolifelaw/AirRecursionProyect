@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,18 +18,18 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class VentanaAdministradorController implements Initializable {
+    //
+    @FXML
+    private AnchorPane anchorPaneAdministrador;
 
     @FXML
-    private AnchorPane anc_administrador;
-    @FXML
-    private AnchorPane anc_bienvenida;
-
+    private AnchorPane anchorPaneBienvenida;
 
     @FXML
-    private AnchorPane anc_contenedor;
+    private AnchorPane anchorPaneContenedor;
 
     @FXML
-    private Button btn_regresar;
+    private Button btnRegresar;
 
     @FXML
     private Button btnClientes;
@@ -43,49 +42,77 @@ public class VentanaAdministradorController implements Initializable {
 
     @FXML
     private Button btnPaquetes;
+    //De aqui para arriba van los componentes
 
+    /**
+     * Accion de botonClientes.
+     *
+     * @param event
+     */
     @FXML
-    private BorderPane borderPanePrincipla;
-
-
-    @FXML
-    void actionbtnClientes(ActionEvent event) {
-
+    void onClientes(ActionEvent event) {
     }
 
+    /**
+     * Accion de botonDestinos.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionbtnDestinos(ActionEvent event) {
+    void onDestinos(ActionEvent event) {
         limpiarContenido();
 
         Platform.runLater(() -> {
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanacreacionDestinos.fxml"));
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCreacionDestinos.fxml"));
                 AnchorPane anchorPaneOfertas = loader.load();
-                anc_contenedor.getChildren().add(anchorPaneOfertas);
+                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
+    /**
+     * metodo que se encarga de limpiar los anchorPane.
+     */
+
     private void limpiarContenido() {
-        anc_bienvenida.getChildren().clear();
-        anc_contenedor.getChildren().clear();
+        anchorPaneBienvenida.getChildren().clear();
+        anchorPaneContenedor.getChildren().clear();
     }
 
+    /**
+     * Accion de botonEstadisticas.
+     *
+     * @param event
+     */
     @FXML
-    void actionbtnEstadisticas(ActionEvent event) {
+    void onEstadisticas(ActionEvent event) {
 
     }
 
+    /**
+     * Accion de botonPaquetes.
+     *
+     * @param event
+     */
     @FXML
-    void actionbtnPaquetes(ActionEvent event) {
+    void onPaquetes(ActionEvent event) {
 
     }
 
+    /**
+     * Accion de botonRegresar.
+     *
+     * @param event
+     * @throws IOException
+     */
+
     @FXML
-    void regresar(ActionEvent event) throws IOException {
+    void onRegresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/Login/ventanaLogin.fxml")));
         Scene escena = new Scene(root);
@@ -93,14 +120,19 @@ public class VentanaAdministradorController implements Initializable {
         stage.show();
         // en esta linea , esconde el stage del login y carga el nuevo stage
         ((Node) (event.getSource())).getScene().getWindow().hide();
-
     }
 
+    /**
+     * Metodo donde se inicializa lo de esta ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         VentanaUtilidades.agregarAnimacionBoton(btnDestinos);
-        VentanaUtilidades.agregarAnimacionBoton(btn_regresar);
+        VentanaUtilidades.agregarAnimacionBoton(btnRegresar);
         VentanaUtilidades.agregarAnimacionBoton(btnClientes);
         VentanaUtilidades.agregarAnimacionBoton(btnPaquetes);
         VentanaUtilidades.agregarAnimacionBoton(btnEstadisticas);

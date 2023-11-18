@@ -161,9 +161,10 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
 
     /**
      * Metodo que hace girar una imagen en 360 grados.
+     *
      * @param imageView
      */
-    public static void girarImagen(ImageView imageView){
+    public static void girarImagen(ImageView imageView) {
         RotateTransition rotate = new RotateTransition();
         rotate.setNode(imageView);
         rotate.setDuration(Duration.millis(1700));
