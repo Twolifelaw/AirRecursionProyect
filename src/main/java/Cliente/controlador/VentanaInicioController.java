@@ -1,9 +1,9 @@
 package Cliente.controlador;
 
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
-import javafx.animation.TranslateTransition;
+import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
+import Cliente.modelo.objetos.Destino;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,19 +12,32 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
 
 public class VentanaInicioController implements Initializable {
 
+    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+
+
+    @FXML
+    private ComboBox<String> cbx_filtro;
+    @FXML
+    private Label lblStatus;
     @FXML
     private AnchorPane anc_bienvenida;
 
@@ -45,6 +58,9 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private ImageView avion_2;
+
+    @FXML
+    private ImageView img_usuario;
 
     @FXML
     private Button btn_chat;
@@ -69,6 +85,14 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private Button btn_salir;
+
+    @FXML
+    private Button btnBuscar;
+
+    @FXML
+    private TextField txt_buscador;
+    VentanaCartsController ventanaCartsController = new VentanaCartsController();
+
 
 
     @FXML
@@ -129,6 +153,11 @@ public class VentanaInicioController implements Initializable {
     }
 
     @FXML
+    void filtrado(ActionEvent event) {
+
+    }
+
+    @FXML
     void OnIzquierda(ActionEvent event) {
     }
 
@@ -141,7 +170,6 @@ public class VentanaInicioController implements Initializable {
         stage.show();
 
     }
-
 
     @FXML
     void OnNacionales(ActionEvent event) {
@@ -171,6 +199,7 @@ public class VentanaInicioController implements Initializable {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
                 AnchorPane anchorPaneOfertas = loader.load();
+                anc_contenedor.getChildren().clear();
                 anc_contenedor.getChildren().add(anchorPaneOfertas);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -178,6 +207,7 @@ public class VentanaInicioController implements Initializable {
         });
 
     }
+
 
     @FXML
     void OnPaquetes(ActionEvent event) {
@@ -195,16 +225,17 @@ public class VentanaInicioController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+
     @FXML
     void anchorDesaparecer(ActionEvent event) {
         anc_bienvenida.setVisible(false);
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         animacionElementos();
     }
-
     public void animacionElementos() {
         VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
         VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
@@ -215,24 +246,9 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.agregarAnimacionBoton(btn_chat);
         VentanaUtilidades.agregarAnimacionBoton(btn_salir);
         VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
-        //Avion 1
-        RotateTransition rotate = new RotateTransition();
-        rotate.setNode(avion_1);
-        rotate.setDuration(Duration.millis(1700));
-        rotate.setCycleCount(TranslateTransition.INDEFINITE);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Y_AXIS);
-        rotate.play();
-        //Avion 2
-        rotate.setNode(avion_2);
-        rotate.setDuration(Duration.millis(1700));
-        rotate.setCycleCount(TranslateTransition.INDEFINITE);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Y_AXIS);
-        rotate.play();
+        VentanaUtilidades.girarImagen(avion_1);
+        VentanaUtilidades.girarImagen(avion_2);
+        VentanaUtilidades.girarImagen(img_usuario);
+
     }
-
-
 }

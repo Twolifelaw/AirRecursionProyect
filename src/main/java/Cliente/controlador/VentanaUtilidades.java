@@ -2,9 +2,7 @@ package Cliente.controlador;
 
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
-import javafx.animation.KeyFrame;
-import javafx.animation.ScaleTransition;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -137,6 +138,16 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         });
     }
 
+    public static void agregarEventoYMostrarStatus(TextArea campo, Label label, String mensaje) {
+        campo.setOnMouseEntered(event -> mostrarStatus(label, mensaje));
+        campo.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                mostrarStatus(label, mensaje);
+            }
+        });
+    }
+
+
     /**
      * Metodo encargado  de mostrar mensaje en el label.
      *
@@ -146,6 +157,21 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
     public static void mostrarStatus(Label label, String mensaje) {
         // Lógica para mostrar el mensaje en el lugar que desees (por ejemplo, lblStatus)
         label.setText(mensaje);
+    }
+
+    /**
+     * Metodo que hace girar una imagen en 360 grados.
+     * @param imageView
+     */
+    public static void girarImagen(ImageView imageView){
+        RotateTransition rotate = new RotateTransition();
+        rotate.setNode(imageView);
+        rotate.setDuration(Duration.millis(1700));
+        rotate.setCycleCount(TranslateTransition.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setByAngle(360);
+        rotate.setAxis(Rotate.Y_AXIS);
+        rotate.play();
     }
 
 }

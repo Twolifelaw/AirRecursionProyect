@@ -1,8 +1,10 @@
 package Cliente.controlador;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,10 +14,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class VentanaAdministradorController {
+public class VentanaAdministradorController implements Initializable {
 
+    @FXML
+    private AnchorPane anc_administrador;
+    @FXML
+    private AnchorPane anc_bienvenida;
+
+
+    @FXML
+    private AnchorPane anc_contenedor;
 
     @FXML
     private Button btn_regresar;
@@ -35,6 +47,7 @@ public class VentanaAdministradorController {
     @FXML
     private BorderPane borderPanePrincipla;
 
+
     @FXML
     void actionbtnClientes(ActionEvent event) {
 
@@ -42,14 +55,23 @@ public class VentanaAdministradorController {
 
     @FXML
     void actionbtnDestinos(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanacreacionDestinos.fxml"));
-            AnchorPane anchorPaneOfertas = loader.load();
-            borderPanePrincipla.setCenter(anchorPaneOfertas);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        limpiarContenido();
+
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanacreacionDestinos.fxml"));
+                AnchorPane anchorPaneOfertas = loader.load();
+                anc_contenedor.getChildren().add(anchorPaneOfertas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void limpiarContenido() {
+        anc_bienvenida.getChildren().clear();
+        anc_contenedor.getChildren().clear();
     }
 
     @FXML
@@ -72,5 +94,15 @@ public class VentanaAdministradorController {
         // en esta linea , esconde el stage del login y carga el nuevo stage
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        VentanaUtilidades.agregarAnimacionBoton(btnDestinos);
+        VentanaUtilidades.agregarAnimacionBoton(btn_regresar);
+        VentanaUtilidades.agregarAnimacionBoton(btnClientes);
+        VentanaUtilidades.agregarAnimacionBoton(btnPaquetes);
+        VentanaUtilidades.agregarAnimacionBoton(btnEstadisticas);
     }
 }

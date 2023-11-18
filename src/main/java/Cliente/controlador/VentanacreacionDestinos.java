@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Destino;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -27,6 +29,18 @@ import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
 
 public class VentanacreacionDestinos implements Initializable {
 
+
+    @FXML
+    private ImageView avion_1;
+
+    @FXML
+    private ImageView avion_2;
+
+    @FXML
+    private Label lblStatus;
+
+    @FXML
+    private AnchorPane anc_crear;
 
     private String imagePath;
 
@@ -55,6 +69,8 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     private TableColumn<Destino, String> columnID;
 
+    @FXML
+    private Button btnAgregarImg;
 
     @FXML
     private TableColumn<Destino, String> columnPais;
@@ -83,6 +99,10 @@ public class VentanacreacionDestinos implements Initializable {
     @FXML
     private TextField txtCupos;
 
+    @FXML
+    private Label lbl_mensaje;
+
+
 
     @FXML
     void seleccionar(MouseEvent event) {
@@ -96,9 +116,13 @@ public class VentanacreacionDestinos implements Initializable {
             this.txtPrecio.setText(d.getPrecio());
             this.txtID.setText(d.getId());
             this.txtCupos.setText(String.valueOf(d.getNumeroCupos()));
+            try {
+                Image img = new Image(d.getImagenes());
+                this.imvImagenDestino.setImage(img);
+            }catch (NullPointerException e){
+                lblStatus.setText("Error en la carga de la imagen ruta no encontrada: "+e.getMessage());
+            }
 
-            Image img = new Image(d.getImagenes());
-            this.imvImagenDestino.setImage(img);
         }
 
 
@@ -106,11 +130,31 @@ public class VentanacreacionDestinos implements Initializable {
 
     @FXML
     void actionbtnAgregar(ActionEvent event) {
-        ArrayList<Destino> destinosNuevos = deserializarDestino("destinos.dat");
-        destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), txtDescripcion.getText(),
-                imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText())));
 
-        serializarDestino("destinos.dat", destinosNuevos);
+        try {
+            String pais = txtPais.getText();
+            String precio = txtPrecio.getText();
+            String ciudad = txtCiudad.getText();
+            String id = txtID.getId();
+            String clima = txtClima.getText();
+            String cupos = txtCupos.getText();
+            String descripcion = txtDescripcion.getText().trim();
+            if (pais.isEmpty() && precio.isEmpty() && ciudad.isEmpty() && id.isEmpty() && clima.isEmpty() && cupos.isEmpty() && descripcion.isEmpty()) {
+                throw new verificarException("Llene los campos");
+            } else if (pais.isEmpty() || precio.isEmpty() || ciudad.isEmpty() || id.isEmpty() || clima.isEmpty() || cupos.isEmpty() || descripcion.isEmpty()) {
+                throw new verificarException("Campo vacío, llenar por favor");
+            } else {
+                ArrayList<Destino> destinosNuevos = deserializarDestino("destinos.dat");
+                destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), descripcion,
+                        imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText())));
+
+                serializarDestino("destinos.dat", destinosNuevos);
+            }
+
+        } catch (verificarException e) {
+            lblStatus.setText(e.getMessage());
+        }
+
     }
 
     @FXML
@@ -215,8 +259,25 @@ public class VentanacreacionDestinos implements Initializable {
         }
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Animacion de los botones
+        VentanaUtilidades.agregarAnimacionBoton(btnAgregar);
+        VentanaUtilidades.agregarAnimacionBoton(btnEditar);
+        VentanaUtilidades.agregarAnimacionBoton(btnEliminar);
+        VentanaUtilidades.agregarAnimacionBoton(btnAgregarImg);
+        //Seguimiento del label
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtPais, lblStatus, "Pais");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtPrecio, lblStatus, "Precio");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtCiudad, lblStatus, "Ciudad");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtID, lblStatus, "ID");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtClima, lblStatus, "Clima");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtCupos, lblStatus, "Cupos");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtDescripcion, lblStatus, "Descripcion");
+        //Animacion de imagen.
+        VentanaUtilidades.girarImagen(avion_1);
+        VentanaUtilidades.girarImagen(avion_2);
 
         columnPais.setCellValueFactory(new PropertyValueFactory<>("pais"));
         ColumnCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));

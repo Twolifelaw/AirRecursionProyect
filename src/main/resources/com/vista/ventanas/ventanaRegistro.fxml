@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" style="-fx-background-color: #212121;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaRegistroController">
+<AnchorPane id="ventanaRegistro" prefHeight="683.0" prefWidth="909.0" style="-fx-background-color: #212121;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaRegistroController">
    <children>
       <AnchorPane layoutX="178.0" layoutY="101.0" opacity="0.87" prefHeight="307.0" prefWidth="275.0" style="-fx-background-color: #0B1525; -fx-background-radius: 15;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="101.0">
          <children>
@@ -43,7 +43,10 @@
                   <PasswordField fx:id="psw_contrasena" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 15;" />
                </children>
             </VBox>
-            <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #593F70; -fx-background-radius: 15;" text="Registrar" textFill="WHITE" />
+            <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Registrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="48.0" prefHeight="18.0" prefWidth="129.0" text="REGISTRO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />

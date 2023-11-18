@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/ventanaPrincipal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
+<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
       <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
          <children>
@@ -51,7 +51,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img_usuario" fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Login/10.png" />
                </image>
@@ -123,7 +123,7 @@
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="467.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="avion_2" fitHeight="41.0" fitWidth="41.0" layoutX="483.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/31069111copy.png" />
                </image>

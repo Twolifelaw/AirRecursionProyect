@@ -31,7 +31,7 @@ public class CartsController {
     @FXML
     private Label lblPais;
     @FXML
-    private Label lblDescipcion;
+    private TextArea lblDescipcion;
     @FXML
     private Label lblPrecio;
 

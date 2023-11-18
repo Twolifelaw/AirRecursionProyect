@@ -119,7 +119,7 @@ public class VentanaLoginController implements Initializable {
                 Administrador adminBuscar = buscarAdmin("Admins.se", nombre, contrasena);
 
                 System.out.println("clientes en el archivo");
-                //System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
+                System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
 
                 if (clienteBuscar != null) {
                     Cliente clienteaut = clienteBuscar;
