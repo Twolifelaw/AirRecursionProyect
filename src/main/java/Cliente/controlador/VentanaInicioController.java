@@ -1,9 +1,6 @@
 package Cliente.controlador;
 
-import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
-import Cliente.modelo.objetos.Destino;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,93 +9,78 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 
 public class VentanaInicioController implements Initializable {
-
-    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
-
-
+    //
     @FXML
-    private ComboBox<String> cbx_filtro;
-    @FXML
-    private Label lblStatus;
-    @FXML
-    private AnchorPane anc_bienvenida;
+    private AnchorPane anchorPaneBienvenida;
 
     @FXML
     private Button btnAyuda;
 
     @FXML
-    private AnchorPane anc_botones;
+    private AnchorPane anchorPaneBotones;
 
     @FXML
-    private AnchorPane anc_contenedor;
+    private AnchorPane anchorPaneContenedor;
 
     @FXML
-    private AnchorPane anc_inicio;
+    private AnchorPane anchorPaneInicio;
 
     @FXML
-    private ImageView avion_1;
+    private ImageView imagenAvion1;
 
     @FXML
-    private ImageView avion_2;
+    private ImageView imagenAvion2;
 
     @FXML
-    private ImageView img_usuario;
+    private ImageView imagenUsuario;
 
     @FXML
-    private Button btn_chat;
+    private Button btnChat;
 
     @FXML
-    private Button btn_cuenta;
+    private Button btnCuenta;
 
     @FXML
-    private Button btn_internacionales;
+    private Button btnInternacionales;
 
     @FXML
-    private Button btn_mapa;
+    private Button btnMapa;
 
     @FXML
-    private Button btn_nacionales;
+    private Button btnNacionales;
 
     @FXML
-    private Button btn_ofertas;
+    private Button btnOfertas;
 
     @FXML
-    private Button btn_paquete;
+    private Button btnPaquetes;
 
     @FXML
-    private Button btn_salir;
+    private Button btnSalir;
+    //De aqui para arriba son componentes.
+
+    /**
+     * Accion del botonMiCuenta.
+     *
+     * @param event
+     * @throws IOException
+     */
 
     @FXML
-    private Button btnBuscar;
-
-    @FXML
-    private TextField txt_buscador;
-    VentanaCartsController ventanaCartsController = new VentanaCartsController();
-
-
-
-    @FXML
-    void OnMiCuenta(ActionEvent event) throws IOException {
+    void onMiCuenta(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/ventanaMiCuenta.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/VentanaMiCuenta.fxml"));
         Parent root = loader.load();
 
         // Obtén el controlador de la ventana Mi Cuenta
@@ -116,50 +98,12 @@ public class VentanaInicioController implements Initializable {
 
     }
 
-    @FXML
-    void OnAyuda(ActionEvent event) {
-    }
-
-    @FXML
-    void OnChat(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
-        Scene escena = new Scene(root);
-        stage.setScene(escena);
-        stage.show();
-
-    }
-
-    @FXML
-    void OnDerecha(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OnInternacionales(ActionEvent event) {
-        anc_contenedor.toFront();
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/ventanaInternacional.fxml"));
-                AnchorPane anchorPaneOfertas = loader.load();
-                anc_contenedor.getChildren().clear();
-                anc_contenedor.getChildren().add(anchorPaneOfertas);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-    }
-
-    @FXML
-    void filtrado(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OnIzquierda(ActionEvent event) {
-    }
+    /**
+     * Accion de botonMapa.
+     *
+     * @param event
+     * @throws IOException
+     */
 
     @FXML
     void OnMapa(ActionEvent event) throws IOException {
@@ -171,51 +115,43 @@ public class VentanaInicioController implements Initializable {
 
     }
 
+    /**
+     * Accion de botonPaquetes.
+     *
+     * @param event
+     */
+
     @FXML
-    void OnNacionales(ActionEvent event) {
-
-        anc_contenedor.toFront();
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/ventanaVueloNacional.fxml"));
-                AnchorPane anchorPaneOfertas = loader.load();
-                anc_contenedor.getChildren().clear();
-                anc_contenedor.getChildren().add(anchorPaneOfertas);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
+    void onPaquetes(ActionEvent event) {
 
     }
 
-    @FXML
-    void OnOfertas(ActionEvent event) throws IOException {
+    /**
+     * Accion de botonChat.
+     *
+     * @param event
+     * @throws IOException
+     */
 
-        anc_contenedor.toFront();
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaCarts.fxml"));
-                AnchorPane anchorPaneOfertas = loader.load();
-                anc_contenedor.getChildren().clear();
-                anc_contenedor.getChildren().add(anchorPaneOfertas);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+    @FXML
+    void onChat(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
 
     }
 
+    /**
+     * Accion del botonSalir.
+     *
+     * @param event
+     * @throws IOException
+     */
 
     @FXML
-    void OnPaquetes(ActionEvent event) {
-
-    }
-
-    @FXML
-    void OnSalir(ActionEvent event) throws IOException {
+    void onSalir(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/Login/ventanaLogin.fxml")));
         Scene escena = new Scene(root);
@@ -225,30 +161,114 @@ public class VentanaInicioController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    /**
+     * Accion de botonAyuda.
+     *
+     * @param event
+     */
 
     @FXML
-    void anchorDesaparecer(ActionEvent event) {
-        anc_bienvenida.setVisible(false);
+    void onAyuda(ActionEvent event) {
     }
+
+    /**
+     * Accion del botonInternacionales.
+     *
+     * @param event
+     */
+
+    @FXML
+    void onInternacionales(ActionEvent event) {
+        anchorPaneContenedor.toFront();
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaInternacional.fxml"));
+                AnchorPane anchorPaneOfertas = loader.load();
+                anchorPaneContenedor.getChildren().clear();
+                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    /**
+     * Accion del botonOfertas.
+     *
+     * @param event
+     * @throws IOException
+     */
+
+    @FXML
+    void onOfertas(ActionEvent event) throws IOException {
+        anchorPaneContenedor.toFront();
+
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaOfertas.fxml"));
+                AnchorPane anchorPaneOfertas = loader.load();
+                anchorPaneContenedor.getChildren().clear();
+                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    /**
+     * Accion de botonNacionales.
+     *
+     * @param event
+     */
+
+    @FXML
+    void onNacionales(ActionEvent event) {
+
+        anchorPaneContenedor.toFront();
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaVueloNacional.fxml"));
+                AnchorPane anchorPaneOfertas = loader.load();
+                anchorPaneContenedor.getChildren().clear();
+                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    /**
+     * Metodo que inicia todo en la ventana.
+     *
+     * @param location
+     * @param resources
+     */
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         animacionElementos();
     }
+
     public void animacionElementos() {
-        VentanaUtilidades.agregarAnimacionBoton(btn_nacionales);
-        VentanaUtilidades.agregarAnimacionBoton(btn_internacionales);
-        VentanaUtilidades.agregarAnimacionBoton(btn_ofertas);
-        VentanaUtilidades.agregarAnimacionBoton(btn_cuenta);
-        VentanaUtilidades.agregarAnimacionBoton(btn_mapa);
-        VentanaUtilidades.agregarAnimacionBoton(btn_paquete);
-        VentanaUtilidades.agregarAnimacionBoton(btn_chat);
-        VentanaUtilidades.agregarAnimacionBoton(btn_salir);
+        VentanaUtilidades.agregarAnimacionBoton(btnNacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btnInternacionales);
+        VentanaUtilidades.agregarAnimacionBoton(btnOfertas);
+        VentanaUtilidades.agregarAnimacionBoton(btnCuenta);
+        VentanaUtilidades.agregarAnimacionBoton(btnMapa);
+        VentanaUtilidades.agregarAnimacionBoton(btnPaquetes);
+        VentanaUtilidades.agregarAnimacionBoton(btnChat);
+        VentanaUtilidades.agregarAnimacionBoton(btnSalir);
         VentanaUtilidades.agregarAnimacionBoton(btnAyuda);
-        VentanaUtilidades.girarImagen(avion_1);
-        VentanaUtilidades.girarImagen(avion_2);
-        VentanaUtilidades.girarImagen(img_usuario);
+        VentanaUtilidades.girarImagen(imagenAvion1);
+        VentanaUtilidades.girarImagen(imagenAvion2);
+        VentanaUtilidades.girarImagen(imagenUsuario);
 
     }
 }

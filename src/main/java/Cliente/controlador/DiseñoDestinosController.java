@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CartsController {
-
+public class DiseñoDestinosController {
+    //
     @FXML
     private Button btnComprar;
 
@@ -30,14 +30,22 @@ public class CartsController {
 
     @FXML
     private Label lblPais;
+
     @FXML
     private TextArea lblDescipcion;
+
     @FXML
     private Label lblPrecio;
+    //De aqui para arriba son los componentes.
 
+    /**
+     * Accion que hace el botonComprar
+     *
+     * @param event
+     * @throws IOException
+     */
 
-    public void ActionComprar(ActionEvent event) throws IOException {
-
+    public void onComprar(ActionEvent event) throws IOException {
         // Crear una instancia de cargador
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/VentanaCompraDestinos.fxml"));
 

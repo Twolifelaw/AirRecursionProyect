@@ -26,7 +26,7 @@ import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deseriali
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
 
 public class VentanaMicuentaController implements Initializable {
-
+    //
     @FXML
     private Label lblMensaje;
 
@@ -34,33 +34,40 @@ public class VentanaMicuentaController implements Initializable {
     private Label lblStatus;
 
     @FXML
-    private Button btn_atras;
+    private Button btnAtras;
 
     @FXML
-    private Button btn_guardar;
+    private Button btnGuardar;
 
     @FXML
-    private PasswordField psw_contrasena;
+    private PasswordField pswContrasena;
 
     @FXML
-    private TextField txt_correo;
+    private TextField txtCorreo;
 
     @FXML
-    private TextField txt_direccion;
+    private TextField txtDireccion;
 
     @FXML
-    private TextField txt_nombre;
+    private TextField txtNombre;
 
     @FXML
-    private TextField txt_numero_telefonico;
+    private TextField txtNumeroTelefonico;
+    //de aqui para arriba son componentes.
 
+    private Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();//se crea una instancia que va almacenar la informacion del cliente que ingreso.
 
-    private Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
+    /**
+     * Accion del botoRegresar(atras).
+     *
+     * @param event
+     * @throws IOException
+     */
 
     @FXML
-    void actionAtras(ActionEvent event) throws IOException {
+    void onRegresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaInicio.fxml")));
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
@@ -68,18 +75,23 @@ public class VentanaMicuentaController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
-    @FXML
-    public void cambiarDatos(ActionEvent event) {
-        ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
+    /**
+     * Accion de botonGuardarCambios.
+     *
+     * @param event
+     */
 
+    @FXML
+    public void onGuardarCambios(ActionEvent event) {
+        ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
         if (listaClientes != null) {
             for (Cliente cliente : listaClientes) {
                 if (cliente.getCedula().equals(clienteAutenticado.getCedula())) {
-                    cliente.setNombre(txt_nombre.getText());
-                    cliente.setCorreo(txt_correo.getText());
-                    cliente.setTelefono(txt_numero_telefonico.getText());
-                    cliente.setDireccionResidencia(txt_direccion.getText());
-                    cliente.setContrasena(psw_contrasena.getText());
+                    cliente.setNombre(txtNombre.getText());
+                    cliente.setCorreo(txtCorreo.getText());
+                    cliente.setTelefono(txtNumeroTelefonico.getText());
+                    cliente.setDireccionResidencia(txtDireccion.getText());
+                    cliente.setContrasena(pswContrasena.getText());
                     lblMensaje.setText("se actualizo sus datos correctamente!");
                     clienteAutenticado = cliente;
                     break;
@@ -94,38 +106,50 @@ public class VentanaMicuentaController implements Initializable {
     /**
      * Metodo que pense que servia para actualizar los textField pero no.
      */
+
     public void actualizarCamposTexto() {
         // Actualiza los campos de texto solo si el clienteAutenticado no es null
         if (clienteAutenticado != null) {
-            txt_nombre.setText(clienteAutenticado.getNombre());
-            txt_correo.setText(clienteAutenticado.getCorreo());
-            txt_numero_telefonico.setText(clienteAutenticado.getTelefono());
-            txt_direccion.setText(clienteAutenticado.getDireccionResidencia());
-            psw_contrasena.setText(clienteAutenticado.getContrasena());
+            txtNombre.setText(clienteAutenticado.getNombre());
+            txtCorreo.setText(clienteAutenticado.getCorreo());
+            txtNumeroTelefonico.setText(clienteAutenticado.getTelefono());
+            txtDireccion.setText(clienteAutenticado.getDireccionResidencia());
+            pswContrasena.setText(clienteAutenticado.getContrasena());
         }
     }
 
+    /**
+     * Metodo que se encarga de validar si todos los campos txt estan llenos para poder dar enter en el botonUsado.
+     */
+
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txt_nombre, txt_correo, txt_numero_telefonico, txt_direccion, psw_contrasena};
+        TextField[] camposTexto = {txtNombre, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
                 if (event.getCode().equals(KeyCode.ENTER)) {
-                    btn_guardar.fire();
+                    btnGuardar.fire();
                 }
             });
         }
     }
 
+    /**
+     * Metodo que inicia todo lo de la ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        VentanaUtilidades.agregarAnimacionBoton(btn_guardar);
-        VentanaUtilidades.agregarAnimacionBoton(btn_atras);
+        VentanaUtilidades.agregarAnimacionBoton(btnGuardar);
+        VentanaUtilidades.agregarAnimacionBoton(btnAtras);
         actualizarCamposTexto();
         inicializarEnterKey();
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_nombre, lblStatus, "Nombre");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_correo, lblStatus, "Correo");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_numero_telefonico, lblStatus, "Telefono");
-        VentanaUtilidades.agregarEventoYMostrarStatus(txt_direccion, lblStatus, "Direccion");
-        VentanaUtilidades.agregarEventoYMostrarStatus(psw_contrasena, lblStatus, "Contraseña");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtNombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtCorreo, lblStatus, "Correo");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtNumeroTelefonico, lblStatus, "Telefono");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtDireccion, lblStatus, "Direccion");
+        VentanaUtilidades.agregarEventoYMostrarStatus(pswContrasena, lblStatus, "Contraseña");
     }
 }

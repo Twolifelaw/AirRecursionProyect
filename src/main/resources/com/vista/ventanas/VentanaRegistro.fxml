@@ -15,35 +15,35 @@
          <children>
             <VBox fx:id="vText" layoutX="189.0" layoutY="124.0" prefHeight="200.0" prefWidth="175.0">
                <children>
-                  <TextField fx:id="txt_nombre" alignment="CENTER" promptText="Nombres" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txtNombre" alignment="CENTER" promptText="Nombres" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="txt_id" alignment="CENTER" promptText="Identificacion" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txtId" alignment="CENTER" promptText="Identificacion" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="txt_correo" alignment="CENTER" promptText="Correo electronico" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txtCorreo" alignment="CENTER" promptText="Correo electronico" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="txt_numero_telefonico" alignment="CENTER" promptText="Numero telefonico" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txtNumeroTelefonico" alignment="CENTER" promptText="Numero telefonico" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="txt_direccion" alignment="CENTER" promptText="Direccion de residencia" style="-fx-background-radius: 15;">
+                  <TextField fx:id="txtDireccion" alignment="CENTER" promptText="Direccion de residencia" style="-fx-background-radius: 15;">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </TextField>
-                  <PasswordField fx:id="psw_contrasena" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 15;" />
+                  <PasswordField fx:id="pswContrasena" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 15;" />
                </children>
             </VBox>
-            <Button fx:id="btn_registrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#actionRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Registrar" textFill="WHITE">
+            <Button fx:id="btnRegistrar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#onRegistrar" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Registrar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
@@ -52,7 +52,7 @@
                   <Font name="System Bold" size="22.0" />
                </font></Label>
             <AnchorPane layoutX="223.0" layoutY="79.0" prefHeight="3.0" prefWidth="109.0" style="-fx-background-color: #593F70;" />
-            <Button fx:id="btn_atras" layoutX="21.0" layoutY="431.0" mnemonicParsing="false" onAction="#actionAtras" style="-fx-background-color: #0B1525;" text="Regresar" textFill="WHITE" />
+            <Button fx:id="btnAtras" layoutX="21.0" layoutY="431.0" mnemonicParsing="false" onAction="#onRegresar" style="-fx-background-color: #0B1525;" text="Regresar" textFill="WHITE" />
             <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="342.0" prefHeight="26.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="13.0" />

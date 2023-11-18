@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserializarDestino;
 
 public class VentanaCompraDestinosController implements Initializable {
-
+    //
     @FXML
     private Button btnComprar;
 
@@ -27,6 +27,7 @@ public class VentanaCompraDestinosController implements Initializable {
 
     @FXML
     private TextArea txtPropiedadesDestino;
+
     @FXML
     private Label lblCiudad;
 
@@ -38,16 +39,26 @@ public class VentanaCompraDestinosController implements Initializable {
 
     @FXML
     private Label lblPrecio;
+    //De aqui para arriba van los componentes.
 
-
+    /**
+     * Accion de botonReservas.
+     *
+     * @param event
+     */
     @FXML
-    void aactionBtnReserva(ActionEvent event) {
-
+    void onReserva(ActionEvent event) {
 
     }
 
+    /**
+     * Accion de botonComprar.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionBtnComprear(ActionEvent event) {
+    void onComprar(ActionEvent event) {
         String aux = "Pais: ";
         for (Destino destino : deserializarDestino("destinos.dat")) {
             if (aux.concat(destino.getPais()).equals(lblPais.getText())) {
@@ -57,6 +68,7 @@ public class VentanaCompraDestinosController implements Initializable {
         }
     }
 
+    //Esta parte del codigo esta por definirse.
     public TextArea getTxtPropiedadesDestino() {
         return txtPropiedadesDestino;
     }
@@ -86,7 +98,14 @@ public class VentanaCompraDestinosController implements Initializable {
     public Label getLblPrecio() {
         return lblPrecio;
     }
+    //
 
+    /**
+     * Metodo que inicializa lo que va llevar la ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

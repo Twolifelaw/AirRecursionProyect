@@ -2,9 +2,7 @@ package Cliente.controlador;
 
 import javafx.event.ActionEvent;
 
-public class CartsPaquetesController {
-
-
+public class DiseñoPaquetesController {
 
     public void actionVerMas(ActionEvent event) {
     }

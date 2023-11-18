@@ -27,20 +27,19 @@ import java.util.ResourceBundle;
 import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
 
 
-public class VentanacreacionDestinos implements Initializable {
-
+public class VentanaCreacionDestinos implements Initializable {
+    //
+    @FXML
+    private ImageView imagenAvion1;
 
     @FXML
-    private ImageView avion_1;
-
-    @FXML
-    private ImageView avion_2;
+    private ImageView imagenAvion2;
 
     @FXML
     private Label lblStatus;
 
     @FXML
-    private AnchorPane anc_crear;
+    private AnchorPane anchorPaneCrear;
 
     private String imagePath;
 
@@ -54,32 +53,34 @@ public class VentanacreacionDestinos implements Initializable {
     private Button btnEliminar;
 
     @FXML
-    private ImageView imvImagenDestino;
+    private ImageView contenedorImagenesDestinos;
 
     @FXML
-    private TableColumn<Destino, String> ColumnCiudad;
-    @FXML
-    private TableColumn<Destino, String> columnPrecio;
-
-    @FXML
-    private TableColumn<Destino, String> columnClima;
-
-    @FXML
-    private TableColumn<Destino, String> columnImagen;
-    @FXML
-    private TableColumn<Destino, String> columnID;
-
-    @FXML
-    private Button btnAgregarImg;
+    private TableView<Destino> tablaDestinos;
 
     @FXML
     private TableColumn<Destino, String> columnPais;
 
     @FXML
-    private TableView<Destino> tblDestinos;
+    private TableColumn<Destino, String> columnaCiudad;
 
     @FXML
-    private TableColumn<Destino, Integer> columnCupos;
+    private TableColumn<Destino, String> columnaPrecio;
+
+    @FXML
+    private TableColumn<Destino, String> columnaClima;
+
+    @FXML
+    private TableColumn<Destino, String> columnaImagen;
+
+    @FXML
+    private TableColumn<Destino, String> columnaID;
+
+    @FXML
+    private TableColumn<Destino, Integer> columnaCupos;
+
+    @FXML
+    private Button btnAgregarImg;
 
     @FXML
     private TextField txtCiudad;
@@ -92,21 +93,28 @@ public class VentanacreacionDestinos implements Initializable {
 
     @FXML
     private TextField txtPais;
+
     @FXML
     private TextField txtID;
+
     @FXML
     private TextField txtPrecio;
+
     @FXML
     private TextField txtCupos;
+    //de aqui para arriba son componentes.
+
+
+
+    /**
+     * Metodo para seleccionar destino dentro de la tablaDestinos.
+     *
+     * @param event
+     */
 
     @FXML
-    private Label lbl_mensaje;
-
-
-
-    @FXML
-    void seleccionar(MouseEvent event) {
-        Destino d = this.tblDestinos.getSelectionModel().getSelectedItem();
+    void onSeleccionar(MouseEvent event) {
+        Destino d = this.tablaDestinos.getSelectionModel().getSelectedItem();
 
         if (d != null) {
             this.txtPais.setText(d.getPais());
@@ -118,18 +126,23 @@ public class VentanacreacionDestinos implements Initializable {
             this.txtCupos.setText(String.valueOf(d.getNumeroCupos()));
             try {
                 Image img = new Image(d.getImagenes());
-                this.imvImagenDestino.setImage(img);
-            }catch (NullPointerException e){
-                lblStatus.setText("Error en la carga de la imagen ruta no encontrada: "+e.getMessage());
+                this.contenedorImagenesDestinos.setImage(img);
+            } catch (NullPointerException e) {
+                lblStatus.setText("Error en la carga de la imagen ruta no encontrada: " + e.getMessage());
             }
 
         }
 
-
     }
 
+    /**
+     * Accion del botonAgregar.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionbtnAgregar(ActionEvent event) {
+    void onAgregar(ActionEvent event) {
 
         try {
             String pais = txtPais.getText();
@@ -147,7 +160,6 @@ public class VentanacreacionDestinos implements Initializable {
                 ArrayList<Destino> destinosNuevos = deserializarDestino("destinos.dat");
                 destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), descripcion,
                         imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText())));
-
                 serializarDestino("destinos.dat", destinosNuevos);
             }
 
@@ -157,11 +169,16 @@ public class VentanacreacionDestinos implements Initializable {
 
     }
 
+    /**
+     * Accion del botonEditar.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionbtnEditar(ActionEvent event) {
+    void onEditar(ActionEvent event) {
 
-        Destino D = this.tblDestinos.getSelectionModel().getSelectedItem();
-
+        Destino D = this.tablaDestinos.getSelectionModel().getSelectedItem();
 
         if (D == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -181,11 +198,18 @@ public class VentanacreacionDestinos implements Initializable {
             D.setId(txtID.getText());
             D.setNumeroCupos(Integer.parseInt(txtCupos.getText()));
 
-            this.tblDestinos.refresh();
+            this.tablaDestinos.refresh();
 
         }
 
     }
+
+    /**
+     * Metodo que se encarga de editar el destino.
+     *
+     * @param nombreArchivo
+     * @param id
+     */
 
     public void editarDestino(String nombreArchivo, String id) {
         ArrayList<Destino> listaObjetos = deserializarObjetos(nombreArchivo);
@@ -203,7 +227,6 @@ public class VentanacreacionDestinos implements Initializable {
                     objeto.setNumeroCupos(Integer.parseInt(txtCupos.getText()));
                     break;
 
-
                 }
             }
             serializarDestino("destinos.dat", listaObjetos);
@@ -211,9 +234,15 @@ public class VentanacreacionDestinos implements Initializable {
 
     }
 
+    /**
+     * Accion del botonEliminar.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionbtnEliminar(ActionEvent event) {
-        Destino D = this.tblDestinos.getSelectionModel().getSelectedItem();
+    void onEliminar(ActionEvent event) {
+        Destino D = this.tablaDestinos.getSelectionModel().getSelectedItem();
         if (D == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -227,8 +256,14 @@ public class VentanacreacionDestinos implements Initializable {
 
     }
 
+    /**
+     * Accion del botonAgregarImagen.
+     *
+     * @param event
+     */
+
     @FXML
-    void actionbtnAgregarImagen(ActionEvent event) {
+    void onAgregarImagen(ActionEvent event) {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos de imagen", "*.png", "*.jpg", "*.gif"));
@@ -252,13 +287,19 @@ public class VentanacreacionDestinos implements Initializable {
                 // Cargar la imagen desde la ubicación dentro del proyecto
                 Image image = new Image("file:" + selectedFile.getAbsolutePath());
 
-                imvImagenDestino.setImage(image);
+                contenedorImagenesDestinos.setImage(image);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
+    /**
+     * Metodo que se encarga de iniciar todo en la ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -276,23 +317,22 @@ public class VentanacreacionDestinos implements Initializable {
         VentanaUtilidades.agregarEventoYMostrarStatus(txtCupos, lblStatus, "Cupos");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtDescripcion, lblStatus, "Descripcion");
         //Animacion de imagen.
-        VentanaUtilidades.girarImagen(avion_1);
-        VentanaUtilidades.girarImagen(avion_2);
+        VentanaUtilidades.girarImagen(imagenAvion1);
+        VentanaUtilidades.girarImagen(imagenAvion2);
 
         columnPais.setCellValueFactory(new PropertyValueFactory<>("pais"));
-        ColumnCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
-        columnClima.setCellValueFactory(new PropertyValueFactory<>("clima"));
-        columnImagen.setCellValueFactory(new PropertyValueFactory<>("imagenes"));
-        columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-        columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
-        columnCupos.setCellValueFactory(new PropertyValueFactory<>("numeroCupos"));
+        columnaCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
+        columnaClima.setCellValueFactory(new PropertyValueFactory<>("clima"));
+        columnaImagen.setCellValueFactory(new PropertyValueFactory<>("imagenes"));
+        columnaPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        columnaID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columnaCupos.setCellValueFactory(new PropertyValueFactory<>("numeroCupos"));
 
 
         ObservableList<Destino> datosDestinos = FXCollections.observableArrayList(deserializarDestino("destinos.dat"));
 
         //Asignar los tados a la tabla
-        tblDestinos.setItems(datosDestinos);
-
+        tablaDestinos.setItems(datosDestinos);
 
     }
 }

@@ -3,9 +3,8 @@ package Cliente.controlador;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
-public class VueloInternacionalController {
+public class VentanaInternacionalController {
     @FXML
-    private AnchorPane anc_Internacional;
-
+    private AnchorPane anchorPaneInternacionales;
 
 }

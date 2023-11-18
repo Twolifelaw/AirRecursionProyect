@@ -1,11 +1,9 @@
 package Cliente.controlador;
 
-import Cliente.modelo.Serializacion.GestionSerializacioClientes;
 import Cliente.modelo.Serializacion.SesionCliente;
 import Cliente.modelo.exceptions.verificarException;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
-import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +17,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -125,7 +122,7 @@ public class VentanaLoginController implements Initializable {
                     Cliente clienteaut = clienteBuscar;
                     SesionCliente.setClienteAutenticado(clienteaut);
                     Stage stage = new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/vista/ventanas/ventanaInicio.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/vista/ventanas/VentanaInicio.fxml"));
                     Scene escena = new Scene(root);
                     stage.setScene(escena);
                     stage.show();
@@ -136,7 +133,7 @@ public class VentanaLoginController implements Initializable {
                 } else if (adminBuscar != null) {
                     //Mensaje provisional xd
                     Stage stage = new Stage();
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaAdministrador.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaAdministrador.fxml")));
                     Scene escena = new Scene(root);
                     stage.setScene(escena);
                     stage.show();
@@ -169,7 +166,7 @@ public class VentanaLoginController implements Initializable {
     @FXML
     void action_registrar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaRegistro.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaRegistro.fxml")));
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
@@ -184,8 +181,9 @@ public class VentanaLoginController implements Initializable {
      * @param event
      */
     @FXML
-    void onRecuperar(ActionEvent event) throws IOException { Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/ventanaRecuperacion.fxml")));
+    void onRecuperar(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaRecuperacion.fxml")));
         Scene escena = new Scene(root);
         stage.setScene(escena);
         stage.show();
@@ -209,8 +207,6 @@ public class VentanaLoginController implements Initializable {
             });
         }
     }
-
-
 
 
     @Override

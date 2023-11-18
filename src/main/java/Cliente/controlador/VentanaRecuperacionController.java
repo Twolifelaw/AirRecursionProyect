@@ -22,25 +22,31 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class VentanaRecuperacionController implements Initializable {
-
+    //
     @FXML
-    private AnchorPane anc_recuperacion;
+    private AnchorPane anchorPaneRecuperar;
 
     @FXML
     private Button btnRecuperar;
 
     @FXML
-    private Button btn_atras;
+    private Button btnAtras;
 
     @FXML
     private Label lblMensaje;
 
     @FXML
     private TextField txtCorreo;
+    //de aqui para arriba van los componentes.
 
+    /**
+     * Accion del botonRecuperar.
+     *
+     * @param event
+     */
 
     @FXML
-    void recuperar(ActionEvent event) {
+    void onRecuperar(ActionEvent event) {
         String correo = txtCorreo.getText().trim();
         boolean correoRegistrado = VentanaUtilidades.verificarCorreoRegistrado("clientes.se", correo);
 
@@ -69,8 +75,15 @@ public class VentanaRecuperacionController implements Initializable {
 
     }
 
+    /**
+     * Accion del botonRegresar.
+     *
+     * @param event
+     * @throws IOException
+     */
+
     @FXML
-    void regresar(ActionEvent event) throws IOException {
+    void onRegresar(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/Login/ventanaLogin.fxml")));
         Scene escena = new Scene(root);
@@ -80,11 +93,17 @@ public class VentanaRecuperacionController implements Initializable {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    /**
+     * Metodo que inicia lo de la ventana.
+     *
+     * @param url
+     * @param resourceBundle
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         VentanaUtilidades.agregarAnimacionBoton(btnRecuperar);
-        VentanaUtilidades.agregarAnimacionBoton(btn_atras);
+        VentanaUtilidades.agregarAnimacionBoton(btnAtras);
 
     }
 }
