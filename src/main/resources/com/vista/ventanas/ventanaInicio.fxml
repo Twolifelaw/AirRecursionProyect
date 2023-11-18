@@ -2,9 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
+<AnchorPane fx:id="anc_inicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
       <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
          <children>
@@ -137,13 +135,6 @@
             </ImageView>
          </children>
       </Pane>
-      <AnchorPane layoutX="396.0" layoutY="192.0" prefHeight="35.0" prefWidth="585.0">
-         <children>
-            <TextField fx:id="txt_buscador" alignment="CENTER" layoutX="165.0" prefHeight="26.0" prefWidth="256.0" promptText="Buscador" style="-fx-background-radius: 15;" />
-            <ComboBox fx:id="cbx_filtro" layoutX="14.0" onAction="#filtrado" prefWidth="150.0" promptText="Filtro" stylesheets="@../Login/DiseñoProyecto.css" />
-            <Button fx:id="btnBuscar" layoutX="428.0" mnemonicParsing="false" onAction="#onBuscar" prefHeight="12.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="buscar" textFill="WHITE" />
-         </children>
-      </AnchorPane>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

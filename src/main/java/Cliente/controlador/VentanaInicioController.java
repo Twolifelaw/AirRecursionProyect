@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 public class VentanaInicioController implements Initializable {
 
-    public ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
 
 
     @FXML
@@ -92,6 +92,8 @@ public class VentanaInicioController implements Initializable {
     @FXML
     private TextField txt_buscador;
     VentanaCartsController ventanaCartsController = new VentanaCartsController();
+
+
 
     @FXML
     void OnMiCuenta(ActionEvent event) throws IOException {
@@ -206,60 +208,7 @@ public class VentanaInicioController implements Initializable {
 
     }
 
-    @FXML
-    void onBuscar(ActionEvent event) {
-        String filtroSeleccionado = cbx_filtro.getValue();
-        String valorBusqueda = txt_buscador.getText();
-        if(filtroSeleccionado != null && !valorBusqueda.isEmpty()){
-            buscarDestinoPorFiltro(filtroSeleccionado,valorBusqueda);
-        }else{
-            System.out.println("Seleccione un filtro y proporcione un valor de búsqueda.");
-        }
-    }
-    private void buscarDestinoPorFiltro(String filtro, String valor) {
-        ArrayList<Destino> destinosFiltrados = new ArrayList<>();
 
-        for (Destino destino : destinosCargados) {
-            String valorAtributo = null;
-
-            switch (filtro.toLowerCase()) {
-                case "pais":
-                    valorAtributo = destino.getPais();
-                    break;
-                case "ciudad":
-                    valorAtributo = destino.getCiudad();
-                    break;
-                case "clima":
-                    valorAtributo = destino.getClima();
-                    break;
-                case "precio":
-                    valorAtributo = destino.getPrecio();
-                    break;
-                case "id":
-                    valorAtributo = destino.getId();
-                    break;
-                case "cupos":
-                    valorAtributo = String.valueOf(destino.getNumeroCupos());
-                    break;
-                // Agrega más casos según tus atributos
-                default:
-                    // Manejar el caso en que el filtro no coincide con ningún atributo
-                    System.out.println("Filtro no válido");
-                    return;
-            }
-
-            // Realiza la comparación, ignorando mayúsculas y minúsculas
-            if (valorAtributo != null && valorAtributo.equalsIgnoreCase(valor)) {
-                destinosFiltrados.add(destino);
-            }
-        }
-
-        if (destinosFiltrados.isEmpty()) {
-            System.out.println("No se encontraron destinos que coincidan con el filtro proporcionado.");
-        } else {
-            ventanaCartsController.mostrarDestinos(destinosFiltrados);
-        }
-    }
     @FXML
     void OnPaquetes(ActionEvent event) {
 
@@ -300,6 +249,6 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.girarImagen(avion_1);
         VentanaUtilidades.girarImagen(avion_2);
         VentanaUtilidades.girarImagen(img_usuario);
-        cbx_filtro.getItems().addAll("Pais","Ciudad","Clima","Precio","ID","Cupo");
+
     }
 }

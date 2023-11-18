@@ -4,30 +4,35 @@ import Cliente.modelo.Serializacion.GestionSerializacionDestinos;
 import Cliente.modelo.exceptions.CargarImagenException;
 import Cliente.modelo.exceptions.VerificarExceptionNull;
 import Cliente.modelo.objetos.Destino;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import static Cliente.controlador.VentanaInicioController.*;
 
 public class VentanaCartsController implements Initializable {
 
     private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private final int maxColumns = 3; // Número máximo de columnas
     // Cargar los destinos desde el archivo
-    public ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+    public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");
+
+    @FXML
+    private Button btnBuscar;
+    @FXML
+    private ComboBox<String> cbx_filtro;
+    @FXML
+    private TextField txt_buscador;
     @FXML
     private GridPane gridOfertas;
     @FXML
@@ -38,17 +43,18 @@ public class VentanaCartsController implements Initializable {
     private Label lblStatus;
     @FXML
     private CartsController cartsController;
-    private int anchorPanelCount = 0;
-
-
 
     public void mostrarDestinos(ArrayList<Destino> destinos) {
+        gridOfertas.getChildren().clear();
+        int anchorPanelCount = 0;
         for (Destino destino : destinos) {
             try {
+
                 //Cargar el AnchorPane desde el archivo FXML
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/Carts.fxml"));
                 AnchorPane nuevoAnchorPane = loader.load();
                 anchorPanelCount++;
+
 
                 // Establece el tamaño deseado para las filas y columnas en el GridPane
                 RowConstraints rowConstraints = new RowConstraints();
@@ -56,81 +62,87 @@ public class VentanaCartsController implements Initializable {
 
                 ColumnConstraints columnConstraints = new ColumnConstraints();
                 columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
-
-                // Aplica las restricciones a todas las filas y columnas
-                gridOfertas.getRowConstraints().addAll(rowConstraints, rowConstraints, rowConstraints);
-                gridOfertas.getColumnConstraints().addAll(columnConstraints, columnConstraints);
-
-
-                //Se setan los valores de los objetos en los labels del anchorPane (Cart)
-                Label lblPais = (Label) nuevoAnchorPane.lookup("#lblPais");
-                lblPais.setText("Pais: " + destino.getPais());
-
-                Label lblCiudad = (Label) nuevoAnchorPane.lookup("#lblCiudad");
-                lblCiudad.setText("Ciudad: " + destino.getCiudad());
-
-                Label lblClima = (Label) nuevoAnchorPane.lookup("#lblClima");
-                lblClima.setText("Clima: " + destino.getClima());
-
-                Label lblDescipcion = (Label) nuevoAnchorPane.lookup("#lblDescipcion");
-                lblDescipcion.setText(destino.getDescripcion());
-
-                Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblPrecio");
-                lblPrecio.setText("Precio: " + destino.getPrecio());
+                if(gridOfertas!= null){
+                    // Aplica las restricciones a todas las filas y columnas
+                    gridOfertas.getRowConstraints().addAll(rowConstraints, rowConstraints, rowConstraints);
+                    gridOfertas.getColumnConstraints().addAll(columnConstraints, columnConstraints);
 
 
-                ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
-                try {
-                    String rutaImagen = destino.getImagenes();
 
-                    if (rutaImagen != null) {
-                        Image image = new Image(rutaImagen);
-                        imgView.setImage(image);
+                    //Se setan los valores de los objetos en los labels del anchorPane (Cart)
+                    Label lblPais = (Label) nuevoAnchorPane.lookup("#lblPais");
+                    lblPais.setText("Pais: " + destino.getPais());
 
-                        // Establece el Ancho y alto de las imágenes
-                        double width = 240; // Ancho deseado
-                        double height = 150; // Alto deseado
-                        imgView.setFitWidth(width);
-                        imgView.setFitHeight(height);
-                    } else {
-                        // Manejar el caso en que la ruta de la imagen es nula
-                        System.out.println("La ruta de la imagen para el destino " + destino.getPais() + " es nula.");
-                        // Puedes asignar una imagen predeterminada o mostrar un mensaje al usuario, según tus necesidades
+                    Label lblCiudad = (Label) nuevoAnchorPane.lookup("#lblCiudad");
+                    lblCiudad.setText("Ciudad: " + destino.getCiudad());
+
+                    Label lblClima = (Label) nuevoAnchorPane.lookup("#lblClima");
+                    lblClima.setText("Clima: " + destino.getClima());
+
+                    TextArea lblDescipcion = (TextArea) nuevoAnchorPane.lookup("#lblDescipcion");
+                    lblDescipcion.setText(destino.getDescripcion());
+
+                    Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblPrecio");
+                    lblPrecio.setText("Precio: " + destino.getPrecio());
+
+
+                    ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
+                    try {
+                        String rutaImagen = destino.getImagenes();
+
+                        if (rutaImagen != null) {
+                            Image image = new Image(rutaImagen);
+                            imgView.setImage(image);
+
+                            // Establece el Ancho y alto de las imágenes
+                            double width = 240; // Ancho deseado
+                            double height = 150; // Alto deseado
+                            imgView.setFitWidth(width);
+                            imgView.setFitHeight(height);
+                        } else {
+                            // Manejar el caso en que la ruta de la imagen es nula
+                            System.out.println("La ruta de la imagen para el destino " + destino.getPais() + " es nula.");
+                            // Puedes asignar una imagen predeterminada o mostrar un mensaje al usuario, según tus necesidades
+                        }
+                    } catch (VerificarExceptionNull e) {
+                        // Manejar la excepción específica para el caso de ruta de imagen nula
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        // Manejar otras excepciones
+                        throw new CargarImagenException("ERROR al cargar la imagen para el destino: " + destino.getPais(), e);
                     }
-                } catch (VerificarExceptionNull e) {
-                    // Manejar la excepción específica para el caso de ruta de imagen nula
-                    System.out.println(e.getMessage());
-                } catch (Exception e) {
-                    // Manejar otras excepciones
-                    throw new CargarImagenException("ERROR al cargar la imagen para el destino: " + destino.getPais(), e);
+
+
+                    //Establece el minimo y maximo de tamaño de los anchorPane's
+                    nuevoAnchorPane.setMaxHeight(291);
+                    nuevoAnchorPane.setMinHeight(291);
+                    nuevoAnchorPane.setMaxWidth(300);
+                    nuevoAnchorPane.setMinWidth(300);
+
+                    // Configurar las coordenadas de acuerdo a tu diseño
+                    int row = (anchorPanelCount - 1) / maxColumns;
+                    int col = (anchorPanelCount - 1) % maxColumns;
+
+                    GridPane.setRowIndex(nuevoAnchorPane, row);
+                    GridPane.setColumnIndex(nuevoAnchorPane, col);
+
+
+                    // Establecer restricciones de crecimiento horizontal para evitar que se agrupen
+                    GridPane.setHgrow(nuevoAnchorPane, Priority.ALWAYS);
+
+                    //Agregar al cart al GridePane
+                    gridOfertas.getChildren().add(nuevoAnchorPane);
+                    if (anchorPanelCount > 0) {
+                        Insets margins = new Insets(paneSpacing, paneSpacing, paneSpacing, paneSpacing);
+                        GridPane.setMargin(nuevoAnchorPane, margins);
+                    }
+
+                    scroll_pane.setVvalue(1.0);
+                }else {
+                    System.out.println("no se cargo el gridPane");
                 }
 
 
-                //Establece el minimo y maximo de tamaño de los anchorPane's
-                nuevoAnchorPane.setMaxHeight(291);
-                nuevoAnchorPane.setMinHeight(291);
-                nuevoAnchorPane.setMaxWidth(300);
-                nuevoAnchorPane.setMinWidth(300);
-
-                // Configurar las coordenadas de acuerdo a tu diseño
-                int row = (anchorPanelCount - 1) / maxColumns;
-                int col = (anchorPanelCount - 1) % maxColumns;
-
-                GridPane.setRowIndex(nuevoAnchorPane, row);
-                GridPane.setColumnIndex(nuevoAnchorPane, col);
-
-
-                // Establecer restricciones de crecimiento horizontal para evitar que se agrupen
-                GridPane.setHgrow(nuevoAnchorPane, javafx.scene.layout.Priority.ALWAYS);
-
-                //Agregar al cart al GridePane
-                gridOfertas.getChildren().add(nuevoAnchorPane);
-                if (anchorPanelCount > 0) {
-                    Insets margins = new Insets(paneSpacing, paneSpacing, paneSpacing, paneSpacing);
-                    GridPane.setMargin(nuevoAnchorPane, margins);
-                }
-
-                scroll_pane.setVvalue(1.0);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -138,12 +150,74 @@ public class VentanaCartsController implements Initializable {
 
     }
 
+    @FXML
+    void onBuscar(ActionEvent event) {
+        String filtroSeleccionado = cbx_filtro.getValue();
+        String valorBusqueda = txt_buscador.getText();
+        if(filtroSeleccionado != null && !valorBusqueda.isEmpty()){
+            //buscarDestinoPorFiltro(filtroSeleccionado,valorBusqueda);
+            mostrarDestinos(buscarDestinoPorFiltro(filtroSeleccionado,valorBusqueda));
+        }else{
+            mostrarDestinos(destinosCargados);
+            //gridOfertas = null;
+            System.out.println("Seleccione un filtro y proporcione un valor de búsqueda.");
+        }
+    }
+    public static ArrayList<Destino> buscarDestinoPorFiltro(String filtro, String valor) {
+        ArrayList<Destino> destinosFiltrados = new ArrayList<>();
+        for (Destino destino : destinosCargados) {
+            String valorAtributo = null ;
+
+            switch (filtro.toLowerCase()) {
+                case "pais":
+                    valorAtributo = destino.getPais();
+                    System.out.println(valorAtributo);
+                    break;
+                case "ciudad":
+                    valorAtributo = destino.getCiudad();
+                    break;
+                case "clima":
+                    valorAtributo = destino.getClima();
+                    break;
+                case "precio":
+                    valorAtributo = destino.getPrecio();
+                    break;
+                case "id":
+                    valorAtributo = destino.getId();
+                    break;
+                case "cupos":
+                    valorAtributo = String.valueOf(destino.getNumeroCupos());
+                    break;
+                // Agrega más casos según tus atributos
+                default:
+                    // Manejar el caso en que el filtro no coincide con ningún atributo
+                    System.out.println("Filtro no válido");
+
+            }
+
+            // Realiza la comparación, ignorando mayúsculas y minúsculas
+            if (valorAtributo != null && valorAtributo.equalsIgnoreCase(valor)) {
+                destinosFiltrados.add(destino);
+            }
+        }
+
+        if (destinosFiltrados.isEmpty()) {
+            System.out.println("No se encontraron destinos que coincidan con el filtro proporcionado.");
+        } else {
+            System.out.println(destinosFiltrados);
+        }
+        return destinosFiltrados;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mostrarDestinos(destinosCargados);
+        cbx_filtro.getItems().addAll("Pais","Ciudad","Clima","Precio","ID","Cupo");
 
 
     }
 
 
+    public void filtrado(ActionEvent event) {
+    }
 }
