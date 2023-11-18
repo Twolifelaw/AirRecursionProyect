@@ -5,52 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/CargarImagenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/VerificarExceptionNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/DiseñoProyecto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/destino2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_11_23,_7_46_a_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_11_23__7_46_a__m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinos.dat" beforeDir="false" afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/CartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaUtilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanacreacionDestinos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Armenia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Armenia.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Candado png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/NotiInversa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/OIP.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/R2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Texas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Texas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Usuarip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/airplane_4902246.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/enviarIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-contraseña-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/icons8-usuario-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/img_451479.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/producto-default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/Login/ventanaPrincipal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/Carts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCarts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanacreacionDestinos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaAdministrador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaInicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaMiCuenta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRecuperacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ventanaRegistro.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
@@ -248,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699241769968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se termino el sistema de filtrado de los destinos">
+      <created>1700275396089</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700275396091</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add Paris.jpg">
+      <created>1700275428412</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700275428412</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +253,9 @@
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="se gurada workspace.xml" />
+    <MESSAGE value="se termino el sistema de filtrado de los destinos" />
+    <MESSAGE value="add Paris.jpg" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Paris.jpg" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
