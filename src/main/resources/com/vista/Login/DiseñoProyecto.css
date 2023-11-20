@@ -67,6 +67,16 @@
 
 }
 
+#scrollPanePaquetes .scroll-bar{
+    -fx-background-color: rgba(10, 20, 37, 0.7);
+}
+
+#gridPaquetes{
+    -fx-background-image: url('17.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
 #gridOfertas{
     -fx-background-image: url('17.jpg');
     -fx-background-size: cover;

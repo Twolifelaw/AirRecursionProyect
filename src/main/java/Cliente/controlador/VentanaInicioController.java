@@ -123,13 +123,19 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     void onPaquetes(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaPaquetes.fxml")));
-        Scene escena = new Scene(root);
-        stage.setScene(escena);
-        stage.show();
-        // en esta línea, esconde el stage del login y carga el nuevo stage
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        anchorPaneContenedor.toFront();
+
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaPaquetes.fxml"));
+                AnchorPane anchorPanePaquetes = loader.load();
+                anchorPaneContenedor.getChildren().clear();
+                anchorPaneContenedor.getChildren().add(anchorPanePaquetes);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
     }
 
@@ -178,28 +184,7 @@ public class VentanaInicioController implements Initializable {
     void onAyuda(ActionEvent event) {
     }
 
-    /**
-     * Accion del botonInternacionales.
-     *
-     * @param event
-     */
 
-    @FXML
-    void onInternacionales(ActionEvent event) {
-        anchorPaneContenedor.toFront();
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaInternacional.fxml"));
-                AnchorPane anchorPaneOfertas = loader.load();
-                anchorPaneContenedor.getChildren().clear();
-                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-    }
 
     /**
      * Accion del botonOfertas.
@@ -227,30 +212,6 @@ public class VentanaInicioController implements Initializable {
     }
 
     /**
-     * Accion de botonNacionales.
-     *
-     * @param event
-     */
-
-    @FXML
-    void onNacionales(ActionEvent event) {
-
-        anchorPaneContenedor.toFront();
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaVueloNacional.fxml"));
-                AnchorPane anchorPaneOfertas = loader.load();
-                anchorPaneContenedor.getChildren().clear();
-                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-    }
-
-    /**
      * Metodo que inicia todo en la ventana.
      *
      * @param location
@@ -264,8 +225,6 @@ public class VentanaInicioController implements Initializable {
     }
 
     public void animacionElementos() {
-        VentanaUtilidades.agregarAnimacionBoton(btnNacionales);
-        VentanaUtilidades.agregarAnimacionBoton(btnInternacionales);
         VentanaUtilidades.agregarAnimacionBoton(btnOfertas);
         VentanaUtilidades.agregarAnimacionBoton(btnCuenta);
         VentanaUtilidades.agregarAnimacionBoton(btnMapa);

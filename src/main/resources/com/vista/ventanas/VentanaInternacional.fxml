@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane fx:id="anchorPaneInternacionales" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="1007.0" style="-fx-background-color: #0A1425;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInternacionalController">
-   <children>
-      <AnchorPane layoutX="404.0" layoutY="94.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" />
-   </children>
-</AnchorPane>
