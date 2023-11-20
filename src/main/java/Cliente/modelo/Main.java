@@ -1,6 +1,7 @@
 package Cliente.modelo;
 
 import Cliente.controlador.VentanaUtilidades;
+import Cliente.modelo.Serializacion.GestionPaquetes;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -17,6 +18,7 @@ public class Main extends Application {
         //VentanaUtilidades.crearAdministrador();
         launch(args);
        // guardarDestinoTuristico("destinos.dat");
+        //GestionPaquetes.crearPaquetePrueba();
 
 
     }

@@ -122,7 +122,14 @@ public class VentanaInicioController implements Initializable {
      */
 
     @FXML
-    void onPaquetes(ActionEvent event) {
+    void onPaquetes(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/vista/ventanas/VentanaPaquetes.fxml")));
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+        stage.show();
+        // en esta línea, esconde el stage del login y carga el nuevo stage
+        ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }
 

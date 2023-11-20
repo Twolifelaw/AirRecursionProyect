@@ -1,59 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="348.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #6e3f70; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoPaquetesController">
+<AnchorPane prefHeight="332.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #6e3f70; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoPaquetesController">
    <children>
-      <HBox layoutX="33.0" layoutY="174.0" prefHeight="104.0" prefWidth="250.0">
+      <HBox layoutX="23.0" layoutY="38.0" prefHeight="141.0" prefWidth="276.0">
          <children>
             <VBox prefHeight="104.0" prefWidth="145.0">
                <children>
-                  <Label fx:id="lbñDestinos" text="Label" textFill="WHITE">
+                  <Label fx:id="lblNombre" prefHeight="17.0" prefWidth="127.0" text="Label" textFill="WHITE">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="30.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="lblNombre" text="Label" textFill="WHITE">
+                  <Label fx:id="lblDuracion" prefHeight="36.0" prefWidth="133.0" text="Label" textFill="WHITE">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="lblDuracion" text="Label" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="30.0" />
                      </VBox.margin>
                   </Label>
                </children>
             </VBox>
             <VBox prefHeight="104.0" prefWidth="140.0">
                <children>
-                  <Label fx:id="lblprecio" text="Label" textFill="WHITE">
+                  <Label fx:id="lblprecio" prefHeight="17.0" prefWidth="141.0" text="Label" textFill="WHITE">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="30.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="lblServicios" text="Label" textFill="WHITE">
+                  <Label fx:id="lblServicios" prefHeight="17.0" prefWidth="142.0" text="Label" textFill="WHITE">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="30.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="lblcupoMaximo" text="Label" textFill="WHITE">
+                  <Label fx:id="lblcupoMaximo" prefHeight="17.0" prefWidth="130.0" text="Label" textFill="WHITE">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="30.0" />
                      </VBox.margin>
                   </Label>
                </children>
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="btnVerMas" layoutX="128.0" layoutY="299.0" mnemonicParsing="false" onAction="#actionVerMas" style="-fx-background-color: #593F70; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" text="Ver más" textFill="WHITE" />
-      <ImageView fx:id="imgvImagensPaquetes" fitHeight="138.0" fitWidth="262.0" layoutX="27.0" layoutY="19.0" pickOnBounds="true" />
+      <Button fx:id="btnVerMas" layoutX="120.0" layoutY="271.0" mnemonicParsing="false" onAction="#actionVerMas" style="-fx-background-color: #593F70; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" text="Ver más" textFill="WHITE" />
+      <TextArea fx:id="txtAreaDestinos" layoutX="16.0" layoutY="193.0" prefHeight="67.0" prefWidth="285.0" />
    </children>
 </AnchorPane>

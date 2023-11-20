@@ -6,8 +6,6 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class GestionSerializacionDestinos {
-    public static ArrayList<Destino> destinos = new ArrayList<>();
-
 
     /**
      * Este método serializa una lista de objetos en un archivo de texto, pero antes de rescribir el arvhio
