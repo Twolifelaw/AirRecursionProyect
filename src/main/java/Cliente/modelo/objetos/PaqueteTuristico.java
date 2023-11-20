@@ -1,9 +1,10 @@
 package Cliente.modelo.objetos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class PaqueteTuristico {
+public class PaqueteTuristico implements Serializable {
 
     private ArrayList<Destino> destinos;
     private String nombre;
@@ -21,6 +22,9 @@ public class PaqueteTuristico {
         this.precio = precio;
         this.cupoMaximo = cupoMaximo;
         this.fechasDisponobles = fechasDisponobles;
+    }
+
+    public PaqueteTuristico() {
     }
 
     public ArrayList<Destino> getDestinos() {

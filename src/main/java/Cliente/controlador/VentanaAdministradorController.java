@@ -102,6 +102,7 @@ public class VentanaAdministradorController implements Initializable {
     @FXML
     void onPaquetes(ActionEvent event) {
 
+
     }
 
     /**
