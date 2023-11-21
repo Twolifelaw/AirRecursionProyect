@@ -21,33 +21,20 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnMapa" layoutX="22.0" layoutY="128.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
+                  <Button fx:id="btnMapa" layoutX="22.0" layoutY="118.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnPaquetes" layoutX="22.0" layoutY="184.0" mnemonicParsing="false" onAction="#onPaquetes" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
+                  <Button fx:id="btnChat" layoutX="22.0" layoutY="165.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnChat" layoutX="22.0" layoutY="242.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
+                  <Button fx:id="btnSalir" layoutX="22.0" layoutY="212.0" mnemonicParsing="false" onAction="#onSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="btnSalir" layoutX="22.0" layoutY="300.0" mnemonicParsing="false" onAction="#onSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnAyuda" layoutX="23.0" layoutY="357.0" mnemonicParsing="false" onAction="#onAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                </children>
             </AnchorPane>
@@ -56,11 +43,19 @@
                   <Image url="@../Login/10.png" />
                </image>
             </ImageView>
+            <Button fx:id="btnAyuda" layoutX="35.0" layoutY="610.0" mnemonicParsing="false" onAction="#onAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="169.0" layoutY="108.0" opacity="0.82" prefHeight="77.0" prefWidth="1042.0" style="-fx-background-color: #0A1425;">
+      <AnchorPane layoutX="170.0" layoutY="115.0" opacity="0.82" prefHeight="77.0" prefWidth="1045.0" style="-fx-background-color: #0A1425;">
          <children>
-            <Button fx:id="btnOfertas" layoutX="441.0" layoutY="16.0" mnemonicParsing="false" onAction="#onOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
+            <Button fx:id="btnOfertas" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#onOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -68,52 +63,36 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnNacionales" layoutX="648.0" layoutY="14.0" mnemonicParsing="false" onAction="#onNacionales" prefHeight="35.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Nacionales" textFill="WHITE">
+            <Pane layoutX="326.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
+            <Pane layoutX="522.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
+            <Button fx:id="btnPaquetes" layoutX="326.0" layoutY="16.0" mnemonicParsing="false" onAction="#onPaquetes" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
-            <Button fx:id="btnInternacionales" layoutX="207.0" layoutY="16.0" mnemonicParsing="false" onAction="#onInternacionales" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Vuelos Internacionales" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane layoutX="214.0" layoutY="52.0" prefHeight="5.0" prefWidth="192.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
-            <Pane layoutX="441.0" layoutY="52.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
-            <Pane layoutX="648.0" layoutY="54.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneContenedor" layoutX="182.0" layoutY="226.0" prefHeight="388.0" prefWidth="1007.0" style="-fx-background-color: #0A1425;">
+      <AnchorPane fx:id="anchorPaneContenedor" layoutX="169.0" layoutY="182.0" prefHeight="485.0" prefWidth="1045.0" style="-fx-background-color: #0A1425;">
          <children>
-            <AnchorPane fx:id="anchorPaneBienvenida" layoutX="3.0" layoutY="-1.0" prefHeight="388.0" prefWidth="1007.0">
+            <HBox layoutX="2.0" prefHeight="485.0" prefWidth="1045.0">
                <children>
-                  <HBox prefHeight="388.0" prefWidth="1007.0">
-                     <children>
-                        <ImageView fitHeight="392.0" fitWidth="347.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../Imagenes/destino%201.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="389.0" fitWidth="330.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../Imagenes/destino2.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="394.0" fitWidth="330.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../Imagenes/destino%203.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <ImageView fitHeight="485.0" fitWidth="347.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Imagenes/destino%201.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="485.0" fitWidth="330.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Imagenes/destino2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="485.0" fitWidth="368.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Imagenes/destino%203.jpg" />
+                     </image>
+                  </ImageView>
                </children>
-            </AnchorPane>
+            </HBox>
          </children>
       </AnchorPane>
       <Pane layoutX="333.0" layoutY="20.0" prefHeight="79.0" prefWidth="710.0">

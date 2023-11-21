@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="332.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #6e3f70; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoPaquetesController">
+<AnchorPane opacity="0.88" prefHeight="332.0" prefWidth="316.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #0A1425; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.DiseñoPaquetesController">
    <children>
       <HBox layoutX="23.0" layoutY="38.0" prefHeight="141.0" prefWidth="276.0">
          <children>

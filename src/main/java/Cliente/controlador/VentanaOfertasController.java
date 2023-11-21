@@ -37,7 +37,7 @@ public class VentanaOfertasController implements Initializable {
     @FXML
     private GridPane gridOfertas;
     @FXML
-    private AnchorPane paneOfertas;
+    private AnchorPane anchorPaneOfertas;
     @FXML
     private ScrollPane scrollPanelContenedor;
     //de aqui para arriba son componentes.

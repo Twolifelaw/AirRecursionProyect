@@ -8,8 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
@@ -30,7 +28,7 @@ public class VentanaPaquetesController implements Initializable {
     @FXML
     private AnchorPane AnchorPaquetes;
     @FXML
-    private ScrollPane scroll_pane;
+    private ScrollPane scrollPanePaquetes;
 
    // public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");//Se trae los destinos deserializados.
 
@@ -130,10 +128,10 @@ public class VentanaPaquetesController implements Initializable {
 
 
                     //Establece el minimo y maximo de tamaño de los anchorPane's
-                    nuevoAnchorPane.setMaxHeight(350);
-                    nuevoAnchorPane.setMinHeight(350);
-                    nuevoAnchorPane.setMaxWidth(350);
-                    nuevoAnchorPane.setMinWidth(350);
+                    nuevoAnchorPane.setMaxHeight(291);
+                    nuevoAnchorPane.setMinHeight(291);
+                    nuevoAnchorPane.setMaxWidth(300);
+                    nuevoAnchorPane.setMinWidth(300);
 
                     // Configurar las coordenadas de acuerdo a tu diseño
                     int row = (anchorPanelCount - 1) / maxColumns;
@@ -153,7 +151,7 @@ public class VentanaPaquetesController implements Initializable {
                         GridPane.setMargin(nuevoAnchorPane, margins);
                     }
 
-                    scroll_pane.setVvalue(1.0);
+                    scrollPanePaquetes.setVvalue(1.0);
                 } else {
                     System.out.println("no se cargo el gridPane");
                 }
