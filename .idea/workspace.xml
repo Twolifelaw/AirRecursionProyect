@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se guarda las nuevas ventanas y archivos serializados">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_23,_11_28_a_ m__[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_23__11_28_a__m___Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_23,_1_26_p_ m__[Changes]/clientes.se" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_23,_1_26_p_ m__[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_23__1_26_p__m___Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaEstadistica.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023_18_09_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_11_2023_18_09__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2023_18_08_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2023_18_08__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_23,_9_09_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_23__9_09_p__m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaAdministradorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaInternacionalController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaNacionalController.java" beforeDir="false" />
@@ -216,7 +230,35 @@
       <option name="project" value="LOCAL" />
       <updated>1699241769968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="correcion de error en el regitro, se añadio nuevos destinos">
+      <created>1700324512519</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700324512522</updated>
+    </task>
+    <task id="LOCAL-00006" summary="se guardo imagemes de destinos nuevos">
+      <created>1700324557880</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700324557881</updated>
+    </task>
+    <task id="LOCAL-00007" summary="se creo la visualisacion de los paquetes y se diseño la ventana de la creación de los paquetes">
+      <created>1700453404664</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700453404664</updated>
+    </task>
+    <task id="LOCAL-00008" summary="se guarda las nuevas ventanas y archivos serializados">
+      <created>1700453433112</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700453433112</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,18 +292,11 @@
     <MESSAGE value="Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos" />
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="se gurada workspace.xml" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoDestinosController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="correcion de error en el regitro, se añadio nuevos destinos" />
+    <MESSAGE value="se guardo imagemes de destinos nuevos" />
+    <MESSAGE value="se creo la visualisacion de los paquetes y se diseño la ventana de la creación de los paquetes" />
+    <MESSAGE value="se guarda las nuevas ventanas y archivos serializados" />
+    <option name="LAST_COMMIT_MESSAGE" value="se guarda las nuevas ventanas y archivos serializados" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
