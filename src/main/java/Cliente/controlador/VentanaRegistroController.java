@@ -1,6 +1,6 @@
 package Cliente.controlador;
 
-import Cliente.modelo.exceptions.verificarException;
+import Cliente.modelo.exceptions.VerificarException;
 import Cliente.modelo.objetos.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -92,21 +92,21 @@ public class VentanaRegistroController implements Initializable {
             contrasena = pswContrasena.getText();
 
             if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty()) {
-                throw new verificarException("Llene los campos");
+                throw new VerificarException("Llene los campos");
             } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty()) {
-                throw new verificarException("Campo vacio llenar porfavor");
+                throw new VerificarException("Campo vacio llenar porfavor");
             } else {
                 if (VentanaUtilidades.verificarIdentificacionRegistrada("clientes.se", identificacion)) {
-                    throw new verificarException("identificacion ya registrada.");
+                    throw new VerificarException("identificacion ya registrada.");
                 } else if (VentanaUtilidades.verificarCorreoRegistrado("clientes.se", correoElectronico)) {
-                    throw new verificarException("correo ya registrada.");
+                    throw new VerificarException("correo ya registrada.");
                 } else {
                     clientes.add(new Cliente(nombres, "a", identificacion, contrasena, correoElectronico, numeroTelefonico, direccionResidencia));
                     serializarObjetos("clientes.se", clientes);
-                    throw new verificarException("Se registró correctamente");
+                    throw new VerificarException("Se registró correctamente");
                 }
             }
-        } catch (verificarException e) {
+        } catch (VerificarException e) {
 
             lblMensaje.setText(e.getMessage());
             VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);

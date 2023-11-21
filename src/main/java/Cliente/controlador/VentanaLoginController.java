@@ -1,7 +1,7 @@
 package Cliente.controlador;
 
 import Cliente.modelo.Serializacion.SesionCliente;
-import Cliente.modelo.exceptions.verificarException;
+import Cliente.modelo.exceptions.VerificarException;
 import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
 import javafx.event.ActionEvent;
@@ -107,9 +107,9 @@ public class VentanaLoginController implements Initializable {
             nombre = txtUsuario.getText();
             contrasena = pswContrasena.getText();
             if (nombre.isEmpty() && contrasena.isEmpty()) {
-                throw new verificarException("Llene los campos");
+                throw new VerificarException("Llene los campos");
             } else if (nombre.isEmpty() || contrasena.isEmpty()) {
-                throw new verificarException("Campo vacio llenar porfavor");
+                throw new VerificarException("Campo vacio llenar porfavor");
             } else {
                 boolean usuarioEncontrado = false;
                 Cliente clienteBuscar = buscarObjeto("clientes.se", nombre, contrasena);
@@ -142,12 +142,12 @@ public class VentanaLoginController implements Initializable {
 
                 } else {
                     if (!usuarioEncontrado) {
-                        throw new verificarException("No se encontro usuario");
+                        throw new VerificarException("No se encontro usuario");
                     }
                 }
             }
 
-        } catch (verificarException e) {
+        } catch (VerificarException e) {
 
             lblMensaje.setText(e.getMessage());
             VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);

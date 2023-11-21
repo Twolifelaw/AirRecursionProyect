@@ -59,7 +59,7 @@ public class VentanaEstadistica implements Initializable {
         XYChart.Series<String,Number> serieCuposPaquetes = new XYChart.Series<>();
         for (PaqueteTuristico paqueteTuristico :paqueteTuristicoArrayList ){
             seriePrecioPaquetes.getData().add(new XYChart.Data<>(paqueteTuristico.getNombre(),paqueteTuristico.getPrecio()));
-            serieCuposPaquetes.getData().add(new XYChart.Data<>(paqueteTuristico.getNombre(),paqueteTuristico.getCupoMaximo()));
+            serieCuposPaquetes.getData().add(new XYChart.Data<>(paqueteTuristico.getNombre(),paqueteTuristico.getCuposMaximos()));
         }
 
         barCharsPrecioPaquetes.getData().addAll(seriePrecioPaquetes);

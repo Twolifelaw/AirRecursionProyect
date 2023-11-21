@@ -84,12 +84,14 @@ public class GestionPaquetes {
         serializarPaquetes(nombreArchivo, paqueteTuristicos);
     }
 
-    public static void crearPaquetePrueba(){
+    /*public static void crearPaquetePrueba(){
         ArrayList<PaqueteTuristico> pack = new ArrayList<>();
         ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");//Se trae los destinos deserializados.
         Date fecha = new Date(2023,11,19);
         pack.add(new PaqueteTuristico(destinosCargados,"Full paquete",fecha,"Hotel , trasporte",50000,200,fecha));
         GestionPaquetes.serializarPaquetes("paquetes.dat",pack);
     }
+
+     */
 
 }

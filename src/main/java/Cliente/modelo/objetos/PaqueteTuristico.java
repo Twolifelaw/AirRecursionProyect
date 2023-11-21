@@ -1,27 +1,34 @@
 package Cliente.modelo.objetos;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PaqueteTuristico implements Serializable {
 
     private ArrayList<Destino> destinos;
     private String nombre;
-    private Date duracion;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
+
+    private ArrayList<LocalDate> fechaDisponible;
     private String servicios;
     private double precio;
-    private int cupoMaximo;
-    private Date fechasDisponobles;
+    private int cuposMaximos;
 
-    public PaqueteTuristico(ArrayList<Destino> destinos, String nombre, Date duracion, String servicios, double precio, int cupoMaximo, Date fechasDisponobles) {
+    public PaqueteTuristico(ArrayList<Destino> destinos, String nombre, LocalDate fechaInicio, LocalDate fechaFin, ArrayList<LocalDate> fechaDisponible, String servicios, double precio, int cuposMaximos) {
         this.destinos = destinos;
         this.nombre = nombre;
-        this.duracion = duracion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.fechaDisponible = fechaDisponible;
         this.servicios = servicios;
         this.precio = precio;
-        this.cupoMaximo = cupoMaximo;
-        this.fechasDisponobles = fechasDisponobles;
+        this.cuposMaximos = cuposMaximos;
+    }
+
+    public PaqueteTuristico(ArrayList<LocalDate> fechaDisponible) {
+        this.fechaDisponible = fechaDisponible;
     }
 
     public PaqueteTuristico() {
@@ -43,12 +50,28 @@ public class PaqueteTuristico implements Serializable {
         this.nombre = nombre;
     }
 
-    public Date getDuracion() {
-        return duracion;
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setDuracion(Date duracion) {
-        this.duracion = duracion;
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public ArrayList<LocalDate> getFechaDisponible() {
+        return fechaDisponible;
+    }
+
+    public void setFechaDisponible(ArrayList<LocalDate> fechaDisponible) {
+        this.fechaDisponible = fechaDisponible;
     }
 
     public String getServicios() {
@@ -67,19 +90,11 @@ public class PaqueteTuristico implements Serializable {
         this.precio = precio;
     }
 
-    public int getCupoMaximo() {
-        return cupoMaximo;
+    public int getCuposMaximos() {
+        return cuposMaximos;
     }
 
-    public void setCupoMaximo(int cupoMaximo) {
-        this.cupoMaximo = cupoMaximo;
-    }
-
-    public Date getFechasDisponobles() {
-        return fechasDisponobles;
-    }
-
-    public void setFechasDisponobles(Date fechasDisponobles) {
-        this.fechasDisponobles = fechasDisponobles;
+    public void setCuposMaximos(int cuposMaximos) {
+        this.cuposMaximos = cuposMaximos;
     }
 }

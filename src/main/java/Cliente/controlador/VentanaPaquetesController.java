@@ -17,26 +17,24 @@ import java.util.ResourceBundle;
 
 public class VentanaPaquetesController implements Initializable {
 
+    public static ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
+    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
+    private final int maxColumns = 3; // Número máximo de columnas
     @FXML
     private Button btnBuscar;
     @FXML
     private ComboBox<String> comboBoxFiltro;
     @FXML
     private TextField txtBuscador;
+
+    // public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");//Se trae los destinos deserializados.
     @FXML
     private GridPane gridPaquetes;
     @FXML
     private AnchorPane AnchorPaquetes;
     @FXML
     private ScrollPane scrollPanePaquetes;
-
-   // public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");//Se trae los destinos deserializados.
-
-    public static  ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
-    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
-    private final int maxColumns = 3; // Número máximo de columnas
     //Lo necesario para buen funcionamiento de toda la ventana.
-
 
     public static ArrayList<PaqueteTuristico> buscarDestinoPorFiltro(String filtro, String valor) {
         ArrayList<PaqueteTuristico> destinosFiltrados = new ArrayList<>();
@@ -48,9 +46,11 @@ public class VentanaPaquetesController implements Initializable {
                     valorAtributo = paquete.getNombre();
                     System.out.println(valorAtributo);
                     break;
-                case "duracion":
+                /*case "duracion":
                     valorAtributo = String.valueOf(paquete.getDuracion());
                     break;
+
+                 */
                 case "servicios":
                     valorAtributo = paquete.getServicios();
                     break;
@@ -58,7 +58,7 @@ public class VentanaPaquetesController implements Initializable {
                     valorAtributo = String.valueOf(paquete.getPrecio());
                     break;
                 case "cupo":
-                    valorAtributo = String.valueOf(paquete.getCupoMaximo());
+                    valorAtributo = String.valueOf(paquete.getCuposMaximos());
                     break;
 
                 // Agrega más casos según tus atributos
@@ -108,23 +108,25 @@ public class VentanaPaquetesController implements Initializable {
                     //Se setan los valores de los objetos en los labels del anchorPane (Cart)
 
                     TextArea txtADestinos = (TextArea) nuevoAnchorPane.lookup("#txtAreaDestinos");
-                    txtADestinos.setText("\nDestinos: "+paquete.getDestinos()+"\n");
+                    txtADestinos.setText("\nDestinos: " + paquete.getDestinos() + "\n");
 
                     Label lblNombre = (Label) nuevoAnchorPane.lookup("#lblNombre");
                     lblNombre.setText("Nombre: " + paquete.getNombre());
 
-                    Label lblDuracion = (Label) nuevoAnchorPane.lookup("#lblDuracion");
+                    /*Label lblDuracion = (Label) nuevoAnchorPane.lookup("#lblDuracion");
                     lblDuracion.setText("Duration: " + paquete.getDuracion());
 
+                     */
+
                     Label lblServicios = (Label) nuevoAnchorPane.lookup("#lblServicios");
-                    lblServicios.setText("Servicios: "+paquete.getServicios());
+                    lblServicios.setText("Servicios: " + paquete.getServicios());
 
 
                     Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblprecio");
                     lblPrecio.setText("Precio: " + paquete.getPrecio());
 
                     Label lblCupoMax = (Label) nuevoAnchorPane.lookup("#lblcupoMaximo");
-                    lblCupoMax.setText("Cupo Max: "+paquete.getCupoMaximo());
+                    lblCupoMax.setText("Cupo Max: " + paquete.getCuposMaximos());
 
 
                     //Establece el minimo y maximo de tamaño de los anchorPane's
