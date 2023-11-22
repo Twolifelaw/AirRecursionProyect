@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class GuardarChat {
-    public static ArrayList<String>leerArchivoTexto(String ruta)throws IOException{
+    public static ArrayList<String> leerArchivoTexto(String ruta) throws IOException {
 
-        File miArchivo=new File(ruta);
-        FileReader miFileReader =new FileReader(miArchivo);
-        BufferedReader miBufferReader=new BufferedReader(miFileReader);
+        File miArchivo = new File(ruta);
+        FileReader miFileReader = new FileReader(miArchivo);
+        BufferedReader miBufferReader = new BufferedReader(miFileReader);
         String linea;
-        ArrayList<String>misLineas=new ArrayList<>();
-        while ((linea=miBufferReader.readLine())!=null){
+        ArrayList<String> misLineas = new ArrayList<>();
+        while ((linea = miBufferReader.readLine()) != null) {
             misLineas.add(linea);
         }
 
@@ -24,15 +24,15 @@ public class GuardarChat {
         miFileReader.close();
         return misLineas;
     }
-    public static ArrayList<String> transformarObservable (ObservableList<Mensajes>mensajes){
-        ArrayList<String >aux=new ArrayList<>();
-        for(int i=0;i<mensajes.size();i++){
-            aux.add(mensajes.get(i).getCliente()+" "+mensajes.get(i).getServidor());
+
+    public static ArrayList<String> transformarObservable(ObservableList<Mensajes> mensajes) {
+        ArrayList<String> aux = new ArrayList<>();
+        for (int i = 0; i < mensajes.size(); i++) {
+            aux.add(mensajes.get(i).getCliente() + " " + mensajes.get(i).getServidor());
         }
         return aux;
 
     }
-
 
 
 }

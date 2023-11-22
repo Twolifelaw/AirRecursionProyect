@@ -29,79 +29,53 @@ import java.util.UUID;
 
 public class ChatServerNuevo implements Runnable, Initializable {
 
+    String ip = "127.0.0.1";
     @FXML
     private Button btnChatear;
-
     //
     @FXML
     private TableColumn<ClienteAux, String> colIdenti;
-
     @FXML
     private TableColumn<ClienteAux, String> colNombre;
-
     @FXML
     private TableView<ClienteAux> tableConexiones;
-
     @FXML
     private TableColumn<Mensajes, String> columCliente;
     @FXML
     private ImageView imagenAvion1;
-
     @FXML
     private ImageView imagenAvion2;
-
-
     @FXML
     private TableView<Mensajes> TableChat;
-
     @FXML
     private TableColumn<ClienteAux, String> columIp;
     @FXML
     private TableColumn<ClienteAux, String> columClientes;
-
     @FXML
     private TableView<ClienteAux> tableChats;
-
     @FXML
     private TableColumn<ClienteAux, String> columClientes1;
     @FXML
     private TableColumn<ClienteAux, String> columIp1;
-
     @FXML
     private TableColumn<Mensajes, String> columServer;
-
     @FXML
     private TableView<ClienteAux> tableEmplea;
-
     @FXML
     private Label labelSelec;
-
     @FXML
     private Button btnEnviar;
-
     @FXML
     private Label IDCliente;
-
     @FXML
     private Label IPTrabajador;
-
-
-
     private ObservableList<Mensajes> observableList;
     private ObservableList<ClienteAux> chatList;
     private ObservableList<ClienteAux> emList;
-
-    private String arreglo[] = new String[100];
-
-    private boolean centi = false;
-    private ArrayList<String> array = new ArrayList<>();
-    private ArrayList<String> array2 = new ArrayList<>();
-
-    public ChatServerNuevo() {
-        Thread miHilo = new Thread(this);
-        miHilo.start();
-    }
-
+    private final String[] arreglo = new String[100];
+    private final boolean centi = false;
+    private final ArrayList<String> array = new ArrayList<>();
+    private final ArrayList<String> array2 = new ArrayList<>();
     @FXML
     private TextField txtDireccion;
 
@@ -113,14 +87,24 @@ public class ChatServerNuevo implements Runnable, Initializable {
     @FXML
     private Label labelSeleccion1;
 
-    String ip="127.0.0.1";
-
-
-
+    public ChatServerNuevo() {
+        Thread miHilo = new Thread(this);
+        miHilo.start();
+    }
 
     public static String[] convertirMsj(String msj) {
         String[] resultado = msj.split(" ");
         return resultado;
+    }
+
+    public static String generateShortID() {
+        // Genera un UUID (Universally Unique Identifier)
+        UUID uuid = UUID.randomUUID();
+
+        // Obtiene solo los primeros 8 caracteres del UUID
+        String shortID = uuid.toString().substring(0, 5);
+
+        return shortID;
     }
 
     @FXML
@@ -129,16 +113,15 @@ public class ChatServerNuevo implements Runnable, Initializable {
 
     }
 
-
     @FXML
     void OnEntrarChat(ActionEvent event) {
 
     }
+
     @FXML
     void OnActualizarChat(ActionEvent event) {
 
     }
-
 
     @FXML
     void OnEnviar(ActionEvent event) {
@@ -205,8 +188,8 @@ public class ChatServerNuevo implements Runnable, Initializable {
             observableList.add(msj3);
             TableChat.setItems(observableList);
         }
-        if(!array2.contains(txtNombre.getText())){
-            ClienteAux clienteAux=new ClienteAux(combrobarVacioNombre(txtNombre.getText()),ip);
+        if (!array2.contains(txtNombre.getText())) {
+            ClienteAux clienteAux = new ClienteAux(combrobarVacioNombre(txtNombre.getText()), ip);
             emList.add(clienteAux);
             tableEmplea.setItems(emList);
             array2.add(txtNombre.getText());
@@ -270,8 +253,8 @@ public class ChatServerNuevo implements Runnable, Initializable {
                     TableChat.setItems(observableList);
                 }
 
-                if(!array.contains(ip)){
-                    ClienteAux clienteAux=new ClienteAux(nombre,ip);
+                if (!array.contains(ip)) {
+                    ClienteAux clienteAux = new ClienteAux(nombre, ip);
                     chatList.add(clienteAux);
                     tableConexiones.setItems(chatList);
 
@@ -294,18 +277,17 @@ public class ChatServerNuevo implements Runnable, Initializable {
 
     }
 
-
-    public String combrobarVacioNombre (String txt){
-        String r="Empleado1";
-        if (txt.equals("")||txt==null){
+    public String combrobarVacioNombre(String txt) {
+        String r = "Empleado1";
+        if (txt.equals("") || txt == null) {
             return r;
         }
         return txt;
     }
 
-    public String combrobarVacioIp (String txt){
-        String r="192.1.168.3";
-        if (txt.equals("")||txt==null){
+    public String combrobarVacioIp(String txt) {
+        String r = "192.1.168.3";
+        if (txt.equals("") || txt == null) {
             return r;
         }
         return txt;
@@ -315,16 +297,6 @@ public class ChatServerNuevo implements Runnable, Initializable {
     @FXML
     void OnAbrirChatEmpleado(ActionEvent event) throws IOException {
 
-    }
-
-    public static String generateShortID() {
-        // Genera un UUID (Universally Unique Identifier)
-        UUID uuid = UUID.randomUUID();
-
-        // Obtiene solo los primeros 8 caracteres del UUID
-        String shortID = uuid.toString().substring(0, 5);
-
-        return shortID;
     }
 
     private void inicializarEnterKey() {
@@ -340,18 +312,15 @@ public class ChatServerNuevo implements Runnable, Initializable {
     }
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         observableList = FXCollections.observableArrayList();
         chatList = FXCollections.observableArrayList();
         emList = FXCollections.observableArrayList();
-        IPTrabajador.setText("id: "+generateShortID());
+        IPTrabajador.setText("id: " + generateShortID());
         VentanaUtilidades.agregarAnimacionBoton(btnChatear);
         VentanaUtilidades.agregarAnimacionBoton(btnEnviar);
         inicializarEnterKey();
-
 
 
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -367,8 +336,8 @@ public class ChatServerNuevo implements Runnable, Initializable {
         // Añadir controladores de eventos según sea necesario
         tableConexiones.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             // Aquí puedes manejar la selección del elemento
-            ip=newValue.getRuta();
-            labelSelec.setText(""+newValue.toString());
+            ip = newValue.getRuta();
+            labelSelec.setText(String.valueOf(newValue));
 
         });
 
@@ -389,8 +358,6 @@ public class ChatServerNuevo implements Runnable, Initializable {
         rotate3.setByAngle(-360);
         rotate3.setAxis(Rotate.Y_AXIS);
         rotate3.play();
-
-        
 
 
     }

@@ -45,18 +45,18 @@ public class VentanaContrasenaController implements Initializable {
     @FXML
     private TextField txtContrasena2;
 
-    private Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
+    private final Cliente clienteAutenticado = SesionCliente.getClienteAutenticado();
 
     @FXML
     void onRecuperar(ActionEvent event) {
         String contrasena1 = txtContrasena.getText();
         String contrasena2 = txtContrasena2.getText();
 
-        if ( contrasena1.isEmpty() && contrasena2.isEmpty()) {
+        if (contrasena1.isEmpty() && contrasena2.isEmpty()) {
             lblStatus.setText("campos vacios. Llenar porfavor");
-        }else if (  contrasena1.isEmpty() || contrasena2.isEmpty()){
+        } else if (contrasena1.isEmpty() || contrasena2.isEmpty()) {
             lblStatus.setText("Uno de los campos Vacios. LLenar porfavor");
-        }else {
+        } else {
             if (contrasena1.equals(contrasena2)) {
                 ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
 
@@ -85,7 +85,7 @@ public class VentanaContrasenaController implements Initializable {
     }
 
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txtContrasena,txtContrasena2};
+        TextField[] camposTexto = {txtContrasena, txtContrasena2};
 
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
@@ -108,10 +108,9 @@ public class VentanaContrasenaController implements Initializable {
     }
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        VentanaUtilidades.agregarEventoYMostrarStatus(txtContrasena,lblStatus, "contraseñaNueva");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtContrasena, lblStatus, "contraseñaNueva");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtContrasena2, lblStatus, "RecontraseñaNueva");
         VentanaUtilidades.agregarAnimacionBoton(btnRecuperar);
         VentanaUtilidades.agregarAnimacionBoton(btnAtras);

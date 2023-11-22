@@ -9,8 +9,6 @@
 }
 
 
-
-
 #anchorPaneInicio {
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
@@ -32,6 +30,7 @@
     -fx-background-radius: 15; /* Radio de las esquinas del fondo */
     -fx-text-fill: #ffffff;
 }
+
 #anchorPaneCrear {
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
@@ -49,11 +48,11 @@
     -fx-background-color: #2e2559;
 }
 
-#tablaPaquetes.table-row-cell{
+#tablaPaquetes.table-row-cell {
     -fx-background-color: #2e2559;
 }
 
-#anchorPaneCrear{
+#anchorPaneCrear {
     -fx-background-color: rgba(46, 37, 89, 0.7); /* Color de fondo con opacidad */
     -fx-background-size: cover;
 }
@@ -66,31 +65,31 @@
 .combo-box .list-cell {
     -fx-background-color: #2e2559;
     -fx-text-fill: #ffffff;
-    -fx-border-color:  #0A1425;
+    -fx-border-color: #0A1425;
 }
 
 #scrollPanelContenedor .scroll-bar {
-    -fx-background-color: rgba(10, 20, 37, 0.7);/* Cambia el color de fondo de las barras de desplazamiento */
+    -fx-background-color: rgba(10, 20, 37, 0.7); /* Cambia el color de fondo de las barras de desplazamiento */
 
 }
 
-#scrollPanePaquetes .scroll-bar{
+#scrollPanePaquetes .scroll-bar {
     -fx-background-color: rgba(10, 20, 37, 0.7);
 }
 
-#gridPaquetes{
+#gridPaquetes {
     -fx-background-image: url('17.jpg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
 }
 
-#gridOfertas{
+#gridOfertas {
     -fx-background-image: url('17.jpg');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
 }
 
-#anchorPaneChats{
+#anchorPaneChats {
     -fx-background-image: url("21.jpg");
     -fx-background-size: cover;
 }

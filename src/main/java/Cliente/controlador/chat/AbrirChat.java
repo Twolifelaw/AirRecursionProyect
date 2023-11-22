@@ -51,7 +51,7 @@ public class AbrirChat implements Initializable {
 
     @FXML
     void onChatCliente(ActionEvent event) {
-       VentanaUtilidades.abrirChatCliente();
+        VentanaUtilidades.abrirChatCliente();
     }
 
     @FXML

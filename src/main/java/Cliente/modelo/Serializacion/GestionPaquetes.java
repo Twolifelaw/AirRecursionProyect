@@ -1,11 +1,9 @@
 package Cliente.modelo.Serializacion;
 
-import Cliente.modelo.objetos.Destino;
 import Cliente.modelo.objetos.PaqueteTuristico;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class GestionPaquetes {
 
@@ -49,7 +47,6 @@ public class GestionPaquetes {
     /**
      * Este metodo deserialisa los clientes del el archivo.
      *
-     *
      * @param nombreArchivo
      * @return
      */
@@ -74,7 +71,7 @@ public class GestionPaquetes {
      * Este método elimina un destino del archivo basado en el nombre del país.
      *
      * @param nombreArchivo
-     * @param nombre          El nombre del país del destino a eliminar
+     * @param nombre        El nombre del país del destino a eliminar
      */
     public static void eliminarPaquete(String nombreArchivo, String nombre) {
         ArrayList<PaqueteTuristico> paqueteTuristicos = deserializarObjetos(nombreArchivo);

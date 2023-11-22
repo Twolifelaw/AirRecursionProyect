@@ -72,14 +72,14 @@ public class GestionSerializacionDestinos {
         //destinos.add(new Destino("Colombia", "Armenia", "aaaa", "/Armenia.jpg", "Calor"));
         //destinos.add(new Destino("Canada", "Toronto", "Descripción", "/Toronto.jpg", "Frio"));
         //destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor"));
-       // GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
+        // GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
     }
 
     /**
      * Este método elimina un destino del archivo basado en el nombre del país.
      *
      * @param nombreArchivo
-     * @param id          El nombre del país del destino a eliminar
+     * @param id            El nombre del país del destino a eliminar
      */
     public static void eliminarDestino(String nombreArchivo, String id) {
         ArrayList<Destino> destinos = deserializarObjetos(nombreArchivo);

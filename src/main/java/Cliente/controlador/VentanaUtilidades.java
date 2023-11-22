@@ -38,7 +38,7 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         }
     }
 
-    public static void mostrarChatServer(){
+    public static void mostrarChatServer() {
         try {
             FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatServer.fxml"));
             Parent root = loader.load();
@@ -52,7 +52,7 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
 
     }
 
-    public static void abrirChatServer(){
+    public static void abrirChatServer() {
         try {
             FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatServer.fxml"));
             Parent root = loader.load();
@@ -66,7 +66,7 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         }
     }
 
-    public static void abrirChatCliente(){
+    public static void abrirChatCliente() {
         try {
             FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatNuevo.fxml"));
             Parent root = loader.load();
@@ -80,7 +80,7 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         }
     }
 
-    public static void mostrarChat(){
+    public static void mostrarChat() {
         try {
             FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/AbrirChat.fxml"));
             Parent root = loader.load();

@@ -5,17 +5,16 @@ public class ClienteAux {
 
     private String ruta;
 
-    @Override
-    public String toString() {
-        return "| "+nombre+ " "+ruta+" |";
-    }
-
     public ClienteAux(String nombre, String ruta) {
         this.nombre = nombre;
         this.ruta = ruta;
 
     }
 
+    @Override
+    public String toString() {
+        return "| " + nombre + " " + ruta + " |";
+    }
 
     public String getNombre() {
         return nombre;

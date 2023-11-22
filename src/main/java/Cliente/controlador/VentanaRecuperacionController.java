@@ -1,9 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.modelo.Serializacion.GestionSerializacioClientes;
 import Cliente.modelo.Serializacion.SesionCliente;
 import Cliente.modelo.exceptions.VerificarException;
-import Cliente.modelo.objetos.Administrador;
 import Cliente.modelo.objetos.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,7 +44,7 @@ public class VentanaRecuperacionController implements Initializable {
     //de aqui para arriba van los componentes.
 
 
-    public static Cliente buscarObjeto(String nombreArchivo,  String correo) {
+    public static Cliente buscarObjeto(String nombreArchivo, String correo) {
         ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
 
         if (listaObjetos != null) {
@@ -58,6 +56,7 @@ public class VentanaRecuperacionController implements Initializable {
         }
         return null; // No se encontró el objeto con el nombre deseado
     }
+
     /**
      * Accion del botonRecuperar.
      *
@@ -95,7 +94,7 @@ public class VentanaRecuperacionController implements Initializable {
                     }
                 }
             }
-        }catch (VerificarException e){
+        } catch (VerificarException e) {
             lblMensaje.setText(e.getMessage());
             VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
         }

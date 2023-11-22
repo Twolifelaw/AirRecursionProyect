@@ -14,16 +14,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class VentanaPaquetesController implements Initializable {
-    @FXML
-    private DatePicker datePickerFechas;
-
     public static ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
     private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
     private final int maxColumns = 3; // Número máximo de columnas
+    @FXML
+    private DatePicker datePickerFechas;
     @FXML
     private Button btnBuscar;
     @FXML
@@ -46,7 +44,7 @@ public class VentanaPaquetesController implements Initializable {
             String valorAtributo = null;
             LocalDate valorFechas = null;
 
-            if(filtro != null){
+            if (filtro != null) {
                 switch (filtro.toLowerCase()) {
                     case "nombre":
                         valorAtributo = paquete.getNombre();
@@ -98,7 +96,7 @@ public class VentanaPaquetesController implements Initializable {
                         // Manejar el caso en que el filtro no coincide con ningún atributo
                         System.out.println("Filtro no válido");
                 }
-            }else{
+            } else {
                 System.out.println("El filtro es nulo.");
             }
             // Realiza la comparación, ignorando mayúsculas y minúsculas
@@ -203,7 +201,7 @@ public class VentanaPaquetesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mostrarDestinos(paquetesTuristicosCargados);
-        comboBoxFiltro.getItems().addAll("Nombre", "Precio", "servicios", "FechaInicio", "FechaFin", "Cupo","FechaDisponible");
+        comboBoxFiltro.getItems().addAll("Nombre", "Precio", "servicios", "FechaInicio", "FechaFin", "Cupo", "FechaDisponible");
 
     }
 

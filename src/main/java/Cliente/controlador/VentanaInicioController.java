@@ -197,7 +197,6 @@ public class VentanaInicioController implements Initializable {
     }
 
 
-
     /**
      * Accion del botonOfertas.
      *

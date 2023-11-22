@@ -1,7 +1,6 @@
 package Cliente.controlador;
 
 import Cliente.modelo.exceptions.VerificarExceptionNull;
-import Cliente.modelo.exceptions.VerificarExceptionNull;
 import Cliente.modelo.objetos.Destino;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
