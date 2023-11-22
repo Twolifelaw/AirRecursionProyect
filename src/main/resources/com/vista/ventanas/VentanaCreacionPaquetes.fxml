@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneCrear" opacity="0.93" prefHeight="561.0" prefWidth="1128.0" style="-fx-background-color: #0A1425;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaCreacionPaquetes">
+<AnchorPane fx:id="anchorPaneCrear" opacity="0.93" prefHeight="561.0" prefWidth="1128.0" style="-fx-background-color: #0A1425;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaCreacionPaquetes">
    <children>
       <AnchorPane layoutX="734.0" layoutY="11.0" prefHeight="549.0" prefWidth="409.0">
          <children>
@@ -60,7 +60,12 @@
             <DatePicker fx:id="datePickerFechaInicio" layoutX="210.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="179.0" promptText="fechaInicio" style="-fx-background-radius: 15;" />
             <DatePicker fx:id="datePickerFechaDisponible" layoutX="111.0" layoutY="153.0" prefHeight="26.0" prefWidth="179.0" promptText="fechaDIsponible" style="-fx-background-radius: 15;" />
             <ListView fx:id="listViewFechasDisponibles" layoutX="64.0" layoutY="200.0" prefHeight="200.0" prefWidth="273.0" />
-            <Button fx:id="btnAgregarDisponible" layoutX="130.0" layoutY="410.0" mnemonicParsing="false" onAction="#onAgregarDisponible" prefHeight="27.0" prefWidth="160.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="AgregarDisponible" textFill="WHITE">
+            <Button fx:id="btnAgregarDisponible" layoutX="174.0" layoutY="410.0" mnemonicParsing="false" onAction="#onAgregarDisponible" prefHeight="27.0" prefWidth="160.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="AgregarDisponible" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarFecha" layoutX="62.0" layoutY="411.0" mnemonicParsing="false" onAction="#onEliminarFecha" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Eliminar fecha" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

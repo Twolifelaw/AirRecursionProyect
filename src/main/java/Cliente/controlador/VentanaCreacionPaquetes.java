@@ -1,6 +1,6 @@
 package Cliente.controlador;
 
-import Cliente.modelo.exceptions.VerificarException;
+import Cliente.modelo.exceptions.VerificarExceptionNull;
 import Cliente.modelo.objetos.PaqueteTuristico;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +24,7 @@ import static Cliente.modelo.Serializacion.GestionPaquetes.*;
 public class VentanaCreacionPaquetes implements Initializable {
 
 
+    public Button btnEliminarFecha;
     @FXML
     private AnchorPane anchorPaneCrear;
 
@@ -99,7 +100,7 @@ public class VentanaCreacionPaquetes implements Initializable {
 
 
     @FXML
-    void onAgregar(ActionEvent event) throws VerificarException {
+    void onAgregar(ActionEvent event) throws VerificarExceptionNull {
         try {
             String nombre = txtNombre.getText();
             String precio = txtPrecio.getText();
@@ -110,9 +111,9 @@ public class VentanaCreacionPaquetes implements Initializable {
             LocalDate fechaDisponible = datePickerFechaDisponible.getValue();
 
             if (nombre.isEmpty() && precio.isEmpty() && servicios.isEmpty() && cuposMaximos.isEmpty() && fechaInicio == null && fechaFin == null && fechaDisponible == null) {
-                throw new VerificarException("Llene los campos");
+                throw new VerificarExceptionNull("Llene los campos");
             } else if (nombre.isEmpty() || precio.isEmpty() || servicios.isEmpty() || cuposMaximos.isEmpty() || fechaInicio == null || fechaFin == null && fechaDisponible == null) {
-                throw new VerificarException("Campo vacío, llenar por favor");
+                throw new VerificarExceptionNull("Campo vacío, llenar por favor");
             } else {
                 // Deserializar la lista actual de paquetes
                 ArrayList<PaqueteTuristico> paquetesNuevos = deserializarPaquetes("paquetes.dat");
@@ -137,7 +138,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                 // Mostrar mensaje de éxito
                 lblStatus.setText("Paquete agregado con éxito");
             }
-        } catch (VerificarException e) {
+        } catch (VerificarExceptionNull e) {
             lblStatus.setText(e.getMessage());
         } catch (NumberFormatException e) {
             lblStatus.setText("Ingrese valores numéricos válidos para precio y cupos");
@@ -146,12 +147,12 @@ public class VentanaCreacionPaquetes implements Initializable {
     }
 
     @FXML
-    void onAgregarDisponible(ActionEvent event) throws VerificarException {
+    void onAgregarDisponible(ActionEvent event) throws VerificarExceptionNull {
         try {
             LocalDate fechaDisponible = datePickerFechaDisponible.getValue();
 
             if (fechaDisponible == null) {
-                throw new VerificarException("Llene los campos");
+                throw new VerificarExceptionNull("Llene los campos");
             } else {
                 ArrayList<PaqueteTuristico> paquetes = deserializarPaquetes("paquetes.dat");
 
@@ -159,41 +160,121 @@ public class VentanaCreacionPaquetes implements Initializable {
                 PaqueteTuristico paqueteSeleccionado = this.tablaPaquetes.getSelectionModel().getSelectedItem();
 
                 if (paqueteSeleccionado != null) {
-                    // Agregar la nueva fecha al paquete existente
-                    paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
+                    // Verificar si la fecha ya existe en la lista
+                    if (!paqueteSeleccionado.getFechaDisponible().contains(fechaDisponible)) {
+                        // Agregar la nueva fecha al paquete existente
+                        paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
 
-                    // Actualizar la lista en la interfaz gráfica
-                    ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
-                    for (LocalDate fecha : paqueteSeleccionado.getFechaDisponible()) {
-                        fechasDisponiblesStrings.add(fecha.toString());
+                        // Actualizar la lista en la interfaz gráfica
+                        ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
+                        for (LocalDate fecha : paqueteSeleccionado.getFechaDisponible()) {
+                            fechasDisponiblesStrings.add(fecha.toString());
+                        }
+                        this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
+
+                        // Serializar la lista actualizada de paquetes
+                        serializarPaquetes("paquetes.dat", paquetes);
+
+                        // Mostrar mensaje de éxito
+                        lblStatus.setText("Fecha disponible agregada con éxito");
+                    } else {
+                        lblStatus.setText("La fecha ya está disponible en la lista");
                     }
-                    this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
-
-                    // Mostrar mensaje de éxito
-                    lblStatus.setText("Fecha disponible agregada con éxito");
                 } else {
                     lblStatus.setText("Seleccione un paquete antes de agregar fecha disponible");
                 }
-
-                // Serializar la lista actualizada de paquetes
-                serializarPaquetes("paquetes.dat", paquetes);
             }
-        } catch (VerificarException e) {
+        } catch (VerificarExceptionNull e) {
             lblStatus.setText(e.getMessage());
         } catch (Exception e) {
             lblStatus.setText("Error al agregar fecha disponible");
-            e.printStackTrace();  // Imprime el seguimiento de la pila para la depuración
+            e.printStackTrace();
         }
     }
 
     public void editarPaquete(String nombreArchivo, String nombre) {
 
+        try {
+            // Deserializar la lista actual de paquetes
+            ArrayList<PaqueteTuristico> listPaquetes = deserializarPaquetes(nombreArchivo);
+
+            LocalDate fechaDisponible = datePickerFechaDisponible.getValue();
+            //ArrayList<LocalDate> fechasDisponibles = listViewFechasDisponibles;
+            ArrayList<LocalDate> fechasDisponibles = new ArrayList<>();
+            ObservableList<String> fechasDisponiblesStrings = listViewFechasDisponibles.getItems();
+
+            for (String fechaString : fechasDisponiblesStrings) {
+                LocalDate fecha = LocalDate.parse(fechaString);
+                fechasDisponibles.add(fecha);
+            }
+
+            if (fechaDisponible != null) {
+                fechasDisponibles.add(fechaDisponible);
+            }
+
+            if (listPaquetes != null) {
+                for (PaqueteTuristico paqueteTuristico : listPaquetes) {
+                    if (paqueteTuristico.getNombre().equals(nombre)) {
+                        // Actualizar solo los campos que se han ingresado
+                        paqueteTuristico.setNombre(txtNombre.getText());
+                        paqueteTuristico.setFechaInicio(datePickerFechaInicio.getValue());
+                        paqueteTuristico.setFechaFin(datePickerFechaFin.getValue());
+                        paqueteTuristico.setServicios(txtServicios.getText());
+                        paqueteTuristico.setFechaDisponible(fechasDisponibles);
+                        paqueteTuristico.setPrecio(Double.parseDouble(txtPrecio.getText()));
+                        paqueteTuristico.setCuposMaximos(Integer.parseInt(txtCupos.getText()));
+                        break;
+                    }
+                }
+                // Serializar la lista actualizada de paquetes
+                serializarPaquetes(nombreArchivo, listPaquetes);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
     void onEditar(ActionEvent event) {
+        PaqueteTuristico p = this.tablaPaquetes.getSelectionModel().getSelectedItem();
 
+        if(p == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debes seleccionar un Destino");
+            alert.showAndWait();
+        } else {
+            try {
+                // Obtener la fecha disponible del DatePicker
+                LocalDate fechaDisponible = datePickerFechaDisponible.getValue();
 
+                // Verificar si la fechaDisponible no es nula antes de agregarla
+                if (fechaDisponible != null) {
+                    // Agregar la nueva fecha al paquete existente
+                    p.getFechaDisponible().add(fechaDisponible);
+
+                    // Actualizar la lista en la interfaz gráfica
+                    ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
+                    for (LocalDate fecha : p.getFechaDisponible()) {
+                        fechasDisponiblesStrings.add(fecha.toString());
+                    }
+                    this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
+                }
+
+                // Realizar la edición del paquete
+                editarPaquete("paquetes.dat", p.getNombre());
+
+                // Refrescar la tabla después de la edición
+                this.tablaPaquetes.refresh();
+
+                // Mostrar mensaje de éxito
+                lblStatus.setText("Paquete editado con éxito");
+            } catch (Exception e) {
+                lblStatus.setText("Error al editar el paquete");
+                e.printStackTrace();  // Imprime el seguimiento de la pila para la depuración
+            }}
     }
 
     @FXML
@@ -234,6 +315,38 @@ public class VentanaCreacionPaquetes implements Initializable {
         }
     }
 
+    public void eliminarFechaDisponible(LocalDate fecha) {
+        // Obtener el paquete seleccionado
+        PaqueteTuristico paqueteSeleccionado = this.tablaPaquetes.getSelectionModel().getSelectedItem();
+
+        if (paqueteSeleccionado != null) {
+            // Obtener la lista de fechas disponibles del paquete
+            ArrayList<LocalDate> fechasDisponibles = paqueteSeleccionado.getFechaDisponible();
+
+            // Verificar si la fecha a eliminar está presente en la lista
+            if (fechasDisponibles.contains(fecha)) {
+                // Eliminar la fecha
+                fechasDisponibles.remove(fecha);
+
+                // Actualizar la lista en la interfaz gráfica
+                ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
+                for (LocalDate fechaDisponible : fechasDisponibles) {
+                    fechasDisponiblesStrings.add(fechaDisponible.toString());
+                }
+                this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
+
+                // Mostrar mensaje de éxito
+                lblStatus.setText("Fecha disponible eliminada con éxito");
+            } else {
+                lblStatus.setText("La fecha seleccionada no está en la lista de fechas disponibles");
+            }
+        } else {
+            lblStatus.setText("Seleccione un paquete antes de eliminar una fecha disponible");
+        }
+        this.tablaPaquetes.refresh();
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -246,5 +359,21 @@ public class VentanaCreacionPaquetes implements Initializable {
         ObservableList<PaqueteTuristico> paqueteTuristicos = FXCollections.observableArrayList(deserializarPaquetes("paquetes.dat"));
         tablaPaquetes.setItems(paqueteTuristicos);
 
+    }
+
+    public void onEliminarFecha(ActionEvent event) {
+
+        // Obtener la fecha seleccionada en el ListView
+        String fechaString = listViewFechasDisponibles.getSelectionModel().getSelectedItem();
+
+        if (fechaString != null) {
+            // Convertir la fecha de String a LocalDate
+            LocalDate fechaSeleccionada = LocalDate.parse(fechaString);
+
+            // Llamar al método para eliminar la fecha
+            eliminarFechaDisponible(fechaSeleccionada);
+        } else {
+            lblStatus.setText("Seleccione una fecha antes de eliminar");
+        }
     }
 }
