@@ -1,6 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.modelo.exceptions.VerificarException;
+import Cliente.modelo.exceptions.VerificarExceptionNull;
+import Cliente.modelo.exceptions.VerificarExceptionNull;
 import Cliente.modelo.objetos.Destino;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -152,9 +153,9 @@ public class VentanaCreacionDestinos implements Initializable {
             String cupos = txtCupos.getText();
             String descripcion = txtDescripcion.getText().trim();
             if (pais.isEmpty() && precio.isEmpty() && ciudad.isEmpty() && id.isEmpty() && clima.isEmpty() && cupos.isEmpty() && descripcion.isEmpty()) {
-                throw new VerificarException("Llene los campos");
+                throw new VerificarExceptionNull("Llene los campos");
             } else if (pais.isEmpty() || precio.isEmpty() || ciudad.isEmpty() || id.isEmpty() || clima.isEmpty() || cupos.isEmpty() || descripcion.isEmpty()) {
-                throw new VerificarException("Campo vacío, llenar por favor");
+                throw new VerificarExceptionNull("Campo vacío, llenar por favor");
             } else {
                 ArrayList<Destino> destinosNuevos = deserializarDestino("destinos.dat");
                 destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), descripcion,
@@ -162,7 +163,7 @@ public class VentanaCreacionDestinos implements Initializable {
                 serializarDestino("destinos.dat", destinosNuevos);
             }
 
-        } catch (VerificarException e) {
+        } catch (VerificarExceptionNull e) {
             lblStatus.setText(e.getMessage());
         }
 
