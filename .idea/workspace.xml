@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se acomodó ciertos detalles">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se guardo workspace.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700628922013</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="se guardo workspace.xml">
+      <created>1700688603787</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700688603787</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +262,8 @@
     <MESSAGE value="guardado previo." />
     <MESSAGE value="se implemento los metodos de editar y eliminat paquetes y editar las fehas disponibles de estos paquetes" />
     <MESSAGE value="se acomodó ciertos detalles" />
-    <option name="LAST_COMMIT_MESSAGE" value="se acomodó ciertos detalles" />
+    <MESSAGE value="se guardo workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="se guardo workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
