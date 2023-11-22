@@ -8,6 +8,9 @@
     -fx-background-size: cover;
 }
 
+
+
+
 #anchorPaneInicio {
     -fx-background-image: url("1.jpg");
     -fx-background-size: cover;
@@ -43,6 +46,10 @@
 }
 
 #tablaDestinos .table-row-cell {
+    -fx-background-color: #2e2559;
+}
+
+#tablaPaquetes.table-row-cell{
     -fx-background-color: #2e2559;
 }
 
@@ -88,6 +95,20 @@
     -fx-background-size: cover;
 }
 
+
+.chart-bar {
+    -fx-bar-fill: #2e2559; /* Color de las barras */
+}
+
+.chart-title {
+    -fx-font-size: 16px; /* Tamaño de fuente del título */
+    -fx-text-fill: #ffffff; /* Cambiar el color del texto del título a rojo (#e74c3c) */
+}
+
+.chart-bar {
+    -fx-font-size: 14px; /* Tamaño de fuente de las etiquetas de datos */
+    -fx-text-fill: #000000; /* Cambiar el color del texto de las etiquetas de datos a azul (#3498db) */
+}
 
 
 

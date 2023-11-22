@@ -8,6 +8,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import static Cliente.modelo.Serializacion.GestionPaquetes.*;
 
 public class VentanaEstadistica implements Initializable {
 
+    @FXML
+    private AnchorPane anchorPaneEstadisticas;
     public BarChart<String,Number> bartChartCuposPaquete;
     public CategoryAxis CategoryCuposPaquetes;
     public NumberAxis NumberCuposPaquetes;

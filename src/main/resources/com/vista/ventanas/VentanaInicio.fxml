@@ -16,17 +16,17 @@
          <children>
             <AnchorPane fx:id="anchorPaneBotones" layoutX="14.0" layoutY="184.0" prefHeight="423.0" prefWidth="144.0">
                <children>
-                  <Button fx:id="btnCuenta" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
+                  <Button fx:id="btnCuenta" layoutX="22.0" layoutY="9.0" mnemonicParsing="false" onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnMapa" layoutX="21.0" layoutY="52.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
+                  <Button fx:id="btnMapa" layoutX="21.0" layoutY="49.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnChat" layoutX="21.0" layoutY="93.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
+                  <Button fx:id="btnChat" layoutX="21.0" layoutY="90.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
