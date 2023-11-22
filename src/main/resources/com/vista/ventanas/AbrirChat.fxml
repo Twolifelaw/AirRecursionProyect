@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneChats" prefHeight="358.0" prefWidth="264.0" style="-fx-background-radius: 15;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.chat.AbrirChat">
+    <children>
+        <AnchorPane opacity="0.87" prefHeight="369.0" prefWidth="264.0">
+            <children>
+                <Button fx:id="btnCliente" layoutX="71.0" layoutY="115.0" mnemonicParsing="false" onAction="#onChatCliente" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="ChatCliente" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="btnSalir" layoutX="58.0" layoutY="251.0" mnemonicParsing="false" onAction="#OnCerrar" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="CerrarServidor" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Label layoutX="77.0" layoutY="42.0" text="AirRoom" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+            <Button fx:id="btnServer" layoutX="71.0" layoutY="178.0" mnemonicParsing="false" onAction="#onChatServer" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="chatServer" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

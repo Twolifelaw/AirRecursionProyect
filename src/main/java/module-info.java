@@ -3,12 +3,16 @@ module com.example.airrecursionproyect {
     requires javafx.fxml;
 
     opens Cliente.modelo to javafx.fxml;
-    opens Cliente.controlador to javafx.fxml; // Abre el paquete del controlador
+    opens Cliente.controlador to javafx.fxml;
+    opens Cliente.modelo.Serializacion to javafx.fxml;
+    opens Cliente to javafx.fxml;
+    opens Cliente.modelo.objetos to javafx.fxml;
 
     exports Cliente.modelo;
     exports Cliente.modelo.Serializacion;
-    opens Cliente.modelo.Serializacion to javafx.fxml;
-    opens Cliente to javafx.fxml;
     exports Cliente.modelo.objetos;
-    opens Cliente.modelo.objetos to javafx.fxml;
+    exports Cliente.controlador; // Exporta el paquete del controlador
+    exports Cliente.controlador.chat;
+    opens Cliente.controlador.chat to javafx.fxml;
+
 }

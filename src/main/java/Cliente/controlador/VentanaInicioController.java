@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.controlador.chat.AbrirChatApp;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,6 +66,8 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private Button btnPaquetes;
+
+    private AbrirChatApp abrirChatApp;
 
     @FXML
     private Button btnSalir;
@@ -147,13 +150,9 @@ public class VentanaInicioController implements Initializable {
      */
 
     @FXML
-    void onChat(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
-        Scene escena = new Scene(root);
-        stage.setScene(escena);
-        stage.show();
-
+    void onChat(ActionEvent event) throws Exception {
+        abrirChatApp.start(new Stage());
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     /**
@@ -235,6 +234,7 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.girarImagen(imagenAvion1);
         VentanaUtilidades.girarImagen(imagenAvion2);
         VentanaUtilidades.girarImagen(imagenUsuario);
+        abrirChatApp = new AbrirChatApp();
 
     }
 }

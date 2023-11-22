@@ -38,6 +38,33 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
         }
     }
 
+    public static void mostrarChatServer(){
+        try {
+            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatServer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public static void mostrarChat(){
+        try {
+            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/AbrirChat.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /**
      * Metodo que se encarga de quemar el administrador en este caso el profesor.
      */

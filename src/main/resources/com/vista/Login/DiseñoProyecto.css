@@ -83,6 +83,11 @@
     -fx-background-repeat: no-repeat;
 }
 
+#anchorPaneChats{
+    -fx-background-image: url("21.jpg");
+    -fx-background-size: cover;
+}
+
 
 
 
