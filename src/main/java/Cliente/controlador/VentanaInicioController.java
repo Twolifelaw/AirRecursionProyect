@@ -24,6 +24,8 @@ public class VentanaInicioController implements Initializable {
     //
     @FXML
     private AnchorPane anchorPaneBienvenida;
+    @FXML
+    private AnchorPane anchorPaneContenedorChat;
 
     @FXML
     private Button btnAyuda;
@@ -151,8 +153,19 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     void onChat(ActionEvent event) throws Exception {
-        abrirChatApp.start(new Stage());
-        ((Node) (event.getSource())).getScene().getWindow().hide();
+        anchorPaneContenedorChat.toFront();
+
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/AbrirChat.fxml"));
+                AnchorPane anchorChat = loader.load();
+                anchorPaneContenedorChat.getChildren().clear();
+                anchorPaneContenedorChat.getChildren().add(anchorChat);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**

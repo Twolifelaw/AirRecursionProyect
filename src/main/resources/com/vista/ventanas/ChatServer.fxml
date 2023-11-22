@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.chat.ChatServerNuevo">
+<AnchorPane prefHeight="629.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.chat.ChatServerNuevo">
     <children>
         <AnchorPane prefHeight="628.0" prefWidth="858.0" style="-fx-background-color: #000000;">
             <children>
@@ -73,7 +73,7 @@
                                 <Image url="@../Imagenes/3.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="IDCliente" layoutX="411.0" layoutY="153.0" text="ID: xxxxxxxx" textFill="WHITE">
+                        <Label fx:id="IDCliente" layoutX="414.0" layoutY="561.0" text="ID: xxxxxxxx" textFill="WHITE">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -127,6 +127,11 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
+                  <Label fx:id="IPTrabajador" layoutX="411.0" layoutY="153.0" text="IP: xxxxxxxx" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                     </children>
                 </Pane>
                 <Pane layoutX="295.0" layoutY="191.0" prefHeight="33.0" prefWidth="337.0" style="-fx-background-color: #2E2559;">
@@ -194,7 +199,7 @@
                         <Font size="19.0" />
                     </font>
                 </Label>
-                <Button layoutX="94.0" layoutY="511.0" mnemonicParsing="false" onAction="#OnActualizarChat" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chatear" textFill="WHITE">
+                <Button fx:id="btnChatear" layoutX="94.0" layoutY="511.0" mnemonicParsing="false" onAction="#OnActualizarChat" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chatear" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>

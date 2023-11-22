@@ -52,6 +52,34 @@ public class VentanaUtilidades {//Esta clase se encargara de todas las utilidade
 
     }
 
+    public static void abrirChatServer(){
+        try {
+            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatServer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void abrirChatCliente(){
+        try {
+            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatNuevo.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void mostrarChat(){
         try {
             FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/AbrirChat.fxml"));

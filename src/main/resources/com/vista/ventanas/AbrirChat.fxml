@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneChats" prefHeight="358.0" prefWidth="264.0" style="-fx-background-radius: 15;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.chat.AbrirChat">
+<AnchorPane fx:id="anchorPaneChats" prefHeight="318.0" prefWidth="161.0" style="-fx-background-radius: 15;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.chat.AbrirChat">
     <children>
-        <AnchorPane opacity="0.87" prefHeight="369.0" prefWidth="264.0">
+        <AnchorPane opacity="0.87" prefHeight="318.0" prefWidth="161.0">
             <children>
-                <Button fx:id="btnCliente" layoutX="71.0" layoutY="115.0" mnemonicParsing="false" onAction="#onChatCliente" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="ChatCliente" textFill="WHITE">
+                <Button fx:id="btnCliente" layoutX="21.0" layoutY="132.0" mnemonicParsing="false" onAction="#onChatCliente" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="ChatCliente" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -18,17 +18,25 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="btnSalir" layoutX="58.0" layoutY="251.0" mnemonicParsing="false" onAction="#OnCerrar" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="CerrarServidor" textFill="WHITE">
+                <Button fx:id="btnSalir" layoutX="14.0" layoutY="259.0" mnemonicParsing="false" onAction="#OnCerrar" prefHeight="37.0" prefWidth="138.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="CerrarServidor" textFill="WHITE">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="16.0" />
                     </font>
                 </Button>
-                <Label layoutX="77.0" layoutY="42.0" text="AirRoom" textFill="WHITE">
+                <Label layoutX="25.0" layoutY="31.0" text="AirRoom" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="28.0" />
                     </font>
                 </Label>
-            <Button fx:id="btnServer" layoutX="71.0" layoutY="178.0" mnemonicParsing="false" onAction="#onChatServer" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="chatServer" textFill="WHITE">
+            <Button fx:id="btnServer" layoutX="25.0" layoutY="179.0" mnemonicParsing="false" onAction="#onChatServer" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="ChatServer" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnDuo" layoutX="21.0" layoutY="85.0" mnemonicParsing="false" onAction="#onChatServerDuo" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="DualChat" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

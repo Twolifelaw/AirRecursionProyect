@@ -1,5 +1,7 @@
 package Cliente.controlador.chat;
 
+import Cliente.controlador.VentanaUtilidades;
+import Cliente.modelo.exceptions.VerificarException;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
@@ -11,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
@@ -20,6 +23,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
@@ -32,7 +36,8 @@ public class ChatNuevo implements Initializable,Runnable {
     @FXML
     private VBox Box;
 
-
+    @FXML
+    private Button btnEnviar;
     @FXML
     private TextFlow FlowCliente;
 
@@ -238,8 +243,9 @@ public class ChatNuevo implements Initializable,Runnable {
         mensajesGuardados=FXCollections.observableArrayList();
         columServer.setCellValueFactory(new PropertyValueFactory<>("Servidor"));
         columCliente.setCellValueFactory(new PropertyValueFactory<>("Cliente"));
+        inicializarEnterKey();
 
-
+        VentanaUtilidades.agregarAnimacionBoton(btnEnviar);
         RotateTransition rotate2 = new RotateTransition();
         rotate2.setNode(imagenAvion1);
         rotate2.setDuration(Duration.millis(1700));
@@ -260,59 +266,68 @@ public class ChatNuevo implements Initializable,Runnable {
 
 
     }
-    @FXML
-    public void OnCerrar(ActionEvent event) {
 
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtEscribe};
+
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnEnviar.fire();
+                }
+            });
+        }
     }
 
     @Override
     public void run() {
-        try{
-            String nombre,ip,mensaje;
-            ServerSocket serverCliente=new ServerSocket(8090);
-            Socket cliente;
-            PaqueteEnvio paqueteRecibido;
+        ServerSocket serverCliente = null;
 
-            while (true){
-                cliente=serverCliente.accept();
-                ObjectInputStream flujoEntrada=new ObjectInputStream(cliente.getInputStream());
-                paqueteRecibido= (PaqueteEnvio) flujoEntrada.readObject();
-                nombre=paqueteRecibido.getNombre();
-                ip=paqueteRecibido.getIp();
+        try {
+            serverCliente = new ServerSocket(8090);
 
-                mensaje=paqueteRecibido.getMensaje();
+            while (true) {
+                Socket cliente = serverCliente.accept();
+                ObjectInputStream flujoEntrada = new ObjectInputStream(cliente.getInputStream());
+                PaqueteEnvio paqueteRecibido = (PaqueteEnvio) flujoEntrada.readObject();
+                String nombre = paqueteRecibido.getNombre();
+                String ip = paqueteRecibido.getIp();
+                String mensaje = paqueteRecibido.getMensaje();
 
-                Mensajes msj4=new Mensajes("Mensaje de: "+nombre+" "+ip,"");
+                Mensajes msj4 = new Mensajes("Mensaje de: " + nombre + " " + ip, "");
                 observableList.add(msj4);
 
-                Mensajes msj=new Mensajes(mensaje,"");
-                if (mensaje.length()>18){
-                    int cont=0;
-                    String []array=convertirMsj(mensaje);
-                    int i=0;
+                Mensajes msj = new Mensajes(mensaje, "");
+                if (mensaje.length() > 18) {
+                    int cont = 0;
+                    String[] array = convertirMsj(mensaje);
+                    int i = 0;
 
-                    while(i<array.length){
-                        String mensa="";
-                        while (cont<16&&i< array.length){
-                            mensa=mensa+" "+array[i];
-                            cont=cont+array[i].length();
+                    while (i < array.length) {
+                        String mensa = "";
+                        while (cont < 16 && i < array.length) {
+                            mensa = mensa + " " + array[i];
+                            cont = cont + array[i].length();
                             i++;
                         }
-                        cont=0;
-                        Mensajes msj2=new Mensajes(mensa,"");
+                        cont = 0;
+                        Mensajes msj2 = new Mensajes(mensa, "");
                         observableList.add(msj2);
                     }
                     TableChat.setItems(observableList);
 
-                }else{
+                } else {
 
                     observableList.add(msj);
                     TableChat.setItems(observableList);
                 }
             }
-
-        }catch (Exception e){
+        } catch (BindException bindException) {
+            System.out.println("¡Error! La dirección ya se está utilizando. Otro usuario ya se ha conectado.");
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            // Aquí puedes agregar código adicional si es necesario
         }
     }
     public ObservableList<Mensajes> transformarArray (ArrayList<String> array){

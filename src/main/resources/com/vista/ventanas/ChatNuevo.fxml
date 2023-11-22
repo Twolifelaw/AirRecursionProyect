@@ -34,11 +34,6 @@
                                 <Image url="@../../../com/vista/Imagenes/airplane_4902246.png" />
                             </image>
                         </ImageView>
-                        <Button layoutX="256.0" layoutY="19.0" mnemonicParsing="false" onAction="#OnCerrar" style="-fx-background-radius: 15; -fx-background-color: #2E2559;" text="Cerrar Chat" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font>
-                        </Button>
                     </children>
                 </Pane>
                 <ImageView fx:id="imagenRotar" fitHeight="106.0" fitWidth="109.0" layoutX="152.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -85,9 +80,9 @@
                         <Font size="19.0" />
                     </font>
                 </Label>
-                <TextField fx:id="txtDireccion" layoutX="286.0" layoutY="129.0" prefHeight="25.0" prefWidth="92.0" promptText="Direccion IP" style="-fx-background-radius: 15;" />
-                <TextField fx:id="txtNombre" layoutX="14.0" layoutY="129.0" prefHeight="25.0" prefWidth="92.0" promptText="Nombre" style="-fx-background-radius: 15;" />
-                <Button layoutX="309.0" layoutY="473.0" mnemonicParsing="false" onAction="#OnEnviar" opacity="0.14" prefHeight="50.0" prefWidth="77.0" style="-fx-background-color: #FFFFFF;" textFill="#222222">
+                <TextField fx:id="txtDireccion" alignment="CENTER" layoutX="286.0" layoutY="129.0" prefHeight="25.0" prefWidth="92.0" promptText="Direccion IP" style="-fx-background-radius: 15;" />
+                <TextField fx:id="txtNombre" alignment="CENTER" layoutX="14.0" layoutY="129.0" prefHeight="25.0" prefWidth="92.0" promptText="Nombre" style="-fx-background-radius: 15;" />
+                <Button fx:id="btnEnviar" layoutX="309.0" layoutY="473.0" mnemonicParsing="false" onAction="#OnEnviar" opacity="0.14" prefHeight="50.0" prefWidth="77.0" style="-fx-background-color: #FFFFFF;" textFill="#222222">
                     <font>
                         <Font size="14.0" />
                     </font>

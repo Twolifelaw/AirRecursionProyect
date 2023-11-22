@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
@@ -27,6 +28,9 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 public class ChatServerNuevo implements Runnable, Initializable {
+
+    @FXML
+    private Button btnChatear;
 
     //
     @FXML
@@ -77,6 +81,9 @@ public class ChatServerNuevo implements Runnable, Initializable {
 
     @FXML
     private Label IDCliente;
+
+    @FXML
+    private Label IPTrabajador;
 
 
 
@@ -320,6 +327,18 @@ public class ChatServerNuevo implements Runnable, Initializable {
         return shortID;
     }
 
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtEscribe};
+
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnEnviar.fire();
+                }
+            });
+        }
+    }
+
 
 
 
@@ -328,8 +347,10 @@ public class ChatServerNuevo implements Runnable, Initializable {
         observableList = FXCollections.observableArrayList();
         chatList = FXCollections.observableArrayList();
         emList = FXCollections.observableArrayList();
+        IPTrabajador.setText("id: "+generateShortID());
+        VentanaUtilidades.agregarAnimacionBoton(btnChatear);
         VentanaUtilidades.agregarAnimacionBoton(btnEnviar);
-        IDCliente.setText("id: "+generateShortID());
+        inicializarEnterKey();
 
 
 

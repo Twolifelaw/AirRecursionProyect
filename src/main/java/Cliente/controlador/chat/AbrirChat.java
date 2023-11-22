@@ -4,6 +4,7 @@ import Cliente.controlador.VentanaUtilidades;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,9 +13,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class AbrirChat {
+public class AbrirChat implements Initializable {
 
     @FXML
     private Button btnCliente;
@@ -24,6 +27,10 @@ public class AbrirChat {
 
     @FXML
     private Button btnServer;
+
+    @FXML
+    private Button btnDuo;
+
 
     @FXML
     private AnchorPane anchorPaneChats;
@@ -44,32 +51,26 @@ public class AbrirChat {
 
     @FXML
     void onChatCliente(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatNuevo.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+       VentanaUtilidades.abrirChatCliente();
     }
 
     @FXML
     void onChatServer(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(VentanaUtilidades.class.getResource("/com/vista/ventanas/ChatServer.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
+        VentanaUtilidades.mostrarChatServer();
+    }
 
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    @FXML
+    void onChatServerDuo(ActionEvent event) {
+        VentanaUtilidades.abrirChatServer();
+        VentanaUtilidades.abrirChatCliente();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        VentanaUtilidades.agregarAnimacionBoton(btnCliente);
+        VentanaUtilidades.agregarAnimacionBoton(btnSalir);
+        VentanaUtilidades.agregarAnimacionBoton(btnServer);
+        VentanaUtilidades.agregarAnimacionBoton(btnDuo);
+
     }
 }

@@ -12,30 +12,31 @@
 
 <AnchorPane fx:id="anchorPaneInicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
    <children>
-      <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
+      <AnchorPane opacity="0.87" prefHeight="630.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
          <children>
             <AnchorPane fx:id="anchorPaneBotones" layoutX="14.0" layoutY="184.0" prefHeight="423.0" prefWidth="144.0">
                <children>
-                  <Button fx:id="btnCuenta" layoutX="22.0" layoutY="72.0" mnemonicParsing="false" onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
+                  <Button fx:id="btnCuenta" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnMapa" layoutX="22.0" layoutY="118.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
+                  <Button fx:id="btnMapa" layoutX="21.0" layoutY="52.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnChat" layoutX="22.0" layoutY="165.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
+                  <Button fx:id="btnChat" layoutX="21.0" layoutY="93.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSalir" layoutX="22.0" layoutY="212.0" mnemonicParsing="false" onAction="#onSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
+                  <Button fx:id="btnSalir" layoutX="21.0" layoutY="131.0" mnemonicParsing="false" onAction="#onSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <AnchorPane fx:id="anchorPaneContenedorChat" layoutX="-12.0" layoutY="168.0" prefHeight="316.0" prefWidth="161.0" />
                </children>
             </AnchorPane>
             <ImageView fx:id="imagenUsuario" fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
@@ -43,14 +44,6 @@
                   <Image url="@../Login/10.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnAyuda" layoutX="35.0" layoutY="610.0" mnemonicParsing="false" onAction="#onAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="170.0" layoutY="115.0" opacity="0.82" prefHeight="77.0" prefWidth="1045.0" style="-fx-background-color: #0A1425;">
@@ -69,6 +62,14 @@
                <font>
                   <Font size="15.0" />
                </font>
+            </Button>
+            <Button fx:id="btnAyuda" layoutX="931.0" layoutY="16.0" mnemonicParsing="false" onAction="#onAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </AnchorPane>
