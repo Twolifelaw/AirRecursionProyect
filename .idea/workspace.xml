@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se implemento los metodos de editar y eliminat paquetes y editar las fehas disponibles de estos paquetes">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java" afterDir="false" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="se acomodó ciertos detalles">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700628270960</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="se acomodó ciertos detalles">
+      <created>1700628922013</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700628922013</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +256,8 @@
     <MESSAGE value="se gurada workspace.xml" />
     <MESSAGE value="guardado previo." />
     <MESSAGE value="se implemento los metodos de editar y eliminat paquetes y editar las fehas disponibles de estos paquetes" />
-    <option name="LAST_COMMIT_MESSAGE" value="se implemento los metodos de editar y eliminat paquetes y editar las fehas disponibles de estos paquetes" />
+    <MESSAGE value="se acomodó ciertos detalles" />
+    <option name="LAST_COMMIT_MESSAGE" value="se acomodó ciertos detalles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
