@@ -160,21 +160,26 @@ public class VentanaCreacionPaquetes implements Initializable {
                 PaqueteTuristico paqueteSeleccionado = this.tablaPaquetes.getSelectionModel().getSelectedItem();
 
                 if (paqueteSeleccionado != null) {
-                    // Agregar la nueva fecha al paquete existente
-                    paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
+                    // Verificar si la fecha ya existe en la lista
+                    if (!paqueteSeleccionado.getFechaDisponible().contains(fechaDisponible)) {
+                        // Agregar la nueva fecha al paquete existente
+                        paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
 
-                    // Actualizar la lista en la interfaz gráfica
-                    ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
-                    for (LocalDate fecha : paqueteSeleccionado.getFechaDisponible()) {
-                        fechasDisponiblesStrings.add(fecha.toString());
+                        // Actualizar la lista en la interfaz gráfica
+                        ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
+                        for (LocalDate fecha : paqueteSeleccionado.getFechaDisponible()) {
+                            fechasDisponiblesStrings.add(fecha.toString());
+                        }
+                        this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
+
+                        // Serializar la lista actualizada de paquetes
+                        serializarPaquetes("paquetes.dat", paquetes);
+
+                        // Mostrar mensaje de éxito
+                        lblStatus.setText("Fecha disponible agregada con éxito");
+                    } else {
+                        lblStatus.setText("La fecha ya está disponible en la lista");
                     }
-                    this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
-
-                    // Serializar la lista actualizada de paquetes
-                    //serializarPaquetes("paquetes.dat", paquetes);
-
-                    // Mostrar mensaje de éxito
-                    lblStatus.setText("Fecha disponible agregada con éxito");
                 } else {
                     lblStatus.setText("Seleccione un paquete antes de agregar fecha disponible");
                 }
@@ -183,7 +188,7 @@ public class VentanaCreacionPaquetes implements Initializable {
             lblStatus.setText(e.getMessage());
         } catch (Exception e) {
             lblStatus.setText("Error al agregar fecha disponible");
-            e.printStackTrace();  // Imprime el seguimiento de la pila para la depuración
+            e.printStackTrace();
         }
     }
 
