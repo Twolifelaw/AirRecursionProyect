@@ -12,10 +12,14 @@ import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class VentanaPaquetesController implements Initializable {
+    @FXML
+    private DatePicker datePickerFechas;
 
     public static ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
     private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
@@ -36,49 +40,79 @@ public class VentanaPaquetesController implements Initializable {
     private ScrollPane scrollPanePaquetes;
     //Lo necesario para buen funcionamiento de toda la ventana.
 
-    public static ArrayList<PaqueteTuristico> buscarDestinoPorFiltro(String filtro, String valor) {
-        ArrayList<PaqueteTuristico> destinosFiltrados = new ArrayList<>();
+    public static ArrayList<PaqueteTuristico> buscarPaquetePorFiltro(String filtro, String valor, LocalDate valorFecha, ArrayList<LocalDate> valoresFechas) {
+        ArrayList<PaqueteTuristico> paquetesFiltrados = new ArrayList<>();
         for (PaqueteTuristico paquete : paquetesTuristicosCargados) {
             String valorAtributo = null;
+            LocalDate valorFechas = null;
 
-            switch (filtro.toLowerCase()) {
-                case "nombre":
-                    valorAtributo = paquete.getNombre();
-                    System.out.println(valorAtributo);
-                    break;
-                /*case "duracion":
-                    valorAtributo = String.valueOf(paquete.getDuracion());
-                    break;
+            if(filtro != null){
+                switch (filtro.toLowerCase()) {
+                    case "nombre":
+                        valorAtributo = paquete.getNombre();
+                        break;
 
-                 */
-                case "servicios":
-                    valorAtributo = paquete.getServicios();
-                    break;
-                case "precio":
-                    valorAtributo = String.valueOf(paquete.getPrecio());
-                    break;
-                case "cupo":
-                    valorAtributo = String.valueOf(paquete.getCuposMaximos());
-                    break;
+                    case "precio":
+                        valorAtributo = String.valueOf(paquete.getPrecio());
+                        break;
 
-                // Agrega más casos según tus atributos
-                default:
-                    // Manejar el caso en que el filtro no coincide con ningún atributo
-                    System.out.println("Filtro no válido");
+                    case "servicios":
+                        valorAtributo = paquete.getServicios();
+                        break;
+
+                    case "fechainicio":
+                        valorFechas = paquete.getFechaInicio();
+                        break;
+
+                    case "fechafin":
+                        valorFechas = paquete.getFechaFin();
+                        break;
+
+                    case "cupo":
+                        valorAtributo = String.valueOf(paquete.getCuposMaximos());
+                        break;
+
+                    case "fechadisponible":
+                        // Aquí verificamos si la fecha proporcionada está en el rango de fechas disponibles
+                        if (valorFecha != null && valorFecha.isAfter(paquete.getFechaInicio()) && valorFecha.isBefore(paquete.getFechaFin())) {
+                            paquetesFiltrados.add(paquete);
+                            continue;  // Continuar con la siguiente iteración del bucle
+                        } else {
+                            // Si no cumple con la condición de fecha, continuar con la siguiente iteración
+                            continue;
+                        }
+
+                    case "fechasdisponibles":
+                        // Aquí verificamos si al menos una fecha proporcionada está en el rango de fechas disponibles
+                        if (valoresFechas != null && valoresFechas.stream().anyMatch(fecha -> fecha.isAfter(paquete.getFechaInicio()) && fecha.isBefore(paquete.getFechaFin()))) {
+                            paquetesFiltrados.add(paquete);
+                            continue;  // Continuar con la siguiente iteración del bucle
+                        } else {
+                            // Si no cumple con la condición de fechas, continuar con la siguiente iteración
+                            continue;
+                        }
+
+                        // Agrega más casos según tus atributos
+
+                    default:
+                        // Manejar el caso en que el filtro no coincide con ningún atributo
+                        System.out.println("Filtro no válido");
+                }
+            }else{
+                System.out.println("El filtro es nulo.");
             }
-
             // Realiza la comparación, ignorando mayúsculas y minúsculas
             if (valorAtributo != null && valorAtributo.equalsIgnoreCase(valor)) {
-                destinosFiltrados.add(paquete);
+                paquetesFiltrados.add(paquete);
             }
         }
 
-        if (destinosFiltrados.isEmpty()) {
-            System.out.println("No se encontraron destinos que coincidan con el filtro proporcionado.");
+        if (paquetesFiltrados.isEmpty()) {
+            System.out.println("No se encontraron paquetes que coincidan con el filtro proporcionado.");
         } else {
-            System.out.println(destinosFiltrados);
+            System.out.println(paquetesFiltrados);
         }
-        return destinosFiltrados;
+        return paquetesFiltrados;
     }
 
     public void mostrarDestinos(ArrayList<PaqueteTuristico> paquetes) {
@@ -169,7 +203,7 @@ public class VentanaPaquetesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mostrarDestinos(paquetesTuristicosCargados);
-        comboBoxFiltro.getItems().addAll("Nombre", "Duracion", "Servicios", "Precio", "Cupo");
+        comboBoxFiltro.getItems().addAll("Nombre", "Precio", "servicios", "FechaInicio", "FechaFin", "Cupo","FechaDisponible");
 
     }
 
@@ -180,13 +214,19 @@ public class VentanaPaquetesController implements Initializable {
     public void onBuscar(ActionEvent event) {
         String filtroSeleccionado = comboBoxFiltro.getValue();
         String valorBusqueda = txtBuscador.getText();
-        if (filtroSeleccionado != null && !valorBusqueda.isEmpty()) {
-            //buscarDestinoPorFiltro(filtroSeleccionado,valorBusqueda);
-            mostrarDestinos(buscarDestinoPorFiltro(filtroSeleccionado, valorBusqueda));
+
+        if ("fechasdisponibles".equalsIgnoreCase(filtroSeleccionado)) {
+            // Obtener la fecha del DatePicker
+            LocalDate fechaBusqueda = datePickerFechas.getValue();
+
+            if (fechaBusqueda != null) {
+                mostrarDestinos(buscarPaquetePorFiltro(filtroSeleccionado, null, fechaBusqueda, null));
+            } else {
+                System.out.println("Seleccione una fecha para realizar la búsqueda.");
+            }
         } else {
-            mostrarDestinos(paquetesTuristicosCargados);
-            //gridOfertas = null;
-            System.out.println("Seleccione un filtro y proporcione un valor de búsqueda.");
+            // Búsqueda normal
+            mostrarDestinos(buscarPaquetePorFiltro(filtroSeleccionado, valorBusqueda, null, null));
         }
     }
 }

@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
@@ -206,6 +207,18 @@ public class VentanaOfertasController implements Initializable {
 
     }
 
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtBuscador};
+
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnBuscar.fire();
+                }
+            });
+        }
+    }
+
     /**
      * Accion del botonBuscar.
      *
@@ -237,6 +250,7 @@ public class VentanaOfertasController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mostrarDestinos(destinosCargados);
         comboBoxFiltro.getItems().addAll("Pais", "Ciudad", "Clima", "Precio", "ID", "Cupo");
+        inicializarEnterKey();
 
 
     }
