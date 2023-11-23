@@ -60,6 +60,19 @@ public class VentanaAdministradorController implements Initializable {
      */
     @FXML
     void onClientes(ActionEvent event) {
+        limpiarContenido();
+
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/VentanaClientes.fxml"));
+                AnchorPane anchorPaneOfertas = loader.load();
+                anchorPaneContenedor.getChildren().add(anchorPaneOfertas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     /**

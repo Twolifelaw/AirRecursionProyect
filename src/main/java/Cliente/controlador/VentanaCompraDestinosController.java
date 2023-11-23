@@ -19,6 +19,7 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
+
 import java.io.IOException;
 import java.io.*;
 import java.net.URL;
@@ -98,7 +99,7 @@ public class VentanaCompraDestinosController implements Initializable {
             document.addPage(page);
 
             try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
-                contentStream.setFont(PDType1Font.COURIER, 12);
+                //contentStream.setFont(PDType1Font.COURIER, 12);Linea que comente porque no tengo libreria
                 contentStream.beginText();
                 contentStream.newLineAtOffset(50, 700);
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneCrear" opacity="0.93" prefHeight="561.0" prefWidth="1128.0" style="-fx-background-color: #0A1425;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaClientesController">
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="47.0" opacity="0.87" prefHeight="500.0" prefWidth="1093.0" style="-fx-background-radius: 50;">
+         <children>
+            <TableView fx:id="tablaClientes" layoutX="79.0" layoutY="11.0" prefHeight="485.0" prefWidth="935.0" style="-fx-background-radius: 50; -fx-background-color: #2E2559;" stylesheets="@../Login/DiseñoProyecto.css">
+               <columns>
+                  <TableColumn fx:id="columnaNombre" prefWidth="113.99999523162842" text="nombre" />
+                  <TableColumn fx:id="columnaApellido" prefWidth="158.0" text="Apellido" />
+                  <TableColumn fx:id="columnaCedula" prefWidth="125.0" text="cedula" />
+                  <TableColumn fx:id="columnaCorreo" minWidth="8.0" prefWidth="154.0" text="correo" />
+                  <TableColumn fx:id="columnaTelefono" prefWidth="184.0" text="telefono" />
+                  <TableColumn fx:id="columnaDireccion" prefWidth="199.0" text="Direccion" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="475.0" layoutY="11.0" prefHeight="26.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="imagenAvion1" fitHeight="26.0" fitWidth="200.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagenAvion2" fitHeight="26.0" fitWidth="200.0" layoutX="160.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/31069111copy.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="34.0" prefHeight="33.0" prefWidth="132.0" text="AirRecursion" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

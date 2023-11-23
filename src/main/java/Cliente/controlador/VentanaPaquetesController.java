@@ -140,15 +140,20 @@ public class VentanaPaquetesController implements Initializable {
                     //Se setan los valores de los objetos en los labels del anchorPane (Cart)
 
                     TextArea txtADestinos = (TextArea) nuevoAnchorPane.lookup("#txtAreaDestinos");
-                    txtADestinos.setText("\nDestinos: " + paquete.getDestinos() + "\n");
+                    txtADestinos.setText("Destinos: " + paquete.getDestinos() + "\n");
+
+                    TextArea txtFechasDisponibles = (TextArea) nuevoAnchorPane.lookup("#txtFechas");
+                    txtFechasDisponibles.setText("FechaDisponible: "+ paquete.getFechaDisponible());
+
 
                     Label lblNombre = (Label) nuevoAnchorPane.lookup("#lblNombre");
                     lblNombre.setText("Nombre: " + paquete.getNombre());
 
-                    /*Label lblDuracion = (Label) nuevoAnchorPane.lookup("#lblDuracion");
-                    lblDuracion.setText("Duration: " + paquete.getDuracion());
+                    Label lblFechaInicio = (Label) nuevoAnchorPane.lookup("#lblFechaInicio");
+                    lblFechaInicio.setText("Fecha de inicio: "+paquete.getFechaInicio());
 
-                     */
+                    Label lblFechaFin = (Label) nuevoAnchorPane.lookup("#lblFechaFin");
+                    lblFechaFin.setText("Fecha de fin: "+paquete.getFechaFin());
 
                     Label lblServicios = (Label) nuevoAnchorPane.lookup("#lblServicios");
                     lblServicios.setText("Servicios: " + paquete.getServicios());
@@ -162,10 +167,10 @@ public class VentanaPaquetesController implements Initializable {
 
 
                     //Establece el minimo y maximo de tamaño de los anchorPane's
-                    nuevoAnchorPane.setMaxHeight(291);
-                    nuevoAnchorPane.setMinHeight(291);
-                    nuevoAnchorPane.setMaxWidth(300);
-                    nuevoAnchorPane.setMinWidth(300);
+                    nuevoAnchorPane.setMaxHeight(400);
+                    nuevoAnchorPane.setMinHeight(400);
+                    nuevoAnchorPane.setMaxWidth(400);
+                    nuevoAnchorPane.setMinWidth(400);
 
                     // Configurar las coordenadas de acuerdo a tu diseño
                     int row = (anchorPanelCount - 1) / maxColumns;
