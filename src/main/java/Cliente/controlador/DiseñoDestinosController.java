@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.modelo.objetos.Destino;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +12,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DiseñoDestinosController {
+    public Button btnLike;
+    public Button btnDisLike;
     //
     @FXML
     private Button btnComprar;
@@ -36,6 +40,10 @@ public class DiseñoDestinosController {
 
     @FXML
     private Label lblPrecio;
+    @FXML
+    private Label lblId;
+
+    //public static ArrayList<Destino> destinos = deserializarDestino("destinos.dat");
     //De aqui para arriba son los componentes.
 
     /**
@@ -88,4 +96,37 @@ public class DiseñoDestinosController {
     }
 
 
+
+    public void onDisLike(ActionEvent mouseEvent) {
+        ArrayList<Destino> destinos = deserializarDestino("destinos.dat");
+        if(destinos!=null){
+            for(Destino destino:destinos){
+                if(destino.getId().equals(lblId.getText())){
+                    int aux = destino.getNumDisLike()+1;
+                    destino.setNumDisLike(aux);
+                    break;
+                }
+
+            }
+            serializarDestino("destinos.dat",destinos);
+        }
+    }
+
+    public void onLike(ActionEvent event) {
+        ArrayList<Destino> destinos = deserializarDestino("destinos.dat");
+        if(destinos!=null){
+
+            for(Destino destino:destinos){
+                if(destino.getId().equals(lblId.getText())){
+                    int aux = destino.getNumLike()+1;
+                    destino.setNumLike(aux);
+                    System.out.println(destino.getNumLike());
+                    break;
+                }
+
+            }
+            serializarDestino("destinos.dat",destinos);
+
+        }
+    }
 }

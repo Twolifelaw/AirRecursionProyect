@@ -116,7 +116,7 @@ public class VentanaOfertasController implements Initializable {
 
                 // Establece el tamaño deseado para las filas y columnas en el GridPane
                 RowConstraints rowConstraints = new RowConstraints();
-                rowConstraints.setPrefHeight(310); // Establece la altura deseada para las filas
+                rowConstraints.setPrefHeight(325); // Establece la altura deseada para las filas
 
                 ColumnConstraints columnConstraints = new ColumnConstraints();
                 columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
@@ -141,6 +141,9 @@ public class VentanaOfertasController implements Initializable {
 
                     Label lblPrecio = (Label) nuevoAnchorPane.lookup("#lblPrecio");
                     lblPrecio.setText("Precio: " + destino.getPrecio());
+
+                    Label lblId = (Label) nuevoAnchorPane.lookup("#lblId");
+                    lblId.setText(destino.getId());
 
 
                     ImageView imgView = (ImageView) nuevoAnchorPane.lookup("#imagenVuelo");
@@ -171,10 +174,10 @@ public class VentanaOfertasController implements Initializable {
 
 
                     //Establece el minimo y maximo de tamaño de los anchorPane's
-                    nuevoAnchorPane.setMaxHeight(291);
-                    nuevoAnchorPane.setMinHeight(291);
-                    nuevoAnchorPane.setMaxWidth(300);
-                    nuevoAnchorPane.setMinWidth(300);
+                    nuevoAnchorPane.setMaxHeight(320);
+                    nuevoAnchorPane.setMinHeight(320);
+                    nuevoAnchorPane.setMaxWidth(320);
+                    nuevoAnchorPane.setMinWidth(320);
 
                     // Configurar las coordenadas de acuerdo a tu diseño
                     int row = (anchorPanelCount - 1) / maxColumns;

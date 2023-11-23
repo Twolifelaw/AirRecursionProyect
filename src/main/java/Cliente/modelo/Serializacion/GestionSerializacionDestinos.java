@@ -72,7 +72,7 @@ public class GestionSerializacionDestinos {
         ArrayList<Destino> destinos = new ArrayList<>();
         //destinos.add(new Destino("Colombia", "Armenia", "aaaa", "/Armenia.jpg", "Calor"));
         //destinos.add(new Destino("Canada", "Toronto", "Descripción", "/Toronto.jpg", "Frio"));
-        destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor","1212","002",100));
+        destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor","1212","002",100,0,0));
         GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
     }
 

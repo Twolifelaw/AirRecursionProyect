@@ -13,7 +13,10 @@ public class Destino implements Serializable {
     private String id;
     private int numeroCupos;
 
-    public Destino(String pais, String ciudad, String descripcion, String imagenes, String clima, String precio, String id, int numeroCupos) {
+    private int numLike;
+    private int numDisLike;
+
+    public Destino(String pais, String ciudad, String descripcion, String imagenes, String clima, String precio, String id, int numeroCupos, int numLike, int numDisLike) {
         this.pais = pais;
         this.ciudad = ciudad;
         this.descripcion = descripcion;
@@ -22,6 +25,11 @@ public class Destino implements Serializable {
         this.precio = precio;
         this.id = id;
         this.numeroCupos = numeroCupos;
+        this.numLike = numLike;
+        this.numDisLike = numDisLike;
+    }
+
+    public Destino() {
     }
 
     public String getPais() {
@@ -86,6 +94,22 @@ public class Destino implements Serializable {
 
     public void setNumeroCupos(int numeroCupos) {
         this.numeroCupos = numeroCupos;
+    }
+
+    public int getNumLike() {
+        return numLike;
+    }
+
+    public void setNumLike(int numLike) {
+        this.numLike = numLike;
+    }
+
+    public int getNumDisLike() {
+        return numDisLike;
+    }
+
+    public void setNumDisLike(int numDisLike) {
+        this.numDisLike = numDisLike;
     }
 
     @Override

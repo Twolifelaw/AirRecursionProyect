@@ -1,107 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="632.0" prefWidth="1128.0"
-            stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21"
-            fx:controller="Cliente.controlador.VentanaEstadistica">
+
+<AnchorPane prefHeight="662.0" prefWidth="843.0" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaEstadistica">
     <children>
-        <ScrollPane prefHeight="643.0" prefWidth="1128.0" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0"
-                    AnchorPane.rightAnchor="-15.0" AnchorPane.topAnchor="0.0">
+        <ScrollPane layoutX="4.0" layoutY="-3.0" prefHeight="662.0" prefWidth="843.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-3.0">
             <content>
-                <AnchorPane fx:id="anchorPaneStats" minHeight="0.0" minWidth="0.0" prefHeight="675.0" prefWidth="1128.0"
-                            style="-fx-background-color: #ffffff;">
+                <AnchorPane fx:id="anchorPaneStats" minHeight="0.0" minWidth="0.0" prefHeight="639.0" prefWidth="1143.0" style="-fx-background-color: black;">
                     <children>
-                        <BarChart fx:id="barChars" layoutX="117.0" layoutY="62.0" prefHeight="265.0" prefWidth="448.0"
-                                  title="Preciso">
+                        <BarChart fx:id="barChars" layoutX="34.0" layoutY="41.0" prefHeight="203.0" prefWidth="359.0" title="Preciso">
                             <xAxis>
-                                <CategoryAxis fx:id="CategoriAxis" side="BOTTOM"/>
+                                <CategoryAxis fx:id="CategoriAxis" side="BOTTOM" />
                             </xAxis>
                             <yAxis>
-                                <NumberAxis fx:id="NumberAxis" side="LEFT"/>
+                                <NumberAxis fx:id="NumberAxis" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                        <BarChart fx:id="bartChartCupos" layoutX="586.0" layoutY="73.0" prefHeight="243.0"
-                                  prefWidth="431.0" title="Cupos Maximos">
+                        <BarChart fx:id="bartChartCupos" layoutX="410.0" layoutY="41.0" prefHeight="204.0" prefWidth="379.0" title="Cupos Maximos">
                             <xAxis>
-                                <CategoryAxis fx:id="CategoryCupos" side="BOTTOM"/>
+                                <CategoryAxis fx:id="CategoryCupos" side="BOTTOM" />
                             </xAxis>
                             <yAxis>
-                                <NumberAxis fx:id="NumberCupos" side="LEFT"/>
+                                <NumberAxis fx:id="NumberCupos" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                        <Label alignment="CENTER" layoutX="455.0" layoutY="1.0" prefHeight="79.0" prefWidth="219.0"
-                               text="Destinos" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="300.0" layoutY="1.0" prefHeight="79.0" prefWidth="219.0" text="Destinos" textAlignment="CENTER">
                             <font>
-                                <Font name="Gabriola" size="48.0"/>
+                                <Font name="Gabriola" size="48.0" />
                             </font>
                             <textFill>
-                                <LinearGradient endX="0.25552049269811594" endY="1.0" startX="0.26182964246731827"
-                                                startY="0.23974754983318333">
+                                <LinearGradient endX="0.25552049269811594" endY="1.0" startX="0.26182964246731827" startY="0.23974754983318333">
                                     <stops>
                                         <Stop>
                                             <color>
-                                                <Color red="0.34210526943206787" green="0.026397010311484337"
-                                                       blue="0.3263198435306549"/>
+                                                <Color red="1.0" blue="0.949999988079071" />
                                             </color>
                                         </Stop>
                                         <Stop offset="1.0">
                                             <color>
-                                                <Color red="0.18039216101169586" green="0.14509804546833038"
-                                                       blue="0.3490196168422699"/>
+                                                <Color red="0.18039216101169586" green="0.14509804546833038" blue="0.3490196168422699" />
                                             </color>
                                         </Stop>
                                     </stops>
                                 </LinearGradient>
                             </textFill>
                         </Label>
-                        <Label alignment="CENTER" layoutX="327.0" layoutY="305.0" prefHeight="32.0" prefWidth="474.0"
-                               text="Paquetes Turisticos" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="173.0" layoutY="410.0" prefHeight="32.0" prefWidth="474.0" text="Paquetes Turisticos" textAlignment="CENTER">
                             <font>
-                                <Font size="33.0"/>
+                                <Font size="33.0" />
                             </font>
                             <textFill>
-                                <LinearGradient endX="0.25552049269811594" endY="1.0" startX="0.26182964246731827"
-                                                startY="0.23974754983318333">
+                                <LinearGradient endX="0.25552049269811594" endY="1.0" startX="0.26182964246731827" startY="0.23974754983318333">
                                     <stops>
                                         <Stop>
                                             <color>
-                                                <Color red="0.34210526943206787" green="0.026397010311484337"
-                                                       blue="0.3263198435306549"/>
+                                                <Color red="1.0" blue="0.949999988079071" />
                                             </color>
                                         </Stop>
                                         <Stop offset="1.0">
                                             <color>
-                                                <Color red="0.18039216101169586" green="0.14509804546833038"
-                                                       blue="0.3490196168422699"/>
+                                                <Color red="0.18039216101169586" green="0.14509804546833038" blue="0.3490196168422699" />
                                             </color>
                                         </Stop>
                                     </stops>
                                 </LinearGradient>
                             </textFill>
                         </Label>
-                        <BarChart fx:id="bartChartCuposPaquete" layoutX="586.0" layoutY="336.0" prefHeight="243.0"
-                                  prefWidth="431.0" title="Cupos Maximos">
+                        <BarChart fx:id="bartChartCuposPaquete" layoutX="433.0" layoutY="441.0" prefHeight="177.0" prefWidth="355.0" title="Cupos Maximos">
                             <xAxis>
-                                <CategoryAxis fx:id="CategoryCuposPaquetes" side="BOTTOM"/>
+                                <CategoryAxis fx:id="CategoryCuposPaquetes" side="BOTTOM" />
                             </xAxis>
                             <yAxis>
-                                <NumberAxis fx:id="NumberCuposPaquetes" side="LEFT"/>
+                                <NumberAxis fx:id="NumberCuposPaquetes" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                        <BarChart fx:id="barCharsPrecioPaquetes" layoutX="117.0" layoutY="336.0" prefHeight="243.0"
-                                  prefWidth="447.0" title="Preciso">
+                        <BarChart fx:id="barCharsPrecioPaquetes" layoutX="78.0" layoutY="435.0" prefHeight="189.0" prefWidth="299.0" title="Preciso">
                             <xAxis>
-                                <CategoryAxis fx:id="CategoriPrecioPaquetes" side="BOTTOM"/>
+                                <CategoryAxis fx:id="CategoriPrecioPaquetes" side="BOTTOM" />
                             </xAxis>
                             <yAxis>
-                                <NumberAxis fx:id="NumberPrecioPaquetes" side="LEFT"/>
+                                <NumberAxis fx:id="NumberPrecioPaquetes" side="LEFT" />
                             </yAxis>
                         </BarChart>
+                  <BarChart fx:id="bartChartDisLike" layoutX="60.0" layoutY="232.0" prefHeight="195.0" prefWidth="316.0" title="DisLike">
+                     <xAxis>
+                        <CategoryAxis fx:id="CategoryDisLike" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="numberDisLike" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="bartChartLike" layoutX="422.0" layoutY="233.0" prefHeight="177.0" prefWidth="354.0" title="Like">
+                     <xAxis>
+                        <CategoryAxis fx:id="categoryLike" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumberLike" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
                     </children>
                 </AnchorPane>
             </content>
