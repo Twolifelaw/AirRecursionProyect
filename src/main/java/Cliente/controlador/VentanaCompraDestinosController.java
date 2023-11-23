@@ -19,6 +19,7 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
+
 import java.io.IOException;
 import java.io.*;
 import java.net.URL;
@@ -90,6 +91,22 @@ public class VentanaCompraDestinosController implements Initializable {
 
         crearPDF(rutaCompleta,contenido);
         System.out.println("PDF creado exitosamente en: " + rutaCompleta);
+
+        //Regresa a la ventana Inicio.
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/VentanaInicio.fxml"));
+        // Cargue el archivo FXML
+        Parent root = loader.load();
+        //Crea un nuevo escenario y prepara el escenario.
+        Stage stage = new Stage();
+        Scene escena = new Scene(root);
+        stage.setScene(escena);
+
+        //Muestra la nueva etapa
+        stage.show();
+
+        // Hide the stage of the login
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     public static void crearPDF(String rutaArchivo, String contenido) throws IOException {
@@ -98,7 +115,7 @@ public class VentanaCompraDestinosController implements Initializable {
             document.addPage(page);
 
             try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
-                contentStream.setFont(PDType1Font.COURIER, 12);
+                //contentStream.setFont(PDType1Font.COURIER, 12);Linea que comente porque no tengo libreria
                 contentStream.beginText();
                 contentStream.newLineAtOffset(50, 700);
 
@@ -114,6 +131,11 @@ public class VentanaCompraDestinosController implements Initializable {
 
             document.save(rutaArchivo);
         }
+
+
+
+
+
     }
 
 

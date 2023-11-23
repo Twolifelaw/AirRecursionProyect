@@ -97,6 +97,7 @@ public class VentanaRegistroController implements Initializable {
             numeroTelefonico = txtNumeroTelefonico.getText();
             direccionResidencia = txtDireccion.getText();
             contrasena = pswContrasena.getText();
+            apellido = txtApellido.getText();
 
             if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty() && apellido.isEmpty()) {
                 throw new VerificarException("Llene los campos");
@@ -111,7 +112,7 @@ public class VentanaRegistroController implements Initializable {
                     if(clientes==null){
                         clientes=new ArrayList<>();
                     }
-                    clientes.add(new Cliente(nombres, "a", identificacion, contrasena, correoElectronico, numeroTelefonico, direccionResidencia));
+                    clientes.add(new Cliente(nombres, apellido, identificacion, contrasena, correoElectronico, numeroTelefonico, direccionResidencia));
                     serializarObjetos("clientes.se", clientes);
                     throw new VerificarException("Se registró correctamente");
                 }

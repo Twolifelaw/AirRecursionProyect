@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="AnchorPaquetes" prefHeight="485.0"
-            prefWidth="1045.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;"
-            xmlns="http://javafx.com/javafx/21" fx:controller="Cliente.controlador.VentanaPaquetesController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane fx:id="AnchorPaquetes" prefHeight="485.0" prefWidth="1045.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaPaquetesController">
     <children>
-        <ScrollPane fx:id="scrollPanePaquetes" layoutX="8.0" layoutY="38.0" prefHeight="447.0" prefWidth="1045.0"
-                    style="-fx-background-color: #2E2559; -fx-background-radius: 15;"
-                    stylesheets="@../Login/DiseñoProyecto.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0"
-                    AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="38.0">
+        <ScrollPane fx:id="scrollPanePaquetes" layoutX="8.0" layoutY="38.0" prefHeight="1000.0" prefWidth="1045.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" stylesheets="@../Login/DiseñoProyecto.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="38.0">
             <content>
-                <GridPane fx:id="gridPaquetes" prefHeight="485.0" prefWidth="1037.0"
-                          style="-fx-background-color: #2E2559; -fx-background-radius: 15;"
-                          stylesheets="@../Login/DiseñoProyecto.css">
+                <GridPane fx:id="gridPaquetes" prefHeight="700.0" prefWidth="1037.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" stylesheets="@../Login/DiseñoProyecto.css">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                 </GridPane>
             </content>
         </ScrollPane>
         <AnchorPane layoutX="238.0" layoutY="5.0" prefHeight="35.0" prefWidth="711.0">
             <children>
-                <TextField fx:id="txtBuscador" alignment="CENTER" layoutX="165.0" prefHeight="26.0" prefWidth="256.0"
-                           promptText="Buscador" style="-fx-background-radius: 15;"/>
-                <ComboBox fx:id="comboBoxFiltro" layoutX="8.0" onAction="#filtrado" prefWidth="150.0"
-                          promptText="Filtro" stylesheets="@../Login/DiseñoProyecto.css"/>
-                <Button fx:id="btnBuscar" layoutX="427.0" mnemonicParsing="false" onAction="#onBuscar" prefHeight="12.0"
-                        prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;"
-                        text="buscar" textFill="WHITE"/>
-                <DatePicker fx:id="datePickerFechas" layoutX="533.0" layoutY="2.0"/>
+                <TextField fx:id="txtBuscador" alignment="CENTER" layoutX="165.0" prefHeight="26.0" prefWidth="256.0" promptText="Buscador" style="-fx-background-radius: 15;" />
+                <ComboBox fx:id="comboBoxFiltro" layoutX="8.0" onAction="#filtrado" prefWidth="150.0" promptText="Filtro" stylesheets="@../Login/DiseñoProyecto.css" />
+                <Button fx:id="btnBuscar" layoutX="427.0" mnemonicParsing="false" onAction="#onBuscar" prefHeight="12.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="buscar" textFill="WHITE" />
+                <DatePicker fx:id="datePickerFechas" layoutX="533.0" layoutY="2.0" />
             </children>
         </AnchorPane>
     </children>

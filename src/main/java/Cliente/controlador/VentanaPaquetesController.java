@@ -18,8 +18,8 @@ import java.util.ResourceBundle;
 
 public class VentanaPaquetesController implements Initializable {
     public static ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
-    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
-    private final int maxColumns = 3; // Número máximo de columnas
+    private final double paneSpacing = 10.0; // Espacio entre los AnchorPane
+    private final int maxColumns = 2; // Número máximo de columnas
     @FXML
     private DatePicker datePickerFechas;
     @FXML
@@ -127,7 +127,7 @@ public class VentanaPaquetesController implements Initializable {
 
                 // Establece el tamaño deseado para las filas y columnas en el GridPane
                 RowConstraints rowConstraints = new RowConstraints();
-                rowConstraints.setPrefHeight(310); // Establece la altura deseada para las filas
+                rowConstraints.setPrefHeight(420); // Establece la altura deseada para las filas
 
                 ColumnConstraints columnConstraints = new ColumnConstraints();
                 columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
@@ -140,15 +140,20 @@ public class VentanaPaquetesController implements Initializable {
                     //Se setan los valores de los objetos en los labels del anchorPane (Cart)
 
                     TextArea txtADestinos = (TextArea) nuevoAnchorPane.lookup("#txtAreaDestinos");
-                    txtADestinos.setText("\nDestinos: " + paquete.getDestinos() + "\n");
+                    txtADestinos.setText("Destinos: " + paquete.getDestinos() + "\n");
+
+                    TextArea txtFechasDisponibles = (TextArea) nuevoAnchorPane.lookup("#txtFechas");
+                    txtFechasDisponibles.setText("FechaDisponible: "+ paquete.getFechaDisponible());
+
 
                     Label lblNombre = (Label) nuevoAnchorPane.lookup("#lblNombre");
                     lblNombre.setText("Nombre: " + paquete.getNombre());
 
-                    /*Label lblDuracion = (Label) nuevoAnchorPane.lookup("#lblDuracion");
-                    lblDuracion.setText("Duration: " + paquete.getDuracion());
+                    Label lblFechaInicio = (Label) nuevoAnchorPane.lookup("#lblFechaInicio");
+                    lblFechaInicio.setText("Fecha de inicio: "+paquete.getFechaInicio());
 
-                     */
+                    Label lblFechaFin = (Label) nuevoAnchorPane.lookup("#lblFechaFin");
+                    lblFechaFin.setText("Fecha de fin: "+paquete.getFechaFin());
 
                     Label lblServicios = (Label) nuevoAnchorPane.lookup("#lblServicios");
                     lblServicios.setText("Servicios: " + paquete.getServicios());
@@ -162,10 +167,10 @@ public class VentanaPaquetesController implements Initializable {
 
 
                     //Establece el minimo y maximo de tamaño de los anchorPane's
-                    nuevoAnchorPane.setMaxHeight(291);
-                    nuevoAnchorPane.setMinHeight(291);
-                    nuevoAnchorPane.setMaxWidth(300);
-                    nuevoAnchorPane.setMinWidth(300);
+                    nuevoAnchorPane.setMaxHeight(400);
+                    nuevoAnchorPane.setMinHeight(400);
+                    nuevoAnchorPane.setMaxWidth(400);
+                    nuevoAnchorPane.setMinWidth(400);
 
                     // Configurar las coordenadas de acuerdo a tu diseño
                     int row = (anchorPanelCount - 1) / maxColumns;
