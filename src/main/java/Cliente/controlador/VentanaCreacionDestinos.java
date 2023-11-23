@@ -161,7 +161,7 @@ public class VentanaCreacionDestinos implements Initializable {
                     destinosNuevos=new ArrayList<>();
                 }
                 destinosNuevos.add(new Destino(txtPais.getText(), txtCiudad.getText(), descripcion,
-                        imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText()),0,0));
+                        imagePath, txtClima.getText(), txtPrecio.getText(), txtID.getText(), Integer.parseInt(txtCupos.getText()),0,0,new ArrayList<>()));
                 serializarDestino("destinos.dat", destinosNuevos);
             }
 

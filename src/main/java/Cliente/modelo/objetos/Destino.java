@@ -1,6 +1,7 @@
 package Cliente.modelo.objetos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Destino implements Serializable {
 
@@ -16,7 +17,9 @@ public class Destino implements Serializable {
     private int numLike;
     private int numDisLike;
 
-    public Destino(String pais, String ciudad, String descripcion, String imagenes, String clima, String precio, String id, int numeroCupos, int numLike, int numDisLike) {
+    private ArrayList<String> comentarios;
+
+    public Destino(String pais, String ciudad, String descripcion, String imagenes, String clima, String precio, String id, int numeroCupos, int numLike, int numDisLike,ArrayList<String> comentarios) {
         this.pais = pais;
         this.ciudad = ciudad;
         this.descripcion = descripcion;
@@ -27,9 +30,18 @@ public class Destino implements Serializable {
         this.numeroCupos = numeroCupos;
         this.numLike = numLike;
         this.numDisLike = numDisLike;
+        this.comentarios=comentarios;
     }
 
     public Destino() {
+    }
+
+    public ArrayList<String> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(ArrayList<String> comentarios) {
+        this.comentarios = comentarios;
     }
 
     public String getPais() {

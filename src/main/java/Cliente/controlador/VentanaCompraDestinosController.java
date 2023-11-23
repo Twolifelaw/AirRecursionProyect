@@ -23,17 +23,26 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import java.io.IOException;
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserializarDestino;
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.*;
 
 public class VentanaCompraDestinosController implements Initializable {
+    @FXML
+    public Label lblid;
     //
     @FXML
     private Button btnComprar;
 
     @FXML
+    private Button btnComentar;
+    @FXML
     private Button btnReserva;
+
+    @FXML
+    private TextArea txtAreaComentario;
+
 
     @FXML
     private ImageView imgDestinos;
@@ -52,7 +61,9 @@ public class VentanaCompraDestinosController implements Initializable {
 
     @FXML
     private Label lblPrecio;
-    //De aqui para arriba van los componentes.
+
+    public static boolean bandera = false;
+
 
     /**
      * Accion de botonReservas.
@@ -91,22 +102,11 @@ public class VentanaCompraDestinosController implements Initializable {
 
         crearPDF(rutaCompleta,contenido);
         System.out.println("PDF creado exitosamente en: " + rutaCompleta);
+        bandera=true;
+        txtAreaComentario.setEditable(bandera);
 
-        //Regresa a la ventana Inicio.
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/VentanaInicio.fxml"));
-        // Cargue el archivo FXML
-        Parent root = loader.load();
-        //Crea un nuevo escenario y prepara el escenario.
-        Stage stage = new Stage();
-        Scene escena = new Scene(root);
-        stage.setScene(escena);
 
-        //Muestra la nueva etapa
-        stage.show();
-
-        // Hide the stage of the login
-        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     public static void crearPDF(String rutaArchivo, String contenido) throws IOException {
@@ -115,7 +115,7 @@ public class VentanaCompraDestinosController implements Initializable {
             document.addPage(page);
 
             try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
-                //contentStream.setFont(PDType1Font.COURIER, 12);Linea que comente porque no tengo libreria
+                contentStream.setFont(PDType1Font.COURIER, 12);
                 contentStream.beginText();
                 contentStream.newLineAtOffset(50, 700);
 
@@ -131,7 +131,33 @@ public class VentanaCompraDestinosController implements Initializable {
 
             document.save(rutaArchivo);
         }
+    }
 
+    @FXML
+    void onComentar(ActionEvent event) {
+        ArrayList<Destino> destinoArrayList = deserializarDestino("destinos.dat");
+        if(destinoArrayList!=null){
+        if(bandera==false){
+            System.out.println("No se puede comentar");
+        }else  {
+            //txtAreaComentario.setEditable(true);
+            for(Destino destino: destinoArrayList){
+                if(destino.getId().equals(lblid.getText())){
+                    if(txtAreaComentario.getText()!=null){
+                        ArrayList<String> auc = destino.getComentarios();
+                        auc.add(txtAreaComentario.getText());
+
+                        destino.setComentarios(auc);
+                        //System.out.println(auc);
+
+                        txtAreaComentario.setText(auc.toString());
+                        break;
+                    }
+                }
+            }
+        }
+        serializarDestino("destinos.dat",destinoArrayList);
+    }
 
 
 
@@ -174,6 +200,15 @@ public class VentanaCompraDestinosController implements Initializable {
     public Label getLblPrecio() {
         return lblPrecio;
     }
+
+    public Label getLblid() {
+        return lblid;
+    }
+
+    public void setLblid(Label lblid) {
+        this.lblid = lblid;
+    }
+
     //
 
     /**
@@ -190,6 +225,7 @@ public class VentanaCompraDestinosController implements Initializable {
     }
 
     public void OnRegresar(ActionEvent event) throws IOException {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/vista/ventanas/VentanaInicio.fxml"));
         // Cargue el archivo FXML
         Parent root = loader.load();

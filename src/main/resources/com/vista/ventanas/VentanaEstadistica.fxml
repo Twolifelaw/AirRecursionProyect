@@ -13,11 +13,11 @@
 
 <AnchorPane prefHeight="561.0" prefWidth="1128.0" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaEstadistica">
     <children>
-        <ScrollPane layoutX="4.0" layoutY="-3.0" prefHeight="700.0" prefWidth="1128.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-3.0">
+        <ScrollPane layoutX="4.0" layoutY="-3.0" prefHeight="800.0" prefWidth="1128.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-3.0">
             <content>
-                <AnchorPane fx:id="anchorPaneStats" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1143.0" style="-fx-background-color: #ffffff;">
+                <AnchorPane fx:id="anchorPaneStats" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1143.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <BarChart fx:id="barChars" layoutX="103.0" layoutY="42.0" prefHeight="203.0" prefWidth="359.0" title="Preciso">
+                        <BarChart fx:id="barChartPrecioDestinos" layoutX="103.0" layoutY="42.0" prefHeight="203.0" prefWidth="359.0" title="Preciso">
                             <xAxis>
                                 <CategoryAxis fx:id="CategoriAxis" side="BOTTOM" />
                             </xAxis>
@@ -25,7 +25,7 @@
                                 <NumberAxis fx:id="NumberAxis" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                        <BarChart fx:id="bartChartCupos" layoutX="647.0" layoutY="41.0" prefHeight="204.0" prefWidth="379.0" title="Cupos Maximos">
+                        <BarChart fx:id="bartChartCuposDestinos" layoutX="647.0" layoutY="41.0" prefHeight="204.0" prefWidth="379.0" title="Cupos Maximos">
                             <xAxis>
                                 <CategoryAxis fx:id="CategoryCupos" side="BOTTOM" />
                             </xAxis>
@@ -83,7 +83,7 @@
                                 <NumberAxis fx:id="NumberCuposPaquetes" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                        <BarChart fx:id="barCharsPrecioPaquetes" layoutX="155.0" layoutY="432.0" prefHeight="189.0" prefWidth="299.0" title="Preciso">
+                        <BarChart fx:id="barCharsPrecioPaquetes" layoutX="155.0" layoutY="432.0" prefHeight="189.0" prefWidth="299.0" title="precio">
                             <xAxis>
                                 <CategoryAxis fx:id="CategoriPrecioPaquetes" side="BOTTOM" />
                             </xAxis>
@@ -91,7 +91,7 @@
                                 <NumberAxis fx:id="NumberPrecioPaquetes" side="LEFT" />
                             </yAxis>
                         </BarChart>
-                  <BarChart fx:id="bartChartDisLike" layoutX="146.0" layoutY="222.0" prefHeight="195.0" prefWidth="316.0" title="DisLike">
+                  <BarChart fx:id="bartChartDislikeDestinos" layoutX="146.0" layoutY="222.0" prefHeight="195.0" prefWidth="316.0" title="DisLike">
                      <xAxis>
                         <CategoryAxis fx:id="CategoryDisLike" side="BOTTOM" />
                      </xAxis>
@@ -99,12 +99,28 @@
                         <NumberAxis fx:id="numberDisLike" side="LEFT" />
                      </yAxis>
                   </BarChart>
-                  <BarChart fx:id="bartChartLike" layoutX="681.0" layoutY="231.0" prefHeight="177.0" prefWidth="354.0" title="Like">
+                  <BarChart fx:id="bartCharLikeDestinos" layoutX="681.0" layoutY="231.0" prefHeight="177.0" prefWidth="354.0" title="Like">
                      <xAxis>
                         <CategoryAxis fx:id="categoryLike" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
                         <NumberAxis fx:id="NumberLike" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="bartChartDislikePaquetes" layoutX="155.0" layoutY="612.0" prefHeight="195.0" prefWidth="316.0" title="DisLike">
+                     <xAxis>
+                        <CategoryAxis fx:id="CategoryDisLikeP" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="numberDisLikeP" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="bartChartLikePaquetes" layoutX="681.0" layoutY="621.0" prefHeight="177.0" prefWidth="354.0" title="Like">
+                     <xAxis>
+                        <CategoryAxis fx:id="categoryLikeP" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumberLikeP" side="LEFT" />
                      </yAxis>
                   </BarChart>
                     </children>

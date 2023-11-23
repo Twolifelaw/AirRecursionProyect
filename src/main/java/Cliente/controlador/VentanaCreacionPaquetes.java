@@ -142,7 +142,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                 // Crear un nuevo objeto PaqueteTuristico
 
 
-                PaqueteTuristico nuevoPaquete = new PaqueteTuristico(new ArrayList<>(List.of(destinos)), nombre, fechaInicio, fechaFin, new ArrayList<>(List.of(fechaDisponible)), servicios, precioPaquete, cuposPaquete);
+                PaqueteTuristico nuevoPaquete = new PaqueteTuristico(new ArrayList<>(List.of(destinos)), nombre, fechaInicio, fechaFin, new ArrayList<>(List.of(fechaDisponible)), servicios, precioPaquete, cuposPaquete,0,0);
                 // Agregar el nuevo paquete a la lista
                 paquetesNuevos.add(nuevoPaquete);
 
