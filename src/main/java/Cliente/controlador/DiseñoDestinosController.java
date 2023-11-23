@@ -79,6 +79,11 @@ public class DiseñoDestinosController {
         Label lblPrecioV = controller.getLblPrecio();
         lblPrecioV.setText(lblPrecio.getText());
 
+        Label lblIdV = controller.getLblid();
+        lblIdV.setText(lblId.getText());
+
+
+
         ImageView imageView = controller.getImgDestinos();
         imageView.setImage(imagenVuelo.getImage());
 

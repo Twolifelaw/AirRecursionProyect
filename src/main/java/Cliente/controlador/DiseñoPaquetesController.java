@@ -13,8 +13,7 @@ import java.util.ArrayList;
 
 import static Cliente.modelo.Serializacion.GestionPaquetes.deserializarPaquetes;
 import static Cliente.modelo.Serializacion.GestionPaquetes.serializarPaquetes;
-import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserializarDestino;
-import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.serializarDestino;
+
 
 public class DiseñoPaquetesController {
 
@@ -52,17 +51,17 @@ public class DiseñoPaquetesController {
         if(paquetes!=null){
 
             for(PaqueteTuristico paquete:paquetes){
-                if(paquete.getNombre().equals(lblNombre.getText())){
-                    int aux = paquete.getNumDislikes();
+                String auxS = "Nombre: "+paquete.getNombre();
+                if(auxS.equals(lblNombre.getText())){
+                    int aux = paquete.getNumDislikes()+1;
                     paquete.setNumDislikes(aux);
                     System.out.println(paquete.getNumDislikes());
                     break;
                 }
             }
-            serializarPaquetes("destinos.dat",paquetes);
+            serializarPaquetes("paquetes.dat",paquetes);
 
         }
-
     }
 
     @FXML
@@ -71,14 +70,17 @@ public class DiseñoPaquetesController {
         if(paquetes!=null){
 
             for(PaqueteTuristico paquete:paquetes){
-                if(paquete.getNombre().equals(lblNombre.getText())){
+                String auxS = "Nombre: "+paquete.getNombre();
+
+                if(auxS.equals(lblNombre.getText())){
                     int aux = paquete.getNumlikes()+1;
                     paquete.setNumlikes(aux);
                     System.out.println(paquete.getNumlikes());
                     break;
                 }
             }
-            serializarPaquetes("destinos.dat",paquetes);
+
+            serializarPaquetes("paquetes.dat",paquetes);
 
         }
 

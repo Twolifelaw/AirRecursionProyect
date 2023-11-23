@@ -108,17 +108,17 @@ public class VentanaEstadistica implements Initializable {
 
         //Destinos
         for (Destino destino : destinos) {
-            try {
-                precioDestinos.getData().add(new XYChart.Data<>(destino.getCiudad(), Integer.parseInt(destino.getPrecio())));
-            } catch (NumberFormatException e) {
-                // Manejo de la excepción, por ejemplo, imprimir un mensaje de error o asignar un valor predeterminado.
-                e.printStackTrace();
-            }
+
+            precioDestinos.getData().add(new XYChart.Data<>(destino.getCiudad(),Integer.parseInt(destino.getPrecio())));
             cupoDestinos.getData().add(new XYChart.Data<>(destino.getCiudad(), destino.getNumeroCupos()));
             likeDestinos.getData().add(new XYChart.Data<>(destino.getCiudad(),destino.getNumLike()));
             dislikeDestinos.getData().add(new XYChart.Data<>(destino.getCiudad(),destino.getNumDisLike()));
         }
 
+        bartCharLikeDestinos.getData().addAll(likeDestinos);
+        bartChartDislikeDestinos.getData().addAll(dislikeDestinos);
+        barChartPrecioDestinos.getData().addAll(precioDestinos);
+        bartChartCuposDestinos.getData().addAll(cupoDestinos);
 
 
     }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="406.0" prefWidth="658.0" style="-fx-background-color: #0A1425;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaCompraDestinosController">
+<AnchorPane prefHeight="406.0" prefWidth="658.0" style="-fx-background-color: #0A1425;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaCompraDestinosController">
     <children>
         <AnchorPane layoutX="319.0" layoutY="4.0" prefHeight="195.0" prefWidth="335.0" style="-fx-background-radius: 10;">
             <children>
@@ -51,10 +51,11 @@
                   <Font size="18.0" />
                </font>
                 </Label>
+            <Label fx:id="lblid" />
          </children>
       </VBox>
       <Button fx:id="btnRegresar" layoutX="-2.0" layoutY="374.0" mnemonicParsing="false" onAction="#OnRegresar" style="-fx-background-color: #0A1425;" text="Regresar" textFill="WHITE" />
-      <TextArea fx:id="txtAreaComentario" layoutX="15.0" layoutY="206.0" prefHeight="110.0" prefWidth="293.0" />
+      <TextArea fx:id="txtAreaComentario" editable="false" layoutX="15.0" layoutY="206.0" prefHeight="110.0" prefWidth="293.0" />
       <AnchorPane layoutX="15.0" layoutY="325.0" prefHeight="37.0" prefWidth="293.0">
          <children>
                 <Button fx:id="btnReserva" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#onReserva" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #2E2559;" text="Reservar" textFill="WHITE">
