@@ -33,6 +33,8 @@ public class VentanaRegistroController implements Initializable {
      * Variables responsables de realizar todas las validaciones de la ventana.
      */
     String nombres;
+
+    String apellido;
     String identificacion;
     String correoElectronico;
     String numeroTelefonico;
@@ -72,6 +74,10 @@ public class VentanaRegistroController implements Initializable {
     private TextField txtNombre;
 
     @FXML
+    private TextField txtApellido;
+
+
+    @FXML
     private TextField txtNumeroTelefonico;
     //de aqui parar arriba van componentes.
 
@@ -92,9 +98,9 @@ public class VentanaRegistroController implements Initializable {
             direccionResidencia = txtDireccion.getText();
             contrasena = pswContrasena.getText();
 
-            if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty()) {
+            if (nombres.isEmpty() && identificacion.isEmpty() && correoElectronico.isEmpty() && numeroTelefonico.isEmpty() && direccionResidencia.isEmpty() && contrasena.isEmpty() && apellido.isEmpty()) {
                 throw new VerificarException("Llene los campos");
-            } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty()) {
+            } else if (nombres.isEmpty() || identificacion.isEmpty() || correoElectronico.isEmpty() || numeroTelefonico.isEmpty() || direccionResidencia.isEmpty() || contrasena.isEmpty() && apellido.isEmpty()) {
                 throw new VerificarException("Campo vacio llenar porfavor");
             } else {
                 if (VentanaUtilidades.verificarIdentificacionRegistrada("clientes.se", identificacion)) {
@@ -112,8 +118,7 @@ public class VentanaRegistroController implements Initializable {
             }
         } catch (VerificarException e) {
 
-            lblMensaje.setText(e.getMessage());
-            VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
+            lblStatus.setText(e.getMessage());
         }
 
 
@@ -143,7 +148,7 @@ public class VentanaRegistroController implements Initializable {
      */
 
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txtNombre, txtId, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
+        TextField[] camposTexto = {txtNombre,txtApellido, txtId, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
 
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
@@ -167,6 +172,7 @@ public class VentanaRegistroController implements Initializable {
         VentanaUtilidades.agregarAnimacionBoton(btnAtras);
         inicializarEnterKey();
         VentanaUtilidades.agregarEventoYMostrarStatus(txtNombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtApellido,lblStatus,"Apellido");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtId, lblStatus, "Identificacion");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtCorreo, lblStatus, "Correo");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtNumeroTelefonico, lblStatus, "Telefono");

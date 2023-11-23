@@ -69,10 +69,11 @@ public class GestionSerializacionDestinos {
     }
 
     public static void guardarDestinoTuristico(String nombreArchivo) {
+        ArrayList<Destino> destinos = new ArrayList<>();
         //destinos.add(new Destino("Colombia", "Armenia", "aaaa", "/Armenia.jpg", "Calor"));
         //destinos.add(new Destino("Canada", "Toronto", "Descripción", "/Toronto.jpg", "Frio"));
-        //destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor"));
-        // GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
+        destinos.add(new Destino("Estados Uniidos", "Texas", "Vaqueros", "/Texas.jpg", "Calor","1212","002",100));
+        GestionSerializacionDestinos.serializarDestino(nombreArchivo, destinos);
     }
 
     /**

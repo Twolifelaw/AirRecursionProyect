@@ -27,8 +27,9 @@ import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializa
 
 public class VentanaMicuentaController implements Initializable {
     //
+
     @FXML
-    private Label lblMensaje;
+    private TextField txtApellido;
 
     @FXML
     private Label lblStatus;
@@ -50,6 +51,7 @@ public class VentanaMicuentaController implements Initializable {
 
     @FXML
     private TextField txtNombre;
+
 
     @FXML
     private TextField txtNumeroTelefonico;
@@ -93,16 +95,19 @@ public class VentanaMicuentaController implements Initializable {
 
                     // Actualizar los atributos del cliente existente
                     cliente.setNombre(txtNombre.getText());
+                    cliente.setApellido(txtApellido.getText());
                     cliente.setCorreo(txtCorreo.getText());
                     cliente.setTelefono(txtNumeroTelefonico.getText());
                     cliente.setDireccionResidencia(txtDireccion.getText());
                     cliente.setContrasena(pswContrasena.getText());
-                    lblMensaje.setText("Se actualizaron los datos correctamente!");
+                    //lblMensaje.setText("Se actualizaron los datos correctamente!");
 
                     // Agregar el cliente editado
                     listaClientes.add(cliente);
 
                     // Romper el bucle ya que ya hemos encontrado y editado el cliente
+                    lblStatus.setText("se actualizo sus datos correctamente!");
+                    clienteAutenticado = cliente;
                     break;
                 }
             }
@@ -122,6 +127,7 @@ public class VentanaMicuentaController implements Initializable {
         // Actualiza los campos de texto solo si el clienteAutenticado no es null
         if (clienteAutenticado != null) {
             txtNombre.setText(clienteAutenticado.getNombre());
+            txtApellido.setText(clienteAutenticado.getApellido());
             txtCorreo.setText(clienteAutenticado.getCorreo());
             txtNumeroTelefonico.setText(clienteAutenticado.getTelefono());
             txtDireccion.setText(clienteAutenticado.getDireccionResidencia());
@@ -134,7 +140,7 @@ public class VentanaMicuentaController implements Initializable {
      */
 
     private void inicializarEnterKey() {
-        TextField[] camposTexto = {txtNombre, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
+        TextField[] camposTexto = {txtNombre,txtApellido, txtCorreo, txtNumeroTelefonico, txtDireccion, pswContrasena};
         for (TextField campo : camposTexto) {
             campo.setOnKeyPressed(event -> {
                 if (event.getCode().equals(KeyCode.ENTER)) {
@@ -158,6 +164,7 @@ public class VentanaMicuentaController implements Initializable {
         actualizarCamposTexto();
         inicializarEnterKey();
         VentanaUtilidades.agregarEventoYMostrarStatus(txtNombre, lblStatus, "Nombre");
+        VentanaUtilidades.agregarEventoYMostrarStatus(txtApellido,lblStatus,"Apellido");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtCorreo, lblStatus, "Correo");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtNumeroTelefonico, lblStatus, "Telefono");
         VentanaUtilidades.agregarEventoYMostrarStatus(txtDireccion, lblStatus, "Direccion");
