@@ -18,8 +18,8 @@ import java.util.ResourceBundle;
 
 public class VentanaPaquetesController implements Initializable {
     public static ArrayList<PaqueteTuristico> paquetesTuristicosCargados = GestionPaquetes.deserializarPaquetes("paquetes.dat"); //Se trae los paquetes deserializados.
-    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
-    private final int maxColumns = 3; // Número máximo de columnas
+    private final double paneSpacing = 10.0; // Espacio entre los AnchorPane
+    private final int maxColumns = 2; // Número máximo de columnas
     @FXML
     private DatePicker datePickerFechas;
     @FXML
@@ -127,7 +127,7 @@ public class VentanaPaquetesController implements Initializable {
 
                 // Establece el tamaño deseado para las filas y columnas en el GridPane
                 RowConstraints rowConstraints = new RowConstraints();
-                rowConstraints.setPrefHeight(310); // Establece la altura deseada para las filas
+                rowConstraints.setPrefHeight(420); // Establece la altura deseada para las filas
 
                 ColumnConstraints columnConstraints = new ColumnConstraints();
                 columnConstraints.setPrefWidth(10); // Establece el ancho deseado para las columnas
