@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="Se configuro para añadir nueos destinos a los paquetes y se corrigieron algunos bugs">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/Corazon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/corazonConColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/corazonSinColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes/disLike.png" afterDir="false" />
+    <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="Se añadio el sistema de like´s y disLike's">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/destinos.dat" beforeDir="false" afterPath="$PROJECT_DIR$/destinos.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoDestinosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoDestinosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaOfertasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaOfertasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionSerializacionDestinos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/Destino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/DiseñoDestinos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/DiseñoDestinos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaEstadistica.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaEstadistica.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700706915676</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Se añadio el sistema de like´s y disLike's">
+      <created>1700713632528</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700713632528</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +278,8 @@
     <MESSAGE value="se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento" />
     <MESSAGE value="se gurada workspace.xml" />
     <MESSAGE value="Se configuro para añadir nueos destinos a los paquetes y se corrigieron algunos bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se configuro para añadir nueos destinos a los paquetes y se corrigieron algunos bugs" />
+    <MESSAGE value="Se añadio el sistema de like´s y disLike's" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se añadio el sistema de like´s y disLike's" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
