@@ -36,6 +36,9 @@ para una empresa de viajes. Además, incluye un sistema de chat implementado med
 2. Abre el proyecto en tu entorno de desarrollo Java.
 3. Descarga la libreria de PDFBox, lo puedes hacer con el siguiente link:
    https://github.com/rherdez/ejemplo_JAVA/tree/master/pdf
+   ignote iReport-5.6.0-plugin.zip.
+   <img width="227" alt="image" src="https://github.com/Twolifelaw/AirRecursionProyect/assets/88161476/14b38d96-d98e-4763-9f9d-c0a639617ae6">
+
 
 ## Configuración
 
