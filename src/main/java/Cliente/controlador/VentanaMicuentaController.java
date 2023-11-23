@@ -86,28 +86,41 @@ public class VentanaMicuentaController implements Initializable {
     @FXML
     public void onGuardarCambios(ActionEvent event) {
         ArrayList<Cliente> listaClientes = deserializarClientesDesdeArchivo("clientes.se");
+
         if (listaClientes != null) {
             for (Cliente cliente : listaClientes) {
                 if (cliente.getCedula().equals(clienteAutenticado.getCedula())) {
+                    // Eliminar el cliente existente
+                    listaClientes.remove(cliente);
+
+                    // Actualizar los atributos del cliente existente
                     cliente.setNombre(txtNombre.getText());
                     cliente.setApellido(txtApellido.getText());
                     cliente.setCorreo(txtCorreo.getText());
                     cliente.setTelefono(txtNumeroTelefonico.getText());
                     cliente.setDireccionResidencia(txtDireccion.getText());
                     cliente.setContrasena(pswContrasena.getText());
+                    //lblMensaje.setText("Se actualizaron los datos correctamente!");
+
+                    // Agregar el cliente editado
+                    listaClientes.add(cliente);
+
+                    // Romper el bucle ya que ya hemos encontrado y editado el cliente
                     lblStatus.setText("se actualizo sus datos correctamente!");
                     clienteAutenticado = cliente;
                     break;
                 }
             }
+
+            // Serializar la lista actualizada
             serializarObjetos("clientes.se", listaClientes);
             actualizarCamposTexto();
         }
-
     }
 
+
     /**
-     * Metodo que pense que servia para actualizar los textField pero no.
+     *
      */
 
     public void actualizarCamposTexto() {

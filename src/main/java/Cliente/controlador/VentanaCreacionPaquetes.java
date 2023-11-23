@@ -178,10 +178,12 @@ public class VentanaCreacionPaquetes implements Initializable {
                 PaqueteTuristico paqueteSeleccionado = this.tablaPaquetes.getSelectionModel().getSelectedItem();
 
                 if (paqueteSeleccionado != null) {
-                    // Verificar si la fecha ya existe en la lista
+                    // Verificar si el destino ya existe en la lista
                     if (!paqueteSeleccionado.getDestinos().contains(destinos)) {
-                        // Agregar la nueva fecha al paquete existente
-                        paqueteSeleccionado.getDestinos().add(destinos);
+                        // Agregar el nuevo destino al paquete existente
+                        ArrayList<String> paquetesN = paqueteSeleccionado.getDestinos();
+                        paquetesN.add(destinos);
+                        paqueteSeleccionado.setDestinos(paquetesN);
 
                         // Actualizar la lista en la interfaz gráfica
                         ObservableList<String> destinosString = FXCollections.observableArrayList();
@@ -228,7 +230,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                     // Verificar si la fecha ya existe en la lista
                     if (!paqueteSeleccionado.getFechaDisponible().contains(fechaDisponible)) {
                         // Agregar la nueva fecha al paquete existente
-                        paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
+                       paqueteSeleccionado.getFechaDisponible().add(fechaDisponible);
 
                         // Actualizar la lista en la interfaz gráfica
                         ObservableList<String> fechasDisponiblesStrings = FXCollections.observableArrayList();
@@ -273,22 +275,15 @@ public class VentanaCreacionPaquetes implements Initializable {
                 fechasDisponibles.add(fecha);
             }
 
-            if (fechaDisponible != null) {
-                fechasDisponibles.add(fechaDisponible);
-            }
 
-            String destinoDisponible = txtDestino.getText();
             ArrayList<String> destinoDisponibles = new ArrayList<>();
             ObservableList<String> destinosDisponiblesString = listViewDestinos.getItems();
 
             for (String destinosString: destinosDisponiblesString) {
                 String destino = destinosString;
                 destinoDisponibles.add(destino);
+            }
 
-            }
-            if (destinoDisponible != null){
-                destinoDisponibles.add(destinoDisponible);
-            }
 
             if (listPaquetes != null) {
                 for (PaqueteTuristico paqueteTuristico : listPaquetes) {
@@ -301,6 +296,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                         paqueteTuristico.setFechaDisponible(fechasDisponibles);
                         paqueteTuristico.setPrecio(Double.parseDouble(txtPrecio.getText()));
                         paqueteTuristico.setCuposMaximos(Integer.parseInt(txtCupos.getText()));
+                        paqueteTuristico.setDestinos(destinoDisponibles);
                         break;
                     }
                 }
@@ -339,7 +335,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                     for (LocalDate fecha : p.getFechaDisponible()) {
                         fechasDisponiblesStrings.add(fecha.toString());
                     }
-                    this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
+                    //this.listViewFechasDisponibles.setItems(fechasDisponiblesStrings);
                 }
 
                 if (destinoDisponible != null) {
@@ -349,7 +345,7 @@ public class VentanaCreacionPaquetes implements Initializable {
                     for (String destino : p.getDestinos()) {
                         destinoDisponibleString.add(destino);
                     }
-                    this.listViewDestinos.setItems(destinoDisponibleString);
+                    //this.listViewDestinos.setItems(destinoDisponibleString);
 
                 }
 

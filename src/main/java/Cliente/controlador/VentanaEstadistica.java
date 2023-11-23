@@ -19,14 +19,34 @@ import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.deserial
 
 public class VentanaEstadistica implements Initializable {
 
+    @FXML
     public static ArrayList<Destino> destinos = deserializarDestino("destinos.dat");
+    @FXML
     public static ArrayList<PaqueteTuristico> paqueteTuristicoArrayList = deserializarPaquetes("paquetes.dat");
+    @FXML
     public BarChart<String, Number> bartChartCuposPaquete;
+    @FXML
     public CategoryAxis CategoryCuposPaquetes;
+    @FXML
     public NumberAxis NumberCuposPaquetes;
+    @FXML
     public BarChart<String, Number> barCharsPrecioPaquetes;
+    @FXML
     public CategoryAxis CategoriPrecioPaquetes;
+    @FXML
     public NumberAxis NumberPrecioPaquetes;
+    @FXML
+    public BarChart<String,Number> bartChartDisLike;
+    @FXML
+    public CategoryAxis CategoryDisLike;
+    @FXML
+    public NumberAxis numberDisLike;
+    @FXML
+    public BarChart<String,Number>bartChartLike;
+    @FXML
+    public CategoryAxis categoryLike;
+    @FXML
+    public NumberAxis NumberLike;
     @FXML
     private AnchorPane anchorPaneEstadisticas;
     @FXML
@@ -46,15 +66,19 @@ public class VentanaEstadistica implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
         XYChart.Series<String, Number> seriesCupos = new XYChart.Series<>();
+        XYChart.Series<String,Number> serisLike = new XYChart.Series<>();
+        XYChart.Series<String,Number> serisDisLike = new XYChart.Series<>();
         //Destinos
         for (Destino destino : destinos) {
-            series1.getData().add(new XYChart.Data<>(destino.getPais(), Integer.parseInt(destino.getPrecio())));
-            seriesCupos.getData().add(new XYChart.Data<>(destino.getPais(), destino.getNumeroCupos()));
+            series1.getData().add(new XYChart.Data<>(destino.getCiudad(), Integer.parseInt(destino.getPrecio())));
+            seriesCupos.getData().add(new XYChart.Data<>(destino.getCiudad(), destino.getNumeroCupos()));
+            serisLike.getData().add(new XYChart.Data<>(destino.getCiudad(),destino.getNumLike()));
+            serisDisLike.getData().add(new XYChart.Data<>(destino.getCiudad(),destino.getNumDisLike()));
 
         }
 
 
-        //Paquetes Touristic
+        //Paquetes Touristicos
 
         XYChart.Series<String, Number> seriePrecioPaquetes = new XYChart.Series<>();
         XYChart.Series<String, Number> serieCuposPaquetes = new XYChart.Series<>();
@@ -63,11 +87,21 @@ public class VentanaEstadistica implements Initializable {
             serieCuposPaquetes.getData().add(new XYChart.Data<>(paqueteTuristico.getNombre(), paqueteTuristico.getCuposMaximos()));
         }
 
+
+
+
         barCharsPrecioPaquetes.getData().addAll(seriePrecioPaquetes);
         bartChartCuposPaquete.getData().addAll(serieCuposPaquetes);
 
         barChars.getData().addAll(series1);
         bartChartCupos.getData().addAll(seriesCupos);
+
+        bartChartLike.getData().addAll(serisLike);
+        bartChartDisLike.getData().addAll(serisDisLike);
+
+
+
+
 
 
     }

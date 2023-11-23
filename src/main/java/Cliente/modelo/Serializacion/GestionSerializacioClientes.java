@@ -16,7 +16,11 @@ public class GestionSerializacioClientes {
      * @param nuevoCliente
      */
     public static void serializarObjetos(String nombreArchivo, ArrayList<Cliente> nuevoCliente) {
-        ArrayList<Cliente> listaClientes = deserializarObjetos(nombreArchivo); // Cargamos la lista existente
+        ArrayList<Cliente> listaClientes = new ArrayList<>(); // Cargamos la lista existente
+
+        if(listaClientes == null){
+            listaClientes = new ArrayList<>();
+        }
 
         listaClientes.addAll(nuevoCliente); // Agregamos los nuevos elementos
 

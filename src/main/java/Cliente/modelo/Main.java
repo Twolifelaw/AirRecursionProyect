@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static Cliente.modelo.Serializacion.GestionSerializacionDestinos.guardarDestinoTuristico;
+
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -17,7 +19,7 @@ public class Main extends Application {
 
         //VentanaUtilidades.crearAdministrador();
         launch(args);
-       // guardarDestinoTuristico("destinos.dat");
+       //guardarDestinoTuristico("destinos.dat");
         //GestionPaquetes.crearPaquetePrueba();
 
 

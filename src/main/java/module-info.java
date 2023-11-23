@@ -1,6 +1,7 @@
 module com.example.airrecursionproyect {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.apache.pdfbox;
 
     opens Cliente.modelo to javafx.fxml;
     opens Cliente.controlador to javafx.fxml;

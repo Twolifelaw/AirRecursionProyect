@@ -64,8 +64,10 @@ public class VentanaContrasenaController implements Initializable {
                     for (Cliente cliente : listaClientes) {
                         // Aquí puedes verificar si el cliente coincide con el cliente autenticado
                         if (cliente.getCedula().equals(clienteAutenticado.getCedula())) {
+                            listaClientes.remove(cliente);
                             // Actualizar la contraseña del cliente
                             cliente.setContrasena(contrasena1);
+                            listaClientes.add(cliente);
                             lblStatus.setText("Se actualizó la contraseña correctamente.");
                             break;
                         }
