@@ -1,6 +1,8 @@
 package Cliente.controlador;
 
 import Cliente.controlador.chat.AbrirChatApp;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,18 +12,24 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 
 public class VentanaInicioController implements Initializable {
     //
+    @FXML
+    private Label lblReloj;
     @FXML
     private AnchorPane anchorPaneBienvenida;
     @FXML
@@ -144,6 +152,17 @@ public class VentanaInicioController implements Initializable {
 
     }
 
+    private void inicializarReloj() {
+        // Crear un objeto Timeline para actualizar el reloj cada segundo
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            String horaActual = sdf.format(new Date());
+            lblReloj.setText(horaActual);
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
+
     /**
      * Accion de botonChat.
      *
@@ -154,6 +173,7 @@ public class VentanaInicioController implements Initializable {
     @FXML
     void onChat(ActionEvent event) throws Exception {
         anchorPaneContenedorChat.toFront();
+
 
         Platform.runLater(() -> {
             try {
@@ -236,6 +256,7 @@ public class VentanaInicioController implements Initializable {
     }
 
     public void animacionElementos() {
+        inicializarReloj();
         VentanaUtilidades.agregarAnimacionBoton(btnOfertas);
         VentanaUtilidades.agregarAnimacionBoton(btnCuenta);
         VentanaUtilidades.agregarAnimacionBoton(btnMapa);

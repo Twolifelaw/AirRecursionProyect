@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class PaqueteTuristico implements Serializable {
 
-    private ArrayList<Destino> destinos;
+    private ArrayList<String> destinos;
     private String nombre;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
@@ -16,7 +16,7 @@ public class PaqueteTuristico implements Serializable {
     private double precio;
     private int cuposMaximos;
 
-    public PaqueteTuristico(ArrayList<Destino> destinos, String nombre, LocalDate fechaInicio, LocalDate fechaFin, ArrayList<LocalDate> fechaDisponible, String servicios, double precio, int cuposMaximos) {
+    public PaqueteTuristico(ArrayList<String> destinos, String nombre, LocalDate fechaInicio, LocalDate fechaFin, ArrayList<LocalDate> fechaDisponible, String servicios, double precio, int cuposMaximos) {
         this.destinos = destinos;
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
@@ -27,18 +27,11 @@ public class PaqueteTuristico implements Serializable {
         this.cuposMaximos = cuposMaximos;
     }
 
-    public PaqueteTuristico(ArrayList<LocalDate> fechaDisponible) {
-        this.fechaDisponible = fechaDisponible;
-    }
-
-    public PaqueteTuristico() {
-    }
-
-    public ArrayList<Destino> getDestinos() {
+    public ArrayList<String> getDestinos() {
         return destinos;
     }
 
-    public void setDestinos(ArrayList<Destino> destinos) {
+    public void setDestinos(ArrayList<String> destinos) {
         this.destinos = destinos;
     }
 
