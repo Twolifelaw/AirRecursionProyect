@@ -33,7 +33,13 @@ public class VentanaCompraDestinosController implements Initializable {
     private Button btnComprar;
 
     @FXML
+    private Button btnComentar;
+    @FXML
     private Button btnReserva;
+
+    @FXML
+    private TextArea txtAreaComentario;
+
 
     @FXML
     private ImageView imgDestinos;
@@ -115,7 +121,7 @@ public class VentanaCompraDestinosController implements Initializable {
             document.addPage(page);
 
             try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
-                //contentStream.setFont(PDType1Font.COURIER, 12);Linea que comente porque no tengo libreria
+                contentStream.setFont(PDType1Font.COURIER, 12);
                 contentStream.beginText();
                 contentStream.newLineAtOffset(50, 700);
 
@@ -131,10 +137,10 @@ public class VentanaCompraDestinosController implements Initializable {
 
             document.save(rutaArchivo);
         }
+    }
 
-
-
-
+    @FXML
+    void onComentar(ActionEvent event) {
 
     }
 

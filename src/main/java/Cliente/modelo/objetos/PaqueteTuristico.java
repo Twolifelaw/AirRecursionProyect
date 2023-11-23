@@ -16,7 +16,11 @@ public class PaqueteTuristico implements Serializable {
     private double precio;
     private int cuposMaximos;
 
-    public PaqueteTuristico(ArrayList<String> destinos, String nombre, LocalDate fechaInicio, LocalDate fechaFin, ArrayList<LocalDate> fechaDisponible, String servicios, double precio, int cuposMaximos) {
+
+    private int numlikes;
+    private int numDislikes;
+
+    public PaqueteTuristico(ArrayList<String> destinos, String nombre, LocalDate fechaInicio, LocalDate fechaFin, ArrayList<LocalDate> fechaDisponible, String servicios, double precio, int cuposMaximos, int numlikes, int numDislikes) {
         this.destinos = destinos;
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
@@ -25,6 +29,8 @@ public class PaqueteTuristico implements Serializable {
         this.servicios = servicios;
         this.precio = precio;
         this.cuposMaximos = cuposMaximos;
+        this.numlikes = numlikes;
+        this.numDislikes = numDislikes;
     }
 
     public ArrayList<String> getDestinos() {
@@ -89,5 +95,21 @@ public class PaqueteTuristico implements Serializable {
 
     public void setCuposMaximos(int cuposMaximos) {
         this.cuposMaximos = cuposMaximos;
+    }
+
+    public int getNumlikes() {
+        return numlikes;
+    }
+
+    public void setNumlikes(int numlikes) {
+        this.numlikes = numlikes;
+    }
+
+    public int getNumDislikes() {
+        return numDislikes;
+    }
+
+    public void setNumDislikes(int numDislikes) {
+        this.numDislikes = numDislikes;
     }
 }
