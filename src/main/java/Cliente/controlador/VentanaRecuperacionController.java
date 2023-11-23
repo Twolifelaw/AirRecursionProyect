@@ -1,6 +1,7 @@
 package Cliente.controlador;
 
-import Cliente.modelo.Serializacion.GestionSerializacioClientes;
+import Cliente.modelo.Serializacion.SesionCliente;
+import Cliente.modelo.exceptions.VerificarException;
 import Cliente.modelo.objetos.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,6 +22,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarClientesDesdeArchivo;
 
 public class VentanaRecuperacionController implements Initializable {
     //
@@ -39,6 +43,20 @@ public class VentanaRecuperacionController implements Initializable {
     private TextField txtCorreo;
     //de aqui para arriba van los componentes.
 
+
+    public static Cliente buscarObjeto(String nombreArchivo, String correo) {
+        ArrayList<Cliente> listaObjetos = deserializarClientesDesdeArchivo(nombreArchivo);
+
+        if (listaObjetos != null) {
+            for (Cliente objeto : listaObjetos) {
+                if (objeto.getCorreo().equalsIgnoreCase(correo)) {
+                    return objeto; // Se encontró el objeto con el nombre deseado
+                }
+            }
+        }
+        return null; // No se encontró el objeto con el nombre deseado
+    }
+
     /**
      * Accion del botonRecuperar.
      *
@@ -46,34 +64,55 @@ public class VentanaRecuperacionController implements Initializable {
      */
 
     @FXML
-    void onRecuperar(ActionEvent event) {
-        String correo = txtCorreo.getText().trim();
-        boolean correoRegistrado = VentanaUtilidades.verificarCorreoRegistrado("clientes.se", correo);
+    void onRecuperar(ActionEvent event) throws VerificarException, IOException {
+        try {
 
-        if (correoRegistrado) {
-            ArrayList<Cliente> clientes = GestionSerializacioClientes.deserializarClientesDesdeArchivo("clientes.se");
 
-            Cliente clienteEncontrado = null;
-            for (Cliente cliente : clientes
-            ) {
-                if (cliente.getCorreo().equals(correo)) {
-                    clienteEncontrado = cliente;
-                    break;
+            String correo = txtCorreo.getText();
+
+            if (correo.isEmpty()) {
+                throw new VerificarException("llene el campo");
+            } else {
+                boolean usuarioEncontrado = false;
+                Cliente clienteBuscar = buscarObjeto("clientes.se", correo);
+                System.out.println("cliente en el archivo");
+                System.out.println(deserializarClientesDesdeArchivo("clientes.se"));
+                if (clienteBuscar != null) {
+                    Cliente clienteaut = clienteBuscar;
+                    SesionCliente.setClienteAutenticado(clienteaut);
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/vista/ventanas/VentanaContrasena.fxml"));
+                    Scene escena = new Scene(root);
+                    stage.setScene(escena);
+                    stage.show();
+                    // en esta linea , esconde el stage del login y carga el nuevo stage
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    usuarioEncontrado = true;
+                } else {
+                    if (!usuarioEncontrado) {
+                        throw new VerificarException("No se encontro usuario");
+                    }
                 }
-
             }
-
-            if (clienteEncontrado != null) {
-                GestionSerializacioClientes.serializarObjetos("clientes.se", clientes);
-                lblMensaje.setText("Se ha enviado un correo de recuperacion a: " + correo);
-                System.out.println("Éxito" + "Correo enviado" + "Se ha enviado un correo de recuperación a " + correo);
-            }
-        } else {
-            lblMensaje.setText("El correo ingresado no está registrado en nuestra base de datos");
-            System.out.println("Error" + "Correo no registrado" + "El correo ingresado no está registrado en nuestra base de datos");
+        } catch (VerificarException e) {
+            lblMensaje.setText(e.getMessage());
+            VentanaUtilidades.mostrarErrorTemporalmente(lblMensaje);
         }
 
     }
+
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtCorreo};
+
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnRecuperar.fire();
+                }
+            });
+        }
+    }
+
 
     /**
      * Accion del botonRegresar.
@@ -102,6 +141,7 @@ public class VentanaRecuperacionController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        inicializarEnterKey();
         VentanaUtilidades.agregarAnimacionBoton(btnRecuperar);
         VentanaUtilidades.agregarAnimacionBoton(btnAtras);
 

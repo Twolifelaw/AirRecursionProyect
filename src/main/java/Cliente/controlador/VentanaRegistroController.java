@@ -22,11 +22,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static Cliente.modelo.Serializacion.GestionSerializacioClientes.deserializarObjetos;
 import static Cliente.modelo.Serializacion.GestionSerializacioClientes.serializarObjetos;
 
 public class VentanaRegistroController implements Initializable {
 
-    public ArrayList<Cliente> clientes = new ArrayList<>();
+    public ArrayList<Cliente> clientes = deserializarObjetos("clientes.se");
 
     /**
      * Variables responsables de realizar todas las validaciones de la ventana.
@@ -101,6 +102,9 @@ public class VentanaRegistroController implements Initializable {
                 } else if (VentanaUtilidades.verificarCorreoRegistrado("clientes.se", correoElectronico)) {
                     throw new VerificarException("correo ya registrada.");
                 } else {
+                    if(clientes==null){
+                        clientes=new ArrayList<>();
+                    }
                     clientes.add(new Cliente(nombres, "a", identificacion, contrasena, correoElectronico, numeroTelefonico, direccionResidencia));
                     serializarObjetos("clientes.se", clientes);
                     throw new VerificarException("Se registró correctamente");

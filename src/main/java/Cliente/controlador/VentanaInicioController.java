@@ -1,5 +1,6 @@
 package Cliente.controlador;
 
+import Cliente.controlador.chat.AbrirChatApp;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +24,8 @@ public class VentanaInicioController implements Initializable {
     //
     @FXML
     private AnchorPane anchorPaneBienvenida;
+    @FXML
+    private AnchorPane anchorPaneContenedorChat;
 
     @FXML
     private Button btnAyuda;
@@ -65,6 +68,8 @@ public class VentanaInicioController implements Initializable {
 
     @FXML
     private Button btnPaquetes;
+
+    private AbrirChatApp abrirChatApp;
 
     @FXML
     private Button btnSalir;
@@ -147,13 +152,20 @@ public class VentanaInicioController implements Initializable {
      */
 
     @FXML
-    void onChat(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
-        Scene escena = new Scene(root);
-        stage.setScene(escena);
-        stage.show();
+    void onChat(ActionEvent event) throws Exception {
+        anchorPaneContenedorChat.toFront();
 
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/vista/ventanas/AbrirChat.fxml"));
+                AnchorPane anchorChat = loader.load();
+                anchorPaneContenedorChat.getChildren().clear();
+                anchorPaneContenedorChat.getChildren().add(anchorChat);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**
@@ -183,7 +195,6 @@ public class VentanaInicioController implements Initializable {
     @FXML
     void onAyuda(ActionEvent event) {
     }
-
 
 
     /**
@@ -235,6 +246,7 @@ public class VentanaInicioController implements Initializable {
         VentanaUtilidades.girarImagen(imagenAvion1);
         VentanaUtilidades.girarImagen(imagenAvion2);
         VentanaUtilidades.girarImagen(imagenUsuario);
+        abrirChatApp = new AbrirChatApp();
 
     }
 }

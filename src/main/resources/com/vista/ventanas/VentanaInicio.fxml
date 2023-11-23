@@ -1,121 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane fx:id="anchorPaneInicio" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cliente.controlador.VentanaInicioController">
-   <children>
-      <AnchorPane opacity="0.87" prefHeight="649.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
-         <children>
-            <AnchorPane fx:id="anchorPaneBotones" layoutX="14.0" layoutY="184.0" prefHeight="423.0" prefWidth="144.0">
-               <children>
-                  <Button fx:id="btnCuenta" layoutX="22.0" layoutY="72.0" mnemonicParsing="false" onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnMapa" layoutX="22.0" layoutY="118.0" mnemonicParsing="false" onAction="#OnMapa" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnChat" layoutX="22.0" layoutY="165.0" mnemonicParsing="false" onAction="#onChat" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnSalir" layoutX="22.0" layoutY="212.0" mnemonicParsing="false" onAction="#onSalir" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
-            <ImageView fx:id="imagenUsuario" fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Login/10.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="btnAyuda" layoutX="35.0" layoutY="610.0" mnemonicParsing="false" onAction="#onAyuda" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="170.0" layoutY="115.0" opacity="0.82" prefHeight="77.0" prefWidth="1045.0" style="-fx-background-color: #0A1425;">
-         <children>
-            <Button fx:id="btnOfertas" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#onOfertas" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas " textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Pane layoutX="326.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
-            <Pane layoutX="522.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" />
-            <Button fx:id="btnPaquetes" layoutX="326.0" layoutY="16.0" mnemonicParsing="false" onAction="#onPaquetes" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes " textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="anchorPaneContenedor" layoutX="169.0" layoutY="182.0" prefHeight="485.0" prefWidth="1045.0" style="-fx-background-color: #0A1425;">
-         <children>
-            <HBox layoutX="2.0" prefHeight="485.0" prefWidth="1045.0">
-               <children>
-                  <ImageView fitHeight="485.0" fitWidth="347.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../Imagenes/destino%201.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="485.0" fitWidth="330.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../Imagenes/destino2.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="485.0" fitWidth="368.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../Imagenes/destino%203.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-         </children>
-      </AnchorPane>
-      <Pane layoutX="333.0" layoutY="20.0" prefHeight="79.0" prefWidth="710.0">
-         <children>
-            <Label layoutX="227.0" layoutY="11.0" text="AirRecursion" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="imagenAvion2" fitHeight="41.0" fitWidth="41.0" layoutX="483.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/31069111copy.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imagenAvion1" fitHeight="41.0" fitWidth="48.0" layoutX="186.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/31069111.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </children>
-   <cursor>
-      <Cursor fx:constant="HAND" />
-   </cursor>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPaneInicio" prefHeight="600.0" prefWidth="1200.0"
+            style="-fx-background-color: #240C24;" stylesheets="@../Login/DiseñoProyecto.css"
+            xmlns="http://javafx.com/javafx/21" fx:controller="Cliente.controlador.VentanaInicioController">
+    <children>
+        <AnchorPane opacity="0.87" prefHeight="630.0" prefWidth="171.0" style="-fx-background-color: #0A1425;">
+            <children>
+                <AnchorPane fx:id="anchorPaneBotones" layoutX="14.0" layoutY="184.0" prefHeight="423.0"
+                            prefWidth="144.0">
+                    <children>
+                        <Button fx:id="btnCuenta" layoutX="22.0" layoutY="9.0" mnemonicParsing="false"
+                                onAction="#onMiCuenta" prefHeight="25.0" prefWidth="102.0"
+                                style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mi Cuenta"
+                                textFill="WHITE">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="btnMapa" layoutX="21.0" layoutY="49.0" mnemonicParsing="false" onAction="#OnMapa"
+                                prefHeight="25.0" prefWidth="102.0"
+                                style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Mapa"
+                                textFill="WHITE">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="btnChat" layoutX="21.0" layoutY="90.0" mnemonicParsing="false" onAction="#onChat"
+                                prefHeight="25.0" prefWidth="102.0"
+                                style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Chat"
+                                textFill="WHITE">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="btnSalir" layoutX="21.0" layoutY="131.0" mnemonicParsing="false"
+                                onAction="#onSalir" prefHeight="25.0" prefWidth="102.0"
+                                style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Salir"
+                                textFill="WHITE">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                        <AnchorPane fx:id="anchorPaneContenedorChat" layoutX="-12.0" layoutY="168.0" prefHeight="316.0"
+                                    prefWidth="161.0"/>
+                    </children>
+                </AnchorPane>
+                <ImageView fx:id="imagenUsuario" fitHeight="103.0" fitWidth="100.0" layoutX="36.0" layoutY="84.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Login/10.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="170.0" layoutY="115.0" opacity="0.82" prefHeight="77.0" prefWidth="1045.0"
+                    style="-fx-background-color: #0A1425;">
+            <children>
+                <Button fx:id="btnOfertas" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#onOfertas"
+                        prefHeight="31.0" prefWidth="161.0"
+                        style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Ofertas "
+                        textFill="WHITE">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Pane layoutX="326.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0"
+                      style="-fx-background-color: #2E2559; -fx-background-radius: 15;"/>
+                <Pane layoutX="522.0" layoutY="50.0" prefHeight="5.0" prefWidth="161.0"
+                      style="-fx-background-color: #2E2559; -fx-background-radius: 15;"/>
+                <Button fx:id="btnPaquetes" layoutX="326.0" layoutY="16.0" mnemonicParsing="false"
+                        onAction="#onPaquetes" prefHeight="31.0" prefWidth="161.0"
+                        style="-fx-background-color: #2E2559; -fx-background-radius: 15;" text="Paquetes "
+                        textFill="WHITE">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnAyuda" layoutX="931.0" layoutY="16.0" mnemonicParsing="false" onAction="#onAyuda"
+                        prefHeight="31.0" prefWidth="100.0"
+                        style="-fx-background-color: #0A1425; -fx-background-radius: 15;" text="Ayuda" textFill="WHITE">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorPaneContenedor" layoutX="169.0" layoutY="182.0" prefHeight="485.0" prefWidth="1045.0"
+                    style="-fx-background-color: #0A1425;">
+            <children>
+                <HBox layoutX="2.0" prefHeight="485.0" prefWidth="1045.0">
+                    <children>
+                        <ImageView fitHeight="485.0" fitWidth="347.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../Imagenes/destino%201.jpg"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="485.0" fitWidth="330.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../Imagenes/destino2.jpg"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="485.0" fitWidth="368.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../Imagenes/destino%203.jpg"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <Pane layoutX="333.0" layoutY="20.0" prefHeight="79.0" prefWidth="710.0">
+            <children>
+                <Label layoutX="227.0" layoutY="11.0" text="AirRecursion" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="40.0"/>
+                    </font>
+                </Label>
+                <ImageView fx:id="imagenAvion2" fitHeight="41.0" fitWidth="41.0" layoutX="483.0" layoutY="19.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/31069111copy.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="imagenAvion1" fitHeight="41.0" fitWidth="48.0" layoutX="186.0" layoutY="19.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Imagenes/31069111.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </children>
+    <cursor>
+        <Cursor fx:constant="HAND"/>
+    </cursor>
 </AnchorPane>

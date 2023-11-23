@@ -239,7 +239,7 @@ public class VentanaCreacionPaquetes implements Initializable {
     void onEditar(ActionEvent event) {
         PaqueteTuristico p = this.tablaPaquetes.getSelectionModel().getSelectedItem();
 
-        if(p == null){
+        if (p == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
@@ -274,7 +274,8 @@ public class VentanaCreacionPaquetes implements Initializable {
             } catch (Exception e) {
                 lblStatus.setText("Error al editar el paquete");
                 e.printStackTrace();  // Imprime el seguimiento de la pila para la depuración
-            }}
+            }
+        }
     }
 
     @FXML

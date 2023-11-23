@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class VentanaOfertasController implements Initializable {
     // Cargar los destinos desde el archivo
     public static ArrayList<Destino> destinosCargados = GestionSerializacionDestinos.deserializarDestino("destinos.dat");//Se trae los destinos deserializados.
     //
-    private final double paneSpacing = 5.0; // Espacio entre los AnchorPane
+    private final double paneSpacing = 10.0; // Espacio entre los AnchorPane
     private final int maxColumns = 3; // Número máximo de columnas
     //Lo necesario para buen funcionamiento de toda la ventana.
 
@@ -206,6 +207,18 @@ public class VentanaOfertasController implements Initializable {
 
     }
 
+    private void inicializarEnterKey() {
+        TextField[] camposTexto = {txtBuscador};
+
+        for (TextField campo : camposTexto) {
+            campo.setOnKeyPressed(event -> {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    btnBuscar.fire();
+                }
+            });
+        }
+    }
+
     /**
      * Accion del botonBuscar.
      *
@@ -237,6 +250,7 @@ public class VentanaOfertasController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         mostrarDestinos(destinosCargados);
         comboBoxFiltro.getItems().addAll("Pais", "Ciudad", "Clima", "Precio", "ID", "Cupo");
+        inicializarEnterKey();
 
 
     }

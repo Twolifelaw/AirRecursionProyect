@@ -1,0 +1,344 @@
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.airrecursionproyect {\n    requires javafx.controls;\n    requires javafx.fxml;\n\n    opens Cliente.modelo to javafx.fxml;\n    opens Cliente.controlador to javafx.fxml; // Abre el paquete del controlador\n\n    exports Cliente.modelo;\n    exports Cliente.modelo.Serializacion;\n    opens Cliente.modelo.Serializacion to javafx.fxml;\n    opens Cliente to javafx.fxml;\n    exports Cliente.modelo.objetos;\n    opens Cliente.modelo.objetos to javafx.fxml;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
++++ b/src/main/java/module-info.java	(date 1700630497264)
+@@ -11,4 +11,4 @@
+     opens Cliente to javafx.fxml;
+     exports Cliente.modelo.objetos;
+     opens Cliente.modelo.objetos to javafx.fxml;
+-}
++}
+\ No newline at end of file
+Index: src/main/java/Servidor/mainServer.java
+===================================================================
+diff --git a/src/main/java/Servidor/mainServer.java b/src/main/java/Servidor/mainServer.java
+deleted file mode 100644
+--- a/src/main/java/Servidor/mainServer.java	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
++++ /dev/null	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
+@@ -1,8 +0,0 @@
+-package Servidor;
+-
+-public class mainServer {
+-
+-    public static void main(String[] args) {
+-        System.out.println("Hola servidor");
+-    }
+-}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"corretto-17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
++++ b/.idea/misc.xml	(date 1700630006486)
+@@ -1,9 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>
+         <option value="$PROJECT_DIR$/pom.xml" />
++        <option value="$USER_HOME$/Descargas/Chat/pom.xml" />
+       </list>
+     </option>
+   </component>
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"Encoding\">\n    <file url=\"file://$PROJECT_DIR$/src/main/java\" charset=\"UTF-8\" />\n    <file url=\"file://$PROJECT_DIR$/src/main/resources\" charset=\"UTF-8\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
++++ b/.idea/encodings.xml	(date 1700630006491)
+@@ -1,6 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="Encoding">
++    <file url="file://$USER_HOME$/Descargas/Chat/src/main/java" charset="UTF-8" />
++    <file url="file://$USER_HOME$/Descargas/Chat/src/main/resources" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+   </component>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"1d5f00c1-523c-4690-8a29-6e36dce43e4f\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/clientes.se\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/clientes.se\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paquetes.dat\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/paquetes.dat\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionPaquetes.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionPaquetes.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/verificarException.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/VerificarException.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCreacionPaquetes.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCreacionPaquetes.fxml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"brandon\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"JsbtTreeLayoutManager\">\n    <layout place=\"tools.popupGrunt\">\n      <scroll-view-position x=\"0\" y=\"0\" />\n    </layout>\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"QODANA_PROBLEMS_VIEW_TAB\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n    &quot;associatedIndex&quot;: 6\n    }</component>\n  <component name=\"ProjectId\" id=\"2W3ZVuM1wGwoGG7x2hP6GVpaZUm\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/twolife/Descargas/serializacion&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Images&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/resources/com/vista/Login\" />\n      <recent name=\"C:\\Users\\camil\\IdeaProjects\\AirRecursionProyect\\src\\main\\resources\\com\\vista\\Imagenes\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/com/vista/Imagenes\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/com/vista\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\camil\\IdeaProjects\\AirRecursionProyect\\src\\main\\resources\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/com/vista/Login\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/com/vista/Imagenes\" />\n      <recent name=\"C:\\Users\\camil\\IdeaProjects\\AirRecursionProyect\\src\\main\\java\\Cliente\\controlador\" />\n      <recent name=\"C:\\Users\\camil\\IdeaProjects\\AirRecursionProyect\\src\\main\\resources\\com\\vista\\ventanas\" />\n    </key>\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"Cliente.modelo\" />\n      <recent name=\"com.codigo.controlador\" />\n      <recent name=\"com.codigo.modelo.objetos\" />\n      <recent name=\"com.codigo.exceptions\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Main\">\n    <configuration name=\"GestionClientes\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Cliente.modelo.GestionClientes\" />\n      <module name=\"AirRecursionProyect\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"Cliente.modelo.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"19\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"Cliente.modelo.Main\" />\n      <module name=\"AirRecursionProyect\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"mainServer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Servidor.mainServer\" />\n      <module name=\"AirRecursionProyect\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"Servidor.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.Main\" />\n      <item itemvalue=\"Application.GestionClientes\" />\n      <item itemvalue=\"Application.mainServer\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.mainServer\" />\n        <item itemvalue=\"Application.GestionClientes\" />\n        <item itemvalue=\"Application.mainServer\" />\n        <item itemvalue=\"Application.GestionClientes\" />\n        <item itemvalue=\"Application.mainServer\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"1d5f00c1-523c-4690-8a29-6e36dce43e4f\" name=\"Changes\" comment=\"\" />\n      <created>1695963252898</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1695963252898</updated>\n      <workItem from=\"1695963254590\" duration=\"5360000\" />\n      <workItem from=\"1696260504095\" duration=\"1035000\" />\n      <workItem from=\"1696364837615\" duration=\"169000\" />\n      <workItem from=\"1696365022818\" duration=\"825000\" />\n      <workItem from=\"1696363648631\" duration=\"117000\" />\n      <workItem from=\"1696392966412\" duration=\"46000\" />\n      <workItem from=\"1696393034793\" duration=\"142000\" />\n      <workItem from=\"1696783508672\" duration=\"89000\" />\n      <workItem from=\"1696783610816\" duration=\"493000\" />\n      <workItem from=\"1696784119074\" duration=\"1943000\" />\n      <workItem from=\"1696807968571\" duration=\"216000\" />\n      <workItem from=\"1696953221833\" duration=\"2235000\" />\n      <workItem from=\"1696955631752\" duration=\"2938000\" />\n      <workItem from=\"1698993688107\" duration=\"1323000\" />\n      <workItem from=\"1699020301383\" duration=\"9224000\" />\n      <workItem from=\"1699314306337\" duration=\"2429000\" />\n      <workItem from=\"1699317377240\" duration=\"2169000\" />\n      <workItem from=\"1699371174656\" duration=\"357000\" />\n      <workItem from=\"1699455920987\" duration=\"1308000\" />\n      <workItem from=\"1699706731691\" duration=\"2886000\" />\n      <workItem from=\"1699709643738\" duration=\"6557000\" />\n      <workItem from=\"1699888108261\" duration=\"1647000\" />\n      <workItem from=\"1699927897019\" duration=\"9028000\" />\n      <workItem from=\"1699939420125\" duration=\"55000\" />\n      <workItem from=\"1699973696022\" duration=\"2164000\" />\n      <workItem from=\"1700569907156\" duration=\"6273000\" />\n      <workItem from=\"1700579416183\" duration=\"4526000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Se crearon las clases, propuestas en el diagrama de clases\">\n      <created>1698968242258</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698968242260</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos\">\n      <created>1698977995616</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698977995617</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento\">\n      <created>1699240810006</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699240810006</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"se gurada workspace.xml\">\n      <created>1699241769968</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699241769968</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/main\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Se crearon las clases, propuestas en el diagrama de clases\" />\n    <MESSAGE value=\"Se realizo la creacion de los Carts donde se mostrara los destinos turisticos, y ademas se realizo la persistencia y serializacion de dichos destinos\" />\n    <MESSAGE value=\"se corrigieron los metodos de verificar la identidad y correos de los clientes cuando se registran y ademas se organizo y comento\" />\n    <MESSAGE value=\"se gurada workspace.xml\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"se gurada workspace.xml\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/Cliente/controlador/DiseñoDestinosController.java</url>\n          <line>49</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0d8e7ae812c6d84e111baefeb28486840a28c0a1)
++++ b/.idea/workspace.xml	(date 1700630828342)
+@@ -5,19 +5,111 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="1d5f00c1-523c-4690-8a29-6e36dce43e4f" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/compiler.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/encodings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/jarRepositories.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.idea/uiDesigner.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/module-info.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/mvnw" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/chat.txt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/AbrirChat.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/AbrirChatApp.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/ChatNuevo.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/ChatServerNuevo.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/ClienteAux.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/GuardarChat.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/Mensajes.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/PaqueteEnvio.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/java/com/example/chat/escribirChat.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/1.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/2.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/3.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/31069111.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/31069111copy.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/3446699.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/4.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/5.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/532-5328945_menu-bar-icon-white-clipart-png-download-menu.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/6.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/7.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/8229.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/8afd3c6c15abcb84fb045d04b1ed108e.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Alert.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Aux.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Aux1.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Candado png.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/CopyCopymapa.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Hangar.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/LineaDiagonal.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/LineaRecta.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/LineaVertical.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/NotiInversa.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/OIP (1).jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/OIP jdkasjasf.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/OIP.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R (1)37832.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R (2).png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R jajjdjajd.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R jajlfas.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/R2.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/SOCIALMEDIA.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/Usuarip.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/admin.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/aim_PNG451.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/airplane_4902246.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/airplane_49022462.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/asjasdkfs5.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/aux3.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/avion.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/basededatos.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/c60c97eba10a56280114b19063d04655-icono-redondo-del-aeropuerto-de-avi-oacute-n-by-vexels.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/clickEnviar.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/conne.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/copyMapa.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/copymapamundi.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/edit.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/enviarIcon.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/exit_PNG45.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/icons8-contraseña-50.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/icons8-usuario-64.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/img_451479.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/inversoAvion.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/istockphoto-951316232-170667a.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/kisspng-computer-icons-portable-network-graphics-avatar-tr-clip-directory-professional-transparent-amp-png-5d1bfa95e508d4.2980489715621147099381.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/pc.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/recorrido.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/serviceClient.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/señora.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/socialMediaair.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/starry-sky-space-stars-night2.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universe2.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universe2copy.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universe3.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universe3copy.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universe4.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universo.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/universo2772.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/Images/wp6493600.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/com/example/chat/AbrirChat.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/com/example/chat/ChatNuevo.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/Servidor/Chat/src/main/resources/com/example/chat/ChatServer.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/AbrirChat.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ChatNuevo.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/ChatServer.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientes.se" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.se" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paquetes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/paquetes.dat" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionDestinos.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaCreacionPaquetes.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaEstadistica.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaLoginController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaPaquetesController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/controlador/VentanaRegistroController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionPaquetes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/Serializacion/GestionPaquetes.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/verificarException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/exceptions/VerificarException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/modelo/objetos/PaqueteTuristico.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCreacionPaquetes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/vista/ventanas/VentanaCreacionPaquetes.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/mainServer.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/module-info.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -30,6 +122,7 @@
+         <option value="Enum" />
+         <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="JavaFXApplication" />
+       </list>
+     </option>
+   </component>
+@@ -66,56 +159,49 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/home/twolife/Descargas/serializacion&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Images&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "main",
++    "last_opened_file_path": "/home/twolife/Documentos/AirRecursionProyect/src/main/java/Servidor/Chat",
++    "node.js.detected.package.eslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Images",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
+-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\Imagenes" />
+-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
+-      <recent name="$PROJECT_DIR$/src/main/resources/com/vista" />
++      <recent name="$PROJECT_DIR$/src/main/java/Servidor/Chat" />
++      <recent name="$PROJECT_DIR$/src/main/java/Servidor" />
++      <recent name="$PROJECT_DIR$/src/main/java/Servidor/imagenes" />
++      <recent name="$PROJECT_DIR$/src/main/java/Servidor/ventanas" />
++      <recent name="$PROJECT_DIR$/src/main/java/Servidor/ventanasChat" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/main/java/Cliente" />
++      <recent name="$PROJECT_DIR$/src/main/resources/com/vista/ventanas" />
+       <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources" />
+       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Login" />
+       <recent name="$PROJECT_DIR$/src/main/resources/com/vista/Imagenes" />
+-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\java\Cliente\controlador" />
+-      <recent name="C:\Users\camil\IdeaProjects\AirRecursionProyect\src\main\resources\com\vista\ventanas" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="Servidor.chat" />
+       <recent name="Cliente.modelo" />
+       <recent name="com.codigo.controlador" />
+       <recent name="com.codigo.modelo.objetos" />
+       <recent name="com.codigo.exceptions" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Main">
+-    <configuration name="GestionClientes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Cliente.modelo.GestionClientes" />
+-      <module name="AirRecursionProyect" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="Cliente.modelo.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="RunManager">
+     <configuration name="Main" type="Application" factoryName="Application">
+       <option name="ALTERNATIVE_JRE_PATH" value="19" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+@@ -125,33 +211,6 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="mainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Servidor.mainServer" />
+-      <module name="AirRecursionProyect" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="Servidor.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <list>
+-      <item itemvalue="Application.Main" />
+-      <item itemvalue="Application.GestionClientes" />
+-      <item itemvalue="Application.mainServer" />
+-    </list>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.mainServer" />
+-        <item itemvalue="Application.GestionClientes" />
+-        <item itemvalue="Application.mainServer" />
+-        <item itemvalue="Application.GestionClientes" />
+-        <item itemvalue="Application.mainServer" />
+-      </list>
+-    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -187,7 +246,9 @@
+       <workItem from="1699939420125" duration="55000" />
+       <workItem from="1699973696022" duration="2164000" />
+       <workItem from="1700569907156" duration="6273000" />
+-      <workItem from="1700579416183" duration="4526000" />
++      <workItem from="1700579416183" duration="4598000" />
++      <workItem from="1700625493506" duration="3463000" />
++      <workItem from="1700629001630" duration="1683000" />
+     </task>
+     <task id="LOCAL-00001" summary="Se crearon las clases, propuestas en el diagrama de clases">
+       <created>1698968242258</created>

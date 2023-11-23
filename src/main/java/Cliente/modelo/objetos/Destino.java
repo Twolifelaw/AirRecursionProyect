@@ -1,7 +1,6 @@
 package Cliente.modelo.objetos;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Destino implements Serializable {
 
@@ -14,15 +13,15 @@ public class Destino implements Serializable {
     private String id;
     private int numeroCupos;
 
-    public Destino(String pais, String ciudad, String descripcion,String imagenes, String clima , String precio , String id , int numeroCupos) {
+    public Destino(String pais, String ciudad, String descripcion, String imagenes, String clima, String precio, String id, int numeroCupos) {
         this.pais = pais;
         this.ciudad = ciudad;
         this.descripcion = descripcion;
         this.imagenes = imagenes;
         this.clima = clima;
-        this.precio=precio;
-        this.id=id;
-        this.numeroCupos=numeroCupos;
+        this.precio = precio;
+        this.id = id;
+        this.numeroCupos = numeroCupos;
     }
 
     public String getPais() {
